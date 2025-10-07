@@ -1,20 +1,28 @@
 * {
-     margin: 0;
-     padding: 0;
-     box-sizing: border-box;
- }
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
 
- body {
+html,
+body {
+    width: 100%;
+    overflow-x: hidden;
+    /* Prevent horizontal scroll */
     font-family: "Poppins", sans-serif;
-     background: #f5f7fa;
-     color: #2d3748;
- }
+    background: #f5f7fa;
+    color: #2d3748;
+}
 
- .container {
-     display: flex;
-     min-height: 100vh;
- }
-
+.container {
+    display: flex;
+    min-height: 100vh;
+    width: 100%;
+    max-width: 100vw;
+    /* Prevent flex overflow */
+    overflow-x: hidden;
+    /* Double safety */
+}
 /* Sidebar */
 .sidebar {
     width: 260px;
@@ -1976,7 +1984,7 @@
         /* Search bar in the middle */
         flex: 1;
         /* Take available space */
-        max-width: 50%;
+        max-width: 60%;
         /* Narrower for smaller screens */
         margin: 0 5px;
         /* Reduced spacing */
@@ -2049,19 +2057,23 @@
         font-size: 14px;
     }
 
-    .insights-grid {
-        grid-template-columns: repeat(2, 1fr);
-        /* Two columns for 2x2 grid */
-        grid-template-rows: repeat(2, auto);
-        /* Two rows for 2x2 grid */
-        gap: 8px;
-        /* Smaller gap */
-    }
+   .insights-grid {
+       display: grid !important;
+       grid-template-columns: repeat(2, 1fr) !important;
+       grid-template-rows: repeat(2, 1fr) !important;
+       gap: 10px !important;
+       grid-auto-flow: dense !important;
+       justify-items: stretch !important;
+       align-items: stretch !important;
+   }
 
-    .insight-card {
-        padding: 8px;
-        /* Smaller padding */
-    }
+   /* Make sure each card fits neatly */
+   .insight-card {
+       width: 100%;
+       height: 100%;
+       padding: 10px;
+       box-sizing: border-box;
+   }
 
     .insight-text {
         font-size: 10px;
