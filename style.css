@@ -7705,7 +7705,674 @@ body {
      color: #ef4444;
  }
 
+@media (max-width: 1200px) {
+    .erp-header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 16px;
+        margin-bottom: 24px;
+    }
 
+    .hdr-content h1 {
+        font-size: 28px;
+        /* Slightly smaller heading */
+    }
+
+    .hdr-content p {
+        font-size: 14px;
+        /* Slightly smaller paragraph */
+    }
+
+    .hdr-actions {
+        flex-wrap: wrap;
+        gap: 8px;
+        /* Tighter gap for buttons */
+    }
+
+    .notif-grid {
+        grid-template-columns: repeat(2, 1fr);
+        /* Reduce to 2 columns for notifications */
+    }
+
+    .metrics-grid {
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        /* Adjust for smaller metric blocks */
+    }
+
+    .graph-layout {
+        grid-template-columns: 1fr;
+        /* Stack graph sections vertically */
+    }
+
+    .graph-area {
+        height: 250px;
+        /* Slightly smaller graph area */
+    }
+
+    .funds-section {
+        padding: 16px;
+        /* Reduce padding */
+    }
+
+    .section-heading h2 {
+        font-size: 20px;
+        /* Smaller section heading */
+    }
+
+    .fund-item {
+        padding: 16px;
+        /* Reduce padding for fund items */
+    }
+
+    .fund-icon {
+        width: 40px;
+        height: 40px;
+        /* Smaller fund icon */
+        font-size: 18px;
+    }
+
+    .overlay-content {
+        max-width: 500px;
+        /* Slightly smaller modal */
+    }
+}
+
+@media (max-width: 1028px) {
+    .erp-header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 12px;
+        margin-bottom: 20px;
+    }
+
+    .hdr-content h1 {
+        font-size: 24px;
+        /* Further reduce heading size */
+    }
+
+    .hdr-content p {
+        font-size: 13px;
+        /* Smaller paragraph text */
+    }
+
+    .hdr-actions {
+        flex-wrap: wrap;
+        gap: 6px;
+        /* Tighter gap for buttons */
+    }
+
+    .action-btn {
+        padding: 8px 16px;
+        /* Slightly smaller button padding */
+        font-size: 13px;
+        /* Smaller button text */
+    }
+
+    .notif-grid {
+        grid-template-columns: 1fr;
+        /* Single column for notifications */
+    }
+
+    .metrics-grid {
+        grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+        /* Smaller metric blocks */
+    }
+
+    .graph-layout {
+        grid-template-columns: 1fr;
+        /* Stack graph sections vertically */
+    }
+
+    .graph-area {
+        height: 220px;
+        /* Smaller graph area */
+    }
+
+    .funds-section {
+        padding: 12px;
+        /* Further reduce padding */
+    }
+
+    .section-heading h2 {
+        font-size: 18px;
+        /* Smaller section heading */
+    }
+
+    .section-heading p {
+        font-size: 12px;
+        /* Smaller section subtitle */
+    }
+
+    .fund-item {
+        padding: 12px;
+        /* Smaller padding for fund items */
+    }
+
+    .fund-icon {
+        width: 36px;
+        height: 36px;
+        /* Smaller fund icon */
+        font-size: 16px;
+    }
+
+    .fund-details h4 {
+        font-size: 14px;
+        /* Smaller fund title */
+    }
+
+    .fund-meta {
+        font-size: 12px;
+        /* Smaller fund meta text */
+    }
+
+    .fund-amount {
+        font-size: 18px;
+        /* Smaller fund amount */
+    }
+
+    .overlay-content {
+        max-width: 450px;
+        /* Smaller modal */
+    }
+}
+
+/* Media Query for 770px */
+@media (max-width: 770px) {
+    .erp-header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 10px;
+        margin-bottom: 16px;
+    }
+
+    .hdr-content h1 {
+        font-size: 22px;
+        /* Smaller heading */
+    }
+
+    .hdr-content p {
+        font-size: 12px;
+        /* Smaller paragraph text */
+    }
+
+    .hdr-actions {
+        flex-direction: row;
+        /* Keep buttons in a row */
+        flex-wrap: wrap;
+        gap: 4px;
+        /* Tighter gap for buttons */
+    }
+
+    .action-btn {
+        padding: 6px 12px;
+        /* Smaller button padding */
+        font-size: 12px;
+        /* Smaller button text */
+    }
+
+    .notif-grid {
+        grid-template-columns: 1fr;
+        /* Single column for notifications */
+    }
+
+    .metrics-grid {
+        grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+        /* Smaller metric blocks */
+    }
+
+    .metric-block {
+        padding: 16px;
+        /* Reduce padding */
+    }
+
+    .metric-figure {
+        font-size: 28px;
+        /* Smaller metric figure */
+    }
+
+    .graph-layout {
+        grid-template-columns: 1fr;
+        /* Stack graph sections */
+    }
+
+    .graph-area {
+        height: 200px;
+        /* Smaller graph area */
+    }
+
+    .funds-section {
+        padding: 10px;
+        /* Further reduce padding */
+    }
+
+    .section-heading h2 {
+        font-size: 16px;
+        /* Smaller section heading */
+    }
+
+    .section-heading p {
+        font-size: 11px;
+        /* Smaller section subtitle */
+    }
+
+    .fund-item {
+        padding: 10px;
+        /* Smaller padding for fund items */
+    }
+
+    .fund-icon {
+        width: 32px;
+        height: 32px;
+        /* Smaller fund icon */
+        font-size: 14px;
+    }
+
+    .fund-details h4 {
+        font-size: 13px;
+        /* Smaller fund title */
+    }
+
+    .fund-meta {
+        font-size: 11px;
+        /* Smaller fund meta text */
+    }
+
+    .fund-amount {
+        font-size: 16px;
+        /* Smaller fund amount */
+    }
+
+    .overlay-content {
+        max-width: 400px;
+        /* Smaller modal */
+    }
+
+    .search-box {
+        width: 180px;
+        /* Smaller search box */
+    }
+}
+
+/* Media Query for 480px */
+@media (max-width: 480px) {
+    .erp-header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 8px;
+        margin-bottom: 12px;
+    }
+
+    .hdr-content h1 {
+        font-size: 20px;
+        /* Smaller heading */
+    }
+
+    .hdr-content p {
+        font-size: 11px;
+        /* Smaller paragraph text */
+    }
+
+    .hdr-actions {
+        flex-direction: row;
+        /* Keep buttons in a row */
+        flex-wrap: wrap;
+        gap: 3px;
+        /* Tighter gap for buttons */
+    }
+
+    .action-btn {
+        padding: 5px 10px;
+        /* Smaller button padding */
+        font-size: 11px;
+        /* Smaller button text */
+    }
+
+    .notif-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .metrics-grid {
+        grid-template-columns: 1fr;
+        /* Single column for metrics */
+    }
+
+    .metric-block {
+        padding: 12px;
+        /* Further reduce padding */
+    }
+
+    .metric-figure {
+        font-size: 24px;
+        /* Smaller metric figure */
+    }
+
+    .graph-layout {
+        grid-template-columns: 1fr;
+    }
+
+    .graph-area {
+        height: 180px;
+        /* Smaller graph area */
+    }
+
+    .funds-section {
+        padding: 8px;
+        /* Minimal padding */
+    }
+
+    .section-heading h2 {
+        font-size: 14px;
+        /* Smaller section heading */
+    }
+
+    .section-heading p {
+        font-size: 10px;
+        /* Smaller section subtitle */
+    }
+
+    .fund-item {
+        padding: 8px;
+        /* Minimal padding for fund items */
+    }
+
+    .fund-icon {
+        width: 28px;
+        height: 28px;
+        /* Smaller fund icon */
+        font-size: 12px;
+    }
+
+    .fund-details h4 {
+        font-size: 12px;
+        /* Smaller fund title */
+    }
+
+    .fund-meta {
+        font-size: 10px;
+        /* Smaller fund meta text */
+    }
+
+    .fund-amount {
+        font-size: 14px;
+        /* Smaller fund amount */
+    }
+
+    .overlay-content {
+        max-width: 350px;
+        /* Smaller modal */
+    }
+
+    .search-box {
+        width: 160px;
+        /* Smaller search box */
+    }
+}
+
+/* Media Query for 420px */
+@media (max-width: 420px) {
+    .erp-header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 6px;
+        margin-bottom: 10px;
+    }
+
+    .hdr-content h1 {
+        font-size: 18px;
+        /* Smaller heading */
+    }
+
+    .hdr-content p {
+        font-size: 10px;
+        /* Smaller paragraph text */
+    }
+
+    .hdr-actions {
+        flex-direction: row;
+        /* Keep buttons in a row */
+        flex-wrap: wrap;
+        gap: 2px;
+        /* Minimal gap for buttons */
+    }
+
+    .action-btn {
+        padding: 4px 8px;
+        /* Minimal button padding */
+        font-size: 10px;
+        /* Smaller button text */
+    }
+
+    .notif-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .metrics-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .metric-block {
+        padding: 10px;
+        /* Minimal padding */
+    }
+
+    .metric-figure {
+        font-size: 22px;
+        /* Smaller metric figure */
+    }
+
+    .graph-layout {
+        grid-template-columns: 1fr;
+    }
+
+    .graph-area {
+        height: 160px;
+        /* Smaller graph area */
+    }
+
+    .funds-section {
+        padding: 6px;
+        /* Minimal padding */
+    }
+
+    .section-heading h2 {
+        font-size: 13px;
+        /* Smaller section heading */
+    }
+
+    .section-heading p {
+        font-size: 9px;
+        /* Smaller section subtitle */
+    }
+
+    .fund-item {
+        padding: 6px;
+        /* Minimal padding for fund items */
+    }
+
+    .fund-icon {
+        width: 24px;
+        height: 24px;
+        /* Smaller fund icon */
+        font-size: 10px;
+    }
+
+    .fund-details h4 {
+        font-size: 11px;
+        /* Smaller fund title */
+    }
+
+    .fund-meta {
+        font-size: 9px;
+        /* Smaller fund meta text */
+    }
+
+    .fund-amount {
+        font-size: 13px;
+        /* Smaller fund amount */
+    }
+
+    .overlay-content {
+        max-width: 320px;
+        /* Smaller modal */
+    }
+
+    .search-box {
+        width: 140px;
+        /* Smaller search box */
+    }
+
+    .mmn-tab {
+        padding: 8px 16px;
+        /* Smaller tab padding */
+        font-size: 12px;
+        /* Smaller tab text */
+    }
+}
+
+@media (max-width: 360px) {
+    .erp-header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 4px;
+        margin-bottom: 8px;
+    }
+
+    .hdr-content h1 {
+        font-size: 16px;
+        /* Smaller heading */
+    }
+
+    .hdr-content p {
+        font-size: 9px;
+        /* Smaller paragraph text */
+    }
+
+    .hdr-actions {
+        flex-direction: row;
+        /* Keep buttons in a row */
+        flex-wrap: wrap;
+        gap: 2px;
+        /* Minimal gap for buttons */
+    }
+
+    .action-btn {
+        padding: 3px 6px;
+        /* Minimal button padding */
+        font-size: 9px;
+        /* Smaller button text */
+    }
+
+    .notif-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .metrics-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .metric-block {
+        padding: 8px;
+        /* Minimal padding */
+    }
+
+    .metric-figure {
+        font-size: 20px;
+        /* Smaller metric figure */
+    }
+
+    .metric-label {
+        font-size: 12px;
+        /* Smaller metric label */
+    }
+
+    .metric-symbol svg {
+        width: 20px;
+        height: 20px;
+        /* Smaller metric icon */
+    }
+
+    .graph-layout {
+        grid-template-columns: 1fr;
+    }
+
+    .graph-area {
+        height: 140px;
+        /* Smaller graph area */
+    }
+
+    .graph-title h3 {
+        font-size: 16px;
+        /* Smaller graph title */
+    }
+
+    .graph-subtitle {
+        font-size: 11px;
+        /* Smaller graph subtitle */
+    }
+
+    .funds-section {
+        padding: 4px;
+        /* Minimal padding */
+    }
+
+    .section-heading h2 {
+        font-size: 12px;
+        /* Smaller section heading */
+    }
+
+    .section-heading p {
+        font-size: 8px;
+        /* Smaller section subtitle */
+    }
+
+    .fund-item {
+        padding: 4px;
+        /* Minimal padding for fund items */
+    }
+
+    .fund-icon {
+        width: 20px;
+        height: 20px;
+        /* Smaller fund icon */
+        font-size: 8px;
+    }
+
+    .fund-details h4 {
+        font-size: 10px;
+        /* Smaller fund title */
+    }
+
+    .fund-meta {
+        font-size: 8px;
+        /* Smaller fund meta text */
+    }
+
+    .fund-amount {
+        font-size: 12px;
+        /* Smaller fund amount */
+    }
+
+    .overlay-content {
+        max-width: 300px;
+        /* Smaller modal */
+    }
+
+    .search-box {
+        width: 120px;
+        /* Smaller search box */
+        padding: 6px 10px;
+        /* Smaller search box padding */
+        font-size: 10px;
+        /* Smaller search box text */
+    }
+
+    .mmn-tab {
+        padding: 6px 12px;
+        /* Smaller tab padding */
+        font-size: 11px;
+        /* Smaller tab text */
+    }
+}
 
 
 
@@ -9057,12 +9724,610 @@ body {
       color: #64748b;
   }
 
+@media (max-width: 1200px) {
+    .vax-header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 12px;
+        margin-bottom: 24px;
+    }
+
+    .vax-content h1 {
+        font-size: 30px;
+        /* Slightly smaller heading */
+    }
+
+    .vax-content p {
+        font-size: 14px;
+        /* Slightly smaller paragraph */
+    }
+
+    .vax-actions {
+        flex-wrap: wrap;
+        gap: 10px;
+        /* Tighter gap for buttons */
+    }
+
+    .notif-grid {
+        gap: 16px;
+        /* Slightly reduce gap */
+        flex-wrap: nowrap;
+        /* Maintain single row with horizontal scroll */
+    }
+
+    .notif-box {
+        flex: 0 0 calc((100% - 32px) / 3);
+        /* Adjust for smaller gap */
+        max-width: calc((100% - 32px) / 3);
+        min-width: 200px;
+        /* Slightly smaller minimum width */
+    }
+
+    .kpi-grid {
+        grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+        /* Adjust for smaller KPI boxes */
+    }
+
+    .kpi-box {
+        padding: 16px;
+        /* Reduce padding */
+    }
+
+    .kpi-value {
+        font-size: 28px;
+        /* Smaller KPI value */
+    }
+
+    .msg-layout {
+        grid-template-columns: 1fr;
+        /* Stack message form and AI panel */
+    }
+
+    .social-grid {
+        grid-template-columns: 1fr;
+        /* Stack social boxes */
+    }
+
+    .social-box {
+        padding: 16px;
+        /* Reduce padding */
+    }
+
+    .social-metrics {
+        grid-template-columns: repeat(2, 1fr);
+        /* Reduce to 2 columns for metrics */
+    }
+
+    .tpl-grid {
+        grid-template-columns: repeat(2, 1fr);
+        /* Reduce to 2 columns for templates */
+    }
+
+    .overlay-content {
+        max-width: 500px;
+        /* Slightly smaller modal */
+    }
+}
 
 
+@media (max-width: 1028px) {
+    .vax-header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 10px;
+        margin-bottom: 20px;
+    }
 
+    .vax-content h1 {
+        font-size: 26px;
+        /* Further reduce heading size */
+    }
 
+    .vax-content p {
+        font-size: 13px;
+        /* Smaller paragraph text */
+    }
 
+    .vax-actions {
+        flex-wrap: wrap;
+        gap: 8px;
+        /* Tighter gap for buttons */
+    }
 
+    .cmd-btn {
+        padding: 8px 16px;
+        /* Slightly smaller button padding */
+        font-size: 13px;
+        /* Smaller button text */
+    }
+
+    .notif-grid {
+        gap: 12px;
+        /* Tighter gap */
+        flex-wrap: nowrap;
+        /* Maintain single row with horizontal scroll */
+    }
+
+    .notif-box {
+        flex: 0 0 calc((100% - 24px) / 3);
+        /* Adjust for smaller gap */
+        max-width: calc((100% - 24px) / 3);
+        min-width: 180px;
+        /* Smaller minimum width */
+    }
+
+    .notif-info h3 {
+        font-size: 15px;
+        /* Smaller notification heading */
+    }
+
+    .notif-info p {
+        font-size: 12px;
+        /* Smaller notification text */
+    }
+
+    .kpi-grid {
+        grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+        /* Smaller KPI boxes */
+    }
+
+    .kpi-box {
+        padding: 12px;
+        /* Further reduce padding */
+    }
+
+    .kpi-value {
+        font-size: 24px;
+        /* Smaller KPI value */
+    }
+
+    .msg-layout {
+        grid-template-columns: 1fr;
+        /* Stack message form and AI panel */
+    }
+
+    .social-grid {
+        grid-template-columns: repeat(2, 1fr);
+        /* Force two columns for social grid */
+    }
+
+    .social-box {
+        padding: 12px;
+        /* Further reduce padding */
+    }
+
+    .social-metrics {
+        grid-template-columns: 1fr;
+        /* Single column for metrics */
+    }
+
+    .social-metric {
+        padding: 12px;
+        /* Reduce padding */
+    }
+
+    .metric-value {
+        font-size: 20px;
+        /* Smaller metric value */
+    }
+
+    .tpl-grid {
+        grid-template-columns: 1fr;
+        /* Single column for templates */
+    }
+
+    .tpl-card {
+        padding: 16px;
+        /* Reduce padding */
+    }
+
+    .overlay-content {
+        max-width: 450px;
+        /* Smaller modal */
+    }
+}
+
+/* Media Query for 770px */
+@media (max-width: 770px) {
+    .vax-header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 8px;
+        margin-bottom: 16px;
+    }
+
+    .vax-content h1 {
+        font-size: 22px;
+        /* Smaller heading */
+    }
+
+    .vax-content p {
+        font-size: 12px;
+        /* Smaller paragraph text */
+    }
+
+    .vax-actions {
+        flex-direction: row;
+        /* Keep buttons in a row */
+        flex-wrap: wrap;
+        gap: 6px;
+        /* Tighter gap for buttons */
+    }
+
+    .cmd-btn {
+        padding: 6px 12px;
+        /* Smaller button padding */
+        font-size: 12px;
+        /* Smaller button text */
+    }
+
+    .notif-grid {
+        gap: 10px;
+        /* Tighter gap */
+        flex-wrap: nowrap;
+        /* Maintain single row with horizontal scroll */
+    }
+
+    .notif-box {
+        flex: 0 0 calc((100% - 20px) / 3);
+        /* Adjust for smaller gap */
+        max-width: calc((100% - 20px) / 3);
+        min-width: 160px;
+        /* Smaller minimum width */
+    }
+
+    .notif-info h3 {
+        font-size: 14px;
+        /* Smaller notification heading */
+    }
+
+    .notif-info p {
+        font-size: 11px;
+        /* Smaller notification text */
+    }
+
+    .kpi-grid {
+        grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+        /* Smaller KPI boxes */
+    }
+
+    .kpi-box {
+        padding: 10px;
+        /* Further reduce padding */
+    }
+
+    .kpi-value {
+        font-size: 22px;
+        /* Smaller KPI value */
+    }
+
+    .msg-layout {
+        grid-template-columns: 1fr;
+        /* Stack message form and AI panel */
+    }
+
+    .social-grid {
+        grid-template-columns: repeat(2, 1fr);
+        /* Maintain two columns for social grid */
+    }
+
+    .social-box {
+        padding: 10px;
+        /* Further reduce padding */
+    }
+
+    .social-metrics {
+        grid-template-columns: 1fr;
+        /* Single column for metrics */
+    }
+
+    .social-metric {
+        padding: 10px;
+        /* Reduce padding */
+    }
+
+    .metric-value {
+        font-size: 18px;
+        /* Smaller metric value */
+    }
+
+    .tpl-grid {
+        grid-template-columns: 1fr;
+        /* Single column for templates */
+    }
+
+    .tpl-card {
+        padding: 12px;
+        /* Reduce padding */
+    }
+
+    .overlay-content {
+        max-width: 400px;
+        /* Smaller modal */
+    }
+}
+
+/* Media Query for 480px */
+@media (max-width: 480px) {
+    .vax-header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 6px;
+        margin-bottom: 12px;
+    }
+
+    .vax-content h1 {
+        font-size: 20px;
+        /* Smaller heading */
+    }
+
+    .vax-content p {
+        font-size: 11px;
+        /* Smaller paragraph text */
+    }
+
+    .vax-actions {
+        flex-direction: row;
+        /* Keep buttons in a row */
+        flex-wrap: wrap;
+        gap: 4px;
+        /* Tighter gap for buttons */
+    }
+
+    .cmd-btn {
+        padding: 5px 10px;
+        /* Smaller button padding */
+        font-size: 11px;
+        /* Smaller button text */
+    }
+
+    .cmd-btn svg {
+        width: 16px;
+        /* Smaller SVG icons */
+        height: 16px;
+    }
+
+    .rat-nav {
+        gap: 6px;
+        /* Further reduce gap between tabs */
+    }
+
+    .rat-tab {
+        padding: 6px 12px;
+        /* Further reduce tab padding */
+        font-size: 12px;
+        /* Smaller tab text */
+    }
+
+    .notif-grid {
+        flex-direction: column;
+        /* Stack notifications vertically */
+        gap: 12px;
+        /* Vertical gap for stacked layout */
+        overflow-x: visible;
+        /* Remove horizontal scroll */
+    }
+
+    .notif-box {
+        flex: 0 0 auto;
+        /* Remove fixed width for stacking */
+        max-width: 100%;
+        /* Full width for each notification */
+        min-width: 0;
+        /* Allow natural sizing */
+    }
+
+    .notif-info h3 {
+        font-size: 13px;
+        /* Smaller notification heading */
+    }
+
+    .notif-info p {
+        font-size: 10px;
+        /* Smaller notification text */
+    }
+
+    .kpi-grid {
+        grid-template-columns: 1fr;
+        /* Single column for KPI boxes */
+    }
+
+    .kpi-box {
+        padding: 8px;
+        /* Further reduce padding */
+    }
+
+    .kpi-value {
+        font-size: 20px;
+        /* Smaller KPI value */
+    }
+
+    .msg-layout {
+        grid-template-columns: 1fr;
+        /* Stack message form and AI panel */
+    }
+
+    .social-grid {
+        grid-template-columns: 1fr;
+        /* Single column for social grid */
+    }
+
+    .social-box {
+        padding: 8px;
+        /* Further reduce padding */
+    }
+
+    .social-metrics {
+        grid-template-columns: 1fr;
+        /* Single column for metrics */
+    }
+
+    .social-metric {
+        padding: 8px;
+        /* Reduce padding */
+    }
+
+    .metric-value {
+        font-size: 16px;
+        /* Smaller metric value */
+    }
+
+    .tpl-grid {
+        grid-template-columns: 1fr;
+        /* Single column for templates */
+    }
+
+    .tpl-card {
+        padding: 10px;
+        /* Reduce padding */
+    }
+
+    .overlay-content {
+        max-width: 350px;
+        /* Smaller modal */
+    }
+}
+
+/* Media Query for 420px */
+@media (max-width: 420px) {
+    .vax-header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 4px;
+        margin-bottom: 10px;
+    }
+
+    .vax-content h1 {
+        font-size: 18px;
+        /* Smaller heading */
+    }
+
+    .vax-content p {
+        font-size: 10px;
+        /* Smaller paragraph text */
+    }
+
+    .vax-actions {
+        flex-direction: row;
+        /* Keep buttons in a row */
+        flex-wrap: wrap;
+        gap: 3px;
+        /* Minimal gap for buttons */
+    }
+
+    .cmd-btn {
+        padding: 4px 8px;
+        /* Minimal button padding */
+        font-size: 10px;
+        /* Smaller button text */
+    }
+
+    .cmd-btn svg {
+        width: 14px;
+        /* Smaller SVG icons */
+        height: 14px;
+    }
+
+    .rat-nav {
+        gap: 4px;
+        /* Minimal gap between tabs */
+    }
+
+    .rat-tab {
+        padding: 5px 10px;
+        /* Minimal tab padding */
+        font-size: 11px;
+        /* Smaller tab text */
+    }
+
+    .notif-grid {
+        flex-direction: column;
+        /* Stack notifications vertically */
+        gap: 10px;
+        /* Vertical gap for stacked layout */
+        overflow-x: visible;
+        /* Remove horizontal scroll */
+    }
+
+    .notif-box {
+        flex: 0 0 auto;
+        /* Remove fixed width for stacking */
+        max-width: 100%;
+        /* Full width for each notification */
+        min-width: 0;
+        /* Allow natural sizing */
+    }
+
+    .notif-info h3 {
+        font-size: 12px;
+        /* Smaller notification heading */
+    }
+
+    .notif-info p {
+        font-size: 9px;
+        /* Smaller notification text */
+    }
+
+    .kpi-grid {
+        grid-template-columns: 1fr;
+        /* Single column for KPI boxes */
+    }
+
+    .kpi-box {
+        padding: 6px;
+        /* Minimal padding */
+    }
+
+    .kpi-value {
+        font-size: 18px;
+        /* Smaller KPI value */
+    }
+
+    .msg-layout {
+        grid-template-columns: 1fr;
+        /* Stack message form and AI panel */
+    }
+
+    .social-grid {
+        grid-template-columns: 1fr;
+        /* Single column for social grid */
+    }
+
+    .social-box {
+        padding: 6px;
+        /* Minimal padding */
+    }
+
+    .social-metrics {
+        grid-template-columns: 1fr;
+        /* Single column for metrics */
+    }
+
+    .social-metric {
+        padding: 6px;
+        /* Minimal padding */
+    }
+
+    .metric-value {
+        font-size: 14px;
+        /* Smaller metric value */
+    }
+
+    .tpl-grid {
+        grid-template-columns: 1fr;
+        /* Single column for templates */
+    }
+
+    .tpl-card {
+        padding: 8px;
+        /* Minimal padding */
+    }
+
+    .overlay-content {
+        max-width: 320px;
+        /* Smaller modal */
+    }
+}
 
 
 
