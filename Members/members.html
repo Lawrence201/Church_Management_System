@@ -639,7 +639,7 @@
 
 
     <script>
-        // Sample member data
+      /* Sample member data (unchanged) */
         let members = [
             {
                 id: 1,
@@ -716,14 +716,12 @@
         let currentFilter = 'all';
         let selectedMembers = new Set();
 
-        // Initialize table
         function renderTable() {
             const tbody = document.getElementById('memberTableBody');
             tbody.innerHTML = '';
 
             let filteredMembers = members;
 
-            // Apply filter
             if (currentFilter !== 'all') {
                 filteredMembers = members.filter(m => {
                     if (currentFilter === 'active') return m.status === 'Active';
@@ -745,68 +743,83 @@
                 }
 
                 row.innerHTML = `
-                        <td class="cf-checkbox-cell">
-                            <input type="checkbox" ${selectedMembers.has(member.id) ? 'checked' : ''} 
-                                   onchange="toggleMemberSelection(${member.id})">
-                        </td>
-                        <td>
-                            <div class="cf-member-card">
-                                <div class="cf-member-icon">👤</div>
-                                <div class="cf-member-info">
-                                    <h4>${member.name}</h4>
-                                    <p>Joined ${member.joined}</p>
-                                </div>
-                            </div>
-                        </td>
-                        <td>
-                            <div class="cf-contact-group">
-                                <div class="cf-contact-item">
-                                    <span class="cf-contact-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-mail h-3 w-3" data-lov-id="src/pages/Members.tsx:278:28" data-lov-name="Mail" data-component-path="src/pages/Members.tsx" data-component-line="278" data-component-file="Members.tsx" data-component-name="Mail" data-component-content="%7B%22className%22%3A%22h-3%20w-3%22%7D"><rect width="20" height="16" x="2" y="4" rx="2"></rect><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"></path></svg></span>
-                                    <span>${member.email}</span>
-                                </div>
-                                <div class="cf-contact-item">
-                                    <span class="cf-contact-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-phone h-3 w-3" data-lov-id="src/pages/Members.tsx:282:28" data-lov-name="Phone" data-component-path="src/pages/Members.tsx" data-component-line="282" data-component-file="Members.tsx" data-component-name="Phone" data-component-content="%7B%22className%22%3A%22h-3%20w-3%22%7D"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg></span>
-                                    <span>${member.phone}</span>
-                                </div>
-                            </div>
-                        </td>
-                        <td>${member.group}</td>
-                        <td><span class="cf-badge ${member.status.toLowerCase()}">${member.status}</span></td>
-                        <td><span class="cf-badge ${member.engagement.toLowerCase()}">${member.engagement}</span></td>
-                        <td>
-                            <div class="cf-progress-group">
-                                <div class="cf-progress-track">
-                                    <div class="cf-progress-bar" style="width: ${member.attendance}%"></div>
-                                </div>
-                                <span class="cf-progress-text">${member.attendance}%</span>
-                            </div>
-                        </td>
-                        <td>${member.lastSeen}</td>
-                        <td>
-                            <div class="cf-actions-cell">
-                                <button class="cf-menu-trigger" onclick="toggleMenu(event, ${member.id})">⋮</button>
-                                <div class="cf-dropdown-menu" id="menu-${member.id}">
-                                    <div class="cf-menu-item" onclick="viewProfile(${member.id})">
-                                        <span>👁️</span>
-                                        <span>View Profile</span>
-                                    </div>
-                                    <div class="cf-menu-item" onclick="editMember(${member.id})">
-                                        <span>✏️</span>
-                                        <span>Edit Member</span>
-                                    </div>
-                                    <div class="cf-menu-item" onclick="sendMessage(${member.id})">
-                                        <span>✉️</span>
-                                        <span>Send Message</span>
-                                    </div>
-                                    <div class="cf-menu-item" onclick="viewInsights(${member.id})">
-                                        <span>✨</span>
-                                        <span>AI Insights</span>
-                                    </div>
-                                </div>
-                            </div>
-                        </td>
-                    `;
+            <td class="cf-checkbox-cell">
+                <input type="checkbox" ${selectedMembers.has(member.id) ? 'checked' : ''} 
+                       onchange="toggleMemberSelection(${member.id})">
+            </td>
+            <td>
+                <div class="cf-member-card">
+                    <div class="cf-member-icon">👤</div>
+                    <div class="cf-member-info">
+                        <h4>${member.name}</h4>
+                        <p>Joined ${member.joined}</p>
+                    </div>
+                </div>
+            </td>
+            <td>
+                <div class="cf-contact-group">
+                    <div class="cf-contact-item">
+                        <span class="cf-contact-icon">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-mail h-3 w-3" data-lov-id="src/pages/Members.tsx:278:28" data-lov-name="Mail" data-component-path="src/pages/Members.tsx" data-component-line="278" data-component-file="Members.tsx" data-component-name="Mail" data-component-content="%7B%22className%22%3A%22h-3%20w-3%22%7D"><rect width="20" height="16" x="2" y="4" rx="2"></rect><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"></path></svg>
+                        </span>
+                        <span class="cf-contact-text">${member.email}</span>
+                    </div>
+                    <div class="cf-contact-item">
+                        <span class="cf-contact-icon">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-phone h-3 w-3" data-lov-id="src/pages/Members.tsx:282:28" data-lov-name="Phone" data-component-path="src/pages/Members.tsx" data-component-line="282" data-component-file="Members.tsx" data-component-name="Phone" data-component-content="%7B%22className%22%3A%22h-3%20w-3%22%7D"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
+                        </span>
+                        <span class="cf-contact-text">${member.phone}</span>
+                    </div>
+                </div>
+            </td>
+            <td>${member.group}</td>
+            <td><span class="cf-badge ${member.status.toLowerCase()}">${member.status}</span></td>
+            <td><span class="cf-badge ${member.engagement.toLowerCase()}">${member.engagement}</span></td>
+            <td>
+                <div class="cf-progress-group">
+                    <div class="cf-progress-track">
+                        <div class="cf-progress-bar" style="width: ${member.attendance}%"></div>
+                    </div>
+                    <span class="cf-progress-text">${member.attendance}%</span>
+                </div>
+            </td>
+            <td>${member.lastSeen}</td>
+            <td>
+                <div class="cf-actions-cell">
+                    <button class="cf-menu-trigger" onclick="toggleMenu(event, ${member.id})">⋮</button>
+                    <div class="cf-dropdown-menu" id="menu-${member.id}">
+                        <div class="cf-menu-item" onclick="viewProfile(${member.id})">
+                            <span>👁️</span>
+                            <span>View Profile</span>
+                        </div>
+                        <div class="cf-menu-item" onclick="editMember(${member.id})">
+                            <span>✏️</span>
+                            <span>Edit Member</span>
+                        </div>
+                        <div class="cf-menu-item" onclick="sendMessage(${member.id})">
+                            <span>✉️</span>
+                            <span>Send Message</span>
+                        </div>
+                        <div class="cf-menu-item" onclick="viewInsights(${member.id})">
+                            <span>✨</span>
+                            <span>AI Insights</span>
+                        </div>
+                    </div>
+                </div>
+            </td>
+        `;
                 tbody.appendChild(row);
+
+                // Add toggle event listeners only for screens <= 1028px
+                if (window.innerWidth <= 1028) {
+                    row.querySelectorAll('.cf-contact-icon').forEach(icon => {
+                        icon.addEventListener('click', (event) => {
+                            event.stopPropagation();
+                            const textSpan = icon.nextElementSibling;
+                            textSpan.classList.toggle('cf-show');
+                        });
+                    });
+                }
             });
 
             updateCounts();
@@ -819,6 +832,7 @@
 
             allMenus.forEach(m => {
                 if (m !== menu) m.classList.remove('cf-show');
+
             });
 
             menu.classList.toggle('cf-show');
@@ -903,71 +917,69 @@
             const body = document.getElementById('profileModalBody');
 
             body.innerHTML = `
-                    <div class="cf-profile-header">
-                        <div class="cf-profile-avatar">👤</div>
-                        <div class="cf-profile-data">
-                            <h3>${member.name}</h3>
-                            <div class="cf-profile-meta">
-                                <span class="cf-meta-item">
-                                    <span>📧</span>
-                                    <span>${member.email}</span>
-                                </span>
-                                <span class="cf-meta-item">
-                                    <span>📞</span>
-                                    <span>${member.phone}</span>
-                                </span>
-                                <span class="cf-meta-item">
-                                    <span>📅</span>
-                                    <span>Joined ${member.joined}</span>
-                                </span>
-                            </div>
-                            <div class="cf-tags-row">
-                                <span class="cf-badge ${member.status.toLowerCase()}">${member.status}</span>
-                                <span class="cf-badge ${member.engagement.toLowerCase()}">${member.engagement} Engagement</span>
-                            </div>
-                        </div>
-                    </div>
-    
-                    <div class="cf-info-section">
-                        <h4>Member Information</h4>
-                        <div class="cf-grid-dual">
-                            <div class="cf-field-group">
-                                <span class="cf-field-label">Ministry Group</span>
-                                <span class="cf-field-value">${member.group}</span>
-                            </div>
-                            <div class="cf-field-group">
-                                <span class="cf-field-label">Attendance Rate</span>
-                                <span class="cf-field-value">${member.attendance}%</span>
-                            </div>
-                            <div class="cf-field-group">
-                                <span class="cf-field-label">Last Attended</span>
-                                <span class="cf-field-value">${member.lastSeen}</span>
-                            </div>
-                            <div class="cf-field-group">
-                                <span class="cf-field-label">Member Status</span>
-                                <span class="cf-field-value">${member.status}</span>
-                            </div>
-                        </div>
-                    </div>
-    
-                    <div class="cf-info-section">
-                        <h4>Engagement Statistics</h4>
-                        <div class="cf-metrics-mini">
-                            <div class="cf-metric-box">
-                                <div class="cf-metric-num">${member.attendance}%</div>
-                                <div class="cf-metric-text">Attendance</div>
-                            </div>
-                            <div class="cf-metric-box">
-                                <div class="cf-metric-num">12</div>
-                                <div class="cf-metric-text">Events Attended</div>
-                            </div>
-                            <div class="cf-metric-box">
-                                <div class="cf-metric-num">8</div>
-                                <div class="cf-metric-text">Messages Read</div>
-                            </div>
-                        </div>
-                    </div>
-                `;
+        <div class="cf-profile-header">
+            <div class="cf-profile-avatar">👤</div>
+            <div class="cf-profile-data">
+                <h3>${member.name}</h3>
+                <div class="cf-profile-meta">
+                    <span class="cf-meta-item">
+                        <span>📧</span>
+                        <span>${member.email}</span>
+                    </span>
+                    <span class="cf-meta-item">
+                        <span>📞</span>
+                        <span>${member.phone}</span>
+                    </span>
+                    <span class="cf-meta-item">
+                        <span>📅</span>
+                        <span>Joined ${member.joined}</span>
+                    </span>
+                </div>
+                <div class="cf-tags-row">
+                    <span class="cf-badge ${member.status.toLowerCase()}">${member.status}</span>
+                    <span class="cf-badge ${member.engagement.toLowerCase()}">${member.engagement} Engagement</span>
+                </div>
+            </div>
+        </div>
+        <div class="cf-info-section">
+            <h4>Member Information</h4>
+            <div class="cf-grid-dual">
+                <div class="cf-field-group">
+                    <span class="cf-field-label">Ministry Group</span>
+                    <span class="cf-field-value">${member.group}</span>
+                </div>
+                <div class="cf-field-group">
+                    <span class="cf-field-label">Attendance Rate</span>
+                    <span class="cf-field-value">${member.attendance}%</span>
+                </div>
+                <div class="cf-field-group">
+                    <span class="cf-field-label">Last Attended</span>
+                    <span class="cf-field-value">${member.lastSeen}</span>
+                </div>
+                <div class="cf-field-group">
+                    <span class="cf-field-label">Member Status</span>
+                    <span class="cf-field-value">${member.status}</span>
+                </div>
+            </div>
+        </div>
+        <div class="cf-info-section">
+            <h4>Engagement Statistics</h4>
+            <div class="cf-metrics-mini">
+                <div class="cf-metric-box">
+                    <div class="cf-metric-num">${member.attendance}%</div>
+                    <div class="cf-metric-text">Attendance</div>
+                </div>
+                <div class="cf-metric-box">
+                    <div class="cf-metric-num">12</div>
+                    <div class="cf-metric-text">Events Attended</div>
+                </div>
+                <div class="cf-metric-box">
+                    <div class="cf-metric-num">8</div>
+                    <div class="cf-metric-text">Messages Read</div>
+                </div>
+            </div>
+        </div>
+    `;
 
             modal.classList.add('cf-show');
         }

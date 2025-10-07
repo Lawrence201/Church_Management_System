@@ -3264,6 +3264,2449 @@ body {
      cursor: pointer;
  }
 
+ /* Desktop - Medium (1200px and below) */
+ @media (max-width: 1200px) {
+
+     /* Main Header */
+     .cf-header-primary {
+         padding: 14px 0;
+         margin-bottom: 28px;
+     }
+
+     .cf-heading-zone h1 {
+         font-size: 26px;
+     }
+
+     .cf-heading-zone p {
+         font-size: 14px;
+     }
+
+     .cf-controls-cluster {
+         gap: 12px;
+     }
+
+     /* Buttons */
+     .cf-btn {
+         padding: 8px 16px;
+         font-size: 13px;
+     }
+
+     .cf-btn svg {
+         width: 16px;
+         height: 16px;
+     }
+
+     /* Insights Section */
+     .insights-header {
+         gap: 14px;
+         margin-bottom: 28px;
+     }
+
+     .insights-header h2,
+     .insight-header-row h2 {
+         font-size: 18px;
+     }
+
+     .insight-icon img {
+         width: 26px;
+         height: 26px;
+     }
+
+     .cf-alerts-layout {
+         grid-template-columns: repeat(2, 1fr);
+         /* Switch to 2-column grid for alerts */
+         gap: 16px;
+     }
+
+     .cf-alert-tile {
+         padding: 16px 18px;
+     }
+
+     .cf-alert-symbol svg {
+         width: 20px;
+         height: 20px;
+     }
+
+     .cf-alert-text h3 {
+         font-size: 14px;
+     }
+
+     .cf-alert-text p {
+         font-size: 13px;
+     }
+
+     /* Stats Container */
+     .cf-stats-container {
+         padding: 20px;
+         margin-bottom: 28px;
+     }
+
+     .cf-stats-layout {
+         grid-template-columns: repeat(2, 1fr);
+         /* Switch to 2-column grid for stats */
+     }
+
+     .cf-stat-unit {
+         padding: 18px 10px;
+     }
+
+     .cf-stat-unit h2 {
+         font-size: 40px;
+     }
+
+     .cf-stat-unit p {
+         font-size: 13px;
+     }
+
+     /* Filters Container */
+     .cf-filter-container {
+         padding: 20px 24px;
+         margin-bottom: 28px;
+     }
+
+     .cf-filter-upper {
+         gap: 14px;
+         margin-bottom: 20px;
+     }
+
+     .cf-search-wrapper {
+         min-width: 180px;
+     }
+
+     .cf-search-input {
+         padding: 10px 14px 10px 40px;
+         font-size: 13px;
+     }
+
+     .cf-search-icon {
+         left: 14px;
+     }
+
+     .cf-filter-upper .cf-btn {
+         min-width: 120px;
+         font-size: 13px;
+     }
+
+     .cf-filter-lower {
+         gap: 10px;
+     }
+
+     .cf-tabs-group {
+         gap: 8px;
+     }
+
+     .cf-tab-item {
+         padding: 8px 18px;
+         font-size: 13px;
+     }
+
+     .cf-batch-controls {
+         gap: 10px;
+     }
+
+     .cf-batch-controls .cf-btn {
+         min-width: 130px;
+         font-size: 13px;
+     }
+
+     /* Directory Container */
+     .cf-directory-container {
+         padding: 24px 20px;
+         margin-bottom: 28px;
+     }
+
+     .cf-directory-label h2 {
+         font-size: 20px;
+     }
+
+     .cf-directory-label p {
+         font-size: 13px;
+     }
+
+     .cf-directory-controls .cf-btn {
+         min-width: 110px;
+         padding: 7px 14px;
+         font-size: 13px;
+     }
+
+     .cf-members-table {
+         font-size: 13px;
+     }
+
+     .cf-members-table thead th {
+         padding: 12px 10px;
+         font-size: 12px;
+     }
+
+     .cf-members-table tbody td {
+         padding: 14px 10px;
+     }
+
+     .cf-member-icon {
+         width: 40px;
+         height: 40px;
+         font-size: 16px;
+     }
+
+     .cf-member-info h4 {
+         font-size: 13px;
+     }
+
+     .cf-member-info p {
+         font-size: 11px;
+     }
+
+     .cf-contact-item {
+         font-size: 13px;
+     }
+
+     .cf-contact-icon {
+         min-width: 26px;
+         min-height: 26px;
+     }
+
+     .cf-contact-icon svg {
+         width: 14px;
+         height: 14px;
+     }
+
+     .cf-badge {
+         padding: 3px 10px;
+         font-size: 11px;
+     }
+
+     .cf-progress-track {
+         width: 50px;
+         height: 5px;
+     }
+
+     .cf-progress-text {
+         font-size: 12px;
+     }
+
+     .cf-menu-trigger {
+         font-size: 16px;
+         padding: 3px 7px;
+     }
+
+     .cf-dropdown-menu {
+         min-width: 160px;
+     }
+
+     .cf-menu-item {
+         padding: 10px 14px;
+         font-size: 13px;
+     }
+
+     /* Modal */
+     .cf-modal-panel {
+         max-width: 700px;
+     }
+
+     .cf-modal-head {
+         padding: 20px;
+     }
+
+     .cf-modal-head h2 {
+         font-size: 22px;
+     }
+
+     .cf-modal-close {
+         font-size: 24px;
+         width: 32px;
+         height: 32px;
+     }
+
+     .cf-modal-content {
+         padding: 20px;
+         gap: 20px;
+     }
+
+     /* Profile View */
+     .cf-profile-header {
+         gap: 20px;
+         margin-bottom: 28px;
+         padding-bottom: 20px;
+     }
+
+     .cf-profile-avatar {
+         width: 90px;
+         height: 90px;
+         font-size: 44px;
+     }
+
+     .cf-profile-data h3 {
+         font-size: 22px;
+     }
+
+     .cf-meta-item {
+         font-size: 13px;
+     }
+
+     .cf-tags-row {
+         gap: 6px;
+         margin-top: 10px;
+     }
+
+     .cf-info-section {
+         margin-bottom: 20px;
+     }
+
+     .cf-info-section h4 {
+         font-size: 15px;
+     }
+
+     .cf-grid-dual {
+         grid-template-columns: 1fr;
+         /* Single column for tighter screens */
+         gap: 14px;
+     }
+
+     .cf-field-label {
+         font-size: 12px;
+     }
+
+     .cf-field-value {
+         font-size: 13px;
+     }
+
+     .cf-metrics-mini {
+         grid-template-columns: repeat(2, 1fr);
+         /* 2-column for metrics */
+         gap: 14px;
+     }
+
+     .cf-metric-box {
+         padding: 14px;
+     }
+
+     .cf-metric-num {
+         font-size: 22px;
+     }
+
+     .cf-metric-text {
+         font-size: 12px;
+     }
+
+     /* Pagination */
+     .cf-pagination {
+         margin-top: 20px;
+         padding-top: 20px;
+     }
+
+     .cf-page-stats {
+         font-size: 13px;
+     }
+
+     .cf-page-btn {
+         padding: 7px 10px;
+         font-size: 13px;
+     }
+
+     /* Form Elements */
+     .cf-form-field {
+         margin-bottom: 16px;
+     }
+
+     .cf-label {
+         font-size: 13px;
+     }
+
+     .cf-input,
+     .cf-select {
+         padding: 8px 12px;
+         font-size: 13px;
+     }
+
+     .cf-modal-foot {
+         padding: 14px 20px;
+         gap: 10px;
+     }
+
+     .cf-checkbox-cell {
+         width: 36px;
+     }
+
+     input[type="checkbox"] {
+         width: 16px;
+         height: 16px;
+     }
+ }
+
+
+ /* Base CSS (unchanged for desktop, showing both icon and text) */
+ .cf-contact-group {
+     display: flex;
+     flex-direction: column;
+     gap: 12px;
+ }
+
+ .cf-contact-item {
+     display: flex;
+     align-items: center;
+     gap: 10px;
+     font-size: 14px;
+     color: #475569;
+ }
+
+ .cf-contact-icon {
+     display: flex;
+     align-items: center;
+     justify-content: center;
+     min-width: 28px;
+     min-height: 28px;
+     color: #3b82f6;
+     border-radius: 50%;
+     padding: 4px;
+     transition: all 0.2s ease;
+ }
+
+ .cf-contact-icon svg {
+     width: 16px;
+     height: 16px;
+     stroke: currentColor;
+ }
+
+ .cf-contact-item span.cf-contact-text {
+     color: #1e293b;
+     font-weight: 500;
+     word-break: break-word;
+ }
+
+ .cf-contact-item:hover .cf-contact-icon {
+     background: #bae6fd;
+     color: #1e40af;
+ }
+
+ /* Tablet - Large (1028px and below) */
+ @media (max-width: 1028px) {
+
+     /* Contact Icons Toggle Behavior */
+     .cf-contact-item span.cf-contact-text {
+         display: none;
+         /* Hide email/phone text by default */
+     }
+
+     .cf-contact-item span.cf-show {
+         display: inline;
+         /* Show text when toggled */
+     }
+
+     .cf-contact-icon {
+         cursor: pointer;
+         /* Make icon tappable */
+         min-width: 24px;
+         min-height: 24px;
+     }
+
+     .cf-contact-icon svg {
+         width: 13px;
+         height: 13px;
+     }
+
+     .cf-contact-item {
+         font-size: 12px;
+         gap: 8px;
+     }
+
+     /* Main Header */
+     .cf-header-primary {
+         padding: 12px 0;
+         margin-bottom: 24px;
+         flex-wrap: wrap;
+         gap: 12px;
+     }
+
+     .cf-heading-zone h1 {
+         font-size: 24px;
+     }
+
+     .cf-heading-zone p {
+         font-size: 13px;
+     }
+
+     .cf-controls-cluster {
+         gap: 10px;
+         flex-wrap: wrap;
+     }
+
+     /* Buttons */
+     .cf-btn {
+         padding: 7px 14px;
+         font-size: 12px;
+     }
+
+     .cf-btn svg {
+         width: 15px;
+         height: 15px;
+     }
+
+     /* Insights Section */
+     .insights-header {
+         gap: 12px;
+         margin-bottom: 24px;
+     }
+
+     .insights-header h2,
+     .insight-header-row h2 {
+         font-size: 17px;
+     }
+
+     .insight-icon img {
+         width: 24px;
+         height: 24px;
+     }
+
+     .cf-alerts-layout {
+         grid-template-columns: repeat(2, 1fr);
+         gap: 14px;
+     }
+
+     .cf-alert-tile {
+         padding: 14px 16px;
+     }
+
+     .cf-alert-symbol svg {
+         width: 18px;
+         height: 18px;
+     }
+
+     .cf-alert-text h3 {
+         font-size: 13px;
+     }
+
+     .cf-alert-text p {
+         font-size: 12px;
+     }
+
+     /* Stats Container */
+     .cf-stats-container {
+         padding: 18px;
+         margin-bottom: 24px;
+     }
+
+     .cf-stats-layout {
+         grid-template-columns: repeat(2, 1fr);
+     }
+
+     .cf-stat-unit {
+         padding: 16px 8px;
+     }
+
+     .cf-stat-unit h2 {
+         font-size: 36px;
+     }
+
+     .cf-stat-unit p {
+         font-size: 12px;
+     }
+
+     /* Filters Container */
+     .cf-filter-container {
+         padding: 18px 20px;
+         margin-bottom: 24px;
+     }
+
+     .cf-filter-upper {
+         gap: 12px;
+         margin-bottom: 18px;
+         flex-direction: column;
+     }
+
+     .cf-search-wrapper {
+         min-width: 100%;
+     }
+
+     .cf-search-input {
+         padding: 9px 12px 9px 36px;
+         font-size: 12px;
+     }
+
+     .cf-search-icon {
+         left: 12px;
+     }
+
+     .cf-filter-upper .cf-btn {
+         min-width: 100%;
+         font-size: 12px;
+     }
+
+     .cf-filter-lower {
+         gap: 8px;
+         flex-direction: column;
+         align-items: flex-start;
+     }
+
+     .cf-tabs-group {
+         gap: 6px;
+         width: 100%;
+     }
+
+     .cf-tab-item {
+         padding: 7px 16px;
+         font-size: 12px;
+         flex: 1;
+     }
+
+     .cf-batch-controls {
+         gap: 8px;
+         width: 100%;
+     }
+
+     .cf-batch-controls .cf-btn {
+         min-width: 100%;
+         font-size: 12px;
+     }
+
+     /* Directory Container */
+     .cf-directory-container {
+         padding: 20px 18px;
+         margin-bottom: 24px;
+     }
+
+     .cf-directory-label h2 {
+         font-size: 18px;
+     }
+
+     .cf-directory-label p {
+         font-size: 12px;
+     }
+
+     .cf-directory-controls .cf-btn {
+         min-width: 100px;
+         padding: 6px 12px;
+         font-size: 12px;
+     }
+
+     .cf-members-table {
+         font-size: 12px;
+     }
+
+     .cf-members-table thead th {
+         padding: 10px 8px;
+         font-size: 11px;
+     }
+
+     .cf-members-table tbody td {
+         padding: 12px 8px;
+     }
+
+     .cf-member-icon {
+         width: 36px;
+         height: 36px;
+         font-size: 14px;
+     }
+
+     .cf-member-info h4 {
+         font-size: 12px;
+     }
+
+     .cf-member-info p {
+         font-size: 10px;
+     }
+
+     .cf-badge {
+         padding: 2px 8px;
+         font-size: 10px;
+     }
+
+     .cf-progress-track {
+         width: 45px;
+         height: 4px;
+     }
+
+     .cf-progress-text {
+         font-size: 11px;
+     }
+
+     .cf-menu-trigger {
+         font-size: 15px;
+         padding: 2px 6px;
+     }
+
+     .cf-dropdown-menu {
+         min-width: 140px;
+     }
+
+     .cf-menu-item {
+         padding: 8px 12px;
+         font-size: 12px;
+     }
+
+     /* Modal */
+     .cf-modal-panel {
+         max-width: 600px;
+     }
+
+     .cf-modal-head {
+         padding: 18px;
+     }
+
+     .cf-modal-head h2 {
+         font-size: 20px;
+     }
+
+     .cf-modal-close {
+         font-size: 22px;
+         width: 30px;
+         height: 30px;
+     }
+
+     .cf-modal-content {
+         padding: 18px;
+         gap: 18px;
+     }
+
+     /* Profile View */
+     .cf-profile-header {
+         gap: 18px;
+         margin-bottom: 24px;
+         padding-bottom: 18px;
+     }
+
+     .cf-profile-avatar {
+         width: 80px;
+         height: 80px;
+         font-size: 40px;
+     }
+
+     .cf-profile-data h3 {
+         font-size: 20px;
+     }
+
+     .cf-meta-item {
+         font-size: 12px;
+     }
+
+     .cf-tags-row {
+         gap: 5px;
+         margin-top: 8px;
+     }
+
+     .cf-info-section {
+         margin-bottom: 18px;
+     }
+
+     .cf-info-section h4 {
+         font-size: 14px;
+     }
+
+     .cf-grid-dual {
+         grid-template-columns: 1fr;
+         gap: 12px;
+     }
+
+     .cf-field-label {
+         font-size: 11px;
+     }
+
+     .cf-field-value {
+         font-size: 12px;
+     }
+
+     .cf-metrics-mini {
+         grid-template-columns: repeat(2, 1fr);
+         gap: 12px;
+     }
+
+     .cf-metric-box {
+         padding: 12px;
+     }
+
+     .cf-metric-num {
+         font-size: 20px;
+     }
+
+     .cf-metric-text {
+         font-size: 11px;
+     }
+
+     /* Pagination */
+     .cf-pagination {
+         margin-top: 18px;
+         padding-top: 18px;
+     }
+
+     .cf-page-stats {
+         font-size: 12px;
+     }
+
+     .cf-page-btn {
+         padding: 6px 8px;
+         font-size: 12px;
+     }
+
+     /* Form Elements */
+     .cf-form-field {
+         margin-bottom: 14px;
+     }
+
+     .cf-label {
+         font-size: 12px;
+     }
+
+     .cf-input,
+     .cf-select {
+         padding: 7px 10px;
+         font-size: 12px;
+     }
+
+     .cf-modal-foot {
+         padding: 12px 18px;
+         gap: 8px;
+     }
+
+     .cf-checkbox-cell {
+         width: 34px;
+     }
+
+     input[type="checkbox"] {
+         width: 15px;
+         height: 15px;
+     }
+ }
+
+
+
+ /* Tablet - Small (770px and below) */
+ @media (max-width: 770px) {
+
+     /* Contact Icons Toggle Behavior */
+     .cf-contact-item span.cf-contact-text {
+         display: none;
+         /* Hide email/phone text by default */
+     }
+
+     .cf-contact-item span.cf-show {
+         display: inline;
+         /* Show text when toggled */
+     }
+
+     .cf-contact-icon {
+         cursor: pointer;
+         /* Make icon tappable */
+         min-width: 22px;
+         min-height: 22px;
+     }
+
+     .cf-contact-icon svg {
+         width: 12px;
+         height: 12px;
+     }
+
+     .cf-contact-item {
+         font-size: 11px;
+         gap: 6px;
+     }
+
+     /* Main Header */
+     .cf-header-primary {
+         padding: 10px 0;
+         margin-bottom: 20px;
+         flex-wrap: wrap;
+         gap: 10px;
+     }
+
+     .cf-heading-zone h1 {
+         font-size: 22px;
+     }
+
+     .cf-heading-zone p {
+         font-size: 12px;
+     }
+
+     .cf-controls-cluster {
+         gap: 8px;
+         flex-wrap: wrap;
+     }
+
+     /* Buttons */
+     .cf-btn {
+         padding: 6px 12px;
+         font-size: 11px;
+     }
+
+     .cf-btn svg {
+         width: 14px;
+         height: 14px;
+     }
+
+     /* Insights Section */
+     .insights-header {
+         gap: 10px;
+         margin-bottom: 20px;
+     }
+
+     .insights-header h2,
+     .insight-header-row h2 {
+         font-size: 16px;
+     }
+
+     .insight-icon img {
+         width: 22px;
+         height: 22px;
+     }
+
+     .cf-alerts-layout {
+         grid-template-columns: 1fr;
+         /* Single column for alerts */
+         gap: 12px;
+     }
+
+     .cf-alert-tile {
+         padding: 12px 14px;
+     }
+
+     .cf-alert-symbol svg {
+         width: 16px;
+         height: 16px;
+     }
+
+     .cf-alert-text h3 {
+         font-size: 12px;
+     }
+
+     .cf-alert-text p {
+         font-size: 11px;
+     }
+
+     /* Stats Container */
+     .cf-stats-container {
+         padding: 16px;
+         margin-bottom: 20px;
+     }
+
+     .cf-stats-layout {
+         grid-template-columns: 1fr;
+         /* Single column for stats */
+     }
+
+     .cf-stat-unit {
+         padding: 14px 6px;
+     }
+
+     .cf-stat-unit h2 {
+         font-size: 32px;
+     }
+
+     .cf-stat-unit p {
+         font-size: 11px;
+     }
+
+     /* Filters Container */
+     .cf-filter-container {
+         padding: 16px 18px;
+         margin-bottom: 20px;
+     }
+
+     .cf-filter-upper {
+         gap: 10px;
+         margin-bottom: 16px;
+         flex-direction: column;
+     }
+
+     .cf-search-wrapper {
+         min-width: 100%;
+     }
+
+     .cf-search-input {
+         padding: 8px 10px 8px 34px;
+         font-size: 11px;
+     }
+
+     .cf-search-icon {
+         left: 10px;
+     }
+
+     .cf-filter-upper .cf-btn {
+         min-width: 100%;
+         font-size: 11px;
+     }
+
+     .cf-filter-lower {
+         gap: 6px;
+         flex-direction: column;
+         align-items: flex-start;
+     }
+
+     .cf-tabs-group {
+         gap: 4px;
+         width: 100%;
+     }
+
+     .cf-tab-item {
+         padding: 6px 14px;
+         font-size: 11px;
+         flex: 1;
+     }
+
+     .cf-batch-controls {
+         gap: 6px;
+         width: 100%;
+     }
+
+     .cf-batch-controls .cf-btn {
+         min-width: 100%;
+         font-size: 11px;
+     }
+
+     /* Directory Container */
+     .cf-directory-container {
+         padding: 18px 16px;
+         margin-bottom: 20px;
+     }
+
+     .cf-directory-label h2 {
+         font-size: 16px;
+     }
+
+     .cf-directory-label p {
+         font-size: 11px;
+     }
+
+     .cf-directory-controls .cf-btn {
+         min-width: 90px;
+         padding: 5px 10px;
+         font-size: 11px;
+     }
+
+     .cf-members-table {
+         font-size: 11px;
+     }
+
+     .cf-members-table thead th {
+         padding: 8px 6px;
+         font-size: 10px;
+     }
+
+     .cf-members-table tbody td {
+         padding: 10px 6px;
+     }
+
+     .cf-member-icon {
+         width: 32px;
+         height: 32px;
+         font-size: 12px;
+     }
+
+     .cf-member-info h4 {
+         font-size: 11px;
+     }
+
+     .cf-member-info p {
+         font-size: 9px;
+     }
+
+     .cf-badge {
+         padding: 2px 6px;
+         font-size: 9px;
+     }
+
+     .cf-progress-track {
+         width: 40px;
+         height: 3px;
+     }
+
+     .cf-progress-text {
+         font-size: 10px;
+     }
+
+     .cf-menu-trigger {
+         font-size: 14px;
+         padding: 2px 5px;
+     }
+
+     .cf-dropdown-menu {
+         min-width: 120px;
+     }
+
+     .cf-menu-item {
+         padding: 6px 10px;
+         font-size: 11px;
+     }
+
+     /* Modal */
+     .cf-modal-panel {
+         max-width: 90%;
+         /* Responsive width */
+     }
+
+     .cf-modal-head {
+         padding: 16px;
+     }
+
+     .cf-modal-head h2 {
+         font-size: 18px;
+     }
+
+     .cf-modal-close {
+         font-size: 20px;
+         width: 28px;
+         height: 28px;
+     }
+
+     .cf-modal-content {
+         padding: 16px;
+         gap: 16px;
+     }
+
+     /* Profile View */
+     .cf-profile-header {
+         gap: 16px;
+         margin-bottom: 20px;
+         padding-bottom: 16px;
+     }
+
+     .cf-profile-avatar {
+         width: 70px;
+         height: 70px;
+         font-size: 36px;
+     }
+
+     .cf-profile-data h3 {
+         font-size: 18px;
+     }
+
+     .cf-meta-item {
+         font-size: 11px;
+     }
+
+     .cf-tags-row {
+         gap: 4px;
+         margin-top: 6px;
+     }
+
+     .cf-info-section {
+         margin-bottom: 16px;
+     }
+
+     .cf-info-section h4 {
+         font-size: 13px;
+     }
+
+     .cf-grid-dual {
+         grid-template-columns: 1fr;
+         gap: 10px;
+     }
+
+     .cf-field-label {
+         font-size: 10px;
+     }
+
+     .cf-field-value {
+         font-size: 11px;
+     }
+
+     .cf-metrics-mini {
+         grid-template-columns: repeat(2, 1fr);
+         gap: 10px;
+     }
+
+     .cf-metric-box {
+         padding: 10px;
+     }
+
+     .cf-metric-num {
+         font-size: 18px;
+     }
+
+     .cf-metric-text {
+         font-size: 10px;
+     }
+
+     /* Pagination */
+     .cf-pagination {
+         margin-top: 16px;
+         padding-top: 16px;
+     }
+
+     .cf-page-stats {
+         font-size: 11px;
+     }
+
+     .cf-page-btn {
+         padding: 5px 6px;
+         font-size: 11px;
+     }
+
+     /* Form Elements */
+     .cf-form-field {
+         margin-bottom: 12px;
+     }
+
+     .cf-label {
+         font-size: 11px;
+     }
+
+     .cf-input,
+     .cf-select {
+         padding: 6px 8px;
+         font-size: 11px;
+     }
+
+     .cf-modal-foot {
+         padding: 10px 16px;
+         gap: 6px;
+     }
+
+     .cf-checkbox-cell {
+         width: 32px;
+     }
+
+     input[type="checkbox"] {
+         width: 14px;
+         height: 14px;
+     }
+ }
+
+
+ /* Mobile (480px and below) */
+ @media (max-width: 480px) {
+     /* Hide Groups, Engagement, and Attendance columns */
+     .cf-members-table tbody tr td:nth-child(4),
+     /* Groups */
+     .cf-members-table tbody tr td:nth-child(6),
+     /* Engagement */
+     .cf-members-table tbody tr td:nth-child(7)
+
+     /* Attendance */
+         {
+         display: none;
+     }
+
+     .cf-members-table thead tr th:nth-child(4),
+     /* Groups header */
+     .cf-members-table thead tr th:nth-child(6),
+     /* Engagement header */
+     .cf-members-table thead tr th:nth-child(7)
+
+     /* Attendance header */
+         {
+         display: none;
+     }
+
+     /* Contact Icons Toggle Behavior */
+     .cf-contact-item span.cf-contact-text {
+         display: none;
+         /* Hide email/phone text by default */
+     }
+
+     .cf-contact-item span.cf-show {
+         display: inline;
+         /* Show text when toggled */
+     }
+
+     .cf-contact-icon {
+         cursor: pointer;
+         /* Make icon tappable */
+         min-width: 20px;
+         min-height: 20px;
+     }
+
+     .cf-contact-icon svg {
+         width: 11px;
+         height: 11px;
+     }
+
+     .cf-contact-item {
+         font-size: 10px;
+         gap: 5px;
+     }
+
+     /* Main Header */
+     .cf-header-primary {
+         padding: 8px 0;
+         margin-bottom: 16px;
+         flex-wrap: wrap;
+         gap: 8px;
+     }
+
+     .cf-heading-zone h1 {
+         font-size: 20px;
+     }
+
+     .cf-heading-zone p {
+         font-size: 11px;
+     }
+
+     .cf-controls-cluster {
+         gap: 6px;
+         flex-wrap: wrap;
+     }
+
+     /* Buttons */
+     .cf-btn {
+         padding: 5px 10px;
+         font-size: 10px;
+     }
+
+     .cf-btn svg {
+         width: 12px;
+         height: 12px;
+     }
+
+     /* Insights Section */
+     .insights-header {
+         gap: 8px;
+         margin-bottom: 16px;
+     }
+
+     .insights-header h2,
+     .insight-header-row h2 {
+         font-size: 14px;
+     }
+
+     .insight-icon img {
+         width: 20px;
+         height: 20px;
+     }
+
+     .cf-alerts-layout {
+         grid-template-columns: 1fr;
+         /* Single column for alerts */
+         gap: 10px;
+     }
+
+     .cf-alert-tile {
+         padding: 10px 12px;
+     }
+
+     .cf-alert-symbol svg {
+         width: 14px;
+         height: 14px;
+     }
+
+     .cf-alert-text h3 {
+         font-size: 11px;
+     }
+
+     .cf-alert-text p {
+         font-size: 10px;
+     }
+
+     /* Stats Container */
+     .cf-stats-container {
+         padding: 14px;
+         margin-bottom: 16px;
+     }
+
+     .cf-stats-layout {
+         grid-template-columns: repeat(2, 1fr);
+         /* Two columns for stats */
+         gap: 10px;
+     }
+
+     .cf-stat-unit {
+         padding: 10px 4px;
+     }
+
+     .cf-stat-unit h2 {
+         font-size: 24px;
+     }
+
+     .cf-stat-unit p {
+         font-size: 9px;
+     }
+
+     /* Filters Container */
+     .cf-filter-container {
+         padding: 14px 16px;
+         margin-bottom: 16px;
+     }
+
+     .cf-filter-upper {
+         gap: 8px;
+         margin-bottom: 14px;
+         flex-direction: column;
+     }
+
+     .cf-search-wrapper {
+         min-width: 100%;
+     }
+
+     .cf-search-input {
+         padding: 7px 8px 7px 32px;
+         font-size: 10px;
+     }
+
+     .cf-search-icon {
+         left: 8px;
+     }
+
+     .cf-filter-upper .cf-btn {
+         min-width: 100%;
+         font-size: 10px;
+     }
+
+     .cf-filter-lower {
+         gap: 5px;
+         flex-direction: column;
+         align-items: flex-start;
+     }
+
+     .cf-tabs-group {
+         gap: 3px;
+         width: 100%;
+     }
+
+     .cf-tab-item {
+         padding: 5px 12px;
+         font-size: 10px;
+         flex: 1;
+     }
+
+     .cf-batch-controls {
+         gap: 5px;
+         width: 100%;
+     }
+
+     .cf-batch-controls .cf-btn {
+         min-width: 100%;
+         font-size: 10px;
+     }
+
+     /* Directory Container */
+     .cf-directory-container {
+         padding: 16px 14px;
+         margin-bottom: 16px;
+     }
+
+     .cf-directory-label h2 {
+         font-size: 14px;
+     }
+
+     .cf-directory-label p {
+         font-size: 10px;
+     }
+
+     .cf-directory-controls .cf-btn {
+         min-width: 80px;
+         padding: 4px 8px;
+         font-size: 10px;
+     }
+
+     .cf-members-table {
+         font-size: 10px;
+     }
+
+     .cf-members-table thead th {
+         padding: 6px 5px;
+         font-size: 9px;
+     }
+
+     .cf-members-table tbody td {
+         padding: 8px 5px;
+     }
+
+     .cf-member-icon {
+         width: 28px;
+         height: 28px;
+         font-size: 11px;
+     }
+
+     .cf-member-info h4 {
+         font-size: 10px;
+     }
+
+     .cf-member-info p {
+         font-size: 8px;
+     }
+
+     .cf-badge {
+         padding: 2px 5px;
+         font-size: 8px;
+     }
+
+     .cf-progress-track {
+         width: 35px;
+         height: 3px;
+     }
+
+     .cf-progress-text {
+         font-size: 9px;
+     }
+
+     .cf-menu-trigger {
+         font-size: 13px;
+         padding: 2px 4px;
+     }
+
+     .cf-dropdown-menu {
+         min-width: 100px;
+     }
+
+     .cf-menu-item {
+         padding: 5px 8px;
+         font-size: 10px;
+     }
+
+     /* Modal */
+     .cf-modal-panel {
+         max-width: 95%;
+         /* Responsive width for small screens */
+     }
+
+     .cf-modal-head {
+         padding: 14px;
+     }
+
+     .cf-modal-head h2 {
+         font-size: 16px;
+     }
+
+     .cf-modal-close {
+         font-size: 18px;
+         width: 26px;
+         height: 26px;
+     }
+
+     .cf-modal-content {
+         padding: 14px;
+         gap: 14px;
+     }
+
+     /* Profile View */
+     .cf-profile-header {
+         gap: 14px;
+         margin-bottom: 16px;
+         padding-bottom: 14px;
+     }
+
+     .cf-profile-avatar {
+         width: 60px;
+         height: 60px;
+         font-size: 32px;
+     }
+
+     .cf-profile-data h3 {
+         font-size: 16px;
+     }
+
+     .cf-meta-item {
+         font-size: 10px;
+     }
+
+     .cf-tags-row {
+         gap: 3px;
+         margin-top: 5px;
+     }
+
+     .cf-info-section {
+         margin-bottom: 14px;
+     }
+
+     .cf-info-section h4 {
+         font-size: 12px;
+     }
+
+     .cf-grid-dual {
+         grid-template-columns: 1fr;
+         gap: 8px;
+     }
+
+     .cf-field-label {
+         font-size: 9px;
+     }
+
+     .cf-field-value {
+         font-size: 10px;
+     }
+
+     .cf-metrics-mini {
+         grid-template-columns: 1fr;
+         /* Single column for metrics */
+         gap: 8px;
+     }
+
+     .cf-metric-box {
+         padding: 8px;
+     }
+
+     .cf-metric-num {
+         font-size: 16px;
+     }
+
+     .cf-metric-text {
+         font-size: 9px;
+     }
+
+     /* Pagination */
+     .cf-pagination {
+         margin-top: 14px;
+         padding-top: 14px;
+     }
+
+     .cf-page-stats {
+         font-size: 10px;
+     }
+
+     .cf-page-btn {
+         padding: 4px 5px;
+         font-size: 10px;
+     }
+
+     /* Form Elements */
+     .cf-form-field {
+         margin-bottom: 10px;
+     }
+
+     .cf-label {
+         font-size: 10px;
+     }
+
+     .cf-input,
+     .cf-select {
+         padding: 5px 7px;
+         font-size: 10px;
+     }
+
+     .cf-modal-foot {
+         padding: 8px 14px;
+         gap: 5px;
+     }
+
+     .cf-checkbox-cell {
+         width: 30px;
+     }
+
+     input[type="checkbox"] {
+         width: 13px;
+         height: 13px;
+     }
+ }
+
+
+ /* Mobile (420px and below) */
+ @media (max-width: 420px) {
+     /* Hide Groups, Engagement, and Attendance columns */
+     .cf-members-table tbody tr td:nth-child(4),
+     /* Groups */
+     .cf-members-table tbody tr td:nth-child(6),
+     /* Engagement */
+     .cf-members-table tbody tr td:nth-child(7)
+
+     /* Attendance */
+         {
+         display: none;
+     }
+
+     .cf-members-table thead tr th:nth-child(4),
+     /* Groups header */
+     .cf-members-table thead tr th:nth-child(6),
+     /* Engagement header */
+     .cf-members-table thead tr th:nth-child(7)
+
+     /* Attendance header */
+         {
+         display: none;
+     }
+
+     /* Contact Icons Toggle Behavior */
+     .cf-contact-item span.cf-contact-text {
+         display: none;
+         /* Hide email/phone text by default */
+     }
+
+     .cf-contact-item span.cf-show {
+         display: inline;
+         /* Show text when toggled */
+     }
+
+     .cf-contact-icon {
+         cursor: pointer;
+         /* Make icon tappable */
+         min-width: 18px;
+         min-height: 18px;
+     }
+
+     .cf-contact-icon svg {
+         width: 10px;
+         height: 10px;
+     }
+
+     .cf-contact-item {
+         font-size: 9px;
+         gap: 4px;
+     }
+
+     /* Main Header */
+     .cf-header-primary {
+         padding: 6px 0;
+         margin-bottom: 14px;
+         flex-wrap: wrap;
+         gap: 6px;
+     }
+
+     .cf-heading-zone h1 {
+         font-size: 18px;
+     }
+
+     .cf-heading-zone p {
+         font-size: 10px;
+     }
+
+     .cf-controls-cluster {
+         gap: 5px;
+         flex-wrap: wrap;
+     }
+
+     /* Buttons */
+     .cf-btn {
+         padding: 4px 8px;
+         font-size: 9px;
+     }
+
+     .cf-btn svg {
+         width: 11px;
+         height: 11px;
+     }
+
+     /* Insights Section */
+     .insights-header {
+         gap: 6px;
+         margin-bottom: 14px;
+     }
+
+     .insights-header h2,
+     .insight-header-row h2 {
+         font-size: 13px;
+     }
+
+     .insight-icon img {
+         width: 18px;
+         height: 18px;
+     }
+
+     .cf-alerts-layout {
+         grid-template-columns: 1fr;
+         /* Single column for alerts */
+         gap: 8px;
+     }
+
+     .cf-alert-tile {
+         padding: 8px 10px;
+     }
+
+     .cf-alert-symbol svg {
+         width: 12px;
+         height: 12px;
+     }
+
+     .cf-alert-text h3 {
+         font-size: 10px;
+     }
+
+     .cf-alert-text p {
+         font-size: 9px;
+     }
+
+     /* Stats Container */
+     .cf-stats-container {
+         padding: 12px;
+         margin-bottom: 14px;
+     }
+
+     .cf-stats-layout {
+         grid-template-columns: repeat(2, 1fr);
+         /* Two columns for stats */
+         gap: 8px;
+     }
+
+     .cf-stat-unit {
+         padding: 8px 3px;
+     }
+
+     .cf-stat-unit h2 {
+         font-size: 22px;
+     }
+
+     .cf-stat-unit p {
+         font-size: 8px;
+     }
+
+     /* Filters Container */
+     .cf-filter-container {
+         padding: 12px 14px;
+         margin-bottom: 14px;
+     }
+
+     .cf-filter-upper {
+         gap: 6px;
+         margin-bottom: 12px;
+         flex-direction: column;
+     }
+
+     .cf-search-wrapper {
+         min-width: 100%;
+     }
+
+     .cf-search-input {
+         padding: 6px 7px 6px 30px;
+         font-size: 9px;
+     }
+
+     .cf-search-icon {
+         left: 7px;
+     }
+
+     .cf-filter-upper .cf-btn {
+         min-width: 100%;
+         font-size: 9px;
+     }
+
+     .cf-filter-lower {
+         gap: 4px;
+         flex-direction: column;
+         align-items: flex-start;
+     }
+
+     .cf-tabs-group {
+         gap: 2px;
+         width: 100%;
+     }
+
+     .cf-tab-item {
+         padding: 4px 10px;
+         font-size: 9px;
+         flex: 1;
+     }
+
+     .cf-batch-controls {
+         gap: 4px;
+         width: 100%;
+     }
+
+     .cf-batch-controls .cf-btn {
+         min-width: 100%;
+         font-size: 9px;
+     }
+
+     /* Directory Container */
+     .cf-directory-container {
+         padding: 14px 12px;
+         margin-bottom: 14px;
+     }
+
+     .cf-directory-label h2 {
+         font-size: 13px;
+     }
+
+     .cf-directory-label p {
+         font-size: 9px;
+     }
+
+     .cf-directory-controls .cf-btn {
+         min-width: 70px;
+         padding: 3px 6px;
+         font-size: 9px;
+     }
+
+     .cf-members-table {
+         font-size: 9px;
+     }
+
+     .cf-members-table thead th {
+         padding: 5px 4px;
+         font-size: 8px;
+     }
+
+     .cf-members-table tbody td {
+         padding: 7px 4px;
+     }
+
+     .cf-member-icon {
+         width: 26px;
+         height: 26px;
+         font-size: 10px;
+     }
+
+     .cf-member-info h4 {
+         font-size: 9px;
+     }
+
+     .cf-member-info p {
+         font-size: 7px;
+     }
+
+     .cf-badge {
+         padding: 1px 4px;
+         font-size: 7px;
+     }
+
+     .cf-progress-track {
+         width: 30px;
+         height: 2px;
+     }
+
+     .cf-progress-text {
+         font-size: 8px;
+     }
+
+     .cf-menu-trigger {
+         font-size: 12px;
+         padding: 1px 3px;
+     }
+
+     .cf-dropdown-menu {
+         min-width: 90px;
+     }
+
+     .cf-menu-item {
+         padding: 4px 7px;
+         font-size: 9px;
+     }
+
+     /* Modal */
+     .cf-modal-panel {
+         max-width: 98%;
+         /* Responsive width for very small screens */
+     }
+
+     .cf-modal-head {
+         padding: 12px;
+     }
+
+     .cf-modal-head h2 {
+         font-size: 15px;
+     }
+
+     .cf-modal-close {
+         font-size: 16px;
+         width: 24px;
+         height: 24px;
+     }
+
+     .cf-modal-content {
+         padding: 12px;
+         gap: 12px;
+     }
+
+     /* Profile View */
+     .cf-profile-header {
+         gap: 12px;
+         margin-bottom: 14px;
+         padding-bottom: 12px;
+     }
+
+     .cf-profile-avatar {
+         width: 55px;
+         height: 55px;
+         font-size: 30px;
+     }
+
+     .cf-profile-data h3 {
+         font-size: 15px;
+     }
+
+     .cf-meta-item {
+         font-size: 9px;
+     }
+
+     .cf-tags-row {
+         gap: 2px;
+         margin-top: 4px;
+     }
+
+     .cf-info-section {
+         margin-bottom: 12px;
+     }
+
+     .cf-info-section h4 {
+         font-size: 11px;
+     }
+
+     .cf-grid-dual {
+         grid-template-columns: 1fr;
+         gap: 6px;
+     }
+
+     .cf-field-label {
+         font-size: 8px;
+     }
+
+     .cf-field-value {
+         font-size: 9px;
+     }
+
+     .cf-metrics-mini {
+         grid-template-columns: 1fr;
+         /* Single column for metrics */
+         gap: 6px;
+     }
+
+     .cf-metric-box {
+         padding: 6px;
+     }
+
+     .cf-metric-num {
+         font-size: 15px;
+     }
+
+     .cf-metric-text {
+         font-size: 8px;
+     }
+
+     /* Pagination */
+     .cf-pagination {
+         margin-top: 12px;
+         padding-top: 12px;
+     }
+
+     .cf-page-stats {
+         font-size: 9px;
+     }
+
+     .cf-page-btn {
+         padding: 3px 4px;
+         font-size: 9px;
+     }
+
+     /* Form Elements */
+     .cf-form-field {
+         margin-bottom: 8px;
+     }
+
+     .cf-label {
+         font-size: 9px;
+     }
+
+     .cf-input,
+     .cf-select {
+         padding: 4px 6px;
+         font-size: 9px;
+     }
+
+     .cf-modal-foot {
+         padding: 6px 12px;
+         gap: 4px;
+     }
+
+     .cf-checkbox-cell {
+         width: 28px;
+     }
+
+     input[type="checkbox"] {
+         width: 12px;
+         height: 12px;
+     }
+ }
+
+
+ /* Mobile (370px and below) */
+ @media (max-width: 370px) {
+     /* Hide Groups, Engagement, and Attendance columns */
+     .cf-members-table tbody tr td:nth-child(4),
+     /* Groups */
+     .cf-members-table tbody tr td:nth-child(6),
+     /* Engagement */
+     .cf-members-table tbody tr td:nth-child(7)
+
+     /* Attendance */
+         {
+         display: none;
+     }
+
+     .cf-members-table thead tr th:nth-child(4),
+     /* Groups header */
+     .cf-members-table thead tr th:nth-child(6),
+     /* Engagement header */
+     .cf-members-table thead tr th:nth-child(7)
+
+     /* Attendance header */
+         {
+         display: none;
+     }
+
+     /* Contact Icons Toggle Behavior */
+     .cf-contact-item span.cf-contact-text {
+         display: none;
+         /* Hide email/phone text by default */
+     }
+
+     .cf-contact-item span.cf-show {
+         display: inline;
+         /* Show text when toggled */
+     }
+
+     .cf-contact-icon {
+         cursor: pointer;
+         /* Make icon tappable */
+         min-width: 16px;
+         min-height: 16px;
+     }
+
+     .cf-contact-icon svg {
+         width: 9px;
+         height: 9px;
+     }
+
+     .cf-contact-item {
+         font-size: 8px;
+         gap: 3px;
+     }
+
+     /* Main Header */
+     .cf-header-primary {
+         padding: 5px 0;
+         margin-bottom: 12px;
+         flex-wrap: wrap;
+         gap: 5px;
+     }
+
+     .cf-heading-zone h1 {
+         font-size: 16px;
+     }
+
+     .cf-heading-zone p {
+         font-size: 9px;
+     }
+
+     .cf-controls-cluster {
+         gap: 4px;
+         flex-wrap: wrap;
+     }
+
+     /* Buttons */
+     .cf-btn {
+         padding: 3px 7px;
+         font-size: 8px;
+     }
+
+     .cf-btn svg {
+         width: 10px;
+         height: 10px;
+     }
+
+     /* Insights Section */
+     .insights-header {
+         gap: 5px;
+         margin-bottom: 12px;
+     }
+
+     .insights-header h2,
+     .insight-header-row h2 {
+         font-size: 12px;
+     }
+
+     .insight-icon img {
+         width: 16px;
+         height: 16px;
+     }
+
+     .cf-alerts-layout {
+         grid-template-columns: 1fr;
+         /* Single column for alerts */
+         gap: 6px;
+     }
+
+     .cf-alert-tile {
+         padding: 7px 9px;
+     }
+
+     .cf-alert-symbol svg {
+         width: 11px;
+         height: 11px;
+     }
+
+     .cf-alert-text h3 {
+         font-size: 9px;
+     }
+
+     .cf-alert-text p {
+         font-size: 8px;
+     }
+
+     /* Stats Container */
+     .cf-stats-container {
+         padding: 10px;
+         margin-bottom: 12px;
+     }
+
+     .cf-stats-layout {
+         grid-template-columns: repeat(2, 1fr);
+         /* Two columns for stats */
+         gap: 6px;
+     }
+
+     .cf-stat-unit {
+         padding: 7px 2px;
+     }
+
+     .cf-stat-unit h2 {
+         font-size: 20px;
+     }
+
+     .cf-stat-unit p {
+         font-size: 7px;
+     }
+
+     /* Filters Container */
+     .cf-filter-container {
+         padding: 10px 12px;
+         margin-bottom: 12px;
+     }
+
+     .cf-filter-upper {
+         gap: 5px;
+         margin-bottom: 10px;
+         flex-direction: column;
+     }
+
+     .cf-search-wrapper {
+         min-width: 100%;
+     }
+
+     .cf-search-input {
+         padding: 5px 6px 5px 28px;
+         font-size: 8px;
+     }
+
+     .cf-search-icon {
+         left: 6px;
+     }
+
+     .cf-filter-upper .cf-btn {
+         min-width: 100%;
+         font-size: 8px;
+     }
+
+     .cf-filter-lower {
+         gap: 3px;
+         flex-direction: column;
+         align-items: flex-start;
+     }
+
+     .cf-tabs-group {
+         gap: 2px;
+         width: 100%;
+     }
+
+     .cf-tab-item {
+         padding: 3px 8px;
+         font-size: 8px;
+         flex: 1;
+     }
+
+     .cf-batch-controls {
+         gap: 3px;
+         width: 100%;
+     }
+
+     .cf-batch-controls .cf-btn {
+         min-width: 100%;
+         font-size: 8px;
+     }
+
+     /* Directory Container */
+     .cf-directory-container {
+         padding: 12px 10px;
+         margin-bottom: 12px;
+     }
+
+     .cf-directory-label h2 {
+         font-size: 12px;
+     }
+
+     .cf-directory-label p {
+         font-size: 8px;
+     }
+
+     .cf-directory-controls .cf-btn {
+         min-width: 60px;
+         padding: 2px 5px;
+         font-size: 8px;
+     }
+
+     .cf-members-table {
+         font-size: 8px;
+     }
+
+     .cf-members-table thead th {
+         padding: 4px 3px;
+         font-size: 7px;
+     }
+
+     .cf-members-table tbody td {
+         padding: 6px 3px;
+     }
+
+     .cf-member-icon {
+         width: 24px;
+         height: 24px;
+         font-size: 9px;
+     }
+
+     .cf-member-info h4 {
+         font-size: 8px;
+     }
+
+     .cf-member-info p {
+         font-size: 6px;
+     }
+
+     .cf-badge {
+         padding: 1px 3px;
+         font-size: 6px;
+     }
+
+     .cf-progress-track {
+         width: 28px;
+         height: 2px;
+     }
+
+     .cf-progress-text {
+         font-size: 7px;
+     }
+
+     .cf-menu-trigger {
+         font-size: 11px;
+         padding: 1px 2px;
+     }
+
+     .cf-dropdown-menu {
+         min-width: 80px;
+     }
+
+     .cf-menu-item {
+         padding: 3px 6px;
+         font-size: 8px;
+     }
+
+     /* Modal */
+     .cf-modal-panel {
+         max-width: 98%;
+         /* Responsive width for very small screens */
+     }
+
+     .cf-modal-head {
+         padding: 10px;
+     }
+
+     .cf-modal-head h2 {
+         font-size: 14px;
+     }
+
+     .cf-modal-close {
+         font-size: 14px;
+         width: 22px;
+         height: 22px;
+     }
+
+     .cf-modal-content {
+         padding: 10px;
+         gap: 10px;
+     }
+
+     /* Profile View */
+     .cf-profile-header {
+         gap: 10px;
+         margin-bottom: 12px;
+         padding-bottom: 10px;
+     }
+
+     .cf-profile-avatar {
+         width: 50px;
+         height: 50px;
+         font-size: 28px;
+     }
+
+     .cf-profile-data h3 {
+         font-size: 14px;
+     }
+
+     .cf-meta-item {
+         font-size: 8px;
+     }
+
+     .cf-tags-row {
+         gap: 2px;
+         margin-top: 3px;
+     }
+
+     .cf-info-section {
+         margin-bottom: 10px;
+     }
+
+     .cf-info-section h4 {
+         font-size: 10px;
+     }
+
+     .cf-grid-dual {
+         grid-template-columns: 1fr;
+         gap: 5px;
+     }
+
+     .cf-field-label {
+         font-size: 7px;
+     }
+
+     .cf-field-value {
+         font-size: 8px;
+     }
+
+     .cf-metrics-mini {
+         grid-template-columns: 1fr;
+         /* Single column for metrics */
+         gap: 5px;
+     }
+
+     .cf-metric-box {
+         padding: 5px;
+     }
+
+     .cf-metric-num {
+         font-size: 14px;
+     }
+
+     .cf-metric-text {
+         font-size: 7px;
+     }
+
+     /* Pagination */
+     .cf-pagination {
+         margin-top: 10px;
+         padding-top: 10px;
+     }
+
+     .cf-page-stats {
+         font-size: 8px;
+     }
+
+     .cf-page-btn {
+         padding: 2px 3px;
+         font-size: 8px;
+     }
+
+     /* Form Elements */
+     .cf-form-field {
+         margin-bottom: 6px;
+     }
+
+     .cf-label {
+         font-size: 8px;
+     }
+
+     .cf-input,
+     .cf-select {
+         padding: 3px 5px;
+         font-size: 8px;
+     }
+
+     .cf-modal-foot {
+         padding: 5px 10px;
+         gap: 3px;
+     }
+
+     .cf-checkbox-cell {
+         width: 26px;
+     }
+
+     input[type="checkbox"] {
+         width: 11px;
+         height: 11px;
+     }
+ }
+
 
  
 
