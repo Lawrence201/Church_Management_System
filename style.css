@@ -1334,7 +1334,7 @@
         /* Search bar in the middle */
         flex: 1;
         /* Allow search bar to take available space */
-        max-width: 50%;
+        max-width: 60%;
         /* Limit width for balance */
         margin: 0 12px;
         /* Add spacing to visually center */
@@ -1461,7 +1461,7 @@
         /* Search bar in the middle */
         flex: 1;
         /* Take available space */
-        max-width: 45%;
+        max-width: 70%;
         /* Slightly narrower for small screens */
         margin: 0 8px;
         /* Reduced spacing for balance */
@@ -1518,6 +1518,23 @@
     .stat-card {
         padding: 18px;
     }
+        .insights-grid {
+            display: grid !important;
+            grid-template-columns: repeat(2, 1fr) !important;
+            grid-template-rows: repeat(2, 1fr) !important;
+            gap: 10px !important;
+            grid-auto-flow: dense !important;
+            justify-items: stretch !important;
+            align-items: stretch !important;
+        }
+    
+        /* Make sure each card fits neatly */
+        .insight-card {
+            width: 100%;
+            height: 100%;
+            padding: 10px;
+            box-sizing: border-box;
+        }
 
     .stat-value {
         font-size: 28px;
@@ -1696,7 +1713,7 @@
         /* Search bar in the middle */
         flex: 1;
         /* Take available space */
-        max-width: 40%;
+        max-width: 70%;
         /* Narrower for smaller screens */
         margin: 0 6px;
         /* Reduced spacing */
@@ -1768,20 +1785,23 @@
     .insights-header h2 {
         font-size: 15px;
     }
+.insights-grid {
+    display: grid !important;
+    grid-template-columns: repeat(2, 1fr) !important;
+    grid-template-rows: repeat(2, 1fr) !important;
+    gap: 10px !important;
+    grid-auto-flow: dense !important;
+    justify-items: stretch !important;
+    align-items: stretch !important;
+}
 
-    .insights-grid {
-        grid-template-columns: repeat(2, 1fr);
-        /* Two columns for 2x2 grid */
-        grid-template-rows: repeat(2, auto);
-        /* Two rows for 2x2 grid */
-        gap: 10px;
-        /* Smaller gap */
-    }
-
-    .insight-card {
-        padding: 10px;
-        /* Smaller padding */
-    }
+/* Make sure each card fits neatly */
+.insight-card {
+    width: 100%;
+    height: 100%;
+    padding: 10px;
+    box-sizing: border-box;
+}
 
     .insight-text {
         font-size: 11px;
@@ -1956,7 +1976,7 @@
         /* Search bar in the middle */
         flex: 1;
         /* Take available space */
-        max-width: 38%;
+        max-width: 50%;
         /* Narrower for smaller screens */
         margin: 0 5px;
         /* Reduced spacing */
