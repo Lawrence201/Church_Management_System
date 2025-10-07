@@ -6589,7 +6589,480 @@ body {
  }
 
 
+@media (max-width: 1200px) {
+    .cf-em-content-grid {
+        grid-template-columns: 1fr;
+        /* Stack calendar and events sections vertically */
+        height: auto;
+        /* Remove fixed height for flexibility */
+    }
 
+    .cf-em-calendar-section,
+    .cf-em-events-section {
+        max-height: none;
+        /* Remove any height restrictions */
+    }
+
+    .cf-em-alerts-grid {
+        grid-template-columns: repeat(2, 1fr);
+        /* Reduce to 2 columns for alerts */
+    }
+}
+
+
+@media (max-width: 1028px) {
+    .cf-em-content-grid {
+        grid-template-columns: 1fr;
+        height: auto;
+    }
+
+    .cf-em-calendar-section,
+    .cf-em-events-section {
+        max-height: none;
+    }
+
+    .cf-em-alerts-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .cf-em-header-content h1 {
+        font-size: 28px;
+    }
+
+    .cf-em-header-actions {
+        flex-direction: row;
+        /* Keep buttons in a row */
+        flex-wrap: wrap;
+        /* Allow wrapping if needed */
+        gap: 12px;
+        /* Slightly reduce gap for tighter spacing */
+        margin-top: 12px;
+        /* Move buttons downward slightly */
+    }
+
+    .cf-em-search-bar {
+        width: 100%;
+    }
+}
+
+
+@media (max-width: 770px) {
+    .cf-em-content-grid {
+        grid-template-columns: 1fr;
+        height: auto;
+    }
+
+    .cf-em-calendar-section,
+    .cf-em-events-section {
+        max-height: none;
+        padding: 16px;
+        /* Reduce padding for smaller screens */
+    }
+
+    .cf-em-alerts-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .cf-em-header-content h1 {
+        font-size: 24px;
+        /* Further reduce font size */
+    }
+
+    .cf-em-header-content p {
+        font-size: 14px;
+        /* Slightly smaller paragraph text */
+    }
+
+    .cf-em-header-actions {
+        flex-direction: row;
+        /* Keep buttons in a row */
+        flex-wrap: wrap;
+        /* Allow wrapping if needed */
+        gap: 6px;
+        /* Tighter gap for smaller screens */
+        margin-top: 12px;
+        /* Retain downward shift */
+    }
+
+    .cf-em-btn {
+        padding: 8px 12px;
+        /* Smaller button padding */
+        font-size: 13px;
+        /* Smaller button text */
+    }
+
+    .cf-em-search-bar {
+        width: 100%;
+    }
+
+    .cf-em-calendar-nav button {
+        font-size: 16px;
+        /* Smaller navigation buttons */
+    }
+
+    .cf-em-calendar-month {
+        font-size: 14px;
+        /* Smaller month text */
+    }
+
+    .cf-em-calendar-day {
+        font-size: 12px;
+        /* Smaller day text */
+    }
+}
+
+@media (max-width: 480px) {
+    .cf-em-content-grid {
+        grid-template-columns: 1fr;
+        height: auto;
+    }
+
+    .cf-em-calendar-section,
+    .cf-em-events-section {
+        max-height: none;
+        padding: 12px;
+        /* Further reduce padding for mobile */
+    }
+
+    .cf-em-alerts-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .cf-em-header-content h1 {
+        font-size: 20px;
+        /* Smaller heading for mobile */
+    }
+
+    .cf-em-header-content p {
+        font-size: 12px;
+        /* Smaller paragraph text */
+    }
+
+    .cf-em-header-actions {
+        flex-direction: row;
+        /* Keep buttons in a row */
+        flex-wrap: wrap;
+        /* Allow wrapping if needed */
+        gap: 4px;
+        /* Tighter gap for mobile */
+        margin-top: 12px;
+        /* Retain downward shift */
+    }
+
+    .cf-em-btn {
+        padding: 6px 10px;
+        /* Smaller button padding */
+        font-size: 12px;
+        /* Smaller button text */
+    }
+
+    .cf-em-btn svg {
+        width: 14px;
+        /* Smaller SVG icons */
+        height: 14px;
+    }
+
+    .cf-em-search-bar {
+        width: 100%;
+    }
+
+    .cf-em-search-input {
+        padding: 6px 10px 6px 30px;
+        /* Adjust padding for smaller input */
+        font-size: 12px;
+        /* Smaller input text */
+    }
+
+    .cf-em-search-icon {
+        left: 8px;
+        /* Adjust icon position */
+    }
+
+    .cf-em-calendar-nav button {
+        font-size: 14px;
+        /* Smaller navigation buttons */
+    }
+
+    .cf-em-calendar-month {
+        font-size: 12px;
+        /* Smaller month text */
+    }
+
+    .cf-em-calendar-day {
+        font-size: 10px;
+        /* Smaller day text */
+    }
+
+    .cf-em-alert-card {
+        padding: 12px;
+        /* Reduce padding for alert cards */
+    }
+
+    .cf-em-alert-content h3 {
+        font-size: 14px;
+        /* Smaller alert heading */
+    }
+
+    .cf-em-alert-content p {
+        font-size: 12px;
+        /* Smaller alert text */
+    }
+
+    .cf-em-event-card {
+        padding: 12px;
+        /* Reduce padding for event cards */
+    }
+
+    .cf-em-event-title {
+        font-size: 16px;
+        /* Smaller event title */
+    }
+
+    .cf-em-event-description {
+        font-size: 12px;
+        /* Smaller event description */
+    }
+}
+
+@media (max-width: 420px) {
+    .cf-em-content-grid {
+        grid-template-columns: 1fr;
+        height: auto;
+    }
+
+    .cf-em-calendar-section,
+    .cf-em-events-section {
+        max-height: none;
+        padding: 10px;
+        /* Further reduce padding for very small screens */
+    }
+
+    .cf-em-alerts-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .cf-em-header-content h1 {
+        font-size: 18px;
+        /* Smaller heading for very small screens */
+    }
+
+    .cf-em-header-content p {
+        font-size: 11px;
+        /* Smaller paragraph text */
+    }
+
+    .cf-em-header-actions {
+        flex-direction: row;
+        /* Keep buttons in a row */
+        flex-wrap: wrap;
+        /* Allow wrapping if needed */
+        gap: 3px;
+        /* Tighter gap for very small screens */
+        margin-top: 12px;
+        /* Retain downward shift */
+    }
+
+    .cf-em-btn {
+        padding: 5px 8px;
+        /* Smaller button padding */
+        font-size: 11px;
+        /* Smaller button text */
+    }
+
+    .cf-em-btn svg {
+        width: 12px;
+        /* Smaller SVG icons */
+        height: 12px;
+    }
+
+    .cf-em-search-bar {
+        width: 100%;
+    }
+
+    .cf-em-search-input {
+        padding: 5px 8px 5px 28px;
+        /* Adjust padding for smaller input */
+        font-size: 11px;
+        /* Smaller input text */
+    }
+
+    .cf-em-search-icon {
+        left: 6px;
+        /* Adjust icon position */
+    }
+
+    .cf-em-calendar-nav button {
+        font-size: 12px;
+        /* Smaller navigation buttons */
+    }
+
+    .cf-em-calendar-month {
+        font-size: 11px;
+        /* Smaller month text */
+    }
+
+    .cf-em-calendar-day {
+        font-size: 9px;
+        /* Smaller day text */
+    }
+
+    .cf-em-alert-card {
+        padding: 10px;
+        /* Reduce padding for alert cards */
+    }
+
+    .cf-em-alert-content h3 {
+        font-size: 13px;
+        /* Smaller alert heading */
+    }
+
+    .cf-em-alert-content p {
+        font-size: 11px;
+        /* Smaller alert text */
+    }
+
+    .cf-em-event-card {
+        padding: 10px;
+        /* Reduce padding for event cards */
+    }
+
+    .cf-em-event-title {
+        font-size: 14px;
+        /* Smaller event title */
+    }
+
+    .cf-em-event-description {
+        font-size: 11px;
+        /* Smaller event description */
+    }
+
+    .cf-em-event-btn {
+        padding: 4px 12px;
+        /* Smaller event button padding */
+        font-size: 11px;
+        /* Smaller event button text */
+    }
+}
+
+@media (max-width: 360px) {
+    .cf-em-content-grid {
+        grid-template-columns: 1fr;
+        height: auto;
+    }
+
+    .cf-em-calendar-section,
+    .cf-em-events-section {
+        max-height: none;
+        padding: 8px;
+        /* Minimize padding for tiny screens */
+    }
+
+    .cf-em-alerts-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .cf-em-header-content h1 {
+        font-size: 16px;
+        /* Smaller heading for tiny screens */
+    }
+
+    .cf-em-header-content p {
+        font-size: 10px;
+        /* Smaller paragraph text */
+    }
+
+    .cf-em-header-actions {
+        flex-direction: row;
+        /* Keep buttons in a row */
+        flex-wrap: wrap;
+        /* Allow wrapping if needed */
+        gap: 2px;
+        /* Minimal gap for tiny screens */
+        margin-top: 12px;
+        /* Retain downward shift */
+    }
+
+    .cf-em-btn {
+        padding: 4px 6px;
+        /* Minimal button padding */
+        font-size: 10px;
+        /* Smaller button text */
+    }
+
+    .cf-em-btn svg {
+        width: 10px;
+        /* Smaller SVG icons */
+        height: 10px;
+    }
+
+    .cf-em-search-bar {
+        width: 100%;
+    }
+
+    .cf-em-search-input {
+        padding: 4px 6px 4px 26px;
+        /* Minimal padding for input */
+        font-size: 10px;
+        /* Smaller input text */
+    }
+
+    .cf-em-search-icon {
+        left: 5px;
+        /* Adjust icon position */
+    }
+
+    .cf-em-calendar-nav button {
+        font-size: 10px;
+        /* Smaller navigation buttons */
+    }
+
+    .cf-em-calendar-month {
+        font-size: 10px;
+        /* Smaller month text */
+    }
+
+    .cf-em-calendar-day {
+        font-size: 8px;
+        /* Smaller day text */
+    }
+
+    .cf-em-alert-card {
+        padding: 8px;
+        /* Minimize padding for alert cards */
+    }
+
+    .cf-em-alert-content h3 {
+        font-size: 12px;
+        /* Smaller alert heading */
+    }
+
+    .cf-em-alert-content p {
+        font-size: 10px;
+        /* Smaller alert text */
+    }
+
+    .cf-em-event-card {
+        padding: 8px;
+        /* Minimize padding for event cards */
+    }
+
+    .cf-em-event-title {
+        font-size: 13px;
+        /* Smaller event title */
+    }
+
+    .cf-em-event-description {
+        font-size: 10px;
+        /* Smaller event description */
+    }
+
+    .cf-em-event-btn {
+        padding: 3px 10px;
+        /* Smaller event button padding */
+        font-size: 10px;
+        /* Smaller event button text */
+    }
+}
 
 
 
