@@ -11140,7 +11140,975 @@ body {
 }
 
 
+@media (max-width: 1200px) {
+    .ran-header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 12px;
+        margin-bottom: 24px;
+    }
 
+    .zap-content h1 {
+        font-size: 24px;
+        /* Slightly smaller heading */
+    }
+
+    .zap-content p {
+        font-size: 14px;
+        /* Slightly smaller paragraph */
+    }
+
+    .xap-actions {
+        flex-wrap: wrap;
+        gap: 10px;
+        /* Tighter gap for buttons */
+    }
+
+    .fil-section {
+        flex-direction: column;
+        /* Stack filter groups vertically */
+        align-items: flex-start;
+        gap: 12px;
+        /* Reduce gap */
+        padding: 16px;
+        /* Slightly reduce padding */
+    }
+
+    .fil-group {
+        min-width: 100%;
+        /* Full width for filter groups */
+    }
+
+    .sum-grid {
+        grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+        /* Smaller summary cards */
+    }
+
+    .sum-card {
+        padding: 14px 16px;
+        /* Reduce padding */
+    }
+
+    .sum-val {
+        font-size: 20px;
+        /* Smaller value text */
+    }
+
+    .ins-grid {
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        /* Smaller insight cards */
+    }
+
+    .ins-card {
+        padding: 14px;
+        /* Reduce padding */
+    }
+
+    .ins-tit {
+        font-size: 14px;
+        /* Smaller title */
+    }
+
+    .cha-grid {
+        grid-template-columns: 1fr;
+        /* Stack chart cards vertically */
+    }
+
+    .cha-card {
+        padding: 16px;
+        /* Reduce padding */
+    }
+
+    .cha-can {
+        height: 250px;
+        /* Slightly smaller chart height */
+    }
+
+    .cha-can.tall {
+        height: 350px;
+        /* Adjust tall chart height */
+    }
+
+    .met-card {
+        padding: 16px;
+        /* Reduce padding */
+    }
+
+    .met-val {
+        font-size: 28px;
+        /* Smaller metric value */
+    }
+
+    .gri-2 {
+        grid-template-columns: 1fr;
+        /* Stack comparison items */
+    }
+
+    .com-item {
+        padding: 12px;
+        /* Reduce padding */
+    }
+
+    .com-val {
+        font-size: 20px;
+        /* Smaller comparison value */
+    }
+
+    .soc-card {
+        padding: 16px;
+        /* Reduce padding */
+    }
+
+    .soc-metr {
+        gap: 16px;
+        /* Reduce gap between metrics */
+    }
+
+    .soc-metri-val {
+        font-size: 16px;
+        /* Smaller metric value */
+    }
+}
+
+
+@media (max-width: 1028px) {
+    .ran-header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 10px;
+        margin-bottom: 20px;
+    }
+
+    .zap-content h1 {
+        font-size: 22px;
+        /* Further reduce heading size */
+    }
+
+    .zap-content p {
+        font-size: 13px;
+        /* Smaller paragraph text */
+    }
+
+    .xap-actions {
+        flex-wrap: wrap;
+        gap: 8px;
+        /* Tighter gap for buttons */
+    }
+
+    .gen-btn {
+        padding: 8px 16px;
+        /* Slightly smaller button padding */
+        font-size: 13px;
+        /* Smaller button text */
+    }
+
+    .fil-section {
+        flex-direction: column;
+        /* Stack filter groups vertically */
+        align-items: flex-start;
+        gap: 10px;
+        /* Further reduce gap */
+        padding: 12px;
+        /* Further reduce padding */
+    }
+
+    .fil-group {
+        min-width: 100%;
+        /* Full width for filter groups */
+    }
+
+    .sum-grid {
+        grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+        /* Smaller summary cards */
+    }
+
+    .sum-card {
+        padding: 12px 14px;
+        /* Further reduce padding */
+    }
+
+    .sum-val {
+        font-size: 18px;
+        /* Smaller value text */
+    }
+
+    .ins-grid {
+        grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+        /* Smaller insight cards */
+    }
+
+    .ins-card {
+        padding: 12px;
+        /* Further reduce padding */
+    }
+
+    .ins-tit {
+        font-size: 13px;
+        /* Smaller title */
+    }
+
+    .cha-grid {
+        grid-template-columns: 1fr;
+        /* Stack chart cards vertically */
+    }
+
+    .cha-card {
+        padding: 12px;
+        /* Further reduce padding */
+    }
+
+    .cha-can {
+        height: 220px;
+        /* Smaller chart height */
+    }
+
+    .cha-can.tall {
+        height: 300px;
+        /* Adjust tall chart height */
+    }
+
+    .met-card {
+        padding: 12px;
+        /* Further reduce padding */
+    }
+
+    .met-val {
+        font-size: 24px;
+        /* Smaller metric value */
+    }
+
+    .gri-2 {
+        grid-template-columns: 1fr;
+        /* Stack comparison items */
+    }
+
+    .com-item {
+        padding: 10px;
+        /* Further reduce padding */
+    }
+
+    .com-val {
+        font-size: 18px;
+        /* Smaller comparison value */
+    }
+
+    .soc-card {
+        padding: 12px;
+        /* Further reduce padding */
+    }
+
+    .soc-metr {
+        gap: 12px;
+        /* Further reduce gap between metrics */
+    }
+
+    .soc-metri-val {
+        font-size: 14px;
+        /* Smaller metric value */
+    }
+}
+
+
+/* Media Query for 770px */
+@media (max-width: 770px) {
+    .ran-header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 8px;
+        margin-bottom: 16px;
+    }
+
+    .zap-content h1 {
+        font-size: 20px;
+        /* Smaller heading */
+    }
+
+    .zap-content p {
+        font-size: 12px;
+        /* Smaller paragraph text */
+    }
+
+    .xap-actions {
+        flex-direction: row;
+        /* Keep buttons in a row */
+        flex-wrap: wrap;
+        gap: 6px;
+        /* Tighter gap for buttons */
+    }
+
+    .gen-btn {
+        padding: 6px 12px;
+        /* Smaller button padding */
+        font-size: 12px;
+        /* Smaller button text */
+    }
+
+    .fil-section {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 8px;
+        /* Further reduce gap */
+        padding: 10px;
+        /* Further reduce padding */
+    }
+
+    .fil-group {
+        min-width: 100%;
+        /* Full width for filter groups */
+    }
+
+    .fil-select {
+        padding: 8px 12px;
+        /* Smaller select padding */
+        font-size: 13px;
+        /* Smaller select text */
+    }
+
+    .sum-grid {
+        grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+        /* Smaller summary cards */
+    }
+
+    .sum-card {
+        padding: 10px 12px;
+        /* Further reduce padding */
+    }
+
+    .sum-val {
+        font-size: 16px;
+        /* Smaller value text */
+    }
+
+    .ins-grid {
+        grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+        /* Smaller insight cards */
+    }
+
+    .ins-card {
+        padding: 10px;
+        /* Further reduce padding */
+    }
+
+    .ins-tit {
+        font-size: 12px;
+        /* Smaller title */
+    }
+
+    .cha-grid {
+        grid-template-columns: 1fr;
+        /* Stack chart cards vertically */
+    }
+
+    .cha-card {
+        padding: 10px;
+        /* Further reduce padding */
+    }
+
+    .cha-can {
+        height: 200px;
+        /* Smaller chart height */
+    }
+
+    .cha-can.tall {
+        height: 280px;
+        /* Adjust tall chart height */
+    }
+
+    .met-card {
+        padding: 10px;
+        /* Further reduce padding */
+    }
+
+    .met-val {
+        font-size: 22px;
+        /* Smaller metric value */
+    }
+
+    .gri-2 {
+        grid-template-columns: 1fr;
+        /* Stack comparison items */
+    }
+
+    .com-item {
+        padding: 8px;
+        /* Further reduce padding */
+    }
+
+    .com-val {
+        font-size: 16px;
+        /* Smaller comparison value */
+    }
+
+    .soc-card {
+        padding: 10px;
+        /* Further reduce padding */
+    }
+
+    .soc-metr {
+        gap: 10px;
+        /* Further reduce gap between metrics */
+    }
+
+    .soc-metri-val {
+        font-size: 13px;
+        /* Smaller metric value */
+    }
+
+    .tab-navi {
+        gap: 6px;
+        /* Reduce gap between tabs */
+    }
+
+    .tab-butt {
+        padding: 12px 0;
+        /* Reduce tab padding */
+        font-size: 13px;
+        /* Smaller tab text */
+    }
+}
+
+/* Media Query for 480px */
+@media (max-width: 480px) {
+    .ran-header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 6px;
+        margin-bottom: 12px;
+    }
+
+    .zap-content h1 {
+        font-size: 18px;
+        /* Smaller heading */
+    }
+
+    .zap-content p {
+        font-size: 11px;
+        /* Smaller paragraph text */
+    }
+
+    .xap-actions {
+        flex-direction: row;
+        /* Keep buttons in a row */
+        flex-wrap: wrap;
+        gap: 4px;
+        /* Tighter gap for buttons */
+    }
+
+    .gen-btn {
+        padding: 5px 10px;
+        /* Smaller button padding */
+        font-size: 11px;
+        /* Smaller button text */
+    }
+
+    .gen-btn svg {
+        width: 14px;
+        /* Smaller SVG icons */
+        height: 14px;
+    }
+
+    .fil-section {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 6px;
+        /* Further reduce gap */
+        padding: 8px;
+        /* Further reduce padding */
+    }
+
+    .fil-group {
+        min-width: 100%;
+        /* Full width for filter groups */
+    }
+
+    .fil-select {
+        padding: 6px 10px;
+        /* Smaller select padding */
+        font-size: 12px;
+        /* Smaller select text */
+    }
+
+    .sum-grid {
+        grid-template-columns: 1fr;
+        /* Single column for summary cards */
+    }
+
+    .sum-card {
+        padding: 8px 10px;
+        /* Further reduce padding */
+    }
+
+    .sum-val {
+        font-size: 14px;
+        /* Smaller value text */
+    }
+
+    .ins-grid {
+        grid-template-columns: 1fr;
+        /* Single column for insight cards */
+    }
+
+    .ins-card {
+        padding: 8px;
+        /* Further reduce padding */
+    }
+
+    .ins-tit {
+        font-size: 11px;
+        /* Smaller title */
+    }
+
+    .cha-grid {
+        grid-template-columns: 1fr;
+        /* Stack chart cards vertically */
+    }
+
+    .cha-card {
+        padding: 8px;
+        /* Further reduce padding */
+    }
+
+    .cha-can {
+        height: 180px;
+        /* Smaller chart height */
+    }
+
+    .cha-can.tall {
+        height: 250px;
+        /* Adjust tall chart height */
+    }
+
+    .met-card {
+        padding: 8px;
+        /* Further reduce padding */
+    }
+
+    .met-val {
+        font-size: 20px;
+        /* Smaller metric value */
+    }
+
+    .gri-2 {
+        grid-template-columns: 1fr;
+        /* Stack comparison items */
+    }
+
+    .com-item {
+        padding: 6px;
+        /* Further reduce padding */
+    }
+
+    .com-val {
+        font-size: 14px;
+        /* Smaller comparison value */
+    }
+
+    .soc-card {
+        padding: 8px;
+        /* Further reduce padding */
+    }
+
+    .soc-metr {
+        gap: 8px;
+        /* Further reduce gap between metrics */
+    }
+
+    .soc-metri-val {
+        font-size: 12px;
+        /* Smaller metric value */
+    }
+
+    .tab-navi {
+        gap: 4px;
+        /* Further reduce gap between tabs */
+    }
+
+    .tab-butt {
+        padding: 10px 0;
+        /* Further reduce tab padding */
+        font-size: 12px;
+        /* Smaller tab text */
+    }
+}
+
+/* Media Query for 420px */
+@media (max-width: 420px) {
+    .ran-header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 4px;
+        margin-bottom: 10px;
+    }
+
+    .zap-content h1 {
+        font-size: 16px;
+        /* Smaller heading */
+    }
+
+    .zap-content p {
+        font-size: 10px;
+        /* Smaller paragraph text */
+    }
+
+    .xap-actions {
+        flex-direction: row;
+        /* Keep buttons in a row */
+        flex-wrap: wrap;
+        gap: 3px;
+        /* Minimal gap for buttons */
+    }
+
+    .gen-btn {
+        padding: 4px 8px;
+        /* Minimal button padding */
+        font-size: 10px;
+        /* Smaller button text */
+    }
+
+    .gen-btn svg {
+        width: 12px;
+        /* Smaller SVG icons */
+        height: 12px;
+    }
+
+    .fil-section {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 4px;
+        /* Minimal gap */
+        padding: 6px;
+        /* Minimal padding */
+    }
+
+    .fil-group {
+        min-width: 100%;
+        /* Full width for filter groups */
+    }
+
+    .fil-select {
+        padding: 5px 8px;
+        /* Minimal select padding */
+        font-size: 11px;
+        /* Smaller select text */
+    }
+
+    .sum-grid {
+        grid-template-columns: 1fr;
+        /* Single column for summary cards */
+    }
+
+    .sum-card {
+        padding: 6px 8px;
+        /* Minimal padding */
+    }
+
+    .sum-val {
+        font-size: 12px;
+        /* Smaller value text */
+    }
+
+    .ins-grid {
+        grid-template-columns: 1fr;
+        /* Single column for insight cards */
+    }
+
+    .ins-card {
+        padding: 6px;
+        /* Minimal padding */
+    }
+
+    .ins-tit {
+        font-size: 10px;
+        /* Smaller title */
+    }
+
+    .cha-grid {
+        grid-template-columns: 1fr;
+        /* Stack chart cards vertically */
+    }
+
+    .cha-card {
+        padding: 6px;
+        /* Minimal padding */
+    }
+
+    .cha-can {
+        height: 160px;
+        /* Smaller chart height */
+    }
+
+    .cha-can.tall {
+        height: 220px;
+        /* Adjust tall chart height */
+    }
+
+    .met-card {
+        padding: 6px;
+        /* Minimal padding */
+    }
+
+    .met-val {
+        font-size: 18px;
+        /* Smaller metric value */
+    }
+
+    .gri-2 {
+        grid-template-columns: 1fr;
+        /* Stack comparison items */
+    }
+
+    .com-item {
+        padding: 4px;
+        /* Minimal padding */
+    }
+
+    .com-val {
+        font-size: 12px;
+        /* Smaller comparison value */
+    }
+
+    .soc-card {
+        padding: 6px;
+        /* Minimal padding */
+    }
+
+    .soc-metr {
+        gap: 6px;
+        /* Minimal gap between metrics */
+    }
+
+    .soc-metri-val {
+        font-size: 11px;
+        /* Smaller metric value */
+    }
+
+    .tab-navi {
+        gap: 3px;
+        /* Minimal gap between tabs */
+    }
+
+    .tab-butt {
+        padding: 8px 0;
+        /* Minimal tab padding */
+        font-size: 11px;
+        /* Smaller tab text */
+    }
+}
+
+@media (max-width: 360px) {
+    .ran-header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 3px;
+        margin-bottom: 8px;
+    }
+
+    .zap-content h1 {
+        font-size: 14px;
+        /* Smaller heading */
+    }
+
+    .zap-content p {
+        font-size: 9px;
+        /* Smaller paragraph text */
+    }
+
+    .xap-actions {
+        flex-direction: row;
+        /* Keep buttons in a row */
+        flex-wrap: wrap;
+        gap: 2px;
+        /* Minimal gap for buttons */
+    }
+
+    .gen-btn {
+        padding: 3px 6px;
+        /* Minimal button padding */
+        font-size: 9px;
+        /* Smaller button text */
+    }
+
+    .gen-btn svg {
+        width: 10px;
+        /* Smaller SVG icons */
+        height: 10px;
+    }
+
+    .fil-section {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 3px;
+        /* Minimal gap */
+        padding: 4px;
+        /* Minimal padding */
+    }
+
+    .fil-group {
+        min-width: 100%;
+        /* Full width for filter groups */
+    }
+
+    .fil-select {
+        padding: 4px 6px;
+        /* Minimal select padding */
+        font-size: 10px;
+        /* Smaller select text */
+        background-size: 12px;
+        /* Smaller dropdown arrow */
+    }
+
+    .sum-grid {
+        grid-template-columns: 1fr;
+        /* Single column for summary cards */
+    }
+
+    .sum-card {
+        padding: 4px 6px;
+        /* Minimal padding */
+    }
+
+    .sum-val {
+        font-size: 10px;
+        /* Smaller value text */
+    }
+
+    .sum-lab {
+        font-size: 11px;
+        /* Smaller label text */
+    }
+
+    .sum-lab svg {
+        width: 14px;
+        /* Smaller SVG icons */
+        height: 14px;
+    }
+
+    .ins-grid {
+        grid-template-columns: 1fr;
+        /* Single column for insight cards */
+    }
+
+    .ins-card {
+        padding: 4px;
+        /* Minimal padding */
+    }
+
+    .ins-tit {
+        font-size: 9px;
+        /* Smaller title */
+    }
+
+    .ins-tex {
+        font-size: 11px;
+        /* Smaller text */
+    }
+
+    .ins-ico {
+        width: 16px;
+        /* Smaller icon */
+        height: 16px;
+    }
+
+    .cha-grid {
+        grid-template-columns: 1fr;
+        /* Stack chart cards vertically */
+    }
+
+    .cha-card {
+        padding: 4px;
+        /* Minimal padding */
+    }
+
+    .cha-can {
+        height: 140px;
+        /* Smaller chart height */
+    }
+
+    .cha-can.tall {
+        height: 200px;
+        /* Adjust tall chart height */
+    }
+
+    .met-card {
+        padding: 4px;
+        /* Minimal padding */
+    }
+
+    .met-val {
+        font-size: 16px;
+        /* Smaller metric value */
+    }
+
+    .met-lab {
+        font-size: 11px;
+        /* Smaller label text */
+    }
+
+    .met-lab svg {
+        width: 16px;
+        /* Smaller SVG icons */
+        height: 16px;
+    }
+
+    .gri-2 {
+        grid-template-columns: 1fr;
+        /* Stack comparison items */
+    }
+
+    .com-item {
+        padding: 3px;
+        /* Minimal padding */
+    }
+
+    .com-val {
+        font-size: 10px;
+        /* Smaller comparison value */
+    }
+
+    .com-lab {
+        font-size: 10px;
+        /* Smaller label text */
+    }
+
+    .soc-card {
+        padding: 4px;
+        /* Minimal padding */
+        gap: 8px;
+        /* Reduce gap */
+    }
+
+    .soc-plat {
+        font-size: 13px;
+        /* Smaller platform title */
+    }
+
+    .soc-metr {
+        gap: 6px;
+        /* Minimal gap between metrics */
+    }
+
+    .soc-metri-val {
+        font-size: 10px;
+        /* Smaller metric value */
+    }
+
+    .soc-metri-lab {
+        font-size: 9px;
+        /* Smaller metric label */
+    }
+
+    .tab-navi {
+        gap: 2px;
+        /* Minimal gap between tabs */
+    }
+
+    .tab-butt {
+        padding: 6px 0;
+        /* Minimal tab padding */
+        font-size: 10px;
+        /* Smaller tab text */
+    }
+}
 
 
 
@@ -11972,7 +12940,663 @@ table td {
 }
 
 
+/* Media Query for 1200px */
+@media (max-width: 1200px) {
+    .rap-header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 12px;
+        margin-bottom: 24px;
+        padding-bottom: 16px;
+    }
 
+    .head-core h1 {
+        font-size: 26px;
+        /* Slightly smaller heading */
+    }
+
+    .head-core p {
+        font-size: 14px;
+        /* Slightly smaller paragraph */
+    }
+
+    .head-tools {
+        flex-wrap: wrap;
+        gap: 8px;
+        /* Tighter gap for buttons */
+    }
+
+    .dash-grid {
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        /* Smaller dashboard cards */
+    }
+
+    .dash-box {
+        padding: 18px;
+        /* Reduce padding */
+    }
+
+    .dash-num {
+        font-size: 28px;
+        /* Smaller number text */
+    }
+
+    .qr-recent-grid {
+        grid-template-columns: 1fr;
+        /* Stack grid vertically */
+    }
+
+    .vax-frame {
+        padding: 20px;
+        /* Reduce padding */
+    }
+
+    .pop-content {
+        max-width: 480px;
+        /* Smaller popup */
+    }
+
+    .nav-tabs {
+        gap: 6px;
+        /* Reduce gap between tabs */
+    }
+
+    .nav-tab {
+        padding: 10px 0;
+        /* Reduce tab padding */
+        font-size: 13px;
+        /* Smaller tab text */
+    }
+}
+
+/* Media Query for 1028px */
+@media (max-width: 1028px) {
+    .rap-header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 10px;
+        margin-bottom: 20px;
+        padding-bottom: 14px;
+    }
+
+    .head-core h1 {
+        font-size: 24px;
+        /* Smaller heading */
+    }
+
+    .head-core p {
+        font-size: 13px;
+        /* Smaller paragraph text */
+    }
+
+    .head-tools {
+        flex-wrap: wrap;
+        gap: 6px;
+        /* Tighter gap for buttons */
+    }
+
+    .vox-btn {
+        padding: 8px 14px;
+        /* Smaller button padding */
+        font-size: 13px;
+        /* Smaller button text */
+    }
+
+    .dash-grid {
+        grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+        /* Smaller dashboard cards */
+    }
+
+    .dash-box {
+        padding: 16px;
+        /* Further reduce padding */
+    }
+
+    .dash-num {
+        font-size: 24px;
+        /* Smaller number text */
+    }
+
+    .dash-label {
+        font-size: 13px;
+        /* Smaller label text */
+    }
+
+    .qr-recent-grid {
+        grid-template-columns: 1fr;
+        /* Stack grid vertically */
+    }
+
+    .vax-frame {
+        padding: 16px;
+        /* Further reduce padding */
+    }
+
+    .pop-content {
+        max-width: 420px;
+        /* Smaller popup */
+    }
+
+    .nav-tabs {
+        gap: 4px;
+        /* Further reduce gap between tabs */
+    }
+
+    .nav-tab {
+        padding: 8px 0;
+        /* Further reduce tab padding */
+        font-size: 12px;
+        /* Smaller tab text */
+    }
+
+    .find-filter {
+        gap: 6px;
+        /* Reduce gap for filters */
+    }
+
+    .find-input,
+    .filter-choice {
+        padding: 6px 10px;
+        /* Smaller input padding */
+        font-size: 12px;
+        /* Smaller input text */
+    }
+}
+
+/* Media Query for 770px */
+@media (max-width: 770px) {
+    .rap-header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 8px;
+        margin-bottom: 16px;
+        padding-bottom: 12px;
+    }
+
+    .head-core h1 {
+        font-size: 22px;
+        /* Smaller heading */
+    }
+
+    .head-core p {
+        font-size: 12px;
+        /* Smaller paragraph text */
+    }
+
+    .head-tools {
+        flex-direction: row;
+        /* Keep buttons in a row */
+        flex-wrap: wrap;
+        gap: 6px;
+        /* Tighter gap for buttons */
+    }
+
+    .vox-btn {
+        padding: 6px 12px;
+        /* Smaller button padding */
+        font-size: 12px;
+        /* Smaller button text */
+    }
+
+    .dash-grid {
+        grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+        /* Smaller dashboard cards */
+    }
+
+    .dash-box {
+        padding: 14px;
+        /* Further reduce padding */
+    }
+
+    .dash-num {
+        font-size: 22px;
+        /* Smaller number text */
+    }
+
+    .dash-label {
+        font-size: 12px;
+        /* Smaller label text */
+    }
+
+    .dash-top svg {
+        width: 24px;
+        /* Smaller icon */
+        height: 24px;
+    }
+
+    .qr-recent-grid {
+        grid-template-columns: 1fr;
+        /* Stack grid vertically */
+    }
+
+    .vax-frame {
+        padding: 14px;
+        /* Further reduce padding */
+    }
+
+    .pop-content {
+        max-width: 380px;
+        /* Smaller popup */
+    }
+
+    .nav-tabs {
+        gap: 3px;
+        /* Further reduce gap between tabs */
+    }
+
+    .nav-tab {
+        padding: 6px 0;
+        /* Further reduce tab padding */
+        font-size: 11px;
+        /* Smaller tab text */
+    }
+
+    .find-filter {
+        gap: 4px;
+        /* Further reduce gap for filters */
+    }
+
+    .find-input,
+    .filter-choice {
+        padding: 5px 8px;
+        /* Smaller input padding */
+        font-size: 11px;
+        /* Smaller input text */
+    }
+
+    .table-wrap th,
+    .table-wrap td {
+        padding: 8px 10px;
+        /* Reduce table cell padding */
+    }
+
+    .person-icon {
+        width: 28px;
+        /* Smaller icon */
+        height: 28px;
+    }
+}
+
+/* Media Query for 480px */
+@media (max-width: 480px) {
+    .rap-header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 6px;
+        margin-bottom: 12px;
+        padding-bottom: 10px;
+    }
+
+    .head-core h1 {
+        font-size: 20px;
+        /* Smaller heading */
+    }
+
+    .head-core p {
+        font-size: 11px;
+        /* Smaller paragraph text */
+    }
+
+    .head-tools {
+        flex-direction: row;
+        /* Keep buttons in a row */
+        flex-wrap: wrap;
+        gap: 4px;
+        /* Tighter gap for buttons */
+    }
+
+    .vox-btn {
+        padding: 5px 10px;
+        /* Smaller button padding */
+        font-size: 11px;
+        /* Smaller button text */
+    }
+
+    .vox-btn svg {
+        width: 14px;
+        /* Smaller SVG icons */
+        height: 14px;
+    }
+
+    .dash-grid {
+        grid-template-columns: 1fr;
+        /* Single column for dashboard cards */
+    }
+
+    .dash-box {
+        padding: 12px;
+        /* Further reduce padding */
+    }
+
+    .dash-num {
+        font-size: 20px;
+        /* Smaller number text */
+    }
+
+    .dash-label {
+        font-size: 11px;
+        /* Smaller label text */
+    }
+
+    .dash-top svg {
+        width: 20px;
+        /* Smaller icon */
+        height: 20px;
+    }
+
+    .qr-recent-grid {
+        grid-template-columns: 1fr;
+        /* Stack grid vertically */
+    }
+
+    .vax-frame {
+        padding: 12px;
+        /* Further reduce padding */
+    }
+
+    .pop-content {
+        max-width: 340px;
+        /* Smaller popup */
+    }
+
+    .nav-tabs {
+        gap: 2px;
+        /* Further reduce gap between tabs */
+    }
+
+    .nav-tab {
+        padding: 5px 0;
+        /* Further reduce tab padding */
+        font-size: 10px;
+        /* Smaller tab text */
+    }
+
+    .find-filter {
+        gap: 3px;
+        /* Further reduce gap for filters */
+    }
+
+    .find-input,
+    .filter-choice {
+        padding: 4px 6px;
+        /* Smaller input padding */
+        font-size: 10px;
+        /* Smaller input text */
+    }
+
+    .table-wrap th,
+    .table-wrap td {
+        padding: 6px 8px;
+        /* Further reduce table cell padding */
+    }
+
+    .person-icon {
+        width: 24px;
+        /* Smaller icon */
+        height: 24px;
+    }
+
+    .alert-box {
+        padding: 10px 14px;
+        /* Reduce alert padding */
+        font-size: 12px;
+        /* Smaller alert text */
+    }
+}
+
+/* Media Query for 420px */
+@media (max-width: 420px) {
+    .rap-header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 4px;
+        margin-bottom: 10px;
+        padding-bottom: 8px;
+    }
+
+    .head-core h1 {
+        font-size: 18px;
+        /* Smaller heading */
+    }
+
+    .head-core p {
+        font-size: 10px;
+        /* Smaller paragraph text */
+    }
+
+    .head-tools {
+        flex-direction: row;
+        /* Keep buttons in a row */
+        flex-wrap: wrap;
+        gap: 3px;
+        /* Minimal gap for buttons */
+    }
+
+    .vox-btn {
+        padding: 4px 8px;
+        /* Minimal button padding */
+        font-size: 10px;
+        /* Smaller button text */
+    }
+
+    .vox-btn svg {
+        width: 12px;
+        /* Smaller SVG icons */
+        height: 12px;
+    }
+
+    .dash-grid {
+        grid-template-columns: 1fr;
+        /* Single column for dashboard cards */
+    }
+
+    .dash-box {
+        padding: 10px;
+        /* Further reduce padding */
+    }
+
+    .dash-num {
+        font-size: 18px;
+        /* Smaller number text */
+    }
+
+    .dash-label {
+        font-size: 10px;
+        /* Smaller label text */
+    }
+
+    .dash-top svg {
+        width: 18px;
+        /* Smaller icon */
+        height: 18px;
+    }
+
+    .qr-recent-grid {
+        grid-template-columns: 1fr;
+        /* Stack grid vertically */
+    }
+
+    .vax-frame {
+        padding: 10px;
+        /* Further reduce padding */
+    }
+
+    .pop-content {
+        max-width: 320px;
+        /* Smaller popup */
+    }
+
+    .nav-tabs {
+        gap: 2px;
+        /* Minimal gap between tabs */
+    }
+
+    .nav-tab {
+        padding: 4px 0;
+        /* Minimal tab padding */
+        font-size: 9px;
+        /* Smaller tab text */
+    }
+
+    .find-filter {
+        gap: 2px;
+        /* Minimal gap for filters */
+    }
+
+    .find-input,
+    .filter-choice {
+        padding: 3px 5px;
+        /* Minimal input padding */
+        font-size: 9px;
+        /* Smaller input text */
+    }
+
+    .table-wrap th,
+    .table-wrap td {
+        padding: 5px 6px;
+        /* Minimal table cell padding */
+    }
+
+    .person-icon {
+        width: 20px;
+        /* Smaller icon */
+        height: 20px;
+    }
+
+    .alert-box {
+        padding: 8px 12px;
+        /* Minimal alert padding */
+        font-size: 11px;
+        /* Smaller alert text */
+    }
+}
+
+/* Media Query for 360px */
+@media (max-width: 360px) {
+    .rap-header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 3px;
+        margin-bottom: 8px;
+        padding-bottom: 6px;
+    }
+
+    .head-core h1 {
+        font-size: 16px;
+        /* Smaller heading */
+    }
+
+    .head-core p {
+        font-size: 9px;
+        /* Smaller paragraph text */
+    }
+
+    .head-tools {
+        flex-direction: row;
+        /* Keep buttons in a row */
+        flex-wrap: wrap;
+        gap: 2px;
+        /* Minimal gap for buttons */
+    }
+
+    .vox-btn {
+        padding: 3px 6px;
+        /* Minimal button padding */
+        font-size: 9px;
+        /* Smaller button text */
+    }
+
+    .vox-btn svg {
+        width: 10px;
+        /* Smaller SVG icons */
+        height: 10px;
+    }
+
+    .dash-grid {
+        grid-template-columns: 1fr;
+        /* Single column for dashboard cards */
+    }
+
+    .dash-box {
+        padding: 8px;
+        /* Minimal padding */
+    }
+
+    .dash-num {
+        font-size: 16px;
+        /* Smaller number text */
+    }
+
+    .dash-label {
+        font-size: 9px;
+        /* Smaller label text */
+    }
+
+    .dash-top svg {
+        width: 16px;
+        /* Smaller icon */
+        height: 16px;
+    }
+
+    .qr-recent-grid {
+        grid-template-columns: 1fr;
+        /* Stack grid vertically */
+    }
+
+    .vax-frame {
+        padding: 8px;
+        /* Minimal padding */
+    }
+
+    .pop-content {
+        max-width: 300px;
+        /* Smaller popup */
+    }
+
+    .nav-tabs {
+        gap: 1px;
+        /* Minimal gap between tabs */
+    }
+
+    .nav-tab {
+        padding: 3px 0;
+        /* Minimal tab padding */
+        font-size: 8px;
+        /* Smaller tab text */
+    }
+
+    .find-filter {
+        gap: 1px;
+        /* Minimal gap for filters */
+    }
+
+    .find-input,
+    .filter-choice {
+        padding: 2px 4px;
+        /* Minimal input padding */
+        font-size: 8px;
+        /* Smaller input text */
+    }
+
+    .table-wrap th,
+    .table-wrap td {
+        padding: 4px 5px;
+        /* Minimal table cell padding */
+    }
+
+    .person-icon {
+        width: 18px;
+        /* Smaller icon */
+        height: 18px;
+    }
+
+    .alert-box {
+        padding: 6px 10px;
+        /* Minimal alert padding */
+        font-size: 10px;
+        /* Smaller alert text */
+    }
+}
 
 
 
@@ -12888,7 +14512,708 @@ table td {
 
 
 
+/* Media Query for 1200px */
+@media (max-width: 1200px) {
+    .xxam-header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 12px;
+        margin-bottom: 24px;
+    }
 
+    .kraz-content h1 {
+        font-size: 30px;
+        /* Slightly smaller heading */
+    }
+
+    .kraz-content p {
+        font-size: 15px;
+        /* Slightly smaller paragraph */
+    }
+
+    .epir-actions {
+        flex-wrap: wrap;
+        gap: 10px;
+        /* Tighter gap for buttons */
+    }
+
+    .kwest-insights-grid {
+        grid-template-columns: repeat(2, 1fr);
+        /* Two columns for insights */
+    }
+
+    .prax-main-grid {
+        grid-template-columns: 1fr;
+        /* Stack main grid vertically */
+    }
+
+    .jiva-prediction-cards {
+        grid-template-columns: 1fr;
+        /* Single column for predictions */
+    }
+
+    .risko-matrix {
+        grid-template-columns: repeat(2, 1fr);
+        /* Two columns for risk matrix */
+    }
+
+    .autoza-grid {
+        grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+        /* Adjust card size */
+    }
+
+    .grafi-chart-container {
+        height: 280px;
+        /* Slightly smaller chart height */
+    }
+
+    .chatz-container {
+        max-height: 360px;
+        /* Adjust chat container height */
+    }
+}
+
+/* Media Query for 1028px */
+@media (max-width: 1028px) {
+    .xxam-header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 10px;
+        margin-bottom: 20px;
+    }
+
+    .kraz-content h1 {
+        font-size: 28px;
+        /* Smaller heading */
+    }
+
+    .kraz-content p {
+        font-size: 14px;
+        /* Smaller paragraph text */
+    }
+
+    .epir-actions {
+        flex-wrap: wrap;
+        gap: 8px;
+        /* Tighter gap for buttons */
+    }
+
+    .voxx-btn {
+        padding: 8px 16px;
+        /* Smaller button padding */
+        font-size: 13px;
+        /* Smaller button text */
+    }
+
+    .zest-status-bar {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 12px;
+        padding: 16px;
+    }
+
+    .nexo-stats {
+        gap: 24px;
+        /* Reduce gap between stats */
+    }
+
+    .kwest-insights-grid {
+        grid-template-columns: repeat(2, 1fr);
+        /* Two columns for insights */
+    }
+
+    .prax-main-grid {
+        grid-template-columns: 1fr;
+        /* Stack main grid vertically */
+    }
+
+    .jiva-prediction-cards {
+        grid-template-columns: 1fr;
+        /* Single column for predictions */
+    }
+
+    .risko-matrix {
+        grid-template-columns: 1fr;
+        /* Single column for risk matrix */
+    }
+
+    .autoza-grid {
+        grid-template-columns: 1fr;
+        /* Single column for autoza cards */
+    }
+
+    .grafi-chart-container {
+        height: 260px;
+        /* Smaller chart height */
+    }
+
+    .chatz-container {
+        max-height: 340px;
+        /* Adjust chat container height */
+    }
+
+    .kwest-insight-card {
+        padding: 20px;
+        /* Reduce padding */
+    }
+
+    .yaro-insight-title {
+        font-size: 15px;
+        /* Smaller title */
+    }
+
+    .zaro-metric-value {
+        font-size: 16px;
+        /* Smaller metric value */
+    }
+}
+
+/* Media Query for 770px */
+@media (max-width: 770px) {
+    .xxam-header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 8px;
+        margin-bottom: 16px;
+    }
+
+    .kraz-content h1 {
+        font-size: 24px;
+        /* Smaller heading */
+    }
+
+    .kraz-content p {
+        font-size: 13px;
+        /* Smaller paragraph text */
+    }
+
+    .epir-actions {
+        flex-direction: row;
+        /* Keep buttons in a row */
+        flex-wrap: wrap;
+        gap: 6px;
+        /* Tighter gap for buttons */
+    }
+
+    .voxx-btn {
+        padding: 6px 12px;
+        /* Smaller button padding */
+        font-size: 12px;
+        /* Smaller button text */
+    }
+
+    .zest-status-bar {
+        padding: 14px;
+        gap: 10px;
+    }
+
+    .quix-pulse {
+        width: 40px;
+        height: 40px;
+        font-size: 18px;
+    }
+
+    .nexo-stats {
+        gap: 20px;
+        /* Further reduce gap */
+    }
+
+    .nexo-stat-value {
+        font-size: 24px;
+        /* Smaller stat value */
+    }
+
+    .kwest-insights-grid {
+        grid-template-columns: 1fr;
+        /* Single column for insights */
+    }
+
+    .prax-main-grid {
+        grid-template-columns: 1fr;
+        /* Stack main grid vertically */
+    }
+
+    .jiva-prediction-cards {
+        grid-template-columns: 1fr;
+        /* Single column for predictions */
+    }
+
+    .risko-matrix {
+        grid-template-columns: 1fr;
+        /* Single column for risk matrix */
+    }
+
+    .autoza-grid {
+        grid-template-columns: 1fr;
+        /* Single column for autoza cards */
+    }
+
+    .grafi-chart-container {
+        height: 240px;
+        /* Smaller chart height */
+    }
+
+    .chatz-container {
+        max-height: 320px;
+        /* Adjust chat container height */
+    }
+
+    .kwest-insight-card {
+        padding: 16px;
+        /* Further reduce padding */
+    }
+
+    .yaro-insight-title {
+        font-size: 14px;
+        /* Smaller title */
+    }
+
+    .yaro-insight-description {
+        font-size: 13px;
+        /* Smaller description */
+    }
+
+    .zaro-metric-value {
+        font-size: 15px;
+        /* Smaller metric value */
+    }
+
+    .autoza-card {
+        padding: 16px;
+        /* Reduce padding */
+    }
+
+    .autoza-title {
+        font-size: 14px;
+        /* Smaller title */
+    }
+}
+
+/* Media Query for 480px */
+@media (max-width: 480px) {
+    .xxam-header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 6px;
+        margin-bottom: 12px;
+    }
+
+    .kraz-content h1 {
+        font-size: 20px;
+        /* Smaller heading */
+    }
+
+    .kraz-content p {
+        font-size: 12px;
+        /* Smaller paragraph text */
+    }
+
+    .epir-actions {
+        flex-direction: row;
+        /* Keep buttons in a row */
+        flex-wrap: wrap;
+        gap: 4px;
+        /* Tighter gap for buttons */
+    }
+
+    .voxx-btn {
+        padding: 5px 10px;
+        /* Smaller button padding */
+        font-size: 11px;
+        /* Smaller button text */
+    }
+
+    .voxx-btn svg {
+        width: 14px;
+        /* Smaller SVG icons */
+        height: 14px;
+    }
+
+    .zest-status-bar {
+        padding: 12px;
+        gap: 8px;
+    }
+
+    .quix-pulse {
+        width: 36px;
+        height: 36px;
+        font-size: 16px;
+    }
+
+    .nexo-stats {
+        gap: 16px;
+        /* Further reduce gap */
+    }
+
+    .nexo-stat-value {
+        font-size: 20px;
+        /* Smaller stat value */
+    }
+
+    .kwest-insights-grid {
+        grid-template-columns: 1fr;
+        /* Single column for insights */
+    }
+
+    .prax-main-grid {
+        grid-template-columns: 1fr;
+        /* Stack main grid vertically */
+    }
+
+    .jiva-prediction-cards {
+        grid-template-columns: 1fr;
+        /* Single column for predictions */
+    }
+
+    .risko-matrix {
+        grid-template-columns: 1fr;
+        /* Single column for risk matrix */
+    }
+
+    .autoza-grid {
+        grid-template-columns: 1fr;
+        /* Single column for autoza cards */
+    }
+
+    .grafi-chart-container {
+        height: 220px;
+        /* Smaller chart height */
+    }
+
+    .chatz-container {
+        max-height: 300px;
+        /* Adjust chat container height */
+    }
+
+    .kwest-insight-card {
+        padding: 12px;
+        /* Further reduce padding */
+    }
+
+    .yaro-insight-title {
+        font-size: 13px;
+        /* Smaller title */
+    }
+
+    .yaro-insight-description {
+        font-size: 12px;
+        /* Smaller description */
+    }
+
+    .zaro-metric-value {
+        font-size: 14px;
+        /* Smaller metric value */
+    }
+
+    .autoza-card {
+        padding: 12px;
+        /* Further reduce padding */
+    }
+
+    .autoza-title {
+        font-size: 13px;
+        /* Smaller title */
+    }
+
+    .autoza-description {
+        font-size: 12px;
+        /* Smaller description */
+    }
+
+    .membrix-item {
+        padding: 12px;
+        /* Reduce padding */
+    }
+
+    .membrix-avatar {
+        width: 32px;
+        height: 32px;
+    }
+}
+
+/* Media Query for 420px */
+@media (max-width: 420px) {
+    .xxam-header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 4px;
+        margin-bottom: 10px;
+    }
+
+    .kraz-content h1 {
+        font-size: 18px;
+        /* Smaller heading */
+    }
+
+    .kraz-content p {
+        font-size: 11px;
+        /* Smaller paragraph text */
+    }
+
+    .epir-actions {
+        flex-direction: row;
+        /* Keep buttons in a row */
+        flex-wrap: wrap;
+        gap: 3px;
+        /* Minimal gap for buttons */
+    }
+
+    .voxx-btn {
+        padding: 4px 8px;
+        /* Minimal button padding */
+        font-size: 10px;
+        /* Smaller button text */
+    }
+
+    .voxx-btn svg {
+        width: 12px;
+        /* Smaller SVG icons */
+        height: 12px;
+    }
+
+    .zest-status-bar {
+        padding: 10px;
+        gap: 6px;
+    }
+
+    .quix-pulse {
+        width: 32px;
+        height: 32px;
+        font-size: 14px;
+    }
+
+    .nexo-stats {
+        gap: 12px;
+        /* Further reduce gap */
+    }
+
+    .nexo-stat-value {
+        font-size: 18px;
+        /* Smaller stat value */
+    }
+
+    .kwest-insights-grid {
+        grid-template-columns: 1fr;
+        /* Single column for insights */
+    }
+
+    .prax-main-grid {
+        grid-template-columns: 1fr;
+        /* Stack main grid vertically */
+    }
+
+    .jiva-prediction-cards {
+        grid-template-columns: 1fr;
+        /* Single column for predictions */
+    }
+
+    .risko-matrix {
+        grid-template-columns: 1fr;
+        /* Single column for risk matrix */
+    }
+
+    .autoza-grid {
+        grid-template-columns: 1fr;
+        /* Single column for autoza cards */
+    }
+
+    .grafi-chart-container {
+        height: 200px;
+        /* Smaller chart height */
+    }
+
+    .chatz-container {
+        max-height: 280px;
+        /* Adjust chat container height */
+    }
+
+    .kwest-insight-card {
+        padding: 10px;
+        /* Further reduce padding */
+    }
+
+    .yaro-insight-title {
+        font-size: 12px;
+        /* Smaller title */
+    }
+
+    .yaro-insight-description {
+        font-size: 11px;
+        /* Smaller description */
+    }
+
+    .zaro-metric-value {
+        font-size: 13px;
+        /* Smaller metric value */
+    }
+
+    .autoza-card {
+        padding: 10px;
+        /* Further reduce padding */
+    }
+
+    .autoza-title {
+        font-size: 12px;
+        /* Smaller title */
+    }
+
+    .autoza-description {
+        font-size: 11px;
+        /* Smaller description */
+    }
+
+    .membrix-item {
+        padding: 10px;
+        /* Reduce padding */
+    }
+
+    .membrix-avatar {
+        width: 28px;
+        height: 28px;
+    }
+}
+
+/* Media Query for 360px */
+@media (max-width: 360px) {
+    .xxam-header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 3px;
+        margin-bottom: 8px;
+    }
+
+    .kraz-content h1 {
+        font-size: 16px;
+        /* Smaller heading */
+    }
+
+    .kraz-content p {
+        font-size: 10px;
+        /* Smaller paragraph text */
+    }
+
+    .epir-actions {
+        flex-direction: row;
+        /* Keep buttons in a row */
+        flex-wrap: wrap;
+        gap: 2px;
+        /* Minimal gap for buttons */
+    }
+
+    .voxx-btn {
+        padding: 3px 6px;
+        /* Minimal button padding */
+        font-size: 9px;
+        /* Smaller button text */
+    }
+
+    .voxx-btn svg {
+        width: 10px;
+        /* Smaller SVG icons */
+        height: 10px;
+    }
+
+    .zest-status-bar {
+        padding: 8px;
+        gap: 4px;
+    }
+
+    .quix-pulse {
+        width: 28px;
+        height: 28px;
+        font-size: 12px;
+    }
+
+    .nexo-stats {
+        gap: 10px;
+        /* Minimal gap */
+    }
+
+    .nexo-stat-value {
+        font-size: 16px;
+        /* Smaller stat value */
+    }
+
+    .kwest-insights-grid {
+        grid-template-columns: 1fr;
+        /* Single column for insights */
+    }
+
+    .prax-main-grid {
+        grid-template-columns: 1fr;
+        /* Stack main grid vertically */
+    }
+
+    .jiva-prediction-cards {
+        grid-template-columns: 1fr;
+        /* Single column for predictions */
+    }
+
+    .risko-matrix {
+        grid-template-columns: 1fr;
+        /* Single column for risk matrix */
+    }
+
+    .autoza-grid {
+        grid-template-columns: 1fr;
+        /* Single column for autoza cards */
+    }
+
+    .grafi-chart-container {
+        height: 180px;
+        /* Smaller chart height */
+    }
+
+    .chatz-container {
+        max-height: 260px;
+        /* Adjust chat container height */
+    }
+
+    .kwest-insight-card {
+        padding: 8px;
+        /* Minimal padding */
+    }
+
+    .yaro-insight-title {
+        font-size: 11px;
+        /* Smaller title */
+    }
+
+    .yaro-insight-description {
+        font-size: 10px;
+        /* Smaller description */
+    }
+
+    .zaro-metric-value {
+        font-size: 12px;
+        /* Smaller metric value */
+    }
+
+    .autoza-card {
+        padding: 8px;
+        /* Minimal padding */
+    }
+
+    .autoza-title {
+        font-size: 11px;
+        /* Smaller title */
+    }
+
+    .autoza-description {
+        font-size: 10px;
+        /* Smaller description */
+    }
+
+    .membrix-item {
+        padding: 8px;
+        /* Minimal padding */
+    }
+
+    .membrix-avatar {
+        width: 24px;
+        height: 24px;
+    }
+}
 
 
 
@@ -13641,7 +15966,667 @@ table td {
 
 
 
+/* Media Query for 1200px */
+@media (max-width: 1200px) {
+    .ride-header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 12px;
+        margin-bottom: 24px;
+    }
 
+    .vibe-content {
+        font-size: 18px;
+        /* Slightly smaller heading */
+    }
+
+    .vibe-content p {
+        font-size: 14px;
+        /* Slightly smaller paragraph */
+    }
+
+    .flow-actions {
+        flex-wrap: wrap;
+        gap: 10px;
+        /* Tighter gap for buttons */
+    }
+
+    .rampa-filters {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 12px;
+        padding: 16px;
+    }
+
+    .metrics-wave {
+        grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+        /* Smaller metric cards */
+    }
+
+    .charts-flow {
+        grid-template-columns: 1fr;
+        /* Stack charts vertically */
+    }
+
+    .segment-rush {
+        grid-template-columns: repeat(2, 1fr);
+        /* Two columns for segments */
+    }
+
+    .lifecycle-grid {
+        grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+        /* Smaller lifecycle cards */
+    }
+
+    .demo-flow {
+        grid-template-columns: repeat(2, 1fr);
+        /* Two columns for demo cards */
+    }
+
+    .insights-grid {
+        grid-template-columns: repeat(2, 1fr);
+        /* Two columns for insights */
+    }
+
+    .vibe-heatmap-grid {
+        grid-template-columns: repeat(4, 1fr);
+        /* Reduce heatmap columns */
+    }
+
+    .flow-canvas {
+        height: 280px;
+        /* Slightly smaller chart height */
+    }
+
+    .vibe-performer-list {
+        gap: 10px;
+        /* Reduce gap between performers */
+    }
+}
+
+/* Media Query for 1028px */
+@media (max-width: 1028px) {
+    .ride-header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 10px;
+        margin-bottom: 20px;
+    }
+
+    .vibe-content {
+        font-size: 16px;
+        /* Smaller heading */
+    }
+
+    .vibe-content p {
+        font-size: 13px;
+        /* Smaller paragraph text */
+    }
+
+    .flow-actions {
+        flex-wrap: wrap;
+        gap: 8px;
+        /* Tighter gap for buttons */
+    }
+
+    .pulse-btn {
+        padding: 8px 16px;
+        /* Smaller button padding */
+        font-size: 13px;
+        /* Smaller button text */
+    }
+
+    .rampa-filters {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 10px;
+        padding: 14px;
+    }
+
+    .metrics-wave {
+        grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+        /* Smaller metric cards */
+    }
+
+    .charts-flow {
+        grid-template-columns: 1fr;
+        /* Stack charts vertically */
+    }
+
+    .segment-rush {
+        grid-template-columns: repeat(2, 1fr);
+        /* Two columns for segments */
+    }
+
+    .lifecycle-grid {
+        grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+        /* Smaller lifecycle cards */
+    }
+
+    .demo-flow {
+        grid-template-columns: 1fr;
+        /* Single column for demo cards */
+    }
+
+    .insights-grid {
+        grid-template-columns: 1fr;
+        /* Single column for insights */
+    }
+
+    .vibe-heatmap-grid {
+        grid-template-columns: repeat(3, 1fr);
+        /* Reduce heatmap columns */
+    }
+
+    .flow-canvas {
+        height: 260px;
+        /* Smaller chart height */
+    }
+
+    .vibe-performer-list {
+        gap: 8px;
+        /* Reduce gap between performers */
+    }
+
+    .vibe-cohort-table th,
+    .vibe-cohort-table td {
+        padding: 10px;
+        /* Reduce table cell padding */
+    }
+
+    .vibe-segment {
+        padding: 16px;
+        /* Reduce padding */
+    }
+}
+
+/* Media Query for 770px */
+@media (max-width: 770px) {
+    .ride-header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 8px;
+        margin-bottom: 16px;
+    }
+
+    .vibe-content {
+        font-size: 14px;
+        /* Smaller heading */
+    }
+
+    .vibe-content p {
+        font-size: 12px;
+        /* Smaller paragraph text */
+    }
+
+    .flow-actions {
+        flex-direction: row;
+        /* Keep buttons in a row */
+        flex-wrap: wrap;
+        gap: 6px;
+        /* Tighter gap for buttons */
+    }
+
+    .pulse-btn {
+        padding: 6px 12px;
+        /* Smaller button padding */
+        font-size: 12px;
+        /* Smaller button text */
+    }
+
+    .rampa-filters {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 8px;
+        padding: 12px;
+    }
+
+    .flow-select {
+        padding: 8px 12px;
+        /* Smaller select padding */
+        font-size: 13px;
+        /* Smaller select text */
+    }
+
+    .metrics-wave {
+        grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+        /* Smaller metric cards */
+    }
+
+    .charts-flow {
+        grid-template-columns: 1fr;
+        /* Stack charts vertically */
+    }
+
+    .segment-rush {
+        grid-template-columns: 1fr;
+        /* Single column for segments */
+    }
+
+    .lifecycle-grid {
+        grid-template-columns: 1fr;
+        /* Single column for lifecycle cards */
+    }
+
+    .demo-flow {
+        grid-template-columns: 1fr;
+        /* Single column for demo cards */
+    }
+
+    .insights-grid {
+        grid-template-columns: 1fr;
+        /* Single column for insights */
+    }
+
+    .vibe-heatmap-grid {
+        grid-template-columns: repeat(2, 1fr);
+        /* Reduce heatmap columns */
+    }
+
+    .flow-canvas {
+        height: 240px;
+        /* Smaller chart height */
+    }
+
+    .vibe-performer-list {
+        gap: 6px;
+        /* Reduce gap between performers */
+    }
+
+    .vibe-cohort-table th,
+    .vibe-cohort-table td {
+        padding: 8px;
+        /* Reduce table cell padding */
+    }
+
+    .vibe-segment {
+        padding: 14px;
+        /* Reduce padding */
+    }
+
+    .performer-avatar {
+        width: 40px;
+        height: 40px;
+    }
+}
+
+/* Media Query for 480px */
+@media (max-width: 480px) {
+    .ride-header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 6px;
+        margin-bottom: 12px;
+    }
+
+    .vibe-content {
+        font-size: 12px;
+        /* Smaller heading */
+    }
+
+    .vibe-content p {
+        font-size: 11px;
+        /* Smaller paragraph text */
+    }
+
+    .flow-actions {
+        flex-direction: row;
+        /* Keep buttons in a row */
+        flex-wrap: wrap;
+        gap: 4px;
+        /* Tighter gap for buttons */
+    }
+
+    .pulse-btn {
+        padding: 5px 10px;
+        /* Smaller button padding */
+        font-size: 11px;
+        /* Smaller button text */
+    }
+
+    .pulse-btn svg {
+        width: 14px;
+        /* Smaller SVG icons */
+        height: 14px;
+    }
+
+    .rampa-filters {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 6px;
+        padding: 10px;
+    }
+
+    .flow-select {
+        padding: 6px 10px;
+        /* Smaller select padding */
+        font-size: 12px;
+        /* Smaller select text */
+    }
+
+    .metrics-wave {
+        grid-template-columns: 1fr;
+        /* Single column for metric cards */
+    }
+
+    .charts-flow {
+        grid-template-columns: 1fr;
+        /* Stack charts vertically */
+    }
+
+    .segment-rush {
+        grid-template-columns: 1fr;
+        /* Single column for segments */
+    }
+
+    .lifecycle-grid {
+        grid-template-columns: 1fr;
+        /* Single column for lifecycle cards */
+    }
+
+    .demo-flow {
+        grid-template-columns: 1fr;
+        /* Single column for demo cards */
+    }
+
+    .insights-grid {
+        grid-template-columns: 1fr;
+        /* Single column for insights */
+    }
+
+    .vibe-heatmap-grid {
+        grid-template-columns: repeat(2, 1fr);
+        /* Reduce heatmap columns */
+    }
+
+    .flow-canvas {
+        height: 220px;
+        /* Smaller chart height */
+    }
+
+    .vibe-performer-list {
+        gap: 4px;
+        /* Reduce gap between performers */
+    }
+
+    .vibe-cohort-table th,
+    .vibe-cohort-table td {
+        padding: 6px;
+        /* Reduce table cell padding */
+    }
+
+    .vibe-segment {
+        padding: 12px;
+        /* Reduce padding */
+    }
+
+    .performer-avatar {
+        width: 36px;
+        height: 36px;
+    }
+
+    .flow-icon {
+        width: 28px;
+        height: 28px;
+    }
+
+    .metric-flow {
+        font-size: 26px;
+        /* Smaller metric number */
+    }
+}
+
+/* Media Query for 420px */
+@media (max-width: 420px) {
+    .ride-header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 4px;
+        margin-bottom: 10px;
+    }
+
+    .vibe-content {
+        font-size: 11px;
+        /* Smaller heading */
+    }
+
+    .vibe-content p {
+        font-size: 10px;
+        /* Smaller paragraph text */
+    }
+
+    .flow-actions {
+        flex-direction: row;
+        /* Keep buttons in a row */
+        flex-wrap: wrap;
+        gap: 3px;
+        /* Minimal gap for buttons */
+    }
+
+    .pulse-btn {
+        padding: 4px 8px;
+        /* Minimal button padding */
+        font-size: 10px;
+        /* Smaller button text */
+    }
+
+    .pulse-btn svg {
+        width: 12px;
+        /* Smaller SVG icons */
+        height: 12px;
+    }
+
+    .rampa-filters {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 4px;
+        padding: 8px;
+    }
+
+    .flow-select {
+        padding: 5px 8px;
+        /* Minimal select padding */
+        font-size: 11px;
+        /* Smaller select text */
+    }
+
+    .metrics-wave {
+        grid-template-columns: 1fr;
+        /* Single column for metric cards */
+    }
+
+    .charts-flow {
+        grid-template-columns: 1fr;
+        /* Stack charts vertically */
+    }
+
+    .segment-rush {
+        grid-template-columns: 1fr;
+        /* Single column for segments */
+    }
+
+    .lifecycle-grid {
+        grid-template-columns: 1fr;
+        /* Single column for lifecycle cards */
+    }
+
+    .demo-flow {
+        grid-template-columns: 1fr;
+        /* Single column for demo cards */
+    }
+
+    .insights-grid {
+        grid-template-columns: 1fr;
+        /* Single column for insights */
+    }
+
+    .vibe-heatmap-grid {
+        grid-template-columns: repeat(2, 1fr);
+        /* Reduce heatmap columns */
+    }
+
+    .flow-canvas {
+        height: 200px;
+        /* Smaller chart height */
+    }
+
+    .vibe-performer-list {
+        gap: 3px;
+        /* Minimal gap between performers */
+    }
+
+    .vibe-cohort-table th,
+    .vibe-cohort-table td {
+        padding: 5px;
+        /* Minimal table cell padding */
+    }
+
+    .vibe-segment {
+        padding: 10px;
+        /* Reduce padding */
+    }
+
+    .performer-avatar {
+        width: 32px;
+        height: 32px;
+    }
+
+    .flow-icon {
+        width: 24px;
+        height: 24px;
+    }
+
+    .metric-flow {
+        font-size: 24px;
+        /* Smaller metric number */
+    }
+}
+
+/* Media Query for 360px */
+@media (max-width: 360px) {
+    .ride-header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 3px;
+        margin-bottom: 8px;
+    }
+
+    .vibe-content {
+        font-size: 10px;
+        /* Smaller heading */
+    }
+
+    .vibe-content p {
+        font-size: 9px;
+        /* Smaller paragraph text */
+    }
+
+    .flow-actions {
+        flex-direction: row;
+        /* Keep buttons in a row */
+        flex-wrap: wrap;
+        gap: 2px;
+        /* Minimal gap for buttons */
+    }
+
+    .pulse-btn {
+        padding: 3px 6px;
+        /* Minimal button padding */
+        font-size: 9px;
+        /* Smaller button text */
+    }
+
+    .pulse-btn svg {
+        width: 10px;
+        /* Smaller SVG icons */
+        height: 10px;
+    }
+
+    .rampa-filters {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 3px;
+        padding: 6px;
+    }
+
+    .flow-select {
+        padding: 4px 6px;
+        /* Minimal select padding */
+        font-size: 10px;
+        /* Smaller select text */
+    }
+
+    .metrics-wave {
+        grid-template-columns: 1fr;
+        /* Single column for metric cards */
+    }
+
+    .charts-flow {
+        grid-template-columns: 1fr;
+        /* Stack charts vertically */
+    }
+
+    .segment-rush {
+        grid-template-columns: 1fr;
+        /* Single column for segments */
+    }
+
+    .lifecycle-grid {
+        grid-template-columns: 1fr;
+        /* Single column for lifecycle cards */
+    }
+
+    .demo-flow {
+        grid-template-columns: 1fr;
+        /* Single column for demo cards */
+    }
+
+    .insights-grid {
+        grid-template-columns: 1fr;
+        /* Single column for insights */
+    }
+
+    .vibe-heatmap-grid {
+        grid-template-columns: repeat(2, 1fr);
+        /* Reduce heatmap columns */
+    }
+
+    .flow-canvas {
+        height: 180px;
+        /* Smaller chart height */
+    }
+
+    .vibe-performer-list {
+        gap: 2px;
+        /* Minimal gap between performers */
+    }
+
+    .vibe-cohort-table th,
+    .vibe-cohort-table td {
+        padding: 4px;
+        /* Minimal table cell padding */
+    }
+
+    .vibe-segment {
+        padding: 8px;
+        /* Minimal padding */
+    }
+
+    .performer-avatar {
+        width: 28px;
+        height: 28px;
+    }
+
+    .flow-icon {
+        width: 20px;
+        height: 20px;
+    }
+
+    .metric-flow {
+        font-size: 22px;
+        /* Smaller metric number */
+    }
+}
 
 
 
@@ -14642,3 +17627,700 @@ table td {
                           width: 100%;
                       }
                   }
+
+
+
+/* Media Query for 1200px */
+@media (max-width: 1200px) {
+    .vitae-header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 12px;
+        margin-bottom: 24px;
+    }
+
+    .vitae-content h1 {
+        font-size: 28px;
+        /* Slightly smaller heading */
+    }
+
+    .vitae-content p {
+        font-size: 15px;
+        /* Slightly smaller paragraph */
+    }
+
+    .vitae-actions {
+        flex-wrap: wrap;
+        gap: 10px;
+        /* Tighter gap for buttons */
+    }
+
+    .aura-banner {
+        padding: 24px;
+    }
+
+    .aura-title {
+        font-size: 22px;
+        /* Smaller title */
+    }
+
+    .aura-description {
+        font-size: 15px;
+        /* Smaller description */
+    }
+
+    .aura-stats {
+        gap: 32px;
+        /* Reduce gap between stats */
+    }
+
+    .nexus-grid {
+        grid-template-columns: 1fr;
+        /* Stack grid vertically */
+    }
+
+    .metrics-matrix {
+        grid-template-columns: repeat(2, 1fr);
+        /* Two columns for metrics */
+    }
+
+    .insights-matrix {
+        grid-template-columns: 1fr;
+        /* Single column for insights */
+    }
+
+    .vellum-card {
+        padding: 20px;
+        /* Reduce padding */
+    }
+
+    .chart-vessel {
+        height: 320px;
+        /* Slightly smaller chart height */
+    }
+
+    .veil-content {
+        max-width: 540px;
+        /* Smaller modal */
+    }
+}
+
+/* Media Query for 1028px */
+@media (max-width: 1028px) {
+    .vitae-header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 10px;
+        margin-bottom: 20px;
+    }
+
+    .vitae-content h1 {
+        font-size: 26px;
+        /* Smaller heading */
+    }
+
+    .vitae-content p {
+        font-size: 14px;
+        /* Smaller paragraph text */
+    }
+
+    .vitae-actions {
+        flex-wrap: wrap;
+        gap: 8px;
+        /* Tighter gap for buttons */
+    }
+
+    .lumen-btn {
+        padding: 8px 16px;
+        /* Smaller button padding */
+        font-size: 13px;
+        /* Smaller button text */
+    }
+
+    .aura-banner {
+        padding: 20px;
+    }
+
+    .aura-title {
+        font-size: 20px;
+        /* Smaller title */
+    }
+
+    .aura-description {
+        font-size: 14px;
+        /* Smaller description */
+    }
+
+    .aura-stats {
+        gap: 24px;
+        /* Reduce gap between stats */
+    }
+
+    .stat-pulse {
+        font-size: 28px;
+        /* Smaller stat value */
+    }
+
+    .nexus-grid {
+        grid-template-columns: 1fr;
+        /* Stack grid vertically */
+    }
+
+    .metrics-matrix {
+        grid-template-columns: repeat(2, 1fr);
+        /* Two columns for metrics */
+    }
+
+    .insights-matrix {
+        grid-template-columns: 1fr;
+        /* Single column for insights */
+    }
+
+    .vellum-card {
+        padding: 16px;
+        /* Reduce padding */
+    }
+
+    .chart-vessel {
+        height: 300px;
+        /* Smaller chart height */
+    }
+
+    .veil-content {
+        max-width: 480px;
+        /* Smaller modal */
+    }
+
+    .report-crafter {
+        padding: 24px;
+        /* Reduce padding */
+    }
+
+    .report-title-segment h2 {
+        font-size: 24px;
+        /* Smaller heading */
+    }
+}
+
+/* Media Query for 770px */
+@media (max-width: 770px) {
+    .vitae-header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 8px;
+        margin-bottom: 16px;
+    }
+
+    .vitae-content h1 {
+        font-size: 22px;
+        /* Smaller heading */
+    }
+
+    .vitae-content p {
+        font-size: 13px;
+        /* Smaller paragraph text */
+    }
+
+    .vitae-actions {
+        flex-direction: row;
+        /* Keep buttons in a row */
+        flex-wrap: wrap;
+        gap: 6px;
+        /* Tighter gap for buttons */
+    }
+
+    .lumen-btn {
+        padding: 6px 12px;
+        /* Smaller button padding */
+        font-size: 12px;
+        /* Smaller button text */
+    }
+
+    .aura-banner {
+        padding: 16px;
+    }
+
+    .aura-title {
+        font-size: 18px;
+        /* Smaller title */
+    }
+
+    .aura-description {
+        font-size: 13px;
+        /* Smaller description */
+    }
+
+    .aura-stats {
+        gap: 16px;
+        /* Further reduce gap */
+    }
+
+    .stat-pulse {
+        font-size: 24px;
+        /* Smaller stat value */
+    }
+
+    .nexus-grid {
+        grid-template-columns: 1fr;
+        /* Stack grid vertically */
+    }
+
+    .metrics-matrix {
+        grid-template-columns: 1fr;
+        /* Single column for metrics */
+    }
+
+    .insights-matrix {
+        grid-template-columns: 1fr;
+        /* Single column for insights */
+    }
+
+    .vellum-card {
+        padding: 14px;
+        /* Reduce padding */
+    }
+
+    .chart-vessel {
+        height: 280px;
+        /* Smaller chart height */
+    }
+
+    .veil-content {
+        max-width: 420px;
+        /* Smaller modal */
+    }
+
+    .report-crafter {
+        padding: 20px;
+        /* Reduce padding */
+    }
+
+    .report-title-segment h2 {
+        font-size: 22px;
+        /* Smaller heading */
+    }
+
+    .template-node {
+        padding: 14px;
+        /* Reduce padding */
+    }
+
+    .template-emblem {
+        width: 36px;
+        height: 36px;
+    }
+
+    .data-grid th,
+    .data-grid td {
+        padding: 10px;
+        /* Reduce table cell padding */
+    }
+}
+
+/* Media Query for 480px */
+@media (max-width: 480px) {
+    .vitae-header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 6px;
+        margin-bottom: 12px;
+    }
+
+    .vitae-content h1 {
+        font-size: 20px;
+        /* Smaller heading */
+    }
+
+    .vitae-content p {
+        font-size: 12px;
+        /* Smaller paragraph text */
+    }
+
+    .vitae-actions {
+        flex-direction: row;
+        /* Keep buttons in a row */
+        flex-wrap: wrap;
+        gap: 4px;
+        /* Tighter gap for buttons */
+    }
+
+    .lumen-btn {
+        padding: 5px 10px;
+        /* Smaller button padding */
+        font-size: 11px;
+        /* Smaller button text */
+    }
+
+    .lumen-btn svg {
+        width: 14px;
+        /* Smaller SVG icons */
+        height: 14px;
+    }
+
+    .aura-banner {
+        padding: 12px;
+    }
+
+    .aura-title {
+        font-size: 16px;
+        /* Smaller title */
+    }
+
+    .aura-description {
+        font-size: 12px;
+        /* Smaller description */
+    }
+
+    .aura-stats {
+        gap: 12px;
+        /* Further reduce gap */
+    }
+
+    .stat-pulse {
+        font-size: 20px;
+        /* Smaller stat value */
+    }
+
+    .nexus-grid {
+        grid-template-columns: 1fr;
+        /* Stack grid vertically */
+    }
+
+    .metrics-matrix {
+        grid-template-columns: 1fr;
+        /* Single column for metrics */
+    }
+
+    .insights-matrix {
+        grid-template-columns: 1fr;
+        /* Single column for insights */
+    }
+
+    .vellum-card {
+        padding: 12px;
+        /* Reduce padding */
+    }
+
+    .chart-vessel {
+        height: 260px;
+        /* Smaller chart height */
+    }
+
+    .veil-content {
+        max-width: 340px;
+        /* Smaller modal */
+    }
+
+    .report-crafter {
+        padding: 16px;
+        /* Reduce padding */
+    }
+
+    .report-title-segment h2 {
+        font-size: 20px;
+        /* Smaller heading */
+    }
+
+    .template-node {
+        padding: 12px;
+        /* Reduce padding */
+    }
+
+    .template-emblem {
+        width: 32px;
+        height: 32px;
+    }
+
+    .data-grid th,
+    .data-grid td {
+        padding: 8px;
+        /* Reduce table cell padding */
+    }
+
+    .suggestion-node {
+        padding: 12px;
+        /* Reduce padding */
+    }
+
+    .icon-pulse {
+        width: 30px;
+        height: 30px;
+    }
+
+    .icon-pulse svg {
+        width: 14px;
+        height: 14px;
+    }
+}
+
+/* Media Query for 420px */
+@media (max-width: 420px) {
+    .vitae-header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 4px;
+        margin-bottom: 10px;
+    }
+
+    .vitae-content h1 {
+        font-size: 18px;
+        /* Smaller heading */
+    }
+
+    .vitae-content p {
+        font-size: 11px;
+        /* Smaller paragraph text */
+    }
+
+    .vitae-actions {
+        flex-direction: row;
+        /* Keep buttons in a row */
+        flex-wrap: wrap;
+        gap: 3px;
+        /* Minimal gap for buttons */
+    }
+
+    .lumen-btn {
+        padding: 4px 8px;
+        /* Minimal button padding */
+        font-size: 10px;
+        /* Smaller button text */
+    }
+
+    .lumen-btn svg {
+        width: 12px;
+        /* Smaller SVG icons */
+        height: 12px;
+    }
+
+    .aura-banner {
+        padding: 10px;
+    }
+
+    .aura-title {
+        font-size: 14px;
+        /* Smaller title */
+    }
+
+    .aura-description {
+        font-size: 11px;
+        /* Smaller description */
+    }
+
+    .aura-stats {
+        gap: 10px;
+        /* Further reduce gap */
+    }
+
+    .stat-pulse {
+        font-size: 18px;
+        /* Smaller stat value */
+    }
+
+    .nexus-grid {
+        grid-template-columns: 1fr;
+        /* Stack grid vertically */
+    }
+
+    .metrics-matrix {
+        grid-template-columns: 1fr;
+        /* Single column for metrics */
+    }
+
+    .insights-matrix {
+        grid-template-columns: 1fr;
+        /* Single column for insights */
+    }
+
+    .vellum-card {
+        padding: 10px;
+        /* Reduce padding */
+    }
+
+    .chart-vessel {
+        height: 240px;
+        /* Smaller chart height */
+    }
+
+    .veil-content {
+        max-width: 320px;
+        /* Smaller modal */
+    }
+
+    .report-crafter {
+        padding: 14px;
+        /* Reduce padding */
+    }
+
+    .report-title-segment h2 {
+        font-size: 18px;
+        /* Smaller heading */
+    }
+
+    .template-node {
+        padding: 10px;
+        /* Reduce padding */
+    }
+
+    .template-emblem {
+        width: 28px;
+        height: 28px;
+    }
+
+    .data-grid th,
+    .data-grid td {
+        padding: 6px;
+        /* Reduce table cell padding */
+    }
+
+    .suggestion-node {
+        padding: 10px;
+        /* Reduce padding */
+    }
+
+    .icon-pulse {
+        width: 28px;
+        height: 28px;
+    }
+
+    .icon-pulse svg {
+        width: 12px;
+        height: 12px;
+    }
+}
+
+/* Media Query for 360px */
+@media (max-width: 360px) {
+    .vitae-header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 3px;
+        margin-bottom: 8px;
+    }
+
+    .vitae-content h1 {
+        font-size: 16px;
+        /* Smaller heading */
+    }
+
+    .vitae-content p {
+        font-size: 10px;
+        /* Smaller paragraph text */
+    }
+
+    .vitae-actions {
+        flex-direction: row;
+        /* Keep buttons in a row */
+        flex-wrap: wrap;
+        gap: 2px;
+        /* Minimal gap for buttons */
+    }
+
+    .lumen-btn {
+        padding: 3px 6px;
+        /* Minimal button padding */
+        font-size: 9px;
+        /* Smaller button text */
+    }
+
+    .lumen-btn svg {
+        width: 10px;
+        /* Smaller SVG icons */
+        height: 10px;
+    }
+
+    .aura-banner {
+        padding: 8px;
+    }
+
+    .aura-title {
+        font-size: 12px;
+        /* Smaller title */
+    }
+
+    .aura-description {
+        font-size: 10px;
+        /* Smaller description */
+    }
+
+    .aura-stats {
+        gap: 8px;
+        /* Minimal gap */
+    }
+
+    .stat-pulse {
+        font-size: 16px;
+        /* Smaller stat value */
+    }
+
+    .nexus-grid {
+        grid-template-columns: 1fr;
+        /* Stack grid vertically */
+    }
+
+    .metrics-matrix {
+        grid-template-columns: 1fr;
+        /* Single column for metrics */
+    }
+
+    .insights-matrix {
+        grid-template-columns: 1fr;
+        /* Single column for insights */
+    }
+
+    .vellum-card {
+        padding: 8px;
+        /* Minimal padding */
+    }
+
+    .chart-vessel {
+        height: 220px;
+        /* Smaller chart height */
+    }
+
+    .veil-content {
+        max-width: 300px;
+        /* Smaller modal */
+    }
+
+    .report-crafter {
+        padding: 12px;
+        /* Minimal padding */
+    }
+
+    .report-title-segment h2 {
+        font-size: 16px;
+        /* Smaller heading */
+    }
+
+    .template-node {
+        padding: 8px;
+        /* Minimal padding */
+    }
+
+    .template-emblem {
+        width: 24px;
+        height: 24px;
+    }
+
+    .data-grid th,
+    .data-grid td {
+        padding: 4px;
+        /* Minimal table cell padding */
+    }
+
+    .suggestion-node {
+        padding: 8px;
+        /* Minimal padding */
+    }
+
+    .icon-pulse {
+        width: 24px;
+        height: 24px;
+    }
+
+    .icon-pulse svg {
+        width: 10px;
+        height: 10px;
+    }
+}
