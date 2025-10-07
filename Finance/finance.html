@@ -1,0 +1,996 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Church Finance</title>
+    <link rel="stylesheet" href="../style.css">
+</head>
+
+<body>
+    <div class="container">
+        <!-- Sidebar -->
+        <div class="sidebar">
+            <div class="logo">
+                <div class="logo-icon">
+                    <img src="../church.png" alt="ChurchFlow Logo">
+                </div>
+
+
+                <div class="logo-text">
+                    <h3>Church</h3>
+                    <p>Management System</p>
+                </div>
+            </div>
+            <div class="sidebar-content">
+                <div class="menu-section">
+                    <div class="menu-label">Main Menu</div>
+                    <a href="../index.html" class="menu-item ">
+                        <span><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                stroke-linejoin="round" class="lucide lucide-layout-dashboard h-5 w-5"
+                                data-lov-id="src/components/AppSidebar.tsx:110:22" data-lov-name="item.icon"
+                                data-component-path="src/components/AppSidebar.tsx" data-component-line="110"
+                                data-component-file="AppSidebar.tsx" data-component-name="item.icon"
+                                data-component-content="%7B%22className%22%3A%22h-5%20w-5%22%7D">
+                                <rect width="7" height="9" x="3" y="3" rx="1"></rect>
+                                <rect width="7" height="5" x="14" y="3" rx="1"></rect>
+                                <rect width="7" height="9" x="14" y="12" rx="1"></rect>
+                                <rect width="7" height="5" x="3" y="16" rx="1"></rect>
+                            </svg></span>
+                        <span>Dashboard</span>
+                    </a>
+                    <a href="../Members/members.html" class="menu-item">
+                        <span>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                stroke-linejoin="round" class="lucide lucide-users h-5 w-5"
+                                data-lov-id="src/components/AppSidebar.tsx:110:22" data-lov-name="item.icon"
+                                data-component-path="src/components/AppSidebar.tsx" data-component-line="110"
+                                data-component-file="AppSidebar.tsx" data-component-name="item.icon"
+                                data-component-content="%7B%22className%22%3A%22h-5%20w-5%22%7D">
+                                <path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"></path>
+                                <circle cx="9" cy="7" r="4"></circle>
+                                <path d="M22 21v-2a4 4 0 0 0-3-3.87"></path>
+                                <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
+                            </svg>
+                        </span>
+                        <span>Members</span>
+                    </a>
+                    <a href="../Events/events.html" class="menu-item ">
+                        <span>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                stroke-linejoin="round" class="lucide lucide-calendar h-5 w-5"
+                                data-lov-id="src/components/AppSidebar.tsx:110:22" data-lov-name="item.icon"
+                                data-component-path="src/components/AppSidebar.tsx" data-component-line="110"
+                                data-component-file="AppSidebar.tsx" data-component-name="item.icon"
+                                data-component-content="%7B%22className%22%3A%22h-5%20w-5%22%7D">
+                                <path d="M8 2v4"></path>
+                                <path d="M16 2v4"></path>
+                                <rect width="18" height="18" x="3" y="4" rx="2"></rect>
+                                <path d="M3 10h18"></path>
+                            </svg>
+                        </span>
+                        <span>Events</span>
+                    </a>
+                    <a href="#" class="menu-item active">
+                        <span>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                stroke-linejoin="round" class="lucide lucide-dollar-sign h-5 w-5"
+                                data-lov-id="src/components/AppSidebar.tsx:110:22" data-lov-name="item.icon"
+                                data-component-path="src/components/AppSidebar.tsx" data-component-line="110"
+                                data-component-file="AppSidebar.tsx" data-component-name="item.icon"
+                                data-component-content="%7B%22className%22%3A%22h-5%20w-5%22%7D">
+                                <line x1="12" x2="12" y1="2" y2="22"></line>
+                                <path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"></path>
+                            </svg>
+                        </span>
+                        <span>Finances</span>
+                    </a>
+                    <a href="../Communication/communication.html" class="menu-item">
+                        <span><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                stroke-linejoin="round" class="lucide lucide-message-square h-5 w-5"
+                                data-lov-id="src/components/AppSidebar.tsx:110:22" data-lov-name="item.icon"
+                                data-component-path="src/components/AppSidebar.tsx" data-component-line="110"
+                                data-component-file="AppSidebar.tsx" data-component-name="item.icon"
+                                data-component-content="%7B%22className%22%3A%22h-5%20w-5%22%7D">
+                                <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path>
+                            </svg>
+                        </span>
+                        <span>Communications</span>
+                    </a>
+                    <a href="../Attendance/attendance.html" class="menu-item">
+                        <span>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                                stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                                class="lucide lucide-user-check h-5 w-5" data-lov-id="src/components/AppSidebar.tsx:112:22"
+                                data-lov-name="item.icon" data-component-path="src/components/AppSidebar.tsx" data-component-line="112"
+                                data-component-file="AppSidebar.tsx" data-component-name="item.icon"
+                                data-component-content="%7B%22className%22%3A%22h-5%20w-5%22%7D">
+                                <path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"></path>
+                                <circle cx="9" cy="7" r="4"></circle>
+                                <polyline points="16 11 18 13 22 9"></polyline>
+                            </svg>
+                        </span>
+                        <span>Attendance</span>
+                    </a>
+                    <a href="../Report/report.html" class="menu-item">
+                        <span><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                stroke-linejoin="round" class="lucide lucide-chart-column h-5 w-5"
+                                data-lov-id="src/components/AppSidebar.tsx:110:22" data-lov-name="item.icon"
+                                data-component-path="src/components/AppSidebar.tsx" data-component-line="110"
+                                data-component-file="AppSidebar.tsx" data-component-name="item.icon"
+                                data-component-content="%7B%22className%22%3A%22h-5%20w-5%22%7D">
+                                <path d="M3 3v16a2 2 0 0 0 2 2h16"></path>
+                                <path d="M18 17V9"></path>
+                                <path d="M13 17V5"></path>
+                                <path d="M8 17v-3"></path>
+                            </svg>
+                        </span>
+                        <span>Reports</span>
+                    </a>
+                </div>
+
+                <div class="menu-section">
+                    <div class="menu-label">AI Features</div>
+                    <a href="../AI/ai_insight.html" class="menu-item has-badge">
+                        <span class="icon">
+                            <img src="../Assests/creative.png" alt="AI Insights">
+                        </span>
+
+
+                        <span>AI Insights</span>
+                        <span class="badge">New</span>
+                    </a>
+                    <a href="../AI/members_analytics.html" class="menu-item has-badge">
+                        <span><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                stroke-linejoin="round" class="lucide lucide-chart-column h-5 w-5"
+                                data-lov-id="src/components/AppSidebar.tsx:131:22" data-lov-name="item.icon"
+                                data-component-path="src/components/AppSidebar.tsx" data-component-line="131"
+                                data-component-file="AppSidebar.tsx" data-component-name="item.icon"
+                                data-component-content="%7B%22className%22%3A%22h-5%20w-5%22%7D">
+                                <path d="M3 3v16a2 2 0 0 0 2 2h16"></path>
+                                <path d="M18 17V9"></path>
+                                <path d="M13 17V5"></path>
+                                <path d="M8 17v-3"></path>
+                            </svg></span>
+                        <span>Member Analytics</span>
+                        <span class="badge">New</span>
+                    </a>
+                    <a href="../AI/ai_smart_report.html" class="menu-item has-badge">
+                        <span><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                stroke-linejoin="round" class="lucide lucide-file-text h-5 w-5"
+                                data-lov-id="src/components/AppSidebar.tsx:131:22" data-lov-name="item.icon"
+                                data-component-path="src/components/AppSidebar.tsx" data-component-line="131"
+                                data-component-file="AppSidebar.tsx" data-component-name="item.icon"
+                                data-component-content="%7B%22className%22%3A%22h-5%20w-5%22%7D">
+                                <path d="M15 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7Z"></path>
+                                <path d="M14 2v4a2 2 0 0 0 2 2h4"></path>
+                                <path d="M10 9H8"></path>
+                                <path d="M16 13H8"></path>
+                                <path d="M16 17H8"></path>
+                            </svg></span>
+                        <span>Smart Reports</span>
+                        <span class="badge">New</span>
+                    </a>
+                </div>
+
+                <div class="menu-section">
+                    <div class="menu-label">Quick Actions</div>
+                    <a href="#" class="menu-item">
+                        <span><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                stroke-linejoin="round" class="lucide lucide-user-plus h-5 w-5"
+                                data-lov-id="src/components/AppSidebar.tsx:151:22" data-lov-name="item.icon"
+                                data-component-path="src/components/AppSidebar.tsx" data-component-line="151"
+                                data-component-file="AppSidebar.tsx" data-component-name="item.icon"
+                                data-component-content="%7B%22className%22%3A%22h-5%20w-5%22%7D">
+                                <path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"></path>
+                                <circle cx="9" cy="7" r="4"></circle>
+                                <line x1="19" x2="19" y1="8" y2="14"></line>
+                                <line x1="22" x2="16" y1="11" y2="11"></line>
+                            </svg></span>
+                        <span>Add Member</span>
+                    </a>
+                    <a href="#" class="menu-item">
+                        <span><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                stroke-linejoin="round" class="lucide lucide-calendar h-5 w-5"
+                                data-lov-id="src/components/AppSidebar.tsx:151:22" data-lov-name="item.icon"
+                                data-component-path="src/components/AppSidebar.tsx" data-component-line="151"
+                                data-component-file="AppSidebar.tsx" data-component-name="item.icon"
+                                data-component-content="%7B%22className%22%3A%22h-5%20w-5%22%7D">
+                                <path d="M8 2v4"></path>
+                                <path d="M16 2v4"></path>
+                                <rect width="18" height="18" x="3" y="4" rx="2"></rect>
+                                <path d="M3 10h18"></path>
+                            </svg></span>
+                        <span>New Event</span>
+                    </a>
+                    <a href="#" class="menu-item">
+                        <span class="icon">
+                            <img src="../Assests/records.png" alt="AI Insights">
+                        </span>
+                        <span>Record Donation</span>
+                    </a>
+                    <a href="#" class="menu-item">
+                        <span><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                stroke-linejoin="round" class="lucide lucide-bell h-5 w-5"
+                                data-lov-id="src/components/AppSidebar.tsx:151:22" data-lov-name="item.icon"
+                                data-component-path="src/components/AppSidebar.tsx" data-component-line="151"
+                                data-component-file="AppSidebar.tsx" data-component-name="item.icon"
+                                data-component-content="%7B%22className%22%3A%22h-5%20w-5%22%7D">
+                                <path d="M6 8a6 6 0 0 1 12 0c0 7 3 9 3 9H3s3-2 3-9"></path>
+                                <path d="M10.3 21a1.94 1.94 0 0 0 3.4 0"></path>
+                            </svg></span>
+                        <span>Send Message</span>
+                    </a>
+                </div>
+
+                <div class="menu-section">
+                    <div class="menu-label"></div>
+                    <a href="#" class="menu-item">
+                        <span><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                stroke-linejoin="round" class="lucide lucide-settings h-5 w-5"
+                                data-lov-id="src/components/AppSidebar.tsx:166:18" data-lov-name="Settings"
+                                data-component-path="src/components/AppSidebar.tsx" data-component-line="166"
+                                data-component-file="AppSidebar.tsx" data-component-name="Settings"
+                                data-component-content="%7B%22className%22%3A%22h-5%20w-5%22%7D">
+                                <path
+                                    d="M12.22 2h-.44a2 2 0 0 0-2 2v.18a2 2 0 0 1-1 1.73l-.43.25a2 2 0 0 1-2 0l-.15-.08a2 2 0 0 0-2.73.73l-.22.38a2 2 0 0 0 .73 2.73l.15.1a2 2 0 0 1 1 1.72v.51a2 2 0 0 1-1 1.74l-.15.09a2 2 0 0 0-.73 2.73l.22.38a2 2 0 0 0 2.73.73l.15-.08a2 2 0 0 1 2 0l.43.25a2 2 0 0 1 1 1.73V20a2 2 0 0 0 2 2h.44a2 2 0 0 0 2-2v-.18a2 2 0 0 1 1-1.73l.43-.25a2 2 0 0 1 2 0l.15.08a2 2 0 0 0 2.73-.73l.22-.39a2 2 0 0 0-.73-2.73l-.15-.08a2 2 0 0 1-1-1.74v-.5a2 2 0 0 1 1-1.74l.15-.09a2 2 0 0 0 .73-2.73l-.22-.38a2 2 0 0 0-2.73-.73l-.15.08a2 2 0 0 1-2 0l-.43-.25a2 2 0 0 1-1-1.73V4a2 2 0 0 0-2-2z">
+                                </path>
+                                <circle cx="12" cy="12" r="3"></circle>
+                            </svg></span>
+                        <span>Settings</span>
+                    </a>
+
+                </div>
+
+            </div>
+
+
+        </div>
+
+
+        <!-- Main Content -->
+        <div class="main-content">
+            <!-- Header -->
+            <div class="header">
+                <button class="mobile-menu-toggle" onclick="toggleSidebar()">☰</button>
+                <div class="search-bar">
+                    <input type="text" class="search-input" placeholder="Search members, events, or anything...">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                        stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                        class="lucide lucide-search absolute left-3 top-1/2 transform -translate-y-1/2 h-4 w-4 text-muted-foreground"
+                        data-lov-id="src/components/Layout.tsx:24:16" data-lov-name="Search"
+                        data-component-path="src/components/Layout.tsx" data-component-line="24"
+                        data-component-file="Layout.tsx" data-component-name="Search"
+                        data-component-content="%7B%22className%22%3A%22absolute%20left-3%20top-1%2F2%20transform%20-translate-y-1%2F2%20h-4%20w-4%20text-muted-foreground%22%7D">
+                        <circle cx="11" cy="11" r="8"></circle>
+                        <path d="m21 21-4.3-4.3"></path>
+                    </svg>
+                </div>
+                <div class="header-right">
+                    <div class="notification-icon">
+                        <span style="font-size: 20px;"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                                viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-bell h-5 w-5"
+                                data-lov-id="src/components/AppSidebar.tsx:151:22" data-lov-name="item.icon"
+                                data-component-path="src/components/AppSidebar.tsx" data-component-line="151"
+                                data-component-file="AppSidebar.tsx" data-component-name="item.icon"
+                                data-component-content="%7B%22className%22%3A%22h-5%20w-5%22%7D">
+                                <path d="M6 8a6 6 0 0 1 12 0c0 7 3 9 3 9H3s3-2 3-9"></path>
+                                <path d="M10.3 21a1.94 1.94 0 0 0 3.4 0"></path>
+                            </svg>
+                        </span>
+                        <span class="notification-badge">3</span>
+                    </div>
+                    <div class="user-profile">
+                        <span style="font-size: 14px; font-weight: 500;">Pastor Lawrence</span>
+                        <span style="font-size: 20px;"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                                viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-user h-5 w-5"
+                                data-lov-id="src/components/Layout.tsx:41:16" data-lov-name="User"
+                                data-component-path="src/components/Layout.tsx" data-component-line="41"
+                                data-component-file="Layout.tsx" data-component-name="User"
+                                data-component-content="%7B%22className%22%3A%22h-5%20w-5%22%7D">
+                                <path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2"></path>
+                                <circle cx="12" cy="7" r="4"></circle>
+                            </svg>
+                        </span>
+                    </div>
+                </div>
+            </div>
+            <script>
+                function toggleSidebar() {
+                    const sidebar = document.querySelector('.sidebar');
+                    sidebar.classList.toggle('open');
+                }
+
+                // Close sidebar when clicking outside on mobile
+                document.addEventListener('click', function (event) {
+                    const sidebar = document.querySelector('.sidebar');
+                    const toggle = document.querySelector('.mobile-menu-toggle');
+
+                    if (window.innerWidth <= 768 &&
+                        !sidebar.contains(event.target) &&
+                        !toggle.contains(event.target) &&
+                        sidebar.classList.contains('open')) {
+                        sidebar.classList.remove('open');
+                    }
+                });
+            </script>
+
+            <!-- Dashboard Content -->
+            <div class="dashboard-content">
+
+                <!-- Main Header -->
+                <div class="cf-header-primary">
+                    <div class="cf-heading-zone">
+                        <h1>Financial Management</h1>
+                        <p>Track donations, expenses, and budgets with AI-powered insights</p>
+                    </div>
+                    <div class="cf-controls-cluster">
+                        <button class="cf-btn cf-btn-alternate" onclick="exportMembers()">
+                            <span><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+                                    <polyline points="7,10 12,15 17,10"></polyline>
+                                    <line x1="12" y1="15" x2="12" y2="3"></line>
+                                </svg></span>
+                            <span>Export Report</span>
+                        </button>
+                        <button class="cf-btn cf-btn-main" onclick="openAddMemberModal()">
+                            <span>
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                    stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-plus h-4 w-4 mr-2"
+                                    data-lov-id="src/pages/Finances.tsx:97:12" data-lov-name="Plus" data-component-path="src/pages/Finances.tsx"
+                                    data-component-line="97" data-component-file="Finances.tsx" data-component-name="Plus"
+                                    data-component-content="%7B%22className%22%3A%22h-4%20w-4%20mr-2%22%7D">
+                                    <path d="M5 12h14"></path>
+                                    <path d="M12 5v14"></path>
+                                </svg>
+                            </span>
+                            <span>Record Donation</span>
+                        </button>
+                    </div>
+                </div>
+                
+                <!-- Notification Cards -->
+                <div class="insights-section">
+                    <div class="insights-header">
+                        <div class="insight-header-row">
+                            <span class="insight-icon">
+                                <img src="../Assests/chatbot.png" alt="AI Insights">
+                            </span>
+                            <h2>AI-Powered Insights</h2>
+                        </div>
+                
+                
+                
+                        <div class="cf-alerts-layout">
+                            <div class="cf-alert-tile cf-success">
+                                <span class="cf-alert-symbol"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="green"
+                                    stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-trending-up h-4 w-4"
+                                    data-lov-id="src/pages/Finances.tsx:110:18" data-lov-name="insight.icon"
+                                    data-component-path="src/pages/Finances.tsx" data-component-line="110" data-component-file="Finances.tsx"
+                                    data-component-name="insight.icon" data-component-content="%7B%22className%22%3A%22h-4%20w-4%22%7D">
+                                    <polyline points="22 7 13.5 15.5 8.5 10.5 2 17"></polyline>
+                                    <polyline points="16 7 22 7 22 13"></polyline>
+                                </svg>
+                                    </svg>
+                                </span>
+                                <div class="cf-alert-text">
+                                    <h3>Donation Trend Positive</h3>
+                                    <p>December donations exceeded budget by 6.4% - highest month this year</p>
+                                </div>
+                            </div>
+                
+                            <div class="cf-alert-tile cf-warning">
+                                <span class="cf-alert-symbol"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="orange"
+                                    stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-target h-4 w-4"
+                                    data-lov-id="src/pages/Finances.tsx:110:18" data-lov-name="insight.icon"
+                                    data-component-path="src/pages/Finances.tsx" data-component-line="110" data-component-file="Finances.tsx"
+                                    data-component-name="insight.icon" data-component-content="%7B%22className%22%3A%22h-4%20w-4%22%7D">
+                                    <circle cx="12" cy="12" r="10"></circle>
+                                    <circle cx="12" cy="12" r="6"></circle>
+                                    <circle cx="12" cy="12" r="2"></circle>
+                                </svg></span>
+                                <div class="cf-alert-text">
+                                    <h3>Budget Performance</h3>
+                                    <p>You're on track to meet 98% of your annual budget goals</p>
+                                </div>
+                            </div>
+                
+                            <div class="cf-alert-tile">
+                                <span class="cf-alert-symbol">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="blue"
+                                        stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-circle-alert h-4 w-4"
+                                        data-lov-id="src/pages/Finances.tsx:110:18" data-lov-name="insight.icon"
+                                        data-component-path="src/pages/Finances.tsx" data-component-line="110" data-component-file="Finances.tsx"
+                                        data-component-name="insight.icon" data-component-content="%7B%22className%22%3A%22h-4%20w-4%22%7D">
+                                        <circle cx="12" cy="12" r="10"></circle>
+                                        <line x1="12" x2="12" y1="8" y2="12"></line>
+                                        <line x1="12" x2="12.01" y1="16" y2="16"></line>
+                                    </svg>
+                                   
+                                </span>
+                                <div class="cf-alert-text">
+                                    <h3>Expense Alert</h3>
+                                    <p>Utilities costs increased 15% this quarter - consider energy audit</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                
+                
+                <div class="metrics-grid">
+                    <div class="metric-block" onclick="showStatDetail('donations')">
+                        <div class="metric-top">
+                            <span class="metric-label">Monthly Donations</span>
+                            <span class="metric-symbol">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                    stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                                    class="lucide lucide-dollar-sign h-4 w-4 text-muted-foreground" data-lov-id="src/pages/Finances.tsx:130:12"
+                                    data-lov-name="DollarSign" data-component-path="src/pages/Finances.tsx" data-component-line="130"
+                                    data-component-file="Finances.tsx" data-component-name="DollarSign"
+                                    data-component-content="%7B%22className%22%3A%22h-4%20w-4%20text-muted-foreground%22%7D">
+                                    <line x1="12" x2="12" y1="2" y2="22"></line>
+                                    <path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"></path>
+                                </svg>
+                            </span>
+                        </div>
+                        <div class="metric-figure">$23,400</div>
+                        <div class="metric-diff">+18.2% from last month</div>
+                    </div>
+                
+                    <div class="metric-block" onclick="showStatDetail('expenses')">
+                        <div class="metric-top">
+                            <span class="metric-label">Monthly Expenses</span>
+                            <span class="metric-symbol"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                                class="lucide lucide-credit-card h-4 w-4 text-muted-foreground" data-lov-id="src/pages/Finances.tsx:143:12"
+                                data-lov-name="CreditCard" data-component-path="src/pages/Finances.tsx" data-component-line="143"
+                                data-component-file="Finances.tsx" data-component-name="CreditCard"
+                                data-component-content="%7B%22className%22%3A%22h-4%20w-4%20text-muted-foreground%22%7D">
+                                <rect width="20" height="14" x="2" y="5" rx="2"></rect>
+                                <line x1="2" x2="22" y1="10" y2="10"></line>
+                            </svg></span>
+                        </div>
+                        <div class="metric-figure">$18,900</div>
+                        <div class="metric-diff stable">- from last month</div>
+                    </div>
+                
+                    <div class="metric-block" onclick="showStatDetail('net')">
+                        <div class="metric-top">
+                            <span class="metric-label">Net Income</span>
+                            <span class="metric-symbol"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                                class="lucide lucide-trending-up h-4 w-4 text-success" data-lov-id="src/pages/Finances.tsx:157:14"
+                                data-lov-name="TrendingUp" data-component-path="src/pages/Finances.tsx" data-component-line="157"
+                                data-component-file="Finances.tsx" data-component-name="TrendingUp"
+                                data-component-content="%7B%22className%22%3A%22h-4%20w-4%20text-success%22%7D">
+                                <polyline points="22 7 13.5 15.5 8.5 10.5 2 17"></polyline>
+                                <polyline points="16 7 22 7 22 13"></polyline>
+                            </svg></span>
+                        </div>
+                        <div class="metric-figure gain">$4,500</div>
+                        <div class="metric-diff">Surplus this month</div>
+                    </div>
+                
+                    <div class="metric-block" onclick="showStatDetail('budget')">
+                        <div class="metric-top">
+                            <span class="metric-label">Budget Performance</span>
+                            <span class="metric-symbol"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                                class="lucide lucide-target h-4 w-4 text-muted-foreground" data-lov-id="src/pages/Finances.tsx:175:12"
+                                data-lov-name="Target" data-component-path="src/pages/Finances.tsx" data-component-line="175"
+                                data-component-file="Finances.tsx" data-component-name="Target"
+                                data-component-content="%7B%22className%22%3A%22h-4%20w-4%20text-muted-foreground%22%7D">
+                                <circle cx="12" cy="12" r="10"></circle>
+                                <circle cx="12" cy="12" r="6"></circle>
+                                <circle cx="12" cy="12" r="2"></circle>
+                            </svg></span>
+                        </div>
+                        <div class="metric-figure">106%</div>
+                        <div class="metric-diff">Above monthly target</div>
+                    </div>
+                </div>
+                
+                <div class="mmn-section">
+                    <div class="mmn-nav">
+                        <div class="mmn-tabs">
+                            <button class="mmn-tab selected" onclick="switchTab('overview')">Overview</button>
+                            <button class="mmn-tab" onclick="switchTab('donations')">Donations</button>
+                            <button class="mmn-tab" onclick="switchTab('expenses')">Expenses</button>
+                            <button class="mmn-tab" onclick="switchTab('budget')">Budget</button>
+                        </div>
+                        <div class="search-area">
+                            <input type="text" class="search-box" placeholder="Search transactions..." id="transactionSearch"
+                                oninput="searchTransactions()">
+                            <button class="action-btn btn-alt" onclick="openFilterModal()">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                    stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-filter h-4 w-4 mr-2"
+                                    data-lov-id="src/pages/Members.tsx:170:12" data-lov-name="Filter" data-component-path="src/pages/Members.tsx"
+                                    data-component-line="170" data-component-file="Members.tsx" data-component-name="Filter"
+                                    data-component-content="%7B%22className%22%3A%22h-4%20w-4%20mr-2%22%7D">
+                                    <polygon points="22 3 2 3 10 12.46 10 19 14 21 14 12.46 22 3"></polygon>
+                                </svg>
+                                Filter</button>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Overview Tab -->
+                <div id="overview-content" class="tab-panel active">
+                    <div class="graph-section">
+                        <div class="graph-layout">
+                            <div class="graph-box">
+                                <div class="graph-title">
+                                    <h3>Financial Overview</h3>
+                                    <p class="graph-subtitle">Monthly donations vs expenses</p>
+                                </div>
+                                <div class="graph-area">
+                                    <canvas id="financialChart"></canvas>
+                                </div>
+                            </div>
+                
+                            <div class="graph-box">
+                                <div class="graph-title">
+                                    <h3>Donation Categories</h3>
+                                    <p class="graph-subtitle">December 2024 breakdown</p>
+                                </div>
+                                <div class="graph-area">
+                                    <canvas id="categoriesChart"></canvas>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                
+                    <div class="funds-section">
+                        <div class="section-top">
+                            <div class="section-heading">
+                                <h2>Recent Transactions</h2>
+                                <p>Latest donation and expense transactions</p>
+                            </div>
+                            <button class="action-btn btn-alt" onclick="viewAllTransactions()">View All</button>
+                        </div>
+                        <div class="funds-list" id="transactionList"></div>
+                    </div>
+                </div>
+                
+                <!-- Donations Tab -->
+                <div id="donations-content" class="tab-panel">
+                    <div class="funds-section">
+                        <div class="section-top">
+                            <div class="section-heading">
+                                <h2>All Donations</h2>
+                                <p>Complete donation history</p>
+                            </div>
+                        </div>
+                        <div class="funds-list" id="donationsList"></div>
+                    </div>
+                </div>
+                
+                <!-- Expenses Tab -->
+                <div id="expenses-content" class="tab-panel">
+                    <div class="funds-section">
+                        <div class="section-top">
+                            <div class="section-heading">
+                                <h2>Expense Tracking</h2>
+                                <p>All church expenses and payments</p>
+                            </div>
+                            <button class="action-btn btn-main" onclick="openRecordExpense()">Add Expense</button>
+                        </div>
+                        <div class="costs-list" id="expensesList"></div>
+                    </div>
+                </div>
+                
+                <!-- Budget Tab -->
+                <div id="budget-content" class="tab-panel">
+                    <div class="funds-section">
+                        <div class="section-top">
+                            <div class="section-heading">
+                                <h2>Budget Management</h2>
+                                <p>Track spending against budget allocations</p>
+                            </div>
+                        </div>
+                        <p style="text-align: center; color: #64748b; padding: 40px;">Budget management coming soon</p>
+                    </div>
+                </div>
+                
+                <!-- Record Donation Modal -->
+                <div class="overlay" id="donationModal">
+                    <div class="overlay-content">
+                        <div class="overlay-header">
+                            <h2>Record Donation</h2>
+                            <button class="overlay-close" onclick="closeModal('donationModal')">×</button>
+                        </div>
+                        <div class="overlay-body">
+                            <form id="donationForm">
+                                <div class="frm-group">
+                                    <label class="frm-label">Donor Name</label>
+                                    <input type="text" class="frm-input" id="donorName" required>
+                                </div>
+                                <div class="info-grid">
+                                    <div class="frm-group">
+                                        <label class="frm-label">Amount</label>
+                                        <input type="number" class="frm-input" id="donationAmount" placeholder="0.00" step="0.01"
+                                            required>
+                                    </div>
+                                    <div class="frm-group">
+                                        <label class="frm-label">Date</label>
+                                        <input type="date" class="frm-input" id="donationDate" required>
+                                    </div>
+                                    <div class="frm-group">
+                                        <label class="frm-label">Category</label>
+                                        <select class="frm-select" id="donationCategory">
+                                            <option>Tithe</option>
+                                            <option>Building Fund</option>
+                                            <option>Missions</option>
+                                            <option>Special Offering</option>
+                                            <option>Other</option>
+                                        </select>
+                                    </div>
+                                    <div class="frm-group">
+                                        <label class="frm-label">Payment Method</label>
+                                        <select class="frm-select" id="paymentMethod">
+                                            <option>Cash</option>
+                                            <option>Bank Transfer</option>
+                                            <option>Credit Card</option>
+                                            <option>PayPal</option>
+                                            <option>Check</option>
+                                        </select>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                        <div class="overlay-footer">
+                            <button class="action-btn btn-alt" onclick="closeModal('donationModal')">Cancel</button>
+                            <button class="action-btn btn-main" onclick="saveDonation()">Record Donation</button>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Transaction Detail Modal -->
+                <div class="overlay" id="transactionDetailModal">
+                    <div class="overlay-content">
+                        <div class="overlay-header">
+                            <h2>Transaction Details</h2>
+                            <button class="overlay-close" onclick="closeModal('transactionDetailModal')">×</button>
+                        </div>
+                        <div class="overlay-body" id="transactionDetailBody"></div>
+                    </div>
+                </div>
+                
+                <!-- Record Expense Modal -->
+                <div class="overlay" id="expenseModal">
+                    <div class="overlay-content">
+                        <div class="overlay-header">
+                            <h2>Record Expense</h2>
+                            <button class="overlay-close" onclick="closeModal('expenseModal')">×</button>
+                        </div>
+                        <div class="overlay-body">
+                            <form id="expenseForm">
+                                <div class="frm-group">
+                                    <label class="frm-label">Expense Description</label>
+                                    <input type="text" class="frm-input" id="expenseDescription" required>
+                                </div>
+                                <div class="info-grid">
+                                    <div class="frm-group">
+                                        <label class="frm-label">Amount</label>
+                                        <input type="number" class="frm-input" id="expenseAmount" placeholder="0.00" step="0.01"
+                                            required>
+                                    </div>
+                                    <div class="frm-group">
+                                        <label class="frm-label">Date</label>
+                                        <input type="date" class="frm-input" id="expenseDate" required>
+                                    </div>
+                                    <div class="frm-group">
+                                        <label class="frm-label">Category</label>
+                                        <select class="frm-select" id="expenseCategory">
+                                            <option>Utilities</option>
+                                            <option>Maintenance</option>
+                                            <option>Salaries</option>
+                                            <option>Supplies</option>
+                                            <option>Other</option>
+                                        </select>
+                                    </div>
+                                    <div class="frm-group">
+                                        <label class="frm-label">Payment Method</label>
+                                        <select class="frm-select" id="expensePaymentMethod">
+                                            <option>Bank Transfer</option>
+                                            <option>Check</option>
+                                            <option>Credit Card</option>
+                                            <option>Cash</option>
+                                        </select>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                        <div class="overlay-footer">
+                            <button class="action-btn btn-alt" onclick="closeModal('expenseModal')">Cancel</button>
+                            <button class="action-btn btn-main" onclick="saveExpense()">Record Expense</button>
+                        </div>
+                    </div>
+                </div>
+                
+                <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.9.1/chart.min.js"></script>
+                <script>
+                    let transactions = [
+                        { id: 1, type: 'donation', donor: 'John Smith', amount: 500, category: 'Tithe', method: 'Bank Transfer', date: '2024-01-07', status: 'completed' },
+                        { id: 2, type: 'donation', donor: 'Anonymous', amount: 1000, category: 'Building Fund', method: 'Cash', date: '2024-01-07', status: 'completed' },
+                        { id: 3, type: 'donation', donor: 'Mary Johnson', amount: 250, category: 'Tithe', method: 'Credit Card', date: '2024-01-06', status: 'completed' },
+                        { id: 4, type: 'donation', donor: 'David Chen', amount: 100, category: 'Missions', method: 'PayPal', date: '2024-01-06', status: 'completed' },
+                        { id: 5, type: 'donation', donor: 'Sarah Wilson', amount: 750, category: 'Special Offering', method: 'Bank Transfer', date: '2024-01-05', status: 'completed' }
+                    ];
+
+                    let expenses = [
+                        { id: 1, description: 'Electric Bill', amount: 450, category: 'Utilities', method: 'Bank Transfer', date: '2024-01-05' },
+                        { id: 2, description: 'Building Maintenance', amount: 1200, category: 'Maintenance', method: 'Check', date: '2024-01-04' },
+                        { id: 3, description: 'Office Supplies', amount: 200, category: 'Supplies', method: 'Credit Card', date: '2024-01-03' }
+                    ];
+
+                    // Financial Overview Chart
+                    const financialCtx = document.getElementById('financialChart').getContext('2d');
+                    const financialChart = new Chart(financialCtx, {
+                        type: 'line',
+                        data: {
+                            labels: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'],
+                            datasets: [
+                                {
+                                    label: 'Donations',
+                                    data: [18000, 19000, 18500, 20000, 21000, 19500, 22000, 20500, 23000, 21500, 22500, 23400],
+                                    backgroundColor: 'rgba(59, 130, 246, 0.3)',
+                                    borderColor: 'rgba(59, 130, 246, 1)',
+                                    borderWidth: 2,
+                                    fill: true,
+                                    tension: 0.4
+                                },
+                                {
+                                    label: 'Expenses',
+                                    data: [17000, 17500, 17200, 18000, 18500, 17800, 19000, 18200, 19500, 18800, 19200, 18900],
+                                    backgroundColor: 'rgba(239, 68, 68, 0.3)',
+                                    borderColor: 'rgba(239, 68, 68, 1)',
+                                    borderWidth: 2,
+                                    fill: true,
+                                    tension: 0.4
+                                }
+                            ]
+                        },
+                        options: {
+                            responsive: true,
+                            maintainAspectRatio: false,
+                            plugins: {
+                                legend: {
+                                    display: true,
+                                    position: 'bottom'
+                                }
+                            },
+                            scales: {
+                                y: {
+                                    beginAtZero: false,
+                                    min: 12000,
+                                    max: 24000
+                                }
+                            }
+                        }
+                    });
+
+                    // Donation Categories Chart
+                    const categoriesCtx = document.getElementById('categoriesChart').getContext('2d');
+                    const categoriesChart = new Chart(categoriesCtx, {
+                        type: 'pie',
+                        data: {
+                            labels: ['Tithe', 'Building Fund', 'Missions', 'Special Offerings', 'Other'],
+                            datasets: [{
+                                data: [65, 20, 8, 3, 4],
+                                backgroundColor: ['#3b82f6', '#10b981', '#f59e0b', '#ec4899', '#8b5cf6'],
+                                borderWidth: 0
+                            }]
+                        },
+                        options: {
+                            responsive: true,
+                            maintainAspectRatio: false,
+                            plugins: {
+                                legend: {
+                                    display: true,
+                                    position: 'right'
+                                }
+                            }
+                        }
+                    });
+
+                    function renderTransactions() {
+                        const container = document.getElementById('transactionList');
+                        container.innerHTML = transactions.map(t => `
+                                <div class="fund-item" onclick="viewTransaction(${t.id})">
+                                    <div class="fund-left">
+                                        <div class="fund-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-dollar-sign h-5 w-5 text-primary" data-lov-id="src/pages/Finances.tsx:254:24" data-lov-name="DollarSign" data-component-path="src/pages/Finances.tsx" data-component-line="254" data-component-file="Finances.tsx" data-component-name="DollarSign" data-component-content="%7B%22className%22%3A%22h-5%20w-5%20text-primary%22%7D"><line x1="12" x2="12" y1="2" y2="22"></line><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"></path></svg></div>
+                                        <div class="fund-details">
+                                            <h4>${t.donor}</h4>
+                                            <p class="fund-meta">${t.date} • ${t.method}</p>
+                                        </div>
+                                    </div>
+                                    <div class="fund-right">
+                                        <div class="fund-amount">$${t.amount}</div>
+                                        <p class="fund-category">${t.category}</p>
+                                    </div>
+                                </div>
+                            `).join('');
+                    }
+
+                    function renderDonations() {
+                        const container = document.getElementById('donationsList');
+                        const donations = transactions.filter(t => t.type === 'donation');
+                        container.innerHTML = donations.map(t => `
+                                <div class="fund-item" onclick="viewTransaction(${t.id})">
+                                    <div class="fund-left">
+                                        <div class="fund-icon">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-dollar-sign h-5 w-5 text-primary" data-lov-id="src/pages/Finances.tsx:254:24" data-lov-name="DollarSign" data-component-path="src/pages/Finances.tsx" data-component-line="254" data-component-file="Finances.tsx" data-component-name="DollarSign" data-component-content="%7B%22className%22%3A%22h-5%20w-5%20text-primary%22%7D"><line x1="12" x2="12" y1="2" y2="22"></line><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"></path></svg>
+                                            </div>
+                                        <div class="fund-details">
+                                            <h4>${t.donor}</h4>
+                                            <p class="fund-meta">${t.date} • ${t.method}</p>
+                                        </div>
+                                    </div>
+                                    <div class="fund-right">
+                                        <div class="fund-amount">$${t.amount}</div>
+                                        <p class="fund-category">${t.category}</p>
+                                    </div>
+                                </div>
+                            `).join('');
+                    }
+
+                    function renderExpenses() {
+                        const container = document.getElementById('expensesList');
+                        container.innerHTML = expenses.map(e => `
+                                <div class="cost-item">
+                                    <div class="cost-info">
+                                        <h4>${e.description}</h4>
+                                        <p class="cost-meta">${e.date} • ${e.category}</p>
+                                    </div>
+                                    <div class="cost-amount">-$${e.amount}</div>
+                                </div>
+                            `).join('');
+                    }
+
+                    function switchTab(tab) {
+                        document.querySelectorAll('.mmn-tab').forEach(t => t.classList.remove('selected'));
+                        event.target.classList.add('selected');
+
+                        document.querySelectorAll('.tab-panel').forEach(c => c.classList.remove('active'));
+                        document.getElementById(tab + '-content').classList.add('active');
+
+                        if (tab === 'donations') renderDonations();
+                        if (tab === 'expenses') renderExpenses();
+                    }
+
+                    function viewTransaction(id) {
+                        const transaction = transactions.find(t => t.id === id);
+                        const modal = document.getElementById('transactionDetailModal');
+                        const body = document.getElementById('transactionDetailBody');
+
+                        body.innerHTML = `
+                                <div class="info-grid" style="margin-bottom: 20px;">
+                                    <div class="info-item">
+                                        <span class="info-label">Donor</span>
+                                        <span class="info-value">${transaction.donor}</span>
+                                    </div>
+                                    <div class="info-item">
+                                        <span class="info-label">Amount</span>
+                                        <span class="info-value">$${transaction.amount}</span>
+                                    </div>
+                                    <div class="info-item">
+                                        <span class="info-label">Category</span>
+                                        <span class="info-value">${transaction.category}</span>
+                                    </div>
+                                    <div class="info-item">
+                                        <span class="info-label">Payment Method</span>
+                                        <span class="info-value">${transaction.method}</span>
+                                    </div>
+                                    <div class="info-item">
+                                        <span class="info-label">Date</span>
+                                        <span class="info-value">${transaction.date}</span>
+                                    </div>
+                                    <div class="info-item">
+                                        <span class="info-label">Status</span>
+                                        <span class="txn-badge ${transaction.status === 'completed' ? 'done' : 'waiting'}">${transaction.status.charAt(0).toUpperCase() + transaction.status.slice(1)}</span>
+                                    </div>
+                                </div>
+                                <div style="display: flex; gap: 12px; margin-top: 20px;">
+                                    <button class="action-btn btn-alt" onclick="printReceipt(${transaction.id})">Print Receipt</button>
+                                    <button class="action-btn btn-alt" onclick="sendThankYou(${transaction.id})">Send Thank You</button>
+                                </div>
+                            `;
+
+                        modal.classList.add('show');
+                    }
+
+                    function openRecordDonation() {
+                        document.getElementById('donationModal').classList.add('show');
+                    }
+
+                    function openRecordExpense() {
+                        document.getElementById('expenseModal').classList.add('show');
+                    }
+
+                    function saveDonation() {
+                        const donor = document.getElementById('donorName').value;
+                        const amount = document.getElementById('donationAmount').value;
+                        alert(`Donation of $${amount} from ${donor} recorded successfully!`);
+                        closeModal('donationModal');
+                        document.getElementById('donationForm').reset();
+                    }
+
+                    function saveExpense() {
+                        const description = document.getElementById('expenseDescription').value;
+                        const amount = document.getElementById('expenseAmount').value;
+                        alert(`Expense "${description}" of $${amount} recorded successfully!`);
+                        closeModal('expenseModal');
+                        document.getElementById('expenseForm').reset();
+                    }
+
+                    function closeModal(modalId) {
+                        document.getElementById(modalId).classList.remove('show');
+                    }
+
+                    function exportReport() {
+                        alert('Exporting financial report to PDF...');
+                    }
+
+                    function showStatDetail(type) {
+                        alert(`Opening detailed view for ${type}`);
+                    }
+
+                    function viewAllTransactions() {
+                        switchTab('donations');
+                        document.querySelectorAll('.mmn-tab').forEach(t => t.classList.remove('selected'));
+                        document.querySelectorAll('.mmn-tab')[1].classList.add('selected');
+                    }
+
+                    function searchTransactions() {
+                        const searchTerm = document.getElementById('transactionSearch').value.toLowerCase();
+                        const items = document.querySelectorAll('.fund-item');
+
+                        items.forEach(item => {
+                            const text = item.textContent.toLowerCase();
+                            item.style.display = text.includes(searchTerm) ? '' : 'none';
+                        });
+                    }
+
+                    function openFilterModal() {
+                        alert('Opening advanced filters...');
+                    }
+
+                    function printReceipt(id) {
+                        alert('Printing receipt...');
+                    }
+
+                    function sendThankYou(id) {
+                        const transaction = transactions.find(t => t.id === id);
+                        alert(`Sending thank you email to ${transaction.donor}`);
+                    }
+
+                    // Initialize
+                    renderTransactions();
+                </script>
+                
+                
+            </div>
+        </div>
+    </div>
+
+</body>
+
+</html>

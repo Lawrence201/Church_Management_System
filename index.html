@@ -1,0 +1,949 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ChurchFlow Management System</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="container">
+        <!-- Sidebar -->
+        <div class="sidebar">
+            <div class="logo">
+                <div class="logo-icon">
+                    <img src="church.png" alt="ChurchFlow Logo">  
+                </div>
+
+           
+                <div class="logo-text">
+                    <h3>Church</h3>
+                    <p>Management System</p>
+                </div>
+            </div>
+            <div class="sidebar-content">
+                <div class="menu-section">
+                    <div class="menu-label">Main Menu</div>
+                    <a href="#" class="menu-item active">
+                        <span><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                                stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                                class="lucide lucide-layout-dashboard h-5 w-5" data-lov-id="src/components/AppSidebar.tsx:110:22"
+                                data-lov-name="item.icon" data-component-path="src/components/AppSidebar.tsx" data-component-line="110"
+                                data-component-file="AppSidebar.tsx" data-component-name="item.icon"
+                                data-component-content="%7B%22className%22%3A%22h-5%20w-5%22%7D">
+                                <rect width="7" height="9" x="3" y="3" rx="1"></rect>
+                                <rect width="7" height="5" x="14" y="3" rx="1"></rect>
+                                <rect width="7" height="9" x="14" y="12" rx="1"></rect>
+                                <rect width="7" height="5" x="3" y="16" rx="1"></rect>
+                            </svg></span>
+                        <span>Dashboard</span>
+                    </a>
+                    <a href="Members/members.html"class="menu-item">
+                        <span>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                                stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                                class="lucide lucide-users h-5 w-5" data-lov-id="src/components/AppSidebar.tsx:110:22"
+                                data-lov-name="item.icon" data-component-path="src/components/AppSidebar.tsx" data-component-line="110"
+                                data-component-file="AppSidebar.tsx" data-component-name="item.icon"
+                                data-component-content="%7B%22className%22%3A%22h-5%20w-5%22%7D">
+                                <path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"></path>
+                                <circle cx="9" cy="7" r="4"></circle>
+                                <path d="M22 21v-2a4 4 0 0 0-3-3.87"></path>
+                                <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
+                            </svg>
+                        </span>
+                        <span>Members</span>
+                    </a>
+                    <a href="Events/events.html" class="menu-item">
+                        <span>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                                stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                                class="lucide lucide-calendar h-5 w-5" data-lov-id="src/components/AppSidebar.tsx:110:22"
+                                data-lov-name="item.icon" data-component-path="src/components/AppSidebar.tsx" data-component-line="110"
+                                data-component-file="AppSidebar.tsx" data-component-name="item.icon"
+                                data-component-content="%7B%22className%22%3A%22h-5%20w-5%22%7D">
+                                <path d="M8 2v4"></path>
+                                <path d="M16 2v4"></path>
+                                <rect width="18" height="18" x="3" y="4" rx="2"></rect>
+                                <path d="M3 10h18"></path>
+                            </svg>
+                        </span>
+                        <span>Events</span>
+                    </a>
+                    <a href="#" class="menu-item">
+                        <span>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                                stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                                class="lucide lucide-dollar-sign h-5 w-5" data-lov-id="src/components/AppSidebar.tsx:110:22"
+                                data-lov-name="item.icon" data-component-path="src/components/AppSidebar.tsx" data-component-line="110"
+                                data-component-file="AppSidebar.tsx" data-component-name="item.icon"
+                                data-component-content="%7B%22className%22%3A%22h-5%20w-5%22%7D">
+                                <line x1="12" x2="12" y1="2" y2="22"></line>
+                                <path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"></path>
+                            </svg>
+                        </span>
+                        <span>Finances</span>
+                    </a>
+                    <a href="Communication/communication.html" class="menu-item">
+                        <span><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                                stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                                class="lucide lucide-message-square h-5 w-5" data-lov-id="src/components/AppSidebar.tsx:110:22"
+                                data-lov-name="item.icon" data-component-path="src/components/AppSidebar.tsx" data-component-line="110"
+                                data-component-file="AppSidebar.tsx" data-component-name="item.icon"
+                                data-component-content="%7B%22className%22%3A%22h-5%20w-5%22%7D">
+                                <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path>
+                            </svg>
+                        </span>
+                        <span>Communications</span>
+                    </a>
+                    <a href="Attendance/attendance.html" class="menu-item">
+                        <span>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-user-check h-5 w-5"
+                                data-lov-id="src/components/AppSidebar.tsx:112:22" data-lov-name="item.icon"
+                                data-component-path="src/components/AppSidebar.tsx" data-component-line="112" data-component-file="AppSidebar.tsx"
+                                data-component-name="item.icon" data-component-content="%7B%22className%22%3A%22h-5%20w-5%22%7D">
+                                <path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"></path>
+                                <circle cx="9" cy="7" r="4"></circle>
+                                <polyline points="16 11 18 13 22 9"></polyline>
+                            </svg>
+                        </span>
+                        <span>Attendance</span>
+                    </a>
+                    <a href="Report/report.html" class="menu-item">
+                        <span><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                                stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                                class="lucide lucide-chart-column h-5 w-5" data-lov-id="src/components/AppSidebar.tsx:110:22"
+                                data-lov-name="item.icon" data-component-path="src/components/AppSidebar.tsx" data-component-line="110"
+                                data-component-file="AppSidebar.tsx" data-component-name="item.icon"
+                                data-component-content="%7B%22className%22%3A%22h-5%20w-5%22%7D">
+                                <path d="M3 3v16a2 2 0 0 0 2 2h16"></path>
+                                <path d="M18 17V9"></path>
+                                <path d="M13 17V5"></path>
+                                <path d="M8 17v-3"></path>
+                            </svg>
+                        </span>
+                        <span>Reports</span>
+                    </a>
+                </div>
+                
+                <div class="menu-section">
+                    <div class="menu-label">AI Features</div>
+                    <a href="AI/ai_insight.html" class="menu-item has-badge">
+                        <span class="icon">
+                            <img src="Assests/creative.png" alt="AI Insights">
+                        </span>
+                
+                
+                        <span>AI Insights</span>
+                        <span class="badge">New</span>
+                    </a>
+                    <a href="AI/members_analytics.html" class="menu-item has-badge">
+                        <span><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                                stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                                class="lucide lucide-chart-column h-5 w-5" data-lov-id="src/components/AppSidebar.tsx:131:22"
+                                data-lov-name="item.icon" data-component-path="src/components/AppSidebar.tsx" data-component-line="131"
+                                data-component-file="AppSidebar.tsx" data-component-name="item.icon"
+                                data-component-content="%7B%22className%22%3A%22h-5%20w-5%22%7D">
+                                <path d="M3 3v16a2 2 0 0 0 2 2h16"></path>
+                                <path d="M18 17V9"></path>
+                                <path d="M13 17V5"></path>
+                                <path d="M8 17v-3"></path>
+                            </svg></span>
+                        <span>Member Analytics</span>
+                        <span class="badge">New</span>
+                    </a>
+                    <a href="AI/ai_smart_report.html" class="menu-item has-badge">
+                        <span><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                                stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                                class="lucide lucide-file-text h-5 w-5" data-lov-id="src/components/AppSidebar.tsx:131:22"
+                                data-lov-name="item.icon" data-component-path="src/components/AppSidebar.tsx" data-component-line="131"
+                                data-component-file="AppSidebar.tsx" data-component-name="item.icon"
+                                data-component-content="%7B%22className%22%3A%22h-5%20w-5%22%7D">
+                                <path d="M15 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7Z"></path>
+                                <path d="M14 2v4a2 2 0 0 0 2 2h4"></path>
+                                <path d="M10 9H8"></path>
+                                <path d="M16 13H8"></path>
+                                <path d="M16 17H8"></path>
+                            </svg></span>
+                        <span>Smart Reports</span>
+                        <span class="badge">New</span>
+                    </a>
+                </div>
+                
+                <div class="menu-section">
+                    <div class="menu-label">Quick Actions</div>
+                    <a href="#" class="menu-item">
+                        <span><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                                stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                                class="lucide lucide-user-plus h-5 w-5" data-lov-id="src/components/AppSidebar.tsx:151:22"
+                                data-lov-name="item.icon" data-component-path="src/components/AppSidebar.tsx" data-component-line="151"
+                                data-component-file="AppSidebar.tsx" data-component-name="item.icon"
+                                data-component-content="%7B%22className%22%3A%22h-5%20w-5%22%7D">
+                                <path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"></path>
+                                <circle cx="9" cy="7" r="4"></circle>
+                                <line x1="19" x2="19" y1="8" y2="14"></line>
+                                <line x1="22" x2="16" y1="11" y2="11"></line>
+                            </svg></span>
+                        <span>Add Member</span>
+                    </a>
+                    <a href="#" class="menu-item">
+                        <span><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                                stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                                class="lucide lucide-calendar h-5 w-5" data-lov-id="src/components/AppSidebar.tsx:151:22"
+                                data-lov-name="item.icon" data-component-path="src/components/AppSidebar.tsx" data-component-line="151"
+                                data-component-file="AppSidebar.tsx" data-component-name="item.icon"
+                                data-component-content="%7B%22className%22%3A%22h-5%20w-5%22%7D">
+                                <path d="M8 2v4"></path>
+                                <path d="M16 2v4"></path>
+                                <rect width="18" height="18" x="3" y="4" rx="2"></rect>
+                                <path d="M3 10h18"></path>
+                            </svg></span>
+                        <span>New Event</span>
+                    </a>
+                    <a href="#" class="menu-item">
+                        <span class="icon">
+                            <img src="Assests/records.png" alt="AI Insights">
+                        </span>
+                        <span>Record Donation</span>
+                    </a>
+                    <a href="#" class="menu-item">
+                        <span><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                                stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                                class="lucide lucide-bell h-5 w-5" data-lov-id="src/components/AppSidebar.tsx:151:22"
+                                data-lov-name="item.icon" data-component-path="src/components/AppSidebar.tsx" data-component-line="151"
+                                data-component-file="AppSidebar.tsx" data-component-name="item.icon"
+                                data-component-content="%7B%22className%22%3A%22h-5%20w-5%22%7D">
+                                <path d="M6 8a6 6 0 0 1 12 0c0 7 3 9 3 9H3s3-2 3-9"></path>
+                                <path d="M10.3 21a1.94 1.94 0 0 0 3.4 0"></path>
+                            </svg></span>
+                        <span>Send Message</span>
+                    </a>
+                </div>
+                
+                <div class="menu-section">
+                    <div class="menu-label"></div>
+                    <a href="#" class="menu-item">
+                        <span><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                                stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                                class="lucide lucide-settings h-5 w-5" data-lov-id="src/components/AppSidebar.tsx:166:18"
+                                data-lov-name="Settings" data-component-path="src/components/AppSidebar.tsx" data-component-line="166"
+                                data-component-file="AppSidebar.tsx" data-component-name="Settings"
+                                data-component-content="%7B%22className%22%3A%22h-5%20w-5%22%7D">
+                                <path
+                                    d="M12.22 2h-.44a2 2 0 0 0-2 2v.18a2 2 0 0 1-1 1.73l-.43.25a2 2 0 0 1-2 0l-.15-.08a2 2 0 0 0-2.73.73l-.22.38a2 2 0 0 0 .73 2.73l.15.1a2 2 0 0 1 1 1.72v.51a2 2 0 0 1-1 1.74l-.15.09a2 2 0 0 0-.73 2.73l.22.38a2 2 0 0 0 2.73.73l.15-.08a2 2 0 0 1 2 0l.43.25a2 2 0 0 1 1 1.73V20a2 2 0 0 0 2 2h.44a2 2 0 0 0 2-2v-.18a2 2 0 0 1 1-1.73l.43-.25a2 2 0 0 1 2 0l.15.08a2 2 0 0 0 2.73-.73l.22-.39a2 2 0 0 0-.73-2.73l-.15-.08a2 2 0 0 1-1-1.74v-.5a2 2 0 0 1 1-1.74l.15-.09a2 2 0 0 0 .73-2.73l-.22-.38a2 2 0 0 0-2.73-.73l-.15.08a2 2 0 0 1-2 0l-.43-.25a2 2 0 0 1-1-1.73V4a2 2 0 0 0-2-2z">
+                                </path>
+                                <circle cx="12" cy="12" r="3"></circle>
+                            </svg></span>
+                        <span>Settings</span>
+                    </a>
+                
+                </div>
+
+            </div>
+
+            
+        </div>
+        
+
+        <!-- Main Content -->
+        <div class="main-content">
+            <!-- Header -->
+            <div class="header">
+                <button class="mobile-menu-toggle" onclick="toggleSidebar()">☰</button>
+                <div class="search-bar">
+                    <input type="text" class="search-input" placeholder="Search members, events, or anything...">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-search absolute left-3 top-1/2 transform -translate-y-1/2 h-4 w-4 text-muted-foreground" data-lov-id="src/components/Layout.tsx:24:16" data-lov-name="Search" data-component-path="src/components/Layout.tsx" data-component-line="24" data-component-file="Layout.tsx" data-component-name="Search" data-component-content="%7B%22className%22%3A%22absolute%20left-3%20top-1%2F2%20transform%20-translate-y-1%2F2%20h-4%20w-4%20text-muted-foreground%22%7D"><circle cx="11" cy="11" r="8"></circle><path d="m21 21-4.3-4.3"></path></svg>
+                </div>
+                <div class="header-right">
+                    <div class="notification-icon">
+                        <span style="font-size: 20px;"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-bell h-5 w-5"
+                            data-lov-id="src/components/AppSidebar.tsx:151:22" data-lov-name="item.icon"
+                            data-component-path="src/components/AppSidebar.tsx" data-component-line="151" data-component-file="AppSidebar.tsx"
+                            data-component-name="item.icon" data-component-content="%7B%22className%22%3A%22h-5%20w-5%22%7D">
+                            <path d="M6 8a6 6 0 0 1 12 0c0 7 3 9 3 9H3s3-2 3-9"></path>
+                            <path d="M10.3 21a1.94 1.94 0 0 0 3.4 0"></path>
+                        </svg>
+                    </span>
+                        <span class="notification-badge">3</span>
+                    </div>
+                    <div class="user-profile">
+                        <span style="font-size: 14px; font-weight: 500;">Pastor Lawrence</span>
+                        <span style="font-size: 20px;"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-user h-5 w-5"
+                            data-lov-id="src/components/Layout.tsx:41:16" data-lov-name="User" data-component-path="src/components/Layout.tsx"
+                            data-component-line="41" data-component-file="Layout.tsx" data-component-name="User"
+                            data-component-content="%7B%22className%22%3A%22h-5%20w-5%22%7D">
+                            <path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2"></path>
+                            <circle cx="12" cy="7" r="4"></circle>
+                        </svg>
+                    </span>
+                    </div>
+                </div>
+            </div>
+            <script>
+                function toggleSidebar() {
+                    const sidebar = document.querySelector('.sidebar');
+                    sidebar.classList.toggle('open');
+                }
+
+                // Close sidebar when clicking outside on mobile
+                document.addEventListener('click', function (event) {
+                    const sidebar = document.querySelector('.sidebar');
+                    const toggle = document.querySelector('.mobile-menu-toggle');
+
+                    if (window.innerWidth <= 768 &&
+                        !sidebar.contains(event.target) &&
+                        !toggle.contains(event.target) &&
+                        sidebar.classList.contains('open')) {
+                        sidebar.classList.remove('open');
+                    }
+                });
+            </script>
+
+            <!-- Dashboard Content -->
+            <div class="dashboard-content">
+                <div class="dashboard-header">
+                    <div class="dashboard-header-text">
+                        <h1>Church Dashboard</h1>
+                        <p>Welcome back, Pastor John. Here's what's happening at your church.</p>
+                    </div>
+                    <div class="header-actions">
+                        <button class="btn btn-secondary">
+                            <span><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-chart-column h-5 w-5"
+                                data-lov-id="src/components/AppSidebar.tsx:110:22" data-lov-name="item.icon"
+                                data-component-path="src/components/AppSidebar.tsx" data-component-line="110" data-component-file="AppSidebar.tsx"
+                                data-component-name="item.icon" data-component-content="%7B%22className%22%3A%22h-5%20w-5%22%7D">
+                                <path d="M3 3v16a2 2 0 0 0 2 2h16"></path>
+                                <path d="M18 17V9"></path>
+                                <path d="M13 17V5"></path>
+                                <path d="M8 17v-3"></path>
+                            </svg></span>
+                            <span>View Reports</span>
+                        </button>
+                        <button class="btn btn-primary">
+                            <span class="icon">
+                                <img src="Assests/creative.png" alt="AI Insights">
+                            </span>
+                            <span>AI Insights</span>
+                        </button>
+                    </div>
+                </div>
+
+
+                <!-- AI Insights -->
+                <div class="insights-section">
+                    <div class="insights-header">
+                        <span class="insight-icon">
+                            <img src="Assests/chatbot.png" alt="AI Insights">
+                        </span>
+                        <h2>AI-Powered Insights</h2>
+                    </div>
+
+                   
+                    <div class="insights-grid">
+                        <div class="insight-card success">
+                            <span class="insight-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#10b981"
+                                stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                                class="lucide lucide-trending-up h-4 w-4 text-success" data-lov-id="src/pages/Dashboard.tsx:85:16"
+                                data-lov-name="TrendingUp" data-component-path="src/pages/Dashboard.tsx" data-component-line="85"
+                                data-component-file="Dashboard.tsx" data-component-name="TrendingUp"
+                                data-component-content="%7B%22className%22%3A%22h-4%20w-4%20text-success%22%7D">
+                                <polyline points="22 7 13.5 15.5 8.5 10.5 2 17"></polyline>
+                                <polyline points="16 7 22 7 22 13"></polyline>
+                            </svg>
+                          </span>
+                            <span class="insight-text">Attendance is trending up 15% this quarter</span>
+                        </div>
+                        <div class="insight-card success">
+                            <span class="insight-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#10b981"
+                                stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-heart h-4 w-4 text-warning"
+                                data-lov-id="src/pages/Dashboard.tsx:89:16" data-lov-name="Heart" data-component-path="src/pages/Dashboard.tsx"
+                                data-component-line="89" data-component-file="Dashboard.tsx" data-component-name="Heart"
+                                data-component-content="%7B%22className%22%3A%22h-4%20w-4%20text-warning%22%7D">
+                                <path
+                                    d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z">
+                                </path>
+                            </svg>
+                        </span>
+                            <span class="insight-text">Youth group engagement is at an all-time high</span>
+                        </div>
+                        <div class="insight-card warning">
+                            <span class="insight-icon">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#f59e0b"
+                                    stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-heart h-4 w-4 text-warning"
+                                    data-lov-id="src/pages/Dashboard.tsx:89:16" data-lov-name="Heart" data-component-path="src/pages/Dashboard.tsx"
+                                    data-component-line="89" data-component-file="Dashboard.tsx" data-component-name="Heart"
+                                    data-component-content="%7B%22className%22%3A%22h-4%20w-4%20text-warning%22%7D">
+                                    <path
+                                        d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z">
+                                    </path>
+                                </svg>
+                        </span>
+                            <span class="insight-text">23 members haven't attended in 30+ days</span>
+                        </div>
+                        <div class="insight-card warnings">
+                            <span class="insight-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="red"
+                                stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                                class="lucide lucide-circle-alert h-4 w-4 text-destructive" data-lov-id="src/pages/Dashboard.tsx:99:16"
+                                data-lov-name="AlertCircle" data-component-path="src/pages/Dashboard.tsx" data-component-line="99"
+                                data-component-file="Dashboard.tsx" data-component-name="AlertCircle"
+                                data-component-content="%7B%22className%22%3A%22h-4%20w-4%20text-destructive%22%7D">
+                                <circle cx="12" cy="12" r="10"></circle>
+                                <line x1="12" x2="12" y1="8" y2="12"></line>
+                                <line x1="12" x2="12.01" y1="16" y2="16"></line>
+                            </svg></span>
+                            <span class="insight-text">3 upcoming events need more volunteers</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Stats Grid -->
+                <div class="stats-grid">
+                    <div class="stat-card">
+                        <div class="stat-header">
+                            <span class="stat-title">Total Members</span>
+                            <div class="stat-icon blue"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                                class="lucide lucide-users h-4 w-4 text-muted-foreground" data-lov-id="src/pages/Dashboard.tsx:112:12"
+                                data-lov-name="Users" data-component-path="src/pages/Dashboard.tsx" data-component-line="112"
+                                data-component-file="Dashboard.tsx" data-component-name="Users"
+                                data-component-content="%7B%22className%22%3A%22h-4%20w-4%20text-muted-foreground%22%7D">
+                                <path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"></path>
+                                <circle cx="9" cy="7" r="4"></circle>
+                                <path d="M22 21v-2a4 4 0 0 0-3-3.87"></path>
+                                <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
+                            </svg>
+                        </div>
+                        </div>
+                        <div class="stat-value">485</div>
+                        <div class="stat-change">+12</div>
+                    </div>
+
+                    <div class="stat-card">
+                        <div class="stat-header">
+                            <span class="stat-title"> This Monthly Events</span>
+                            <div class="stat-icon purple"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                                class="lucide lucide-calendar h-4 w-4 text-muted-foreground" data-lov-id="src/pages/Dashboard.tsx:138:12"
+                                data-lov-name="Calendar" data-component-path="src/pages/Dashboard.tsx" data-component-line="138"
+                                data-component-file="Dashboard.tsx" data-component-name="Calendar"
+                                data-component-content="%7B%22className%22%3A%22h-4%20w-4%20text-muted-foreground%22%7D">
+                                <path d="M8 2v4"></path>
+                                <path d="M16 2v4"></path>
+                                <rect width="18" height="18" x="3" y="4" rx="2"></rect>
+                                <path d="M3 10h18"></path>
+                            </svg></div>
+                        </div>
+                        <div class="stat-value">7</div>
+                        <div class="stat-change">+2</div>
+                    </div>
+
+                    <div class="stat-card">
+                        <div class="stat-header">
+                            <span class="stat-title">Monthly Donations</span>
+                            <div class="stat-icon green"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                                class="lucide lucide-dollar-sign h-4 w-4 text-muted-foreground" data-lov-id="src/pages/Dashboard.tsx:125:12"
+                                data-lov-name="DollarSign" data-component-path="src/pages/Dashboard.tsx" data-component-line="125"
+                                data-component-file="Dashboard.tsx" data-component-name="DollarSign"
+                                data-component-content="%7B%22className%22%3A%22h-4%20w-4%20text-muted-foreground%22%7D">
+                                <line x1="12" x2="12" y1="2" y2="22"></line>
+                                <path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"></path>
+                            </svg></div>
+                        </div>
+                        <div class="stat-value">$19.8K</div>
+                        <div class="stat-change">+8.7%</div>
+                    </div>
+
+                    <div class="stat-card">
+                        <div class="stat-header">
+                            <span class="stat-title">Messages Sent</span>
+                            <div class="stat-icon orange"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-bell h-5 w-5"
+                                data-lov-id="src/components/AppSidebar.tsx:151:22" data-lov-name="item.icon"
+                                data-component-path="src/components/AppSidebar.tsx" data-component-line="151" data-component-file="AppSidebar.tsx"
+                                data-component-name="item.icon" data-component-content="%7B%22className%22%3A%22h-5%20w-5%22%7D">
+                                <path d="M6 8a6 6 0 0 1 12 0c0 7 3 9 3 9H3s3-2 3-9"></path>
+                                <path d="M10.3 21a1.94 1.94 0 0 0 3.4 0"></path>
+                            </svg></div>
+                        </div>
+                        <div class="stat-value">847</div>
+                        <div class="stat-change">+24</div>
+                    </div>
+                </div>
+
+                <!-- Charts -->
+                <div class="charts-grid">
+                    <div class="chart-card">
+                        <div class="chart-header">
+                            <h3>Attendance Trends</h3>
+                            <p class="chart-subtitle">Monthly attendance vs targets</p>
+                        </div>
+                        <div class="chart-container">
+                            <canvas id="attendanceChart"></canvas>
+                        </div>
+                    </div>
+
+                    <div class="chart-card">
+                        <div class="chart-header">
+                            <h3>Donation Trends</h3>
+                            <p class="chart-subtitle">Monthly donation amounts</p>
+                        </div>
+                        <div class="chart-container">
+                            <canvas id="donationChart"></canvas>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Three Column Section -->
+                <div class="three-column-grid">
+                    <!-- Quick Actions -->
+                    <div class="quick-actions">
+                        <div class="section-header">
+                            <span style="font-size: 20px;"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="orange"
+                                stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-activity h-5 w-5 text-primary"
+                                data-lov-id="src/components/QuickActionsWidget.tsx:61:12" data-lov-name="Activity"
+                                data-component-path="src/components/QuickActionsWidget.tsx" data-component-line="61"
+                                data-component-file="QuickActionsWidget.tsx" data-component-name="Activity"
+                                data-component-content="%7B%22className%22%3A%22h-5%20w-5%20text-primary%22%7D">
+                                <path
+                                    d="M22 12h-2.48a2 2 0 0 0-1.93 1.46l-2.35 8.36a.25.25 0 0 1-.48 0L9.24 2.18a.25.25 0 0 0-.48 0l-2.35 8.36A2 2 0 0 1 4.49 12H2">
+                                </path>
+                            </svg></span>
+                            <h3>Quick Actions</h3>
+                        </div>
+                        <p class="section-subtitle">Common tasks you can perform instantly</p>
+
+                        <div class="action-buttons">
+                            <button class="action-bt primary">
+                                <span><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                    stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-user-plus h-4 w-4 mr-2"
+                                    data-lov-id="src/components/QuickActionsWidget.tsx:70:16" data-lov-name="UserPlus"
+                                    data-component-path="src/components/QuickActionsWidget.tsx" data-component-line="70"
+                                    data-component-file="QuickActionsWidget.tsx" data-component-name="UserPlus"
+                                    data-component-content="%7B%22className%22%3A%22h-4%20w-4%20mr-2%22%7D">
+                                    <path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"></path>
+                                    <circle cx="9" cy="7" r="4"></circle>
+                                    <line x1="19" x2="19" y1="8" y2="14"></line>
+                                    <line x1="22" x2="16" y1="11" y2="11"></line>
+                                </svg></span>
+                                <span>Add New Member</span>
+                            </button>
+                            <button class="action-bt">
+                                <span><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="orange"
+                                    stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-calendar-plus h-4 w-4 mr-2"
+                                    data-lov-id="src/components/QuickActionsWidget.tsx:78:16" data-lov-name="CalendarPlus"
+                                    data-component-path="src/components/QuickActionsWidget.tsx" data-component-line="78"
+                                    data-component-file="QuickActionsWidget.tsx" data-component-name="CalendarPlus"
+                                    data-component-content="%7B%22className%22%3A%22h-4%20w-4%20mr-2%22%7D">
+                                    <path d="M8 2v4"></path>
+                                    <path d="M16 2v4"></path>
+                                    <path d="M21 13V6a2 2 0 0 0-2-2H5a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h8"></path>
+                                    <path d="M3 10h18"></path>
+                                    <path d="M16 19h6"></path>
+                                    <path d="M19 16v6"></path>
+                                </svg></span>
+                                <span>Schedule Event</span>
+                            </button>
+                            <button class="action-bt">
+                                <span><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="blue"
+                                    stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-credit-card h-4 w-4 mr-2"
+                                    data-lov-id="src/components/QuickActionsWidget.tsx:85:16" data-lov-name="CreditCard"
+                                    data-component-path="src/components/QuickActionsWidget.tsx" data-component-line="85"
+                                    data-component-file="QuickActionsWidget.tsx" data-component-name="CreditCard"
+                                    data-component-content="%7B%22className%22%3A%22h-4%20w-4%20mr-2%22%7D">
+                                    <rect width="20" height="14" x="2" y="5" rx="2"></rect>
+                                    <line x1="2" x2="22" y1="10" y2="10"></line>
+                                </svg></span>
+                                <span>Record Donation</span>
+                            </button>
+                            <button class="action-bt">
+                                <span>
+                                    <svg xmlns="http://www.w3.org/2000/svg" class="action-icon" viewBox="0 0 24 24" fill="none"
+                                        stroke="green" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                        <path
+                                            d="M14.536 21.686a.5.5 0 0 0 .937-.024l6.5-19a.496.496 0 0 0-.635-.635l-19 6.5a.5.5 0 0 0-.024.937l7.93 3.18a2 2 0 0 1 1.112 1.11z">
+                                        </path>
+                                        <path d="m21.854 2.147-10.94 10.939"></path>
+                                    </svg>
+                                </span>
+                                <span>Send Message</span>
+                            </button>
+
+                            
+                        </div>
+                    </div>
+
+                    <!-- Membership Overview -->
+                    <div class="membership-overview">
+                        <div class="section-header">
+                            <h3>Membership Overview</h3>
+                        </div>
+                        <p class="section-subtitle">Current membership distribution</p>
+
+                        <div class="donut-container">
+                            <canvas id="membershipChart"></canvas>
+                        </div>
+
+                        <div class="membership-legend">
+                            <div class="legend-item">
+                                <div class="legend-label">
+                                    <span class="legend-dot" style="background: #3b82f6;"></span>
+                                    <span>Active Members</span>
+                                </div>
+                                <span class="legend-value">485</span>
+                            </div>
+                            <div class="legend-item">
+                                <div class="legend-label">
+                                    <span class="legend-dot" style="background: #10b981;"></span>
+                                    <span>New Members</span>
+                                </div>
+                                <span class="legend-value">67</span>
+                            </div>
+                            <div class="legend-item">
+                                <div class="legend-label">
+                                    <span class="legend-dot" style="background: #f59e0b;"></span>
+                                    <span>Visitors</span>
+                                </div>
+                                <span class="legend-value">134</span>
+                            </div>
+                            <div class="legend-item">
+                                <div class="legend-label">
+                                    <span class="legend-dot" style="background: #ec4899;"></span>
+                                    <span>Inactive</span>
+                                </div>
+                                <span class="legend-value">23</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Upcoming Events -->
+                    <div class="upcoming-events">
+                        <div class="section-header">
+                            <h3>Upcoming Events</h3>
+                        </div>
+                        <p class="section-subtitle">Next 7 days</p>
+
+                        <div class="events-list">
+                            <div class="event-item">
+                                <div class="event-info">
+                                    <span class="event-dot" style="background: #3b82f6;"></span>
+                                    <div class="event-details">
+                                        <h4>Sunday Service</h4>
+                                        <p>Tomorrow, 10:00 AM</p>
+                                    </div>
+                                </div>
+                                <span class="event-attendance">356 attending</span>
+                            </div>
+
+                            <div class="event-item youth">
+                                <div class="event-info">
+                                    <span class="event-dot" style="background: #f59e0b;"></span>
+                                    <div class="event-details">
+                                        <h4>Youth Group Meeting</h4>
+                                        <p>Wednesday, 7:00 PM</p>
+                                    </div>
+                                </div>
+                                <span class="event-attendance">42 attending</span>
+                            </div>
+
+                            <div class="event-item bible">
+                                <div class="event-info">
+                                    <span class="event-dot" style="background: #10b981;"></span>
+                                    <div class="event-details">
+                                        <h4>Bible Study</h4>
+                                        <p>Thursday, 6:30 PM</p>
+                                    </div>
+                                </div>
+                                <span class="event-attendance">28 attending</span>
+                            </div>
+                        </div>
+
+                        <a href="#" class="view-all-link">
+                            <span>View All Events</span>
+                            <span>→</span>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Bottom Section: Recent Activity & Monthly Goals -->
+                <div class="bottom-section-grid">
+                    <!-- Recent Activity -->
+                    <div class="recent-activity">
+                        <div class="section-header">
+                            <span style="font-size: 20px;"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#3b82f6"
+                                stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-clock h-5 w-5 text-primary"
+                                data-lov-id="src/components/QuickActionsWidget.tsx:104:12" data-lov-name="Clock"
+                                data-component-path="src/components/QuickActionsWidget.tsx" data-component-line="104"
+                                data-component-file="QuickActionsWidget.tsx" data-component-name="Clock"
+                                data-component-content="%7B%22className%22%3A%22h-5%20w-5%20text-primary%22%7D">
+                                <circle cx="12" cy="12" r="10"></circle>
+                                <polyline points="12 6 12 12 16 14"></polyline>
+                            </svg></span>
+                            <h3>Recent Activity</h3>
+                        </div>
+                        <p class="section-subtitle">Latest actions performed in the system</p>
+
+                        <div class="activity-list">
+                            <div class="activity-item">
+                                <div class="activity-icon">
+                                    <span><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="blue"
+                                        stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-user-plus h-4 w-4 text-primary"
+                                        data-lov-id="src/components/QuickActionsWidget.tsx:113:16" data-lov-name="UserPlus"
+                                        data-component-path="src/components/QuickActionsWidget.tsx" data-component-line="113"
+                                        data-component-file="QuickActionsWidget.tsx" data-component-name="UserPlus"
+                                        data-component-content="%7B%22className%22%3A%22h-4%20w-4%20text-primary%22%7D">
+                                        <path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"></path>
+                                        <circle cx="9" cy="7" r="4"></circle>
+                                        <line x1="19" x2="19" y1="8" y2="14"></line>
+                                        <line x1="22" x2="16" y1="11" y2="11"></line>
+                                    </svg></span>
+                                </div>
+                                <div class="activity-content">
+                                    <h4>New member added</h4>
+                                    <p>Sarah Johnson joined the church</p>
+                                </div>
+                                <span class="activity-time">2 min ago</span>
+                            </div>
+
+                            <div class="activity-item">
+                                <div class="activity-icon donation">
+                                    <span><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="green"
+                                        stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                                        class="lucide lucide-credit-card h-4 w-4 text-success" data-lov-id="src/components/QuickActionsWidget.tsx:124:16"
+                                        data-lov-name="CreditCard" data-component-path="src/components/QuickActionsWidget.tsx" data-component-line="124"
+                                        data-component-file="QuickActionsWidget.tsx" data-component-name="CreditCard"
+                                        data-component-content="%7B%22className%22%3A%22h-4%20w-4%20text-success%22%7D">
+                                        <rect width="20" height="14" x="2" y="5" rx="2"></rect>
+                                        <line x1="2" x2="22" y1="10" y2="10"></line>
+                                    </svg></span>
+                                </div>
+                                <div class="activity-content">
+                                    <h4>Donation recorded</h4>
+                                    <p>$500 donation from anonymous donor</p>
+                                </div>
+                                <span class="activity-time">5 min ago</span>
+                            </div>
+
+                            <div class="activity-item">
+                                <div class="activity-icon event">
+                                    <span><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="orange"
+                                        stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                                        class="lucide lucide-calendar-plus h-4 w-4 text-accent" data-lov-id="src/components/QuickActionsWidget.tsx:135:16"
+                                        data-lov-name="CalendarPlus" data-component-path="src/components/QuickActionsWidget.tsx" data-component-line="135"
+                                        data-component-file="QuickActionsWidget.tsx" data-component-name="CalendarPlus"
+                                        data-component-content="%7B%22className%22%3A%22h-4%20w-4%20text-accent%22%7D">
+                                        <path d="M8 2v4"></path>
+                                        <path d="M16 2v4"></path>
+                                        <path d="M21 13V6a2 2 0 0 0-2-2H5a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h8"></path>
+                                        <path d="M3 10h18"></path>
+                                        <path d="M16 19h6"></path>
+                                        <path d="M19 16v6"></path>
+                                    </svg></span>
+                                </div>
+                                <div class="activity-content">
+                                    <h4>Event scheduled</h4>
+                                    <p>Youth Group Pizza Night added to calendar</p>
+                                </div>
+                                <span class="activity-time">15 min ago</span>
+                            </div>
+
+                            <div class="activity-item">
+                                <div class="activity-icon" style="background: #fef3c7; color: #f59e0b;">
+                                    <span><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                        stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-send h-4 w-4 text-warning"
+                                        data-lov-id="src/components/QuickActionsWidget.tsx:146:16" data-lov-name="Send"
+                                        data-component-path="src/components/QuickActionsWidget.tsx" data-component-line="146"
+                                        data-component-file="QuickActionsWidget.tsx" data-component-name="Send"
+                                        data-component-content="%7B%22className%22%3A%22h-4%20w-4%20text-warning%22%7D">
+                                        <path
+                                            d="M14.536 21.686a.5.5 0 0 0 .937-.024l6.5-19a.496.496 0 0 0-.635-.635l-19 6.5a.5.5 0 0 0-.024.937l7.93 3.18a2 2 0 0 1 1.112 1.11z">
+                                        </path>
+                                        <path d="m21.854 2.147-10.94 10.939"></path>
+                                    </svg></span>
+                                </div>
+                                <div class="activity-content">
+                                    <h4>Message sent</h4>
+                                    <p>Sunday service reminder sent to 485 members</p>
+                                </div>
+                                <span class="activity-time">1 hour ago</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Monthly Goals -->
+                    <div class="monthly-goals">
+                        <div class="section-header">
+                            <span style="font-size: 20px;"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="blue"
+                                stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-target h-5 w-5 text-primary"
+                                data-lov-id="src/components/QuickActionsWidget.tsx:162:12" data-lov-name="Target"
+                                data-component-path="src/components/QuickActionsWidget.tsx" data-component-line="162"
+                                data-component-file="QuickActionsWidget.tsx" data-component-name="Target"
+                                data-component-content="%7B%22className%22%3A%22h-5%20w-5%20text-primary%22%7D">
+                                <circle cx="12" cy="12" r="10"></circle>
+                                <circle cx="12" cy="12" r="6"></circle>
+                                <circle cx="12" cy="12" r="2"></circle>
+                            </svg></span>
+                            <h3>Monthly Goals</h3>
+                        </div>
+                        <p class="section-subtitle">Track progress toward your monthly targets</p>
+
+                        <div class="goals-list">
+                            <div class="goal-item">
+                                <div class="goal-header">
+                                    <span class="goal-title">New Members</span>
+                                    <span class="goal-value">67 / 50</span>
+                                </div>
+                                <div class="progress-bar">
+                                    <div class="progress-fill" style="width: 100%; background: #10b981;"></div>
+                                </div>
+                                <p class="goal-status success">Goal exceeded! 134% completed</p>
+                            </div>
+
+                            <div class="goal-item">
+                                <div class="goal-header">
+                                    <span class="goal-title">Monthly Donations</span>
+                                    <span class="goal-value">$19.8K / $20K</span>
+                                </div>
+                                <div class="progress-bar">
+                                    <div class="progress-fill" style="width: 99%; background: #3b82f6;"></div>
+                                </div>
+                                <p class="goal-status">Almost there! 99% completed</p>
+                            </div>
+
+                            <div class="goal-item">
+                                <div class="goal-header">
+                                    <span class="goal-title">Event Attendance</span>
+                                    <span class="goal-value">356 / 400</span>
+                                </div>
+                                <div class="progress-bar">
+                                    <div class="progress-fill" style="width: 89%; background: #3b82f6;"></div>
+                                </div>
+                                <p class="goal-status">89% completed</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.9.1/chart.min.js"></script>
+    <script>
+        // Attendance Chart
+        const attendanceCtx = document.getElementById('attendanceChart').getContext('2d');
+        const attendanceChart = new Chart(attendanceCtx, {
+            type: 'line',
+            data: {
+                labels: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun'],
+                datasets: [{
+                    label: 'Actual Attendance',
+                    data: [250, 270, 280, 320, 340, 356],
+                    borderColor: '#3b82f6',
+                    backgroundColor: 'rgba(59, 130, 246, 0.1)',
+                    tension: 0.4,
+                    fill: true,
+                    pointRadius: 5,
+                    pointBackgroundColor: '#3b82f6'
+                }, {
+                    label: 'Target',
+                    data: [260, 270, 280, 290, 300, 310],
+                    borderColor: '#94a3b8',
+                    borderDash: [5, 5],
+                    tension: 0.4,
+                    fill: false,
+                    pointRadius: 0
+                }]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                plugins: {
+                    legend: {
+                        display: true,
+                        position: 'bottom'
+                    }
+                },
+                scales: {
+                    y: {
+                        beginAtZero: false,
+                        min: 180,
+                        max: 380
+                    }
+                }
+            }
+        });
+
+        // Donation Chart
+        const donationCtx = document.getElementById('donationChart').getContext('2d');
+        const donationChart = new Chart(donationCtx, {
+            type: 'bar',
+            data: {
+                labels: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun'],
+                datasets: [{
+                    label: 'Donations',
+                    data: [12000, 14500, 13800, 16200, 18500, 19800],
+                    backgroundColor: '#3b82f6',
+                    borderRadius: 6
+                }]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                plugins: {
+                    legend: {
+                        display: false
+                    }
+                },
+                scales: {
+                    y: {
+                        beginAtZero: false,
+                        min: 10000,
+                        max: 22000,
+                        ticks: {
+                            callback: function (value) {
+                                return '$' + value.toLocaleString();
+                            }
+                        }
+                    }
+                }
+            }
+        });
+
+        // Membership Donut Chart
+        const membershipCtx = document.getElementById('membershipChart').getContext('2d');
+        const membershipChart = new Chart(membershipCtx, {
+            type: 'doughnut',
+            data: {
+                labels: ['Active Members', 'New Members', 'Visitors', 'Inactive'],
+                datasets: [{
+                    data: [485, 67, 134, 23],
+                    backgroundColor: [
+                        '#3b82f6',
+                        '#10b981',
+                        '#f59e0b',
+                        '#ec4899'
+                    ],
+                    borderWidth: 0
+                }]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                plugins: {
+                    legend: {
+                        display: false
+                    }
+                },
+                cutout: '70%'
+            }
+        });
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,936 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Church Events</title>
+    <link rel="stylesheet" href="../style.css">
+  
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.9.1/chart.min.js"></script>
+</head>
+
+<body>
+    <div class="container">
+        <!-- Sidebar -->
+        <div class="sidebar">
+            <div class="logo">
+                <div class="logo-icon">
+                    <img src="../church.png" alt="ChurchFlow Logo">
+                </div>
+                <div class="logo-text">
+                    <h3>Church</h3>
+                    <p>Management System</p>
+                   
+                </div>
+            </div>
+            <div class="sidebar-content">
+                <div class="menu-section">
+                    <div class="menu-label">Main Menu</div>
+                    <a href="../index.html" class="menu-item">
+                        <span><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                stroke-linejoin="round" class="lucide lucide-layout-dashboard h-5 w-5">
+                                <rect width="7" height="9" x="3" y="3" rx="1"></rect>
+                                <rect width="7" height="5" x="14" y="3" rx="1"></rect>
+                                <rect width="7" height="9" x="14" y="12" rx="1"></rect>
+                                <rect width="7" height="5" x="3" y="16" rx="1"></rect>
+                            </svg></span>
+                        <span>Dashboard</span>
+                    </a>
+                    <a href="../Members/members.html" class="menu-item">
+                        <span><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                stroke-linejoin="round" class="lucide lucide-users h-5 w-5">
+                                <path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"></path>
+                                <circle cx="9" cy="7" r="4"></circle>
+                                <path d="M22 21v-2a4 4 0 0 0-3-3.87"></path>
+                                <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
+                            </svg></span>
+                        <span>Members</span>
+                    </a>
+                    <a href="../Events/events.html" class="menu-item">
+                        <span><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                stroke-linejoin="round" class="lucide lucide-calendar h-5 w-5">
+                                <path d="M8 2v4"></path>
+                                <path d="M16 2v4"></path>
+                                <rect width="18" height="18" x="3" y="4" rx="2"></rect>
+                                <path d="M3 10h18"></path>
+                            </svg></span>
+                        <span>Events</span>
+                    </a>
+                    <a href="../Finance/finance.html" class="menu-item">
+                        <span><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                stroke-linejoin="round" class="lucide lucide-dollar-sign h-5 w-5">
+                                <line x1="12" x2="12" y1="2" y2="22"></line>
+                                <path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"></path>
+                            </svg></span>
+                        <span>Finances</span>
+                    </a>
+                    <a href="../Communication/communication.html" class="menu-item">
+                        <span><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                stroke-linejoin="round" class="lucide lucide-message-square h-5 w-5">
+                                <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path>
+                            </svg></span>
+                        <span>Communications</span>
+                    </a>
+                    <a href="../Attendance/attendance.html" class="menu-item ">
+                        <span><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                stroke-linejoin="round" class="lucide lucide-user-check h-5 w-5">
+                                <path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"></path>
+                                <circle cx="9" cy="7" r="4"></circle>
+                                <polyline points="16 11 18 13 22 9"></polyline>
+                            </svg></span>
+                        <span>Attendance</span>
+                    </a>
+                    <a href="../Report/report.html" class="menu-item">
+                        <span><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                stroke-linejoin="round" class="lucide lucide-chart-column h-5 w-5">
+                                <path d="M3 3v16a2 2 0 0 0 2 2h16"></path>
+                                <path d="M18 17V9"></path>
+                                <path d="M13 17V5"></path>
+                                <path d="M8 17v-3"></path>
+                            </svg></span>
+                        <span>Reports</span>
+                    </a>
+                </div>
+                <div class="menu-section">
+                    <div class="menu-label">AI Features</div>
+                    <a href="ai_insight.html" class="menu-item  has-badge">
+                        <span class="icon"><img src="../Assests/creative.png" alt="AI Insights"></span>
+                        <span>AI Insights</span>
+                        <span class="badge">New</span>
+                    </a>
+                    <a href="members_analytics.html" class="menu-item active has-badge">
+                        <span><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                stroke-linejoin="round" class="lucide lucide-chart-column h-5 w-5">
+                                <path d="M3 3v16a2 2 0 0 0 2 2h16"></path>
+                                <path d="M18 17V9"></path>
+                                <path d="M13 17V5"></path>
+                                <path d="M8 17v-3"></path>
+                            </svg></span>
+                        <span>Member Analytics</span>
+                        <span class="badge">New</span>
+                    </a>
+                    <a href="ai_smart_report.html" class="menu-item has-badge">
+                        <span><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                stroke-linejoin="round" class="lucide lucide-file-text h-5 w-5">
+                                <path d="M15 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7Z"></path>
+                                <path d="M14 2v4a2 2 0 0 0 2 2h4"></path>
+                                <path d="M10 9H8"></path>
+                                <path d="M16 13H8"></path>
+                                <path d="M16 17H8"></path>
+                            </svg></span>
+                        <span>Smart Reports</span>
+                        <span class="badge">New</span>
+                    </a>
+                </div>
+                <div class="menu-section">
+                    <div class="menu-label">Quick Actions</div>
+                    <a href="#" class="menu-item">
+                        <span><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                stroke-linejoin="round" class="lucide lucide-user-plus h-5 w-5">
+                                <path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"></path>
+                                <circle cx="9" cy="7" r="4"></circle>
+                                <line x1="19" x2="19" y1="8" y2="14"></line>
+                                <line x1="22" x2="16" y1="11" y2="11"></line>
+                            </svg></span>
+                        <span>Add Member</span>
+                    </a>
+                    <a href="#" class="menu-item">
+                        <span><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                stroke-linejoin="round" class="lucide lucide-calendar h-5 w-5">
+                                <path d="M8 2v4"></path>
+                                <path d="M16 2v4"></path>
+                                <rect width="18" height="18" x="3" y="4" rx="2"></rect>
+                                <path d="M3 10h18"></path>
+                            </svg></span>
+                        <span>New Event</span>
+                    </a>
+                    <a href="#" class="menu-item">
+                        <span class="icon"><img src="../Assests/records.png" alt="AI Insights"></span>
+                        <span>Record Donation</span>
+                    </a>
+                    <a href="#" class="menu-item">
+                        <span><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                stroke-linejoin="round" class="lucide lucide-bell h-5 w-5">
+                                <path d="M6 8a6 6 0 0 1 12 0c0 7 3 9 3 9H3s3-2 3-9"></path>
+                                <path d="M10.3 21a1.94 1.94 0 0 0 3.4 0"></path>
+                            </svg></span>
+                        <span>Send Message</span>
+                    </a>
+                </div>
+                <div class="menu-section">
+                    <div class="menu-label"></div>
+                    <a href="#" class="menu-item">
+                        <span><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                stroke-linejoin="round" class="lucide lucide-settings h-5 w-5">
+                                <path
+                                    d="M12.22 2h-.44a2 2 0 0 0-2 2v.18a2 2 0 0 1-1 1.73l-.43.25a2 2 0 0 1-2 0l-.15-.08a2 2 0 0 0-2.73.73l-.22.38a2 2 0 0 0 .73 2.73l.15.1a2 2 0 0 1 1 1.72v.51a2 2 0 0 1-1 1.74l-.15.09a2 2 0 0 0-.73 2.73l.22.38a2 2 0 0 0 2.73.73l.15-.08a2 2 0 0 1 2 0l.43.25a2 2 0 0 1 1 1.73V20a2 2 0 0 0 2 2h.44a2 2 0 0 0 2-2v-.18a2 2 0 0 1 1-1.73l.43-.25a2 2 0 0 1 2 0l.15.08a2 2 0 0 0 2.73-.73l.22-.39a2 2 0 0 0-.73-2.73l-.15-.08a2 2 0 0 1-1-1.74v-.5a2 2 0 0 1 1-1.74l.15-.09a2 2 0 0 0 .73-2.73l-.22-.38a2 2 0 0 0-2.73-.73l-.15.08a2 2 0 0 1-2 0l-.43-.25a2 2 0 0 1-1-1.73V4a2 2 0 0 0-2-2z">
+                                </path>
+                                <circle cx="12" cy="12" r="3"></circle>
+                            </svg></span>
+                        <span>Settings</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+        <!-- Main Content -->
+        <div class="main-content">
+            <!-- Header -->
+            <div class="header">
+                <button class="mobile-menu-toggle" onclick="toggleSidebar()">☰</button>
+                <div class="search-bar">
+                    <input type="text" class="search-input" placeholder="Search members, events, or anything...">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                        stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                        class="lucide lucide-search absolute left-3 top-1/2 transform -translate-y-1/2 h-4 w-4 text-muted-foreground">
+                        <circle cx="11" cy="11" r="8"></circle>
+                        <path d="m21 21-4.3-4.3"></path>
+                    </svg>
+                </div>
+                <div class="header-right">
+                    <div class="notification-icon">
+                        <span style="font-size: 20px;"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                                viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-bell h-5 w-5">
+                                <path d="M6 8a6 6 0 0 1 12 0c0 7 3 9 3 9H3s3-2 3-9"></path>
+                                <path d="M10.3 21a1.94 1.94 0 0 0 3.4 0"></path>
+                            </svg></span>
+                        <span class="notification-badge">3</span>
+                    </div>
+                    <div class="user-profile">
+                        <span style="font-size: 14px; font-weight: 500;">Pastor Lawrence</span>
+                        <span style="font-size: 20px;"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                                viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-user h-5 w-5">
+                                <path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2"></path>
+                                <circle cx="12" cy="7" r="4"></circle>
+                            </svg></span>
+                    </div>
+                </div>
+            </div>
+            <script>
+                function toggleSidebar() {
+                    const sidebar = document.querySelector('.sidebar');
+                    sidebar.classList.toggle('open');
+                }
+                document.addEventListener('click', function (event) {
+                    const sidebar = document.querySelector('.sidebar');
+                    const toggle = document.querySelector('.mobile-menu-toggle');
+                    if (window.innerWidth <= 768 && !sidebar.contains(event.target) && !toggle.contains(event.target) && sidebar.classList.contains('open')) {
+                        sidebar.classList.remove('open');
+                    }
+                });
+            </script>
+            <!-- Dashboard Content -->
+            <div class="dashboard-content">
+                    <div class="ride-header">
+                        <div class="vibe-content">
+                            <h1>Member Analytics</h1>
+                            <p>Comprehensive insights into member behavior, engagement, and trends</p>
+                        </div>
+                        <div class="flow-actions">
+                            <button class="pulse-btn pulse-secondary">Export Report</button>
+                            <button class="pulse-btn pulse-secondary">Configure Metrics</button>
+                            <button class="pulse-btn pulse-primary">Generate Insights</button>
+                        </div>
+                    </div>
+                    
+                    <div class="rampa-filters">
+                        <div class="wave-group">
+                            <label class="tide-label">Time Period</label>
+                            <select class="flow-select">
+                                <option>Last 30 Days</option>
+                                <option>Last 90 Days</option>
+                                <option>Last 6 Months</option>
+                                <option>Last Year</option>
+                                <option>All Time</option>
+                            </select>
+                        </div>
+                        <div class="wave-group">
+                            <label class="tide-label">Ministry</label>
+                            <select class="flow-select">
+                                <option>All Ministries</option>
+                                <option>Youth Ministry</option>
+                                <option>Worship Team</option>
+                                <option>Children's Ministry</option>
+                                <option>Prayer Team</option>
+                            </select>
+                        </div>
+                        <div class="wave-group">
+                            <label class="tide-label">Status</label>
+                            <select class="flow-select">
+                                <option>All Members</option>
+                                <option>Active Only</option>
+                                <option>Inactive Only</option>
+                                <option>New Members</option>
+                            </select>
+                        </div>
+                        <div class="wave-group">
+                            <label class="tide-label">Engagement</label>
+                            <select class="flow-select">
+                                <option>All Levels</option>
+                                <option>High Engagement</option>
+                                <option>Medium Engagement</option>
+                                <option>Low Engagement</option>
+                            </select>
+                        </div>
+                        <button class="pulse-btn pulse-primary" style="margin-bottom: 0;">Apply Filters</button>
+                    </div>
+
+                    <div class="metrics-wave">
+                        <div class="vibe-card">
+                            <div class="tide-header">
+                                <div class="metric-tide">Total Members</div>
+                                <div class="flow-icon blue">
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                        stroke-linejoin="round">
+                                        <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2" />
+                                        <circle cx="9" cy="7" r="4" />
+                                        <path d="M23 21v-2a4 4 0 0 0-3-3.87" />
+                                        <path d="M16 3.13a4 4 0 0 1 0 7.75" />
+                                    </svg>
+                                </div>
+                            </div>
+                            <div class="metric-flow">485</div>
+                            <div class="metric-shift positive">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                    stroke-linejoin="round">
+                                    <polyline points="18 15 12 9 6 15" />
+                                </svg>
+                                +12 this month
+                            </div>
+                        </div>
+                    
+                        <div class="vibe-card">
+                            <div class="tide-header">
+                                <div class="metric-tide">Avg Engagement</div>
+                                <div class="flow-icon green">
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                        stroke-linejoin="round">
+                                        <line x1="18" y1="20" x2="18" y2="10" />
+                                        <line x1="12" y1="20" x2="12" y2="4" />
+                                        <line x1="6" y1="20" x2="6" y2="14" />
+                                    </svg>
+                                </div>
+                            </div>
+                            <div class="metric-flow">87%</div>
+                            <div class="metric-shift positive">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                    stroke-linejoin="round">
+                                    <polyline points="18 15 12 9 6 15" />
+                                </svg>
+                                +8% vs last month
+                            </div>
+                        </div>
+                    
+                        <div class="vibe-card">
+                            <div class="tide-header">
+                                <div class="metric-tide">Retention Rate</div>
+                                <div class="flow-icon purple">
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                        stroke-linejoin="round">
+                                        <circle cx="12" cy="12" r="10" />
+                                        <circle cx="12" cy="12" r="6" />
+                                        <circle cx="12" cy="12" r="2" />
+                                    </svg>
+                                </div>
+                            </div>
+                            <div class="metric-flow">94%</div>
+                            <div class="metric-shift positive">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                    stroke-linejoin="round">
+                                    <polyline points="18 15 12 9 6 15" />
+                                </svg>
+                                +2.3% improvement
+                            </div>
+                        </div>
+                    
+                        <div class="vibe-card">
+                            <div class="tide-header">
+                                <div class="metric-tide">Avg Attendance</div>
+                                <div class="flow-icon orange">
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                        stroke-linejoin="round">
+                                        <rect x="3" y="4" width="18" height="18" rx="2" ry="2" />
+                                        <line x1="16" y1="2" x2="16" y2="6" />
+                                        <line x1="8" y1="2" x2="8" y2="6" />
+                                        <line x1="3" y1="10" x2="21" y2="10" />
+                                    </svg>
+                                </div>
+                            </div>
+                            <div class="metric-flow">73%</div>
+                            <div class="metric-shift positive">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                    stroke-linejoin="round">
+                                    <polyline points="18 15 12 9 6 15" />
+                                </svg>
+                                +5% this quarter
+                            </div>
+                        </div>
+                    
+                        <div class="vibe-card">
+                            <div class="tide-header">
+                                <div class="metric-tide">At Risk</div>
+                                <div class="flow-icon red">
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                        stroke-linejoin="round">
+                                        <path
+                                            d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z" />
+                                        <line x1="12" y1="9" x2="12" y2="13" />
+                                        <line x1="12" y1="17" x2="12.01" y2="17" />
+                                    </svg>
+                                </div>
+                            </div>
+                            <div class="metric-flow">23</div>
+                            <div class="metric-shift negative">Need attention</div>
+                        </div>
+                    </div>
+                    
+                   
+                    
+                    <div class="insights-rush">
+                        <div class="vibe-insights-header">
+                            <div class="flow-insights-icon">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                    stroke-linejoin="round">
+                                    <path d="M12 2l2.09 6.26H20l-5.18 3.76L16.91 18 12 14.77 7.09 18l1.09-5.98L3 8.26h5.91L12 2z" />
+                                </svg>
+                            </div>
+                            <h2 class="tide-insights-title">AI-Powered Insights</h2>
+                        </div>
+                    
+                        <div class="insights-grid">
+                            <div class="insight-block">
+                                <div class="insight-label">Fastest Growing Segment</div>
+                                <div class="insight-value">Youth 18–25</div>
+                                <div class="insight-description">+45% growth in 3 months</div>
+                            </div>
+                    
+                            <div class="insight-block">
+                                <div class="insight-label">Peak Engagement Day</div>
+                                <div class="insight-value">Sundays</div>
+                                <div class="insight-description">92% average attendance</div>
+                            </div>
+                    
+                            <div class="insight-block">
+                                <div class="insight-label">Optimal Contact Time</div>
+                                <div class="insight-value">Saturday 7PM</div>
+                                <div class="insight-description">Highest message open rate</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    
+                    <div class="segment-rush">
+                        <div class="vibe-segment">
+                            <div class="segment-tide">
+                                <span class="flow-segment-name">Champions</span>
+                            </div>
+                            <div class="segment-count">127</div>
+                            <div class="segment-ratio">26% of total members</div>
+                            <div class="segment-trend">↑ +15 new champions</div>
+                        </div>
+                    
+                        <div class="vibe-segment">
+                            <div class="segment-tide">
+                                <span class="flow-segment-name">Loyal</span>
+                            </div>
+                            <div class="segment-count">198</div>
+                            <div class="segment-ratio">41% of total members</div>
+                            <div class="segment-trend">↑ +8 new loyal members</div>
+                        </div>
+                    
+                        <div class="vibe-segment">
+                            <div class="segment-tide">
+                                <span class="flow-segment-name">At Risk</span>
+                            </div>
+                            <div class="segment-count">67</div>
+                            <div class="segment-ratio">14% of total members</div>
+                            <div class="segment-trend" style="color: #f59e0b;">⚠ Need engagement</div>
+                        </div>
+                    
+                        <div class="vibe-segment">
+                            <div class="segment-tide">
+                                <span class="flow-segment-name">Inactive</span>
+                            </div>
+                            <div class="segment-count">23</div>
+                            <div class="segment-ratio">5% of total members</div>
+                            <div class="segment-trend" style="color: #ef4444;">↓ Requires follow-up</div>
+                        </div>
+                    </div>
+                    
+                    <div class="charts-flow">
+                        <div class="rampa-chart">
+                            <div class="vibe-chart-header">
+                                <div class="tide-chart-title">
+                                    <h3>Engagement Trends</h3>
+                                    <p>Member activity over the last 12 months</p>
+                                </div>
+                                <button class="pulse-btn pulse-secondary">View Details</button>
+                            </div>
+                            <div class="flow-canvas">
+                                <canvas id="engagementChart"></canvas>
+                            </div>
+                        </div>
+                    
+                        <div class="rampa-chart">
+                            <div class="vibe-chart-header">
+                                <div class="tide-chart-title">
+                                    <h3>Engagement Distribution</h3>
+                                    <p>Current engagement levels</p>
+                                </div>
+                            </div>
+                            <div class="flow-canvas">
+                                <canvas id="distributionChart"></canvas>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="rampa-lifecycle">
+                        <div class="vibe-section-header">
+                            <div class="tide-section-title">
+                                <h2>Member Lifecycle Stages</h2>
+                                <p>Distribution across different membership stages</p>
+                            </div>
+                        </div>
+                    
+                        <div class="lifecycle-grid">
+                            <div class="flow-stage">
+                                <div class="stage-emblem stage1">
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                        stroke-linejoin="round">
+                                        <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
+                                        <path d="M12 8v4" />
+                                        <path d="M12 16h.01" />
+                                    </svg>
+                                </div>
+                                <div class="stage-label">Newcomers</div>
+                                <div class="stage-count">67</div>
+                                <div class="stage-ratio">14% of members</div>
+                            </div>
+                    
+                            <div class="flow-stage">
+                                <div class="stage-emblem stage2">
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                        stroke-linejoin="round">
+                                        <polyline points="23 4 23 10 17 10" />
+                                        <polyline points="1 20 1 14 7 14" />
+                                        <path d="M3.51 9a9 9 0 0 1 14.85-3.36L23 10M1 14l4.64 4.36A9 9 0 0 0 20.49 15" />
+                                    </svg>
+                                </div>
+                                <div class="stage-label">Growing</div>
+                                <div class="stage-count">134</div>
+                                <div class="stage-ratio">28% of members</div>
+                            </div>
+                    
+                            <div class="flow-stage">
+                                <div class="stage-emblem stage3">
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                        stroke-linejoin="round">
+                                        <polygon
+                                            points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" />
+                                    </svg>
+                                </div>
+                                <div class="stage-label">Established</div>
+                                <div class="stage-count">198</div>
+                                <div class="stage-ratio">41% of members</div>
+                            </div>
+                    
+                            <div class="flow-stage">
+                                <div class="stage-emblem stage4">
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                        stroke-linejoin="round">
+                                        <path d="M6 9H4.5a2.5 2.5 0 0 1 0-5H6" />
+                                        <path d="M18 9h1.5a2.5 2.5 0 0 0 0-5H18" />
+                                        <path d="M4 22h16" />
+                                        <path d="M10 14.66V17c0 .55-.47.98-.97 1.21C7.85 18.75 7 20.24 7 22" />
+                                        <path d="M14 14.66V17c0 .55.47.98.97 1.21C16.15 18.75 17 20.24 17 22" />
+                                        <path d="M18 2H6v7a6 6 0 0 0 12 0V2z" />
+                                    </svg>
+                                </div>
+                                <div class="stage-label">Leaders</div>
+                                <div class="stage-count">63</div>
+                                <div class="stage-ratio">13% of members</div>
+                            </div>
+                    
+                            <div class="flow-stage">
+                                <div class="stage-emblem stage5">
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                        stroke-linejoin="round">
+                                        <path d="M2 12h6" />
+                                        <path d="M22 12h-6" />
+                                        <path d="M12 2v2" />
+                                        <path d="M12 8v2" />
+                                        <path d="M12 14v2" />
+                                        <path d="M12 20v2" />
+                                        <path d="m19 9-3 3 3 3" />
+                                        <path d="m5 15 3-3-3-3" />
+                                    </svg>
+                                </div>
+                                <div class="stage-label">Dormant</div>
+                                <div class="stage-count">23</div>
+                                <div class="stage-ratio">5% of members</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    
+                    <div class="rampa-cohort">
+                        <div class="vibe-section-header">
+                            <div class="tide-section-title">
+                                <h2>Cohort Analysis</h2>
+                                <p>Retention rates by member join date</p>
+                            </div>
+                        </div>
+                        <table class="vibe-cohort-table">
+                            <thead>
+                                <tr>
+                                    <th>Cohort</th>
+                                    <th>Size</th>
+                                    <th>Month 1</th>
+                                    <th>Month 3</th>
+                                    <th>Month 6</th>
+                                    <th>Month 12</th>
+                                    <th>Current</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>Jan 2024</td>
+                                    <td>45</td>
+                                    <td><span class="cohort-block retention-strong">100%</span></td>
+                                    <td><span class="cohort-block retention-strong">96%</span></td>
+                                    <td><span class="cohort-block retention-strong">91%</span></td>
+                                    <td><span class="cohort-block retention-strong">89%</span></td>
+                                    <td><span class="cohort-block retention-strong">89%</span></td>
+                                </tr>
+                                <tr>
+                                    <td>Apr 2024</td>
+                                    <td>38</td>
+                                    <td><span class="cohort-block retention-strong">100%</span></td>
+                                    <td><span class="cohort-block retention-strong">95%</span></td>
+                                    <td><span class="cohort-block retention-strong">92%</span></td>
+                                    <td>-</td>
+                                    <td><span class="cohort-block retention-strong">92%</span></td>
+                                </tr>
+                                <tr>
+                                    <td>Jul 2024</td>
+                                    <td>52</td>
+                                    <td><span class="cohort-block retention-strong">100%</span></td>
+                                    <td><span class="cohort-block retention-strong">94%</span></td>
+                                    <td>-</td>
+                                    <td>-</td>
+                                    <td><span class="cohort-block retention-strong">94%</span></td>
+                                </tr>
+                                <tr>
+                                    <td>Oct 2024</td>
+                                    <td>67</td>
+                                    <td><span class="cohort-block retention-strong">100%</span></td>
+                                    <td>-</td>
+                                    <td>-</td>
+                                    <td>-</td>
+                                    <td><span class="cohort-block retention-strong">100%</span></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    
+                    <div class="demo-flow">
+                        <div class="vibe-demo-card">
+                            <div class="tide-section-title">
+                                <h2>Age Distribution</h2>
+                                <p>Members by age group</p>
+                            </div>
+                            <div class="demo-chart">
+                                <canvas id="ageChart"></canvas>
+                            </div>
+                        </div>
+                    
+                        <div class="vibe-demo-card">
+                            <div class="tide-section-title">
+                                <h2>Ministry Participation</h2>
+                                <p>Active involvement by ministry</p>
+                            </div>
+                            <div class="demo-chart">
+                                <canvas id="ministryChart"></canvas>
+                            </div>
+                        </div>
+                    
+                        <div class="vibe-demo-card">
+                            <div class="tide-section-title">
+                                <h2>Attendance Frequency</h2>
+                                <p>Service attendance patterns</p>
+                            </div>
+                            <div class="demo-chart">
+                                <canvas id="frequencyChart"></canvas>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="rampa-heatmap">
+                        <div class="vibe-section-header">
+                            <div class="tide-section-title">
+                                <h2>Activity Heatmap</h2>
+                                <p>Member engagement intensity by day of week</p>
+                            </div>
+                        </div>
+                        <div class="vibe-heatmap-grid" id="heatmapGrid"></div>
+                    </div>
+                    
+                    <div class="rampa-performers">
+                        <div class="vibe-section-header">
+                            <div class="tide-section-title">
+                                <h2>Top Engaged Members</h2>
+                                <p>Highest engagement scores this month</p>
+                            </div>
+                        </div>
+                        <div class="vibe-performer-list">
+                            <div class="flow-performer-item">
+                                <div class="performer-rank">1</div>
+                                <div class="performer-avatar">SJ</div>
+                                <div class="performer-info">
+                                    <div class="performer-name">Sarah Johnson</div>
+                                    <div class="performer-stats">Worship Team • 100% attendance • 47 activities</div>
+                                </div>
+                                <div class="performer-score">
+                                    <div class="score-value">98</div>
+                                    <div class="score-label">SCORE</div>
+                                </div>
+                            </div>
+                    
+                            <div class="flow-performer-item">
+                                <div class="performer-rank">2</div>
+                                <div class="performer-avatar">MC</div>
+                                <div class="performer-info">
+                                    <div class="performer-name">Michael Chen</div>
+                                    <div class="performer-stats">Youth Ministry • 96% attendance • 42 activities</div>
+                                </div>
+                                <div class="performer-score">
+                                    <div class="score-value">96</div>
+                                    <div class="score-label">SCORE</div>
+                                </div>
+                            </div>
+                    
+                            <div class="flow-performer-item">
+                                <div class="performer-rank">3</div>
+                                <div class="performer-avatar">JW</div>
+                                <div class="performer-info">
+                                    <div class="performer-name">Jennifer Williams</div>
+                                    <div class="performer-stats">Prayer Team • 100% attendance • 39 activities</div>
+                                </div>
+                                <div class="performer-score">
+                                    <div class="score-value">95</div>
+                                    <div class="score-label">SCORE</div>
+                                </div>
+                            </div>
+                    
+                            <div class="flow-performer-item">
+                                <div class="performer-rank">4</div>
+                                <div class="performer-avatar">ER</div>
+                                <div class="performer-info">
+                                    <div class="performer-name">Emily Rodriguez</div>
+                                    <div class="performer-stats">Children's Ministry • 92% attendance • 38 activities</div>
+                                </div>
+                                <div class="performer-score">
+                                    <div class="score-value">93</div>
+                                    <div class="score-label">SCORE</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <script>
+                        // Engagement Trends Chart
+                        const engagementCtx = document.getElementById('engagementChart').getContext('2d');
+                        new Chart(engagementCtx, {
+                            type: 'line',
+                            data: {
+                                labels: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'],
+                                datasets: [
+                                    {
+                                        label: 'High Engagement',
+                                        data: [98, 102, 108, 115, 120, 125, 127, 130, 134, 138, 132, 127],
+                                        borderColor: '#10b981',
+                                        backgroundColor: 'rgba(16, 185, 129, 0.1)',
+                                        tension: 0.4,
+                                        fill: true
+                                    },
+                                    {
+                                        label: 'Medium Engagement',
+                                        data: [145, 152, 158, 165, 172, 178, 185, 190, 195, 200, 202, 198],
+                                        borderColor: '#3b82f6',
+                                        backgroundColor: 'rgba(59, 130, 246, 0.1)',
+                                        tension: 0.4,
+                                        fill: true
+                                    },
+                                    {
+                                        label: 'Low Engagement',
+                                        data: [85, 82, 78, 75, 72, 68, 65, 62, 58, 55, 60, 67],
+                                        borderColor: '#f59e0b',
+                                        backgroundColor: 'rgba(245, 158, 11, 0.1)',
+                                        tension: 0.4,
+                                        fill: true
+                                    }
+                                ]
+                            },
+                            options: {
+                                responsive: true,
+                                maintainAspectRatio: false,
+                                plugins: {
+                                    legend: {
+                                        position: 'bottom'
+                                    }
+                                },
+                                scales: {
+                                    y: {
+                                        beginAtZero: true
+                                    }
+                                }
+                            }
+                        });
+
+                        // Distribution Chart
+                        const distributionCtx = document.getElementById('distributionChart').getContext('2d');
+                        new Chart(distributionCtx, {
+                            type: 'doughnut',
+                            data: {
+                                labels: ['High', 'Medium', 'Low', 'Inactive'],
+                                datasets: [{
+                                    data: [127, 198, 67, 23],
+                                    backgroundColor: ['#10b981', '#3b82f6', '#f59e0b', '#ef4444'],
+                                    borderWidth: 0
+                                }]
+                            },
+                            options: {
+                                responsive: true,
+                                maintainAspectRatio: false,
+                                plugins: {
+                                    legend: {
+                                        position: 'bottom'
+                                    }
+                                }
+                            }
+                        });
+
+                        // Age Chart
+                        const ageCtx = document.getElementById('ageChart').getContext('2d');
+                        new Chart(ageCtx, {
+                            type: 'bar',
+                            data: {
+                                labels: ['13-17', '18-25', '26-35', '36-45', '46-55', '56-65', '65+'],
+                                datasets: [{
+                                    label: 'Members',
+                                    data: [45, 89, 134, 98, 67, 38, 14],
+                                    backgroundColor: '#3b82f6',
+                                    borderRadius: 6
+                                }]
+                            },
+                            options: {
+                                responsive: true,
+                                maintainAspectRatio: false,
+                                plugins: {
+                                    legend: {
+                                        display: false
+                                    }
+                                },
+                                scales: {
+                                    y: {
+                                        beginAtZero: true
+                                    }
+                                }
+                            }
+                        });
+
+                        // Ministry Chart
+                        const ministryCtx = document.getElementById('ministryChart').getContext('2d');
+                        new Chart(ministryCtx, {
+                            type: 'doughnut',
+                            data: {
+                                labels: ['Worship', 'Youth', 'Children', 'Prayer', 'Men', 'Women', 'Other'],
+                                datasets: [{
+                                    data: [85, 134, 92, 67, 45, 38, 24],
+                                    backgroundColor: ['#3b82f6', '#10b981', '#f59e0b', '#ec4899', '#8b5cf6', '#06b6d4', '#64748b'],
+                                    borderWidth: 0
+                                }]
+                            },
+                            options: {
+                                responsive: true,
+                                maintainAspectRatio: false,
+                                plugins: {
+                                    legend: {
+                                        position: 'bottom'
+                                    }
+                                }
+                            }
+                        });
+
+                        // Frequency Chart
+                        const frequencyCtx = document.getElementById('frequencyChart').getContext('2d');
+                        new Chart(frequencyCtx, {
+                            type: 'bar',
+                            data: {
+                                labels: ['Weekly', '2x/Month', 'Monthly', 'Quarterly', 'Rarely'],
+                                datasets: [{
+                                    label: 'Members',
+                                    data: [245, 134, 67, 28, 11],
+                                    backgroundColor: ['#10b981', '#3b82f6', '#f59e0b', '#ec4899', '#ef4444'],
+                                    borderRadius: 6
+                                }]
+                            },
+                            options: {
+                                responsive: true,
+                                maintainAspectRatio: false,
+                                plugins: {
+                                    legend: {
+                                        display: false
+                                    }
+                                },
+                                scales: {
+                                    y: {
+                                        beginAtZero: true
+                                    }
+                                }
+                            }
+                        });
+
+                        // Generate Heatmap
+                        const days = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'];
+                        const activityData = [356, 67, 89, 124, 45, 78, 92];
+                        const heatmapGrid = document.getElementById('heatmapGrid');
+
+                        days.forEach((day, index) => {
+                            const value = activityData[index];
+                            const intensity = Math.min(value / 400, 1);
+                            const cell = document.createElement('div');
+                            cell.className = 'heatmap-block';
+                            cell.style.background = `rgba(59, 130, 246, ${intensity})`;
+                            cell.style.color = intensity > 0.5 ? 'white' : '#1e293b';
+                            cell.innerHTML = `
+                                    <div class="heatmap-dayname">${day}</div>
+                                    <div class="heatmap-value">${value}</div>
+                                `;
+                            heatmapGrid.appendChild(cell);
+                        });
+                    </script>
+              
+            </div>
+
+        </div>
+    </div>
+    </div>
+</body>
+
+</html>

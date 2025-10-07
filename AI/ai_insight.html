@@ -1,0 +1,842 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Church Events</title>
+    <link rel="stylesheet" href="../style.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+</head>
+
+<body>
+    <div class="container">
+        <!-- Sidebar -->
+        <div class="sidebar">
+            <div class="logo">
+                <div class="logo-icon">
+                    <img src="../church.png" alt="ChurchFlow Logo">
+                </div>
+                <div class="logo-text">
+                    <h3>Church</h3>
+                    <p>Management System</p>
+                </div>
+            </div>
+            <div class="sidebar-content">
+                <div class="menu-section">
+                    <div class="menu-label">Main Menu</div>
+                    <a href="../index.html" class="menu-item">
+                        <span><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                stroke-linejoin="round" class="lucide lucide-layout-dashboard h-5 w-5">
+                                <rect width="7" height="9" x="3" y="3" rx="1"></rect>
+                                <rect width="7" height="5" x="14" y="3" rx="1"></rect>
+                                <rect width="7" height="9" x="14" y="12" rx="1"></rect>
+                                <rect width="7" height="5" x="3" y="16" rx="1"></rect>
+                            </svg></span>
+                        <span>Dashboard</span>
+                    </a>
+                    <a href="../Members/members.html" class="menu-item">
+                        <span><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                stroke-linejoin="round" class="lucide lucide-users h-5 w-5">
+                                <path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"></path>
+                                <circle cx="9" cy="7" r="4"></circle>
+                                <path d="M22 21v-2a4 4 0 0 0-3-3.87"></path>
+                                <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
+                            </svg></span>
+                        <span>Members</span>
+                    </a>
+                    <a href="../Events/events.html" class="menu-item">
+                        <span><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                stroke-linejoin="round" class="lucide lucide-calendar h-5 w-5">
+                                <path d="M8 2v4"></path>
+                                <path d="M16 2v4"></path>
+                                <rect width="18" height="18" x="3" y="4" rx="2"></rect>
+                                <path d="M3 10h18"></path>
+                            </svg></span>
+                        <span>Events</span>
+                    </a>
+                    <a href="../Finance/finance.html" class="menu-item">
+                        <span><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                stroke-linejoin="round" class="lucide lucide-dollar-sign h-5 w-5">
+                                <line x1="12" x2="12" y1="2" y2="22"></line>
+                                <path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"></path>
+                            </svg></span>
+                        <span>Finances</span>
+                    </a>
+                    <a href="../Communication/communication.html" class="menu-item">
+                        <span><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                stroke-linejoin="round" class="lucide lucide-message-square h-5 w-5">
+                                <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path>
+                            </svg></span>
+                        <span>Communications</span>
+                    </a>
+                    <a href="../Attendance/attendance.html" class="menu-item ">
+                        <span><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                stroke-linejoin="round" class="lucide lucide-user-check h-5 w-5">
+                                <path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"></path>
+                                <circle cx="9" cy="7" r="4"></circle>
+                                <polyline points="16 11 18 13 22 9"></polyline>
+                            </svg></span>
+                        <span>Attendance</span>
+                    </a>
+                    <a href="../Report/report.html" class="menu-item">
+                        <span><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                stroke-linejoin="round" class="lucide lucide-chart-column h-5 w-5">
+                                <path d="M3 3v16a2 2 0 0 0 2 2h16"></path>
+                                <path d="M18 17V9"></path>
+                                <path d="M13 17V5"></path>
+                                <path d="M8 17v-3"></path>
+                            </svg></span>
+                        <span>Reports</span>
+                    </a>
+                </div>
+                <div class="menu-section">
+                    <div class="menu-label">AI Features</div>
+                    <a href="#" class="menu-item active has-badge">
+                        <span class="icon"><img src="../Assests/creative.png" alt="AI Insights"></span>
+                        <span>AI Insights</span>
+                        <span class="badge">New</span>
+                    </a>
+                    <a href="members_analytics.html" class="menu-item has-badge">
+                        <span><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                stroke-linejoin="round" class="lucide lucide-chart-column h-5 w-5">
+                                <path d="M3 3v16a2 2 0 0 0 2 2h16"></path>
+                                <path d="M18 17V9"></path>
+                                <path d="M13 17V5"></path>
+                                <path d="M8 17v-3"></path>
+                            </svg></span>
+                        <span>Member Analytics</span>
+                        <span class="badge">New</span>
+                    </a>
+                    <a href="ai_insight.html" class="menu-item has-badge">
+                        <span><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                stroke-linejoin="round" class="lucide lucide-file-text h-5 w-5">
+                                <path d="M15 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7Z"></path>
+                                <path d="M14 2v4a2 2 0 0 0 2 2h4"></path>
+                                <path d="M10 9H8"></path>
+                                <path d="M16 13H8"></path>
+                                <path d="M16 17H8"></path>
+                            </svg></span>
+                        <span>Smart Reports</span>
+                        <span class="badge">New</span>
+                    </a>
+                </div>
+                <div class="menu-section">
+                    <div class="menu-label">Quick Actions</div>
+                    <a href="#" class="menu-item">
+                        <span><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                stroke-linejoin="round" class="lucide lucide-user-plus h-5 w-5">
+                                <path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"></path>
+                                <circle cx="9" cy="7" r="4"></circle>
+                                <line x1="19" x2="19" y1="8" y2="14"></line>
+                                <line x1="22" x2="16" y1="11" y2="11"></line>
+                            </svg></span>
+                        <span>Add Member</span>
+                    </a>
+                    <a href="#" class="menu-item">
+                        <span><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                stroke-linejoin="round" class="lucide lucide-calendar h-5 w-5">
+                                <path d="M8 2v4"></path>
+                                <path d="M16 2v4"></path>
+                                <rect width="18" height="18" x="3" y="4" rx="2"></rect>
+                                <path d="M3 10h18"></path>
+                            </svg></span>
+                        <span>New Event</span>
+                    </a>
+                    <a href="#" class="menu-item">
+                        <span class="icon"><img src="../Assests/records.png" alt="AI Insights"></span>
+                        <span>Record Donation</span>
+                    </a>
+                    <a href="#" class="menu-item">
+                        <span><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                stroke-linejoin="round" class="lucide lucide-bell h-5 w-5">
+                                <path d="M6 8a6 6 0 0 1 12 0c0 7 3 9 3 9H3s3-2 3-9"></path>
+                                <path d="M10.3 21a1.94 1.94 0 0 0 3.4 0"></path>
+                            </svg></span>
+                        <span>Send Message</span>
+                    </a>
+                </div>
+                <div class="menu-section">
+                    <div class="menu-label"></div>
+                    <a href="#" class="menu-item">
+                        <span><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                stroke-linejoin="round" class="lucide lucide-settings h-5 w-5">
+                                <path
+                                    d="M12.22 2h-.44a2 2 0 0 0-2 2v.18a2 2 0 0 1-1 1.73l-.43.25a2 2 0 0 1-2 0l-.15-.08a2 2 0 0 0-2.73.73l-.22.38a2 2 0 0 0 .73 2.73l.15.1a2 2 0 0 1 1 1.72v.51a2 2 0 0 1-1 1.74l-.15.09a2 2 0 0 0-.73 2.73l.22.38a2 2 0 0 0 2.73.73l.15-.08a2 2 0 0 1 2 0l.43.25a2 2 0 0 1 1 1.73V20a2 2 0 0 0 2 2h.44a2 2 0 0 0 2-2v-.18a2 2 0 0 1 1-1.73l.43-.25a2 2 0 0 1 2 0l.15.08a2 2 0 0 0 2.73-.73l.22-.39a2 2 0 0 0-.73-2.73l-.15-.08a2 2 0 0 1-1-1.74v-.5a2 2 0 0 1 1-1.74l.15-.09a2 2 0 0 0 .73-2.73l-.22-.38a2 2 0 0 0-2.73-.73l-.15.08a2 2 0 0 1-2 0l-.43-.25a2 2 0 0 1-1-1.73V4a2 2 0 0 0-2-2z">
+                                </path>
+                                <circle cx="12" cy="12" r="3"></circle>
+                            </svg></span>
+                        <span>Settings</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+        <!-- Main Content -->
+        <div class="main-content">
+            <!-- Header -->
+            <div class="header">
+                <button class="mobile-menu-toggle" onclick="toggleSidebar()">☰</button>
+                <div class="search-bar">
+                    <input type="text" class="search-input" placeholder="Search members, events, or anything...">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                        stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                        class="lucide lucide-search absolute left-3 top-1/2 transform -translate-y-1/2 h-4 w-4 text-muted-foreground">
+                        <circle cx="11" cy="11" r="8"></circle>
+                        <path d="m21 21-4.3-4.3"></path>
+                    </svg>
+                </div>
+                <div class="header-right">
+                    <div class="notification-icon">
+                        <span style="font-size: 20px;"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                                viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-bell h-5 w-5">
+                                <path d="M6 8a6 6 0 0 1 12 0c0 7 3 9 3 9H3s3-2 3-9"></path>
+                                <path d="M10.3 21a1.94 1.94 0 0 0 3.4 0"></path>
+                            </svg></span>
+                        <span class="notification-badge">3</span>
+                    </div>
+                    <div class="user-profile">
+                        <span style="font-size: 14px; font-weight: 500;">Pastor Lawrence</span>
+                        <span style="font-size: 20px;"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                                viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-user h-5 w-5">
+                                <path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2"></path>
+                                <circle cx="12" cy="7" r="4"></circle>
+                            </svg></span>
+                    </div>
+                </div>
+            </div>
+            <script>
+                function toggleSidebar() {
+                    const sidebar = document.querySelector('.sidebar');
+                    sidebar.classList.toggle('open');
+                }
+                document.addEventListener('click', function (event) {
+                    const sidebar = document.querySelector('.sidebar');
+                    const toggle = document.querySelector('.mobile-menu-toggle');
+                    if (window.innerWidth <= 768 && !sidebar.contains(event.target) && !toggle.contains(event.target) && sidebar.classList.contains('open')) {
+                        sidebar.classList.remove('open');
+                    }
+                });
+            </script>
+            <!-- Dashboard Content -->
+            <div class="dashboard-content">
+                    <div class="xxam-header">
+                        <div class="kraz-content">
+                            <h1>AI Intelligence Center</h1>
+                            <p>Advanced predictive analytics and automated insights for your church</p>
+                        </div>
+                        <div class="epir-actions">
+                            <button class="voxx-btn voxx-btn-secondary">Configure AI</button>
+                            <button class="voxx-btn voxx-btn-primary">Train Models</button>
+                        </div>
+                    </div>
+                    
+                    <div class="zest-status-bar">
+                        <div class="quix-status-left">
+                            <div class="quix-pulse">AI</div>
+                            <div class="quix-status-text">
+                                <h3>AI System Active</h3>
+                                <p>Analyzing 485 members across 12 data points in real-time</p>
+                            </div>
+                        </div>
+                        <div class="nexo-stats">
+                            <div class="nexo-stat-item">
+                                <div class="nexo-stat-value">847</div>
+                                <div class="nexo-stat-label">Insights Generated</div>
+                            </div>
+                            <div class="nexo-stat-item">
+                                <div class="nexo-stat-value">96%</div>
+                                <div class="nexo-stat-label">Accuracy Rate</div>
+                            </div>
+                            <div class="nexo-stat-item">
+                                <div class="nexo-stat-value">24/7</div>
+                                <div class="nexo-stat-label">Active Monitoring</div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="kwest-insights-grid">
+                        <div class="kwest-insight-card zest-critical">
+                            <div class="yaro-insight-header">
+                                <div class="yaro-insight-icon" style="background: #fee2e2; color: #dc2626;">
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                        stroke-linejoin="round">
+                                        <path
+                                            d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z" />
+                                        <line x1="12" y1="9" x2="12" y2="13" />
+                                        <line x1="12" y1="17" x2="12.01" y2="17" />
+                                    </svg>
+                                </div>
+                                <span class="yaro-insight-priority xoro-high">High Priority</span>
+                            </div>
+                            <h3 class="yaro-insight-title">Member Retention Alert</h3>
+                            <p class="yaro-insight-description">23 members showing disengagement patterns. AI predicts 15 may become
+                                inactive within 30 days without intervention.</p>
+                            <div class="yaro-insight-metrics">
+                                <div class="yaro-insight-metric">
+                                    <div class="zaro-metric-label">Risk Score</div>
+                                    <div class="zaro-metric-value" style="color: #dc2626;">8.4/10</div>
+                                </div>
+                                <div class="yaro-insight-metric">
+                                    <div class="zaro-metric-label">Confidence</div>
+                                    <div class="zaro-metric-value">92%</div>
+                                </div>
+                            </div>
+                            <div class="zaro-insight-actions">
+                                <button class="zaro-insight-btn voxx-primary">Send Follow-Up</button>
+                                <button class="zaro-insight-btn">View Details</button>
+                            </div>
+                        </div>
+                    
+                        <div class="kwest-insight-card zest-success">
+                            <div class="yaro-insight-header">
+                                <div class="yaro-insight-icon" style="background: #d1fae5; color: #10b981;">
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                        stroke-linejoin="round">
+                                        <polyline points="23 6 13.5 15.5 8.5 10.5 1 18" />
+                                        <polyline points="17 6 23 6 23 12" />
+                                    </svg>
+                                </div>
+                                <span class="yaro-insight-priority xoro-low">Opportunity</span>
+                            </div>
+                            <h3 class="yaro-insight-title">Youth Growth Potential</h3>
+                            <p class="yaro-insight-description">Youth ministry trending 95% above average. AI recommends expanding capacity
+                                and adding 2 staff members.</p>
+                            <div class="yaro-insight-metrics">
+                                <div class="yaro-insight-metric">
+                                    <div class="zaro-metric-label">Impact Score</div>
+                                    <div class="zaro-metric-value" style="color: #10b981;">9.2/10</div>
+                                </div>
+                                <div class="yaro-insight-metric">
+                                    <div class="zaro-metric-label">ROI Estimate</div>
+                                    <div class="zaro-metric-value">+45%</div>
+                                </div>
+                            </div>
+                            <div class="zaro-insight-actions">
+                                <button class="zaro-insight-btn voxx-primary">Create Plan</button>
+                                <button class="zaro-insight-btn">Analyze</button>
+                            </div>
+                        </div>
+                    
+                        <div class="kwest-insight-card zest-warning">
+                            <div class="yaro-insight-header">
+                                <div class="yaro-insight-icon" style="background: #fef3c7; color: #d97706;">
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                        stroke-linejoin="round">
+                                        <line x1="12" y1="1" x2="12" y2="13" />
+                                        <path d="M12 1a5 5 0 0 1 5 5v7a5 5 0 0 1-10 0V6a5 5 0 0 1 5-5z" />
+                                        <path d="M8.5 21h7" />
+                                        <path d="M12 17v4" />
+                                    </svg>
+                                </div>
+                                <span class="yaro-insight-priority xoro-medium">Action Needed</span>
+                            </div>
+                            <h3 class="yaro-insight-title">Donation Pattern Shift</h3>
+                            <p class="yaro-insight-description">AI detected unusual giving pattern. 12% decrease in recurring donations
+                                expected next month without engagement.</p>
+                            <div class="yaro-insight-metrics">
+                                <div class="yaro-insight-metric">
+                                    <div class="zaro-metric-label">Predicted Impact</div>
+                                    <div class="zaro-metric-value">-$2.4K</div>
+                                </div>
+                                <div class="yaro-insight-metric">
+                                    <div class="zaro-metric-label">Time to Act</div>
+                                    <div class="zaro-metric-value">7 days</div>
+                                </div>
+                            </div>
+                            <div class="zaro-insight-actions">
+                                <button class="zaro-insight-btn voxx-primary">Campaign</button>
+                                <button class="zaro-insight-btn">Review</button>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="prax-main-grid">
+                        <div class="epir-section">
+                            <div class="kron-section-header">
+                                <div class="kron-section-title">
+                                    <h2>Predictive Analytics</h2>
+                                    <p>AI-powered forecasting for the next 30 days</p>
+                                </div>
+                                <button class="voxx-btn voxx-btn-secondary">Adjust Timeframe</button>
+                            </div>
+                    
+                            <div class="jiva-prediction-cards">
+                                <div class="jiva-prediction-card">
+                                    <div class="jiva-prediction-header">
+                                        <div class="jiva-prediction-icon">
+                                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                                stroke-linejoin="round">
+                                                <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2" />
+                                                <circle cx="9" cy="7" r="4" />
+                                                <path d="M23 21v-2a4 4 0 0 0-3-3.87" />
+                                                <path d="M16 3.13a4 4 0 0 1 0 7.75" />
+                                            </svg>
+                                        </div>
+                                        <div class="jiva-prediction-label">Attendance Forecast</div>
+                                    </div>
+                                    <div class="jiva-prediction-value">378</div>
+                                    <div class="jiva-prediction-trend lift-up">
+                                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                            stroke-linejoin="round">
+                                            <polyline points="18 15 12 9 6 15" />
+                                        </svg>
+                                        +6.2% vs current
+                                    </div>
+                                    <div class="xeno-confidence-bar">
+                                        <div class="xeno-confidence-label">Confidence: 94%</div>
+                                        <div class="xeno-confidence-progress">
+                                            <div class="xeno-confidence-fill" style="width: 94%"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                            
+                                <div class="jiva-prediction-card">
+                                    <div class="jiva-prediction-header">
+                                        <div class="jiva-prediction-icon">
+                                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                                stroke-linejoin="round">
+                                                <line x1="12" y1="1" x2="12" y2="23" />
+                                                <path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6" />
+                                            </svg>
+                                        </div>
+                                        <div class="jiva-prediction-label">Expected Donations</div>
+                                    </div>
+                                    <div class="jiva-prediction-value">$21.3K</div>
+                                    <div class="jiva-prediction-trend lift-up">
+                                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                            stroke-linejoin="round">
+                                            <polyline points="18 15 12 9 6 15" />
+                                        </svg>
+                                        +7.5% projected
+                                    </div>
+                                    <div class="xeno-confidence-bar">
+                                        <div class="xeno-confidence-label">Confidence: 89%</div>
+                                        <div class="xeno-confidence-progress">
+                                            <div class="xeno-confidence-fill" style="width: 89%"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                            
+                                <div class="jiva-prediction-card">
+                                    <div class="jiva-prediction-header">
+                                        <div class="jiva-prediction-icon">
+                                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                                stroke-linejoin="round">
+                                                <rect x="3" y="4" width="18" height="18" rx="2" ry="2" />
+                                                <line x1="16" y1="2" x2="16" y2="6" />
+                                                <line x1="8" y1="2" x2="8" y2="6" />
+                                                <line x1="3" y1="10" x2="21" y2="10" />
+                                            </svg>
+                                        </div>
+                                        <div class="jiva-prediction-label">Event Participation</div>
+                                    </div>
+                                    <div class="jiva-prediction-value">142</div>
+                                    <div class="jiva-prediction-trend lift-up">
+                                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                            stroke-linejoin="round">
+                                            <polyline points="18 15 12 9 6 15" />
+                                        </svg>
+                                        +12% expected
+                                    </div>
+                                    <div class="xeno-confidence-bar">
+                                        <div class="xeno-confidence-label">Confidence: 91%</div>
+                                        <div class="xeno-confidence-progress">
+                                            <div class="xeno-confidence-fill" style="width: 91%"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                            
+                                <div class="jiva-prediction-card">
+                                    <div class="jiva-prediction-header">
+                                        <div class="jiva-prediction-icon">
+                                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                                stroke-linejoin="round">
+                                                <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" />
+                                                <polyline points="22,6 12,13 2,6" />
+                                            </svg>
+                                        </div>
+                                        <div class="jiva-prediction-label">Message Engagement</div>
+                                    </div>
+                                    <div class="jiva-prediction-value">92%</div>
+                                    <div class="jiva-prediction-trend lift-up">
+                                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                            stroke-linejoin="round">
+                                            <polyline points="18 15 12 9 6 15" />
+                                        </svg>
+                                        +3% improvement
+                                    </div>
+                                    <div class="xeno-confidence-bar">
+                                        <div class="xeno-confidence-label">Confidence: 96%</div>
+                                        <div class="xeno-confidence-progress">
+                                            <div class="xeno-confidence-fill" style="width: 96%"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                    
+                            <div class="grafi-chart-container">
+                                <canvas id="predictionChart"></canvas>
+                            </div>
+                        </div>
+                    
+                        <div class="sylo-assistant">
+                            <div class="sylo-assistant-header">
+                                <h2>AI Assistant</h2>
+                                <div class="sylo-assistant-status">
+                                    <span class="sylo-status-dot"></span>
+                                    <span>Online and ready</span>
+                                </div>
+                            </div>
+                    
+                            <div class="chatz-container" id="chatContainer">
+                                <div class="chatz-message ai">
+                                    <div class="chatz-avatar">AI</div>
+                                    <div class="chatz-bubble">
+                                        <div class="chatz-text">Hello! I've analyzed your church data and found 3 high-priority insights.
+                                            Would you like me to explain them?</div>
+                                        <div class="chatz-time">Just now</div>
+                                    </div>
+                                </div>
+                            </div>
+                    
+                            <div class="quik-actions-ai">
+                                <button class="quik-action" onclick="askAI('Show retention risk')">Show retention risks</button>
+                                <button class="quik-action" onclick="askAI('Growth opportunities')">Growth opportunities</button>
+                                <button class="quik-action" onclick="askAI('Predict attendance')">Predict attendance</button>
+                                <button class="quik-action" onclick="askAI('Optimize budget')">Optimize budget</button>
+                            </div>
+                    
+                            <div class="chatz-input-container">
+                                <input type="text" class="chatz-input" id="chatInput"
+                                    placeholder="Ask AI anything about your church data...">
+                                <button class="sendz-btn" onclick="sendMessage()">Send</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="autoza-section">
+                        <div class="kron-section-header">
+                            <div class="kron-section-title">
+                                <h2>Intelligent Automation</h2>
+                                <p>AI-powered workflows running automatically</p>
+                            </div>
+                        </div>
+                    
+                        <div class="autoza-grid">
+                            <div class="autoza-card active">
+                                <div class="autoza-header">
+                                    <div class="autoza-icon ai-green">
+                                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                            stroke-linejoin="round">
+                                            <rect x="3" y="11" width="18" height="11" rx="2" ry="2" />
+                                            <path d="M7 11V7a5 5 0 0 1 10 0v4" />
+                                            <circle cx="12" cy="16" r="1" />
+                                        </svg>
+                                    </div>
+                                    <div class="autoza-toggle"></div>
+                                </div>
+                                <h3 class="autoza-title">Smart Follow-Ups</h3>
+                                <p class="autoza-description">Automatically sends personalized messages to members showing disengagement
+                                    patterns</p>
+                                <div class="autoza-stats">Last 30 days: 47 members contacted, 38 re-engaged</div>
+                            </div>
+                    
+                            <div class="autoza-card active">
+                                <div class="autoza-header">
+                                    <div class="autoza-icon ai-blue">
+                                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                            stroke-linejoin="round">
+                                            <line x1="18" y1="20" x2="18" y2="10" />
+                                            <line x1="12" y1="20" x2="12" y2="4" />
+                                            <line x1="6" y1="20" x2="6" y2="14" />
+                                        </svg>
+                                    </div>
+                                    <div class="autoza-toggle"></div>
+                                </div>
+                                <h3 class="autoza-title">Attendance Predictions</h3>
+                                <p class="autoza-description">Forecasts weekly attendance and sends capacity alerts to leadership team</p>
+                                <div class="autoza-stats">Accuracy: 94% over last quarter</div>
+                            </div>
+                    
+                            <div class="autoza-card">
+                                <div class="autoza-header">
+                                    <div class="autoza-icon ai-orange">
+                                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                            stroke-linejoin="round">
+                                            <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z" />
+                                        </svg>
+                                    </div>
+                                    <div class="autoza-toggle"></div>
+                                </div>
+                                <h3 class="autoza-title">Sentiment Analysis</h3>
+                                <p class="autoza-description">Analyzes feedback and communication to detect mood shifts and concerns</p>
+                                <div class="autoza-stats">Click to enable this feature</div>
+                            </div>
+                    
+                            <div class="autoza-card active">
+                                <div class="autoza-header">
+                                    <div class="autoza-icon ai-purple">
+                                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                            stroke-linejoin="round">
+                                            <circle cx="12" cy="12" r="10" />
+                                            <circle cx="12" cy="12" r="6" />
+                                            <circle cx="12" cy="12" r="2" />
+                                        </svg>
+                                    </div>
+                                    <div class="autoza-toggle"></div>
+                                </div>
+                                <h3 class="autoza-title">Donation Reminders</h3>
+                                <p class="autoza-description">Intelligent timing for giving reminders based on historical patterns</p>
+                                <div class="autoza-stats">+18% increase in recurring donations</div>
+                            </div>
+                    
+                            <div class="autoza-card active">
+                                <div class="autoza-header">
+                                    <div class="autoza-icon ai-pink">
+                                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                            stroke-linejoin="round">
+                                            <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" />
+                                            <polyline points="22,6 12,13 2,6" />
+                                        </svg>
+                                    </div>
+                                    <div class="autoza-toggle"></div>
+                                </div>
+                                <h3 class="autoza-title">Welcome Sequences</h3>
+                                <p class="autoza-description">Automated onboarding for new members with personalized content</p>
+                                <div class="autoza-stats">67 new members onboarded this month</div>
+                            </div>
+                    
+                            <div class="autoza-card">
+                                <div class="autoza-header">
+                                    <div class="autoza-icon ai-yellow">
+                                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                            stroke-linejoin="round">
+                                            <path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9" />
+                                            <path d="M13.73 21a2 2 0 0 1-3.46 0" />
+                                        </svg>
+                                    </div>
+                                    <div class="autoza-toggle"></div>
+                                </div>
+                                <h3 class="autoza-title">Event Optimization</h3>
+                                <p class="autoza-description">Suggests best times and dates for events based on attendance patterns</p>
+                                <div class="autoza-stats">Click to enable this feature</div>
+                            </div>
+                        </div>
+                    </div>
+
+
+
+                   
+                 
+                    
+                    <div class="membrix-analysis">
+                        <div class="kron-section-header">
+                            <div class="kron-section-title">
+                                <h2>Member Risk Analysis</h2>
+                                <p>AI-powered engagement scoring and intervention recommendations</p>
+                            </div>
+                            <button class="voxx-btn voxx-btn-secondary">Export Report</button>
+                        </div>
+                    
+                        <div class="risko-matrix">
+                            <div class="risko-card risko-high">
+                                <div class="risko-count">23</div>
+                                <div class="risko-label">High Risk</div>
+                            </div>
+                            <div class="risko-card risko-medium">
+                                <div class="risko-count">67</div>
+                                <div class="risko-label">Medium Risk</div>
+                            </div>
+                            <div class="risko-card risko-low">
+                                <div class="risko-count">395</div>
+                                <div class="risko-label">Low Risk</div>
+                            </div>
+                        </div>
+                    
+                        <div class="membrix-list">
+                            <div class="membrix-item">
+                                <div class="membrix-info">
+                                    <div class="membrix-avatar">DT</div>
+                                    <div class="membrix-details">
+                                        <h4>David Thompson</h4>
+                                        <p>Last attended 47 days ago • Declining engagement</p>
+                                    </div>
+                                </div>
+                                <div class="risko-score">
+                                    <div class="scorex-value">8.7</div>
+                                    <div class="scorex-label">RISK SCORE</div>
+                                </div>
+                            </div>
+                    
+                            <div class="membrix-item">
+                                <div class="membrix-info">
+                                    <div class="membrix-avatar">MR</div>
+                                    <div class="membrix-details">
+                                        <h4>Maria Rodriguez</h4>
+                                        <p>Last attended 38 days ago • Missed 3 events</p>
+                                    </div>
+                                </div>
+                                <div class="risko-score">
+                                    <div class="scorex-value">7.9</div>
+                                    <div class="scorex-label">RISK SCORE</div>
+                                </div>
+                            </div>
+                    
+                            <div class="membrix-item">
+                                <div class="membrix-info">
+                                    <div class="membrix-avatar">JB</div>
+                                    <div class="membrix-details">
+                                        <h4>James Brown</h4>
+                                        <p>Last attended 52 days ago • No message responses</p>
+                                    </div>
+                                </div>
+                                <div class="risko-score">
+                                    <div class="scorex-value">8.2</div>
+                                    <div class="scorex-label">RISK SCORE</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <script>
+                        // Prediction Chart
+                        const predictionCtx = document.getElementById('predictionChart').getContext('2d');
+                        new Chart(predictionCtx, {
+                            type: 'line',
+                            data: {
+                                labels: ['Week 1', 'Week 2', 'Week 3', 'Week 4', 'Week 5 (Predicted)'],
+                                datasets: [
+                                    {
+                                        label: 'Actual Attendance',
+                                        data: [342, 356, 351, 365, null],
+                                        borderColor: '#3b82f6',
+                                        backgroundColor: 'rgba(59, 130, 246, 0.1)',
+                                        tension: 0.4,
+                                        fill: true,
+                                        borderWidth: 3
+                                    },
+                                    {
+                                        label: 'AI Prediction',
+                                        data: [null, null, null, 365, 378],
+                                        borderColor: '#8b5cf6',
+                                        backgroundColor: 'rgba(139, 92, 246, 0.1)',
+                                        tension: 0.4,
+                                        fill: true,
+                                        borderDash: [5, 5],
+                                        borderWidth: 3
+                                    }
+                                ]
+                            },
+                            options: {
+                                responsive: true,
+                                maintainAspectRatio: false,
+                                plugins: {
+                                    legend: {
+                                        display: true,
+                                        position: 'bottom'
+                                    }
+                                },
+                                scales: {
+                                    y: {
+                                        beginAtZero: false,
+                                        min: 300,
+                                        max: 400
+                                    }
+                                }
+                            }
+                        });
+
+                        // Chat functionality
+                        function sendMessage() {
+                            const input = document.getElementById('chatInput');
+                            const message = input.value.trim();
+                            if (!message) return;
+
+                            addUserMessage(message);
+                            input.value = '';
+
+                            setTimeout(() => {
+                                addAIResponse(message);
+                            }, 1000);
+                        }
+
+                        function askAI(question) {
+                            addUserMessage(question);
+                            setTimeout(() => {
+                                addAIResponse(question);
+                            }, 1000);
+                        }
+
+                        function addUserMessage(text) {
+                            const container = document.getElementById('chatContainer');
+                            const messageDiv = document.createElement('div');
+                            messageDiv.className = 'chatz-message';
+                            messageDiv.innerHTML = `
+                                    <div class="chatz-avatar" style="background: #3b82f6;">U</div>
+                                    <div class="chatz-bubble">
+                                        <div class="chatz-text">${text}</div>
+                                        <div class="chatz-time">Just now</div>
+                                    </div>
+                                `;
+                            container.appendChild(messageDiv);
+                            container.scrollTop = container.scrollHeight;
+                        }
+
+                        function addAIResponse(question) {
+                            const container = document.getElementById('chatContainer');
+                            const messageDiv = document.createElement('div');
+                            messageDiv.className = 'chatz-message ai';
+
+                            let response = 'I found some insights related to your question. ';
+                            if (question.toLowerCase().includes('retention')) {
+                                response += '23 members are at risk of disengagement. I recommend sending personalized follow-up messages within the next 7 days.';
+                            } else if (question.toLowerCase().includes('growth')) {
+                                response += 'Your youth ministry shows the highest growth potential with 95% above-average engagement. Consider expanding capacity.';
+                            } else if (question.toLowerCase().includes('attendance')) {
+                                response += 'I predict 378 attendees next week with 94% confidence, which is a 6.2% increase from current levels.';
+                            } else {
+                                response += 'I can help you analyze member engagement, predict trends, and optimize your church operations. What would you like to know more about?';
+                            }
+
+                            messageDiv.innerHTML = `
+                                    <div class="chatz-avatar">AI</div>
+                                    <div class="chatz-bubble">
+                                        <div class="chatz-text">${response}</div>
+                                        <div class="chatz-time">Just now</div>
+                                    </div>
+                                `;
+                            container.appendChild(messageDiv);
+                            container.scrollTop = container.scrollHeight;
+                        }
+
+                        // Allow Enter key to send message
+                        document.getElementById('chatInput').addEventListener('keypress', function (e) {
+                            if (e.key === 'Enter') {
+                                sendMessage();
+                            }
+                        });
+                    </script>
+                </div>
+                
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,1047 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Church Events</title>
+    <link rel="stylesheet" href="../style.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+</head>
+
+<body>
+    <div class="container">
+        <!-- Sidebar -->
+        <div class="sidebar">
+            <div class="logo">
+                <div class="logo-icon">
+                    <img src="../church.png" alt="ChurchFlow Logo">
+                </div>
+                <div class="logo-text">
+                    <h3>Church</h3>
+                    <p>Management System</p>
+                </div>
+            </div>
+            <div class="sidebar-content">
+                <div class="menu-section">
+                    <div class="menu-label">Main Menu</div>
+                    <a href="../index.html" class="menu-item">
+                        <span><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                stroke-linejoin="round" class="lucide lucide-layout-dashboard h-5 w-5">
+                                <rect width="7" height="9" x="3" y="3" rx="1"></rect>
+                                <rect width="7" height="5" x="14" y="3" rx="1"></rect>
+                                <rect width="7" height="9" x="14" y="12" rx="1"></rect>
+                                <rect width="7" height="5" x="3" y="16" rx="1"></rect>
+                            </svg></span>
+                        <span>Dashboard</span>
+                    </a>
+                    <a href="../Members/members.html" class="menu-item">
+                        <span><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                stroke-linejoin="round" class="lucide lucide-users h-5 w-5">
+                                <path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"></path>
+                                <circle cx="9" cy="7" r="4"></circle>
+                                <path d="M22 21v-2a4 4 0 0 0-3-3.87"></path>
+                                <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
+                            </svg></span>
+                        <span>Members</span>
+                    </a>
+                    <a href="../Events/events.html" class="menu-item">
+                        <span><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                stroke-linejoin="round" class="lucide lucide-calendar h-5 w-5">
+                                <path d="M8 2v4"></path>
+                                <path d="M16 2v4"></path>
+                                <rect width="18" height="18" x="3" y="4" rx="2"></rect>
+                                <path d="M3 10h18"></path>
+                            </svg></span>
+                        <span>Events</span>
+                    </a>
+                    <a href="../Finance/finance.html" class="menu-item">
+                        <span><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                stroke-linejoin="round" class="lucide lucide-dollar-sign h-5 w-5">
+                                <line x1="12" x2="12" y1="2" y2="22"></line>
+                                <path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"></path>
+                            </svg></span>
+                        <span>Finances</span>
+                    </a>
+                    <a href="../Communication/communication.html" class="menu-item">
+                        <span><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                stroke-linejoin="round" class="lucide lucide-message-square h-5 w-5">
+                                <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path>
+                            </svg></span>
+                        <span>Communications</span>
+                    </a>
+                    <a href="#" class="menu-item active">
+                        <span><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                stroke-linejoin="round" class="lucide lucide-user-check h-5 w-5">
+                                <path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"></path>
+                                <circle cx="9" cy="7" r="4"></circle>
+                                <polyline points="16 11 18 13 22 9"></polyline>
+                            </svg></span>
+                        <span>Attendance</span>
+                    </a>
+                    <a href="../Report/report.html" class="menu-item">
+                        <span><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                stroke-linejoin="round" class="lucide lucide-chart-column h-5 w-5">
+                                <path d="M3 3v16a2 2 0 0 0 2 2h16"></path>
+                                <path d="M18 17V9"></path>
+                                <path d="M13 17V5"></path>
+                                <path d="M8 17v-3"></path>
+                            </svg></span>
+                        <span>Reports</span>
+                    </a>
+                </div>
+                <div class="menu-section">
+                    <div class="menu-label">AI Features</div>
+                    <a href="../AI/ai_insight.html" class="menu-item has-badge">
+                        <span class="icon"><img src="../Assests/creative.png" alt="AI Insights"></span>
+                        <span>AI Insights</span>
+                        <span class="badge">New</span>
+                    </a>
+                    <a href="../AI/members_analytics.html" class="menu-item has-badge">
+                        <span><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                stroke-linejoin="round" class="lucide lucide-chart-column h-5 w-5">
+                                <path d="M3 3v16a2 2 0 0 0 2 2h16"></path>
+                                <path d="M18 17V9"></path>
+                                <path d="M13 17V5"></path>
+                                <path d="M8 17v-3"></path>
+                            </svg></span>
+                        <span>Member Analytics</span>
+                        <span class="badge">New</span>
+                    </a>
+                    <a href="../AI/ai_smart_report.html" class="menu-item has-badge">
+                        <span><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                stroke-linejoin="round" class="lucide lucide-file-text h-5 w-5">
+                                <path d="M15 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7Z"></path>
+                                <path d="M14 2v4a2 2 0 0 0 2 2h4"></path>
+                                <path d="M10 9H8"></path>
+                                <path d="M16 13H8"></path>
+                                <path d="M16 17H8"></path>
+                            </svg></span>
+                        <span>Smart Reports</span>
+                        <span class="badge">New</span>
+                    </a>
+                </div>
+                <div class="menu-section">
+                    <div class="menu-label">Quick Actions</div>
+                    <a href="#" class="menu-item">
+                        <span><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                stroke-linejoin="round" class="lucide lucide-user-plus h-5 w-5">
+                                <path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"></path>
+                                <circle cx="9" cy="7" r="4"></circle>
+                                <line x1="19" x2="19" y1="8" y2="14"></line>
+                                <line x1="22" x2="16" y1="11" y2="11"></line>
+                            </svg></span>
+                        <span>Add Member</span>
+                    </a>
+                    <a href="#" class="menu-item">
+                        <span><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                stroke-linejoin="round" class="lucide lucide-calendar h-5 w-5">
+                                <path d="M8 2v4"></path>
+                                <path d="M16 2v4"></path>
+                                <rect width="18" height="18" x="3" y="4" rx="2"></rect>
+                                <path d="M3 10h18"></path>
+                            </svg></span>
+                        <span>New Event</span>
+                    </a>
+                    <a href="#" class="menu-item">
+                        <span class="icon"><img src="../Assests/records.png" alt="AI Insights"></span>
+                        <span>Record Donation</span>
+                    </a>
+                    <a href="#" class="menu-item">
+                        <span><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                stroke-linejoin="round" class="lucide lucide-bell h-5 w-5">
+                                <path d="M6 8a6 6 0 0 1 12 0c0 7 3 9 3 9H3s3-2 3-9"></path>
+                                <path d="M10.3 21a1.94 1.94 0 0 0 3.4 0"></path>
+                            </svg></span>
+                        <span>Send Message</span>
+                    </a>
+                </div>
+                <div class="menu-section">
+                    <div class="menu-label"></div>
+                    <a href="#" class="menu-item">
+                        <span><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                stroke-linejoin="round" class="lucide lucide-settings h-5 w-5">
+                                <path
+                                    d="M12.22 2h-.44a2 2 0 0 0-2 2v.18a2 2 0 0 1-1 1.73l-.43.25a2 2 0 0 1-2 0l-.15-.08a2 2 0 0 0-2.73.73l-.22.38a2 2 0 0 0 .73 2.73l.15.1a2 2 0 0 1 1 1.72v.51a2 2 0 0 1-1 1.74l-.15.09a2 2 0 0 0-.73 2.73l.22.38a2 2 0 0 0 2.73.73l.15-.08a2 2 0 0 1 2 0l.43.25a2 2 0 0 1 1 1.73V20a2 2 0 0 0 2 2h.44a2 2 0 0 0 2-2v-.18a2 2 0 0 1 1-1.73l.43-.25a2 2 0 0 1 2 0l.15.08a2 2 0 0 0 2.73-.73l.22-.39a2 2 0 0 0-.73-2.73l-.15-.08a2 2 0 0 1-1-1.74v-.5a2 2 0 0 1 1-1.74l.15-.09a2 2 0 0 0 .73-2.73l-.22-.38a2 2 0 0 0-2.73-.73l-.15.08a2 2 0 0 1-2 0l-.43-.25a2 2 0 0 1-1-1.73V4a2 2 0 0 0-2-2z">
+                                </path>
+                                <circle cx="12" cy="12" r="3"></circle>
+                            </svg></span>
+                        <span>Settings</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+        <!-- Main Content -->
+        <div class="main-content">
+            <!-- Header -->
+            <div class="header">
+                <button class="mobile-menu-toggle" onclick="toggleSidebar()">☰</button>
+                <div class="search-bar">
+                    <input type="text" class="search-input" placeholder="Search members, events, or anything...">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                        stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                        class="lucide lucide-search absolute left-3 top-1/2 transform -translate-y-1/2 h-4 w-4 text-muted-foreground">
+                        <circle cx="11" cy="11" r="8"></circle>
+                        <path d="m21 21-4.3-4.3"></path>
+                    </svg>
+                </div>
+                <div class="header-right">
+                    <div class="notification-icon">
+                        <span style="font-size: 20px;"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                                viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-bell h-5 w-5">
+                                <path d="M6 8a6 6 0 0 1 12 0c0 7 3 9 3 9H3s3-2 3-9"></path>
+                                <path d="M10.3 21a1.94 1.94 0 0 0 3.4 0"></path>
+                            </svg></span>
+                        <span class="notification-badge">3</span>
+                    </div>
+                    <div class="user-profile">
+                        <span style="font-size: 14px; font-weight: 500;">Pastor Lawrence</span>
+                        <span style="font-size: 20px;"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                                viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-user h-5 w-5">
+                                <path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2"></path>
+                                <circle cx="12" cy="7" r="4"></circle>
+                            </svg></span>
+                    </div>
+                </div>
+            </div>
+            <script>
+                function toggleSidebar() {
+                    const sidebar = document.querySelector('.sidebar');
+                    sidebar.classList.toggle('open');
+                }
+                document.addEventListener('click', function (event) {
+                    const sidebar = document.querySelector('.sidebar');
+                    const toggle = document.querySelector('.mobile-menu-toggle');
+                    if (window.innerWidth <= 768 && !sidebar.contains(event.target) && !toggle.contains(event.target) && sidebar.classList.contains('open')) {
+                        sidebar.classList.remove('open');
+                    }
+                });
+            </script>
+            <!-- Dashboard Content -->
+            <div class="dashboard-content">
+                <div class="rap-header">
+                    <div class="head-core">
+                        <h1>Attendance Records</h1>
+                        <p>Real-time tracking and member management</p>
+                    </div>
+                
+                    <div class="head-tools">
+                        
+                        <input type="date" id="headerDateFilter" onchange="loadDateData()">
+                
+                        <button class="vox-btn">
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+                                <polyline points="7,10 12,15 17,10"></polyline>
+                                <line x1="12" y1="15" x2="12" y2="3"></line>
+                            </svg>
+                            Export
+                        </button>
+                
+                        <button class="vox-btn vox-btn-main">
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
+                                <line x1="16" y1="2" x2="16" y2="6"></line>
+                                <line x1="8" y1="2" x2="8" y2="6"></line>
+                                <line x1="3" y1="10" x2="21" y2="10"></line>
+                            </svg>
+                            Generate Report
+                        </button>
+                    </div>
+                </div>
+
+
+                <div class="dash-grid">
+                    <div class="dash-box">
+                        <div class="dash-top">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2">
+                                <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2" />
+                                <circle cx="9" cy="7" r="4" />
+                                <path d="M23 21v-2a4 4 0 0 0-3-3.87" />
+                                <path d="M16 3.13a4 4 0 0 1 0 7.75" />
+                            </svg>
+                            <span class="dash-label">Members</span>
+                        </div>
+                        <div class="dash-num" id="membersPresent">0</div>
+                        <div class="dash-shift">Registered: <span id="totalMembers">0</span></div>
+                    </div>
+                    <div class="dash-box">
+                        <div class="dash-top">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2">
+                                <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14" />
+                                <polyline points="22 4 12 14.01 9 11.01" />
+                            </svg>
+                            <span class="dash-label">Present Today</span>
+                        </div>
+                        <div class="dash-num" id="totalPresent">0</div>
+                        <div class="dash-shift" id="totalChange">Today</div>
+                    </div>
+                    <div class="dash-box">
+                        <div class="dash-top">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2">
+                                <circle cx="12" cy="12" r="10" />
+                                <line x1="15" y1="9" x2="9" y2="15" />
+                                <line x1="9" y1="9" x2="15" y2="15" />
+                            </svg>
+                            <span class="dash-label">Absent</span>
+                        </div>
+                        <div class="dash-num" id="absentCount">0</div>
+                        <div class="dash-shift">Members</div>
+                    </div>
+                    <div class="dash-box">
+                        <div class="dash-top">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2">
+                                <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2" />
+                                <circle cx="12" cy="7" r="4" />
+                                <path d="M12 14v7" />
+                                <path d="M9 17l3-3 3 3" />
+                            </svg>
+                            <span class="dash-label">Visitors</span>
+                        </div>
+                        <div class="dash-num" id="visitorsCount">0</div>
+                        <div class="dash-shift">First-time</div>
+                    </div>
+                    <div class="dash-box">
+                        <div class="dash-top">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2">
+                                <circle cx="12" cy="12" r="10" />
+                                <polyline points="12 6 12 12 16 14" />
+                            </svg>
+                            <span class="dash-label">Avg Arrival</span>
+                        </div>
+                        <div class="dash-num" id="avgArrival">0</div>
+                        <div class="dash-shift">Real-time average</div>
+                    </div>
+                    <div class="dash-box">
+                        <div class="dash-top">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2">
+                                <circle cx="12" cy="8" r="5" />
+                                <path d="M20 21a8 8 0 1 0-16 0" />
+                                <path d="M12 13v-2" />
+                            </svg>
+                            <span class="dash-label">Males</span>
+                        </div>
+                        <div class="dash-num" id="malesCount">0</div>
+                        <div class="dash-shift">Present</div>
+                    </div>
+                    <div class="dash-box">
+                        <div class="dash-top">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2">
+                                <circle cx="12" cy="8" r="5" />
+                                <path d="M20 21a8 8 0 1 0-16 0" />
+                                <circle cx="12" cy="8" r="2" />
+                            </svg>
+                            <span class="dash-label">Females</span>
+                        </div>
+                        <div class="dash-num" id="femalesCount">0</div>
+                        <div class="dash-shift">Present</div>
+                    </div>
+                    <div class="dash-box">
+                        <div class="dash-top">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2">
+                                <path
+                                    d="M12 2a3 3 0 0 0-3 3c0 1.3.8 2.4 2 2.8V9H8v2h3v2H8v2h3v5a1 1 0 0 0 2 0v-5h3v-2h-3v-2h3V9h-3V7.8c1.2-.4 2-1.5 2-2.8a3 3 0 0 0-3-3z" />
+                            </svg>
+                            <span class="dash-label">Children</span>
+                        </div>
+                        <div class="dash-num" id="childrenCount">0</div>
+                        <div class="dash-shift">Present</div>
+                    </div>
+                </div>
+                <div class="main-layout">
+                    <div class="track-section">
+                        <div class="nav-tabs">
+                            <button class="nav-tab current" onclick="switchTab('qr')">QR Check-In</button>
+                            <button class="nav-tab" onclick="switchTab('live')">Live Attendance</button>
+                            <button class="nav-tab" onclick="switchTab('visitors')">Visitors</button>
+                            <button class="nav-tab" onclick="switchTab('absent')">Absent</button>
+                        </div>
+                        <div id="qr-content" class="tab-panel current">
+                            <div class="qr-recent-grid">
+                                <!-- Left Section -->
+                                <div class="qr-section">
+                                    <div class="vax-head">
+                                        <h2>QR Check-In</h2>
+                                        <p>Service-specific code for instant verification</p>
+                                    </div>
+                            
+                                    <!-- Service Select -->
+                                    <div class="form-block">
+                                        <label>Select Service</label>
+                                        <select id="serviceSelect" onchange="generateQRCode()">
+                                            <option value="sunday-morning">Sunday Morning - 10:00 AM</option>
+                                            <option value="sunday-evening">Sunday Evening - 6:00 PM</option>
+                                            <option value="midweek">Midweek Bible Study - 7:00 PM</option>
+                                            <option value="youth">Youth Gathering - 5:00 PM</option>
+                                            <option value="women">Women's Ministry - 8:00 PM</option>
+                                        </select>
+                                    </div>
+                            
+                                    <!-- QR Code Frame -->
+                                    <div class="vax-frame" id="qrcode"></div>
+                            
+                                    <!-- Info Section -->
+                                    <div class="vax-info">
+                                        <h3>About QR Check-In</h3>
+                                        <p>
+                                            1. Generate unique QR codes for each service <br>
+                                            2. Export QR code as image or PDF <br>
+                                            3. Open Camera app to scan, no app needed <br>
+                                            4. Members choose member or visitor option <br>
+                                            5. Members enter phone number to check-in <br>
+                                            6. Visitors enter name and phone number for verification
+                                        </p>
+                                    </div>
+                            
+                                    <!-- Action Buttons -->
+                                    <div class="btn-row">
+                                        <button class="vox-btn vox-btn-main" onclick="generateNewQRCode()">
+                                            ⟳ Generate QR Code
+                                        </button>
+                                        <button class="vox-btn">
+                                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                                <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+                                                <polyline points="7,10 12,15 17,10"></polyline>
+                                                <line x1="12" y1="15" x2="12" y2="3"></line>
+                                            </svg>
+                                            Export
+                                        </button>
+                                    </div>
+                                </div>
+                            
+                                <!-- Right Section -->
+                                <div class="recent-checkins">
+                                    <h3>Recent Check-Ins</h3>
+                                    <div class="table-wrap">
+                                        <table>
+                                            <thead>
+                                                <tr>
+                                                    <th>Name</th>
+                                                    <th>Check-In Time</th>
+                                                    <th>Phone Number</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody id="recentCheckinsTableBody"></tbody>
+                                        </table>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                        <div id="live-content" class="tab-panel">
+                            <div class="track-head">
+                                <div class="track-title">
+                                    <h2>Live Attendance</h2>
+                                    <p>Real-time updates</p>
+                                </div>
+                                <div class="find-filter">
+                                    <input type="date" id="liveDateFilter" onchange="filterTable()">
+                                    <input type="text" class="find-input" placeholder="Search..." id="searchInput"
+                                        oninput="filterTable()">
+                                    <select class="filter-choice" id="statusFilter" onchange="filterTable()">
+                                        <option value="">All Status</option>
+                                        <option value="present">Present</option>
+                                        <option value="visitor">Visitor</option>
+                                        <option value="absent">Absent</option>
+                                    </select>
+                                    <select class="filter-choice" id="ministryFilter" onchange="filterTable()">
+                                        <option value="">All Ministries</option>
+                                        <option value="Worship Team">Worship</option>
+                                        <option value="Youth Ministry">Youth</option>
+                                        <option value="Children's Ministry">Children</option>
+                                        <option value="Prayer Team">Prayer</option>
+                                        <option value="Men's Group">Men</option>
+                                        <option value="Women's Ministry">Women</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="table-wrap">
+                                <table>
+                                    <thead>
+                                        <tr>
+                                            <th>Member</th>
+                                            <th>Phone</th>
+                                            <th>Check-In Time</th>
+                                            <th>Status</th>
+                                            <th>Ministry</th>
+                                            <th>Position</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody id="attendanceTableBody"></tbody>
+                                </table>
+                            </div>
+                            <div class="page-nav" id="livePagination"></div>
+                        </div>
+                        <div id="visitors-content" class="tab-panel">
+                            <div class="track-head">
+                                <div class="track-title">
+                                    <h2>Visitor Management</h2>
+                                    <p>Track and engage first-time guests</p>
+                                </div>
+                                <div class="find-filter">
+                                    <input type="text" class="find-input" placeholder="Search visitors..."
+                                        id="visitorSearch" oninput="filterVisitors()">
+                                    <select class="filter-choice" id="followupFilter" onchange="filterVisitors()">
+                                        <option value="">All Follow-Ups</option>
+                                        <option value="pending">Pending</option>
+                                        <option value="sent">Sent</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="table-wrap">
+                                <table>
+                                    <thead>
+                                        <tr>
+                                            <th>Name</th>
+                                            <th>Phone</th>
+                                            <th>Check-In Time</th>
+                                            <th>Source</th>
+                                            <th>Follow-Up</th>
+                                            <th>Actions</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody id="visitorsTableBody"></tbody>
+                                </table>
+                            </div>
+                            <div class="page-nav" id="visitorPagination"></div>
+                        </div>
+                        <div id="absent-content" class="tab-panel">
+                            <div class="track-head">
+                                <div class="track-title">
+                                    <h2>Absent Members</h2>
+                                    <p>Track members who haven't checked in</p>
+                                </div>
+                                <div class="find-filter">
+                                    <input type="text" class="find-input" placeholder="Search absent members..."
+                                        id="absentSearch" oninput="filterAbsent()">
+                                </div>
+                            </div>
+                            <div class="table-wrap">
+                                <table>
+                                    <thead>
+                                        <tr>
+                                            <th>Name</th>
+                                            <th>Phone</th>
+                                            <th>Ministry</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody id="absentTableBody"></tbody>
+                                </table>
+                            </div>
+                            <div class="page-nav" id="absentPagination"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="pop-overlay" id="checkInModal">
+                    <div class="pop-content">
+                        <div class="pop-head">
+                            <h2>Member Verification</h2>
+                            <p>Enter phone number or name to check in</p>
+                        </div>
+                        <div class="pop-body">
+                            <div class="form-block">
+                                <label class="form-tag">Phone Number or Name</label>
+                                <input type="text" class="form-entry" id="memberIdentifier"
+                                    placeholder="e.g., 0551234567 or John Smith">
+                            </div>
+                            <div id="verificationResult"></div>
+                        </div>
+                        <div class="pop-footer">
+                            <button class="vox-btn" onclick="closeModal('checkInModal')">Cancel</button>
+                            <button class="vox-btn vox-btn-main" onclick="verifyAndCheckIn()">Verify & Check In</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="pop-overlay" id="newVisitorModal">
+                    <div class="pop-content">
+                        <div class="pop-head">
+                            <h2>Welcome New Guest</h2>
+                            <p>Please share your information</p>
+                        </div>
+                        <div class="pop-body">
+                            <div class="form-block">
+                                <label class="form-tag">Full Name *</label>
+                                <input type="text" class="form-entry" id="visitorName" required>
+                            </div>
+                            <div class="form-block">
+                                <label class="form-tag">Phone Number *</label>
+                                <input type="tel" class="form-entry" id="visitorPhone" required>
+                            </div>
+                            <div class="form-block">
+                                <label class="form-tag">Email (Optional)</label>
+                                <input type="email" class="form-entry" id="visitorEmail">
+                            </div>
+                            <div class="form-block">
+                                <label class="form-tag">How did you hear about us?</label>
+                                <select class="form-choice" id="visitorSource">
+                                    <option value="friend">Friend/Family</option>
+                                    <option value="social">Social Media</option>
+                                    <option value="online">Online Search</option>
+                                    <option value="event">Community Event</option>
+                                    <option value="other">Other</option>
+                                </select>
+                            </div>
+                            <div class="form-block">
+                                <label class="form-tag">Interests</label>
+                                <input type="text" class="form-entry" id="visitorInterests"
+                                    placeholder="e.g., Youth Group, Music Ministry">
+                            </div>
+                        </div>
+                        <div class="pop-footer">
+                            <button class="vox-btn" onclick="closeModal('newVisitorModal')">Cancel</button>
+                            <button class="vox-btn vox-btn-main" onclick="registerVisitor()">Register & Check
+                                In</button>
+                        </div>
+                    </div>
+                </div>
+                <script>
+                    let attendanceData = [];
+                    let visitorsData = [];
+                    let memberDatabase = [
+                        { id: 1, name: 'Sarah Johnson', phone: '0551234567', email: 'sarah@church.com', ministry: 'Worship Team', position: 'Singer', joinDate: '2023-01-15', attendanceCount: 45, lastCheckIn: '2025-10-01' },
+                        { id: 2, name: 'Michael Chen', phone: '0559876543', email: 'michael@church.com', ministry: 'Youth Ministry', position: 'Member', joinDate: '2022-06-20', attendanceCount: 32, lastCheckIn: '2025-09-28' },
+                        { id: 3, name: 'Emily Rodriguez', phone: '0552345678', email: 'emily@church.com', ministry: "Children's Ministry", position: 'Member', joinDate: '2024-03-10', attendanceCount: 28, lastCheckIn: '2025-10-01' },
+                        { id: 4, name: 'David Thompson', phone: '0558765432', email: 'david@church.com', ministry: "Men's Group", position: 'Usher', joinDate: '2021-11-05', attendanceCount: 50, lastCheckIn: '2025-09-30' },
+                        { id: 5, name: 'Jennifer Williams', phone: '0553456789', email: 'jennifer@church.com', ministry: 'Prayer Team', position: 'Member', joinDate: '2023-08-12', attendanceCount: 20, lastCheckIn: '2025-10-01' },
+                        { id: 6, name: 'Robert Lee', phone: '0556789012', email: 'robert@church.com', ministry: 'Youth Ministry', position: 'Member', joinDate: '2024-01-20', attendanceCount: 15, lastCheckIn: '2025-09-29' },
+                        { id: 7, name: 'Lisa Brown', phone: '0554321098', email: 'lisa@church.com', ministry: "Women's Ministry", position: 'Member', joinDate: '2022-04-18', attendanceCount: 38, lastCheckIn: '2025-10-01' },
+                        { id: 8, name: 'James Wilson', phone: '0557654321', email: 'james@church.com', ministry: 'Worship Team', position: 'Choir', joinDate: '2023-12-05', attendanceCount: 25, lastCheckIn: '2025-09-27' },
+                        { id: 9, name: 'Anna Davis', phone: '0551098765', email: 'anna@church.com', ministry: "Children's Ministry", position: 'Member', joinDate: '2024-07-22', attendanceCount: 12, lastCheckIn: '2025-10-01' },
+                        { id: 10, name: 'Thomas Miller', phone: '0555432109', email: 'thomas@church.com', ministry: "Men's Group", position: 'Pastor', joinDate: '2021-09-14', attendanceCount: 55, lastCheckIn: '2025-09-30' }
+                    ];
+                    let currentPage = { live: 1, visitors: 1, absent: 1 };
+                    let rowsPerPage = 10;
+                    let currentDate = new Date().toISOString().split('T')[0];
+                    let isDarkMode = localStorage.getItem('darkMode') === 'true';
+
+                    function initDatabase() {
+                        if (localStorage.getItem('memberDatabase')) {
+                            memberDatabase = JSON.parse(localStorage.getItem('memberDatabase'));
+                        } else {
+                            saveDatabase();
+                        }
+                        if (localStorage.getItem('attendanceData_' + currentDate)) {
+                            attendanceData = JSON.parse(localStorage.getItem('attendanceData_' + currentDate));
+                        }
+                        if (localStorage.getItem('visitorsData_' + currentDate)) {
+                            visitorsData = JSON.parse(localStorage.getItem('visitorsData_' + currentDate));
+                        }
+                    }
+
+                    function saveDatabase() {
+                        localStorage.setItem('memberDatabase', JSON.stringify(memberDatabase));
+                    }
+
+                    function saveAttendanceData() {
+                        localStorage.setItem('attendanceData_' + currentDate, JSON.stringify(attendanceData));
+                    }
+
+                    function saveVisitorsData() {
+                        localStorage.setItem('visitorsData_' + currentDate, JSON.stringify(visitorsData));
+                    }
+
+                    function generateQRCode() {
+                        const qrContainer = document.getElementById('qrcode');
+                        qrContainer.innerHTML = '';
+                        const service = document.getElementById('serviceSelect').value;
+                        const date = currentDate;
+                        const qrData = `https://churchflow.ai/verify?service=${service}&date=${date}&token=${btoa(Math.random().toString(36) + Date.now())}`;
+                        new QRCode(qrContainer, {
+                            text: qrData,
+                            width: 240,
+                            height: 240,
+                            colorDark: "#111827",
+                            colorLight: "#ffffff",
+                            correctLevel: QRCode.CorrectLevel.H
+                        });
+                    }
+
+                    function generateNewQRCode() {
+                        generateQRCode();
+                        showNotification('New QR code generated');
+                    }
+
+                    function openCheckInModal() {
+                        document.getElementById('checkInModal').classList.add('show');
+                    }
+
+                    function closeModal(modalId) {
+                        document.getElementById(modalId).classList.remove('show');
+                    }
+
+                    function verifyAndCheckIn() {
+                        const identifier = document.getElementById('memberIdentifier').value.trim();
+                        const resultDiv = document.getElementById('verificationResult');
+                        if (!identifier) {
+                            showNotification('Please enter a valid identifier', 'error');
+                            return;
+                        }
+                        const member = memberDatabase.find(m => m.phone === identifier || m.name.toLowerCase().includes(identifier.toLowerCase()));
+                        if (member) {
+                            const checkInTime = new Date().toLocaleTimeString('en-US', { hour: '2-digit', minute: '2-digit' });
+                            const alreadyCheckedIn = attendanceData.find(a => a.id === member.id && a.date === currentDate);
+                            if (alreadyCheckedIn) {
+                                resultDiv.innerHTML = `
+                                    <div style="padding: 14px; background: #fef3c7; border-radius: 6px; border: 1px solid #fde68a;">
+                                        <h3 style="font-size: 14px; font-weight: 600; color: #92400e; margin-bottom: 3px;">Already Checked In</h3>
+                                        <p style="font-size: 13px; color: #b45309;">Time: ${alreadyCheckedIn.time}</p>
+                                    </div>
+                                `;
+                                return;
+                            }
+                            const attendanceEntry = {
+                                ...member,
+                                time: checkInTime,
+                                status: 'present',
+                                date: currentDate
+                            };
+                            attendanceData.push(attendanceEntry);
+                            member.attendanceCount = (member.attendanceCount || 0) + 1;
+                            member.lastCheckIn = currentDate;
+                            saveDatabase();
+                            saveAttendanceData();
+                            resultDiv.innerHTML = `
+                                <div class="check-success">
+                                    <h3>Welcome back, ${member.name}!</h3>
+                                    <p>Checked in at ${checkInTime}</p>
+                                </div>
+                            `;
+                            updateStats();
+                            renderAttendance();
+                            renderAbsent();
+                            setTimeout(() => {
+                                closeModal('checkInModal');
+                                document.getElementById('memberIdentifier').value = '';
+                                resultDiv.innerHTML = '';
+                            }, 2000);
+                            showNotification(`Checked in: ${member.name}`);
+                        } else {
+                            closeModal('checkInModal');
+                            document.getElementById('newVisitorModal').classList.add('show');
+                        }
+                    }
+
+                    function registerVisitor() {
+                        const name = document.getElementById('visitorName').value.trim();
+                        const phone = document.getElementById('visitorPhone').value.trim();
+                        const email = document.getElementById('visitorEmail').value.trim();
+                        const source = document.getElementById('visitorSource').value;
+                        const interests = document.getElementById('visitorInterests').value.trim();
+                        if (!name || !phone) {
+                            showNotification('Name and phone are required', 'error');
+                            return;
+                        }
+                        const checkInTime = new Date().toLocaleTimeString('en-US', { hour: '2-digit', minute: '2-digit' });
+                        const visitor = {
+                            id: Date.now(),
+                            name,
+                            phone,
+                            email,
+                            source,
+                            interests,
+                            time: checkInTime,
+                            status: 'visitor',
+                            date: currentDate,
+                            followupStatus: 'pending',
+                            position: 'Member',
+                            ministry: interests || 'General'
+                        };
+                        visitorsData.push(visitor);
+                        saveVisitorsData();
+                        showNotification(`Welcome ${name}! Profile created`);
+                        closeModal('newVisitorModal');
+                        ['visitorName', 'visitorPhone', 'visitorEmail', 'visitorInterests'].forEach(id => document.getElementById(id).value = '');
+                        document.getElementById('visitorSource').value = 'friend';
+                        updateStats();
+                        renderVisitors();
+                        renderAttendance();
+                        renderRecentCheckIns();
+                    }
+
+                    function renderAttendance(page = currentPage.live) {
+                        const tbody = document.getElementById('attendanceTableBody');
+                        const filteredData = filterAttendanceData();
+                        const start = (page - 1) * rowsPerPage;
+                        const end = start + rowsPerPage;
+                        const pageData = filteredData.slice(start, end);
+                        tbody.innerHTML = pageData.map(entry => `
+                            <tr>
+                                <td>
+                                    <div class="person-cell">
+                                        <div class="person-icon">${entry.name.split(' ').map(n => n[0]).join('')}</div>
+                                        <div class="person-details">
+                                            <h4>${entry.name}</h4>
+                                            <p>${entry.email || 'No email'}</p>
+                                        </div>
+                                    </td>
+                                    <td>${entry.phone}</td>
+                                    <td>${entry.time}</td>
+                                    <td><span class="status-tag ${entry.status === 'present' ? 'active' : entry.status === 'visitor' ? 'guest' : 'missing'}">${entry.status}</span></td>
+                                    <td>${entry.ministry}</td>
+                                    <td>${entry.position}</td>
+                                </tr>
+                        `).join('') || '<tr><td colspan="6" style="text-align: center; padding: 40px; color: #9ca3af;">No records found</td></tr>';
+                        renderPagination('live', filteredData.length, page);
+                    }
+
+                    function renderVisitors(page = currentPage.visitors) {
+                        const tbody = document.getElementById('visitorsTableBody');
+                        const filteredData = filterVisitorsData();
+                        const start = (page - 1) * rowsPerPage;
+                        const end = start + rowsPerPage;
+                        const pageData = filteredData.slice(start, end);
+                        tbody.innerHTML = pageData.map(visitor => `
+                            <tr>
+                                <td>
+                                    <div class="person-cell">
+                                        <div class="person-icon">${visitor.name.split(' ').map(n => n[0]).join('')}</div>
+                                        <div class="person-details">
+                                            <h4>${visitor.name}</h4>
+                                            <p>${visitor.email || 'No email'}</p>
+                                        </div>
+                                    </td>
+                                    <td>${visitor.phone}</td>
+                                    <td>${visitor.time}</td>
+                                    <td>${visitor.source}</td>
+                                    <td><span class="track-status ${visitor.followupStatus}">${visitor.followupStatus}</span></td>
+                                    <td>
+                                        <button class="vox-btn vox-btn-main vox-btn-tiny" onclick="sendFollowUp(${visitor.id})">Message</button>
+                                    </td>
+                                </tr>
+                        `).join('') || '<tr><td colspan="6" style="text-align: center; padding: 40px; color: #9ca3af;">No visitors today</td></tr>';
+                        renderPagination('visitors', filteredData.length, page);
+                    }
+
+                    function renderAbsent(page = currentPage.absent) {
+                        const tbody = document.getElementById('absentTableBody');
+                        const filteredData = filterAbsentData();
+                        const start = (page - 1) * rowsPerPage;
+                        const end = start + rowsPerPage;
+                        const pageData = filteredData.slice(start, end);
+                        tbody.innerHTML = pageData.map(member => `
+                            <tr>
+                                <td>
+                                    <div class="person-cell">
+                                        <div class="person-icon">${member.name.split(' ').map(n => n[0]).join('')}</div>
+                                        <div class="person-details">
+                                            <h4>${member.name}</h4>
+                                            <p>${member.email || 'No email'}</p>
+                                        </div>
+                                    </td>
+                                    <td>${member.phone}</td>
+                                    <td>${member.ministry}</td>
+                                </tr>
+                        `).join('') || '<tr><td colspan="3" style="text-align: center; padding: 40px; color: #9ca3af;">No absent members found</td></tr>';
+                        renderPagination('absent', filteredData.length, page);
+                    }
+
+                    function renderRecentCheckIns() {
+                        const tbody = document.getElementById('recentCheckinsTableBody');
+                        const recentData = [...attendanceData, ...visitorsData].slice(-5).reverse();
+                        tbody.innerHTML = recentData.map(entry => `
+                            <tr>
+                                <td>${entry.name}</td>
+                                <td>${entry.time}</td>
+                                <td>${entry.phone}</td>
+                            </tr>
+                        `).join('') || '<tr><td colspan="3" style="text-align: center; padding: 40px; color: #9ca3af;">No recent check-ins</td></tr>';
+                    }
+
+                    function filterTable() {
+                        renderAttendance(currentPage.live);
+                    }
+
+                    function filterVisitors() {
+                        renderVisitors(currentPage.visitors);
+                    }
+
+                    function filterAbsent() {
+                        renderAbsent(currentPage.absent);
+                    }
+
+                    function filterAttendanceData() {
+                        let data = [...attendanceData, ...visitorsData.map(v => ({ ...v, ministry: v.interests || 'General' }))];
+                        const search = document.getElementById('searchInput').value.toLowerCase();
+                        const status = document.getElementById('statusFilter').value;
+                        const ministry = document.getElementById('ministryFilter').value;
+                        if (search) data = data.filter(d => d.name.toLowerCase().includes(search) || d.phone.includes(search));
+                        if (status) data = data.filter(d => d.status === status);
+                        if (ministry) data = data.filter(d => d.ministry === ministry);
+                        return data;
+                    }
+
+                    function filterVisitorsData() {
+                        let data = [...visitorsData];
+                        const search = document.getElementById('visitorSearch').value.toLowerCase();
+                        const followup = document.getElementById('followupFilter').value;
+                        if (search) data = data.filter(v => v.name.toLowerCase().includes(search) || v.phone.includes(search));
+                        if (followup) data = data.filter(v => v.followupStatus === followup);
+                        return data;
+                    }
+
+                    function filterAbsentData() {
+                        let data = memberDatabase.filter(m => !attendanceData.find(a => a.id === m.id && a.date === currentDate));
+                        const search = document.getElementById('absentSearch').value.toLowerCase();
+                        if (search) data = data.filter(m => m.name.toLowerCase().includes(search) || m.phone.includes(search));
+                        return data;
+                    }
+
+                    function renderPagination(tab, total, current) {
+                        const pages = Math.ceil(total / rowsPerPage);
+                        const pagination = document.getElementById(tab + 'Pagination');
+                        if (pages <= 1) {
+                            pagination.innerHTML = '';
+                            return;
+                        }
+                        let html = '';
+                        for (let i = 1; i <= pages; i++) {
+                            html += `<button class="vox-btn vox-btn-tiny ${i === current ? 'vox-btn-main' : ''}" onclick="switchPage('${tab}', ${i})">${i}</button>`;
+                        }
+                        pagination.innerHTML = html;
+                    }
+
+                    function switchPage(tab, page) {
+                        currentPage[tab] = page;
+                        if (tab === 'live') renderAttendance(page);
+                        else if (tab === 'visitors') renderVisitors(page);
+                        else if (tab === 'absent') renderAbsent(page);
+                    }
+
+                    function updateStats() {
+                        const totalPresent = attendanceData.length + visitorsData.length;
+                        const membersPresent = attendanceData.length;
+                        const totalMembers = memberDatabase.length;
+                        const visitors = visitorsData.length;
+                        const absentCount = totalMembers - membersPresent;
+                        document.getElementById('totalPresent').textContent = totalPresent;
+                        document.getElementById('membersPresent').textContent = membersPresent;
+                        document.getElementById('totalMembers').textContent = totalMembers;
+                        document.getElementById('visitorsCount').textContent = visitors;
+                        document.getElementById('absentCount').textContent = absentCount;
+                        if (attendanceData.length > 0 || visitorsData.length > 0) {
+                            const times = [...attendanceData, ...visitorsData].map(a => {
+                                const [time, period] = a.time.split(' ');
+                                let [hours, minutes] = time.split(':').map(Number);
+                                if (period === 'PM' && hours !== 12) hours += 12;
+                                if (period === 'AM' && hours === 12) hours = 0;
+                                return hours * 60 + minutes;
+                            });
+                            const avgMinutes = times.reduce((a, b) => a + b) / times.length;
+                            const avgHours = Math.floor(avgMinutes / 60);
+                            const avgMins = Math.floor(avgMinutes % 60);
+                            const period = avgHours >= 12 ? 'PM' : 'AM';
+                            const displayHours = avgHours > 12 ? avgHours - 12 : (avgHours === 0 ? 12 : avgHours);
+                            document.getElementById('avgArrival').textContent = `${displayHours}:${avgMins.toString().padStart(2, '0')} ${period}`;
+                        } else {
+                            document.getElementById('avgArrival').textContent = 'N/A';
+                        }
+                    }
+
+                    function switchTab(tab) {
+                        document.querySelectorAll('.nav-tab').forEach(t => t.classList.remove('current'));
+                        event.target.classList.add('current');
+                        document.querySelectorAll('.tab-panel').forEach(c => c.classList.remove('current'));
+                        document.getElementById(tab + '-content').classList.add('current');
+                        if (tab === 'live') renderAttendance();
+                        else if (tab === 'visitors') renderVisitors();
+                        else if (tab === 'absent') renderAbsent();
+                    }
+
+                    function sendFollowUp(id) {
+                        const visitor = visitorsData.find(v => v.id === id);
+                        if (visitor) {
+                            visitor.followupStatus = 'sent';
+                            saveVisitorsData();
+                            renderVisitors();
+                            updateStats();
+                            showNotification(`Follow-up sent to ${visitor.name}`);
+                        }
+                    }
+
+                    function loadDateData() {
+                        currentDate = document.getElementById('headerDateFilter').value || new Date().toISOString().split('T')[0];
+                        document.getElementById('liveDateFilter').value = currentDate;
+                        attendanceData = JSON.parse(localStorage.getItem('attendanceData_' + currentDate) || '[]');
+                        visitorsData = JSON.parse(localStorage.getItem('visitorsData_' + currentDate) || '[]');
+                        updateStats();
+                        renderAttendance();
+                        renderVisitors();
+                        renderAbsent();
+                        renderRecentCheckIns();
+                        generateQRCode();
+                    }
+
+                    function showNotification(message, type = 'info') {
+                        const notification = document.createElement('div');
+                        notification.className = 'alert-box';
+                        notification.style.background = type === 'success' ? '#059669' : type === 'error' ? '#dc2626' : '#2563eb';
+                        notification.textContent = message;
+                        document.body.appendChild(notification);
+                        setTimeout(() => notification.remove(), 3000);
+                    }
+
+                    setInterval(() => {
+                        if (Math.random() > 0.7 && attendanceData.length < memberDatabase.length) {
+                            const available = memberDatabase.filter(m => !attendanceData.find(a => a.id === m.id && a.date === currentDate));
+                            if (available.length > 0) {
+                                const randomMember = available[Math.floor(Math.random() * available.length)];
+                                const time = new Date().toLocaleTimeString('en-US', { hour: '2-digit', minute: '2-digit' });
+                                attendanceData.push({ ...randomMember, time, status: 'present', date: currentDate });
+                                randomMember.attendanceCount = (randomMember.attendanceCount || 0) + 1;
+                                randomMember.lastCheckIn = currentDate;
+                                saveAttendanceData();
+                                saveDatabase();
+                                updateStats();
+                                renderAttendance();
+                                renderAbsent();
+                                renderRecentCheckIns();
+                                showNotification(`Auto check-in: ${randomMember.name}`);
+                            }
+                        }
+                    }, 30000);
+
+                    window.addEventListener('DOMContentLoaded', () => {
+                        if (isDarkMode) {
+                            document.body.classList.add('night-mode');
+                        }
+                        initDatabase();
+                        document.getElementById('headerDateFilter').value = currentDate;
+                        document.getElementById('liveDateFilter').value = currentDate;
+                        generateQRCode();
+                        updateStats();
+                        renderAttendance();
+                        renderVisitors();
+                        renderAbsent();
+                        renderRecentCheckIns();
+                    });
+                </script>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

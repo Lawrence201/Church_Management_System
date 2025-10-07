@@ -1,0 +1,1414 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ChurchFlow - Church Attendance System</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.9.1/chart.min.js"></script>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            background: #f8f9fa;
+            color: #212529;
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        .header {
+            background: white;
+            padding: 24px;
+            border-radius: 8px;
+            margin-bottom: 24px;
+            border: 1px solid #dee2e6;
+        }
+
+        .header h1 {
+            font-size: 26px;
+            font-weight: 600;
+            color: #212529;
+            margin-bottom: 8px;
+        }
+
+        .header p {
+            font-size: 14px;
+            color: #6c757d;
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+            gap: 16px;
+            margin-bottom: 24px;
+        }
+
+        .stat-card {
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+            border: 1px solid #dee2e6;
+        }
+
+        .stat-label {
+            font-size: 12px;
+            color: #6c757d;
+            text-transform: uppercase;
+            font-weight: 500;
+            letter-spacing: 0.5px;
+            margin-bottom: 8px;
+        }
+
+        .stat-value {
+            font-size: 28px;
+            font-weight: 600;
+            color: #212529;
+        }
+
+        .stat-subtitle {
+            font-size: 12px;
+            color: #6c757d;
+            margin-top: 4px;
+        }
+
+        .main-content {
+            background: white;
+            border-radius: 8px;
+            border: 1px solid #dee2e6;
+        }
+
+        .tabs {
+            display: flex;
+            border-bottom: 1px solid #dee2e6;
+            overflow-x: auto;
+        }
+
+        .tab {
+            padding: 16px 24px;
+            border: none;
+            background: transparent;
+            color: #6c757d;
+            font-size: 14px;
+            font-weight: 500;
+            cursor: pointer;
+            border-bottom: 2px solid transparent;
+            white-space: nowrap;
+            transition: all 0.2s;
+        }
+
+        .tab:hover {
+            color: #212529;
+        }
+
+        .tab.active {
+            color: #212529;
+            border-bottom-color: #212529;
+        }
+
+        .tab-content {
+            display: none;
+            padding: 24px;
+        }
+
+        .tab-content.active {
+            display: block;
+        }
+
+        .section-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 20px;
+            flex-wrap: wrap;
+            gap: 12px;
+        }
+
+        .section-title h2 {
+            font-size: 18px;
+            font-weight: 600;
+            color: #212529;
+            margin-bottom: 4px;
+        }
+
+        .section-title p {
+            font-size: 13px;
+            color: #6c757d;
+        }
+
+        .date-picker {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            padding: 8px 12px;
+            border: 1px solid #dee2e6;
+            border-radius: 6px;
+            background: white;
+        }
+
+        .date-picker input {
+            border: none;
+            outline: none;
+            font-size: 14px;
+            color: #212529;
+        }
+
+        .filters {
+            display: flex;
+            gap: 8px;
+            margin-bottom: 20px;
+            flex-wrap: wrap;
+        }
+
+        .filter-input,
+        .filter-select {
+            padding: 8px 12px;
+            border: 1px solid #dee2e6;
+            border-radius: 6px;
+            font-size: 13px;
+            background: white;
+            color: #212529;
+        }
+
+        .table-container {
+            overflow-x: auto;
+            border: 1px solid #dee2e6;
+            border-radius: 6px;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        th,
+        td {
+            padding: 12px;
+            text-align: left;
+            border-bottom: 1px solid #f1f3f5;
+        }
+
+        th {
+            background: #f8f9fa;
+            font-weight: 600;
+            font-size: 12px;
+            color: #495057;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        td {
+            font-size: 14px;
+            color: #212529;
+        }
+
+        .person-info {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .person-avatar {
+            width: 36px;
+            height: 36px;
+            border-radius: 50%;
+            background: #e9ecef;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 13px;
+            font-weight: 600;
+            color: #495057;
+        }
+
+        .person-details h4 {
+            font-size: 14px;
+            font-weight: 500;
+            color: #212529;
+            margin-bottom: 2px;
+        }
+
+        .person-details p {
+            font-size: 12px;
+            color: #6c757d;
+        }
+
+        .badge {
+            padding: 4px 10px;
+            border-radius: 12px;
+            font-size: 11px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.3px;
+        }
+
+        .badge-present {
+            background: #d4edda;
+            color: #155724;
+        }
+
+        .badge-absent {
+            background: #f8d7da;
+            color: #721c24;
+        }
+
+        .badge-visitor {
+            background: #d1ecf1;
+            color: #0c5460;
+        }
+
+        .badge-male {
+            background: #cce5ff;
+            color: #004085;
+        }
+
+        .badge-female {
+            background: #f8d7da;
+            color: #721c24;
+        }
+
+        .badge-child {
+            background: #fff3cd;
+            color: #856404;
+        }
+
+        .btn {
+            padding: 8px 16px;
+            border-radius: 6px;
+            border: 1px solid #dee2e6;
+            cursor: pointer;
+            font-size: 13px;
+            font-weight: 500;
+            background: white;
+            color: #495057;
+            transition: all 0.2s;
+        }
+
+        .btn:hover {
+            background: #f8f9fa;
+        }
+
+        .btn-sm {
+            padding: 5px 10px;
+            font-size: 12px;
+        }
+
+        .btn-primary {
+            background: #212529;
+            color: white;
+            border-color: #212529;
+        }
+
+        .btn-primary:hover {
+            background: #343a40;
+        }
+
+        .qr-section {
+            display: grid;
+            grid-template-columns: 1fr 2fr;
+            gap: 24px;
+        }
+
+        .qr-display {
+            background: #f8f9fa;
+            padding: 24px;
+            border-radius: 8px;
+            text-align: center;
+            border: 1px solid #dee2e6;
+        }
+
+        .qr-code {
+            margin: 20px 0;
+            display: flex;
+            justify-content: center;
+        }
+
+        .qr-info {
+            background: #e7f3ff;
+            padding: 16px;
+            border-radius: 6px;
+            margin-top: 16px;
+            text-align: left;
+        }
+
+        .qr-info h3 {
+            font-size: 13px;
+            font-weight: 600;
+            color: #004085;
+            margin-bottom: 8px;
+        }
+
+        .qr-info p {
+            font-size: 12px;
+            color: #004085;
+            line-height: 1.6;
+        }
+
+        .qr-table-wrapper {
+            overflow-x: auto;
+        }
+
+        .service-select {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #dee2e6;
+            border-radius: 6px;
+            font-size: 14px;
+            margin-bottom: 16px;
+        }
+
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.5);
+            z-index: 1000;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .modal.show {
+            display: flex;
+        }
+
+        .modal-content {
+            background: white;
+            border-radius: 8px;
+            width: 90%;
+            max-width: 500px;
+            max-height: 90vh;
+            overflow-y: auto;
+        }
+
+        .modal-header {
+            padding: 20px 24px;
+            border-bottom: 1px solid #dee2e6;
+        }
+
+        .modal-header h2 {
+            font-size: 18px;
+            font-weight: 600;
+            color: #212529;
+        }
+
+        .modal-body {
+            padding: 24px;
+        }
+
+        .modal-footer {
+            padding: 16px 24px;
+            border-top: 1px solid #dee2e6;
+            display: flex;
+            gap: 10px;
+            justify-content: flex-end;
+        }
+
+        .form-group {
+            margin-bottom: 16px;
+        }
+
+        .form-label {
+            display: block;
+            font-size: 13px;
+            font-weight: 500;
+            color: #495057;
+            margin-bottom: 6px;
+        }
+
+        .form-input,
+        .form-select {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #dee2e6;
+            border-radius: 6px;
+            font-size: 14px;
+        }
+
+        .alert {
+            padding: 12px 16px;
+            border-radius: 6px;
+            margin-bottom: 16px;
+            font-size: 13px;
+        }
+
+        .alert-success {
+            background: #d4edda;
+            color: #155724;
+            border: 1px solid #c3e6cb;
+        }
+
+        .alert-error {
+            background: #f8d7da;
+            color: #721c24;
+            border: 1px solid #f5c6cb;
+        }
+
+        .alert-warning {
+            background: #fff3cd;
+            color: #856404;
+            border: 1px solid #ffeeba;
+        }
+
+        .notification {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            padding: 14px 18px;
+            background: #212529;
+            color: white;
+            border-radius: 6px;
+            z-index: 2000;
+            animation: slideIn 0.2s ease;
+            font-size: 13px;
+            font-weight: 500;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+        }
+
+        @keyframes slideIn {
+            from {
+                transform: translateX(100%);
+            }
+
+            to {
+                transform: translateX(0);
+            }
+        }
+
+        .empty-state {
+            text-align: center;
+            padding: 60px 20px;
+            color: #6c757d;
+        }
+
+        .empty-state p {
+            font-size: 14px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>ChurchFlow Attendance System</h1>
+            <p>Real-time tracking and member management</p>
+        </div>
+
+        <div class="stats-grid">
+            <div class="stat-card">
+                <div class="stat-label">Total Members</div>
+                <div class="stat-value" id="totalMembers">0</div>
+                <div class="stat-subtitle">Registered</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-label">Total Present</div>
+                <div class="stat-value" id="totalPresent">0</div>
+                <div class="stat-subtitle">Today</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-label">Absent</div>
+                <div class="stat-value" id="totalAbsent">0</div>
+                <div class="stat-subtitle">Members</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-label">Visitors</div>
+                <div class="stat-value" id="totalVisitors">0</div>
+                <div class="stat-subtitle">First-time</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-label">Males</div>
+                <div class="stat-value" id="totalMales">0</div>
+                <div class="stat-subtitle">Present</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-label">Females</div>
+                <div class="stat-value" id="totalFemales">0</div>
+                <div class="stat-subtitle">Present</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-label">Children</div>
+                <div class="stat-value" id="totalChildren">0</div>
+                <div class="stat-subtitle">Present</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-label">Avg Arrival</div>
+                <div class="stat-value" style="font-size: 20px;" id="avgArrival">--:--</div>
+                <div class="stat-subtitle">Real-time average</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-label">Attendance Rate</div>
+                <div class="stat-value" id="attendanceRate">0%</div>
+                <div class="stat-subtitle">Of total members</div>
+            </div>
+        </div>
+
+        <div class="main-content">
+            <div class="tabs">
+                <button class="tab active" onclick="switchTab('qr-checkin')">QR Check-In</button>
+                <button class="tab" onclick="switchTab('present')">Present</button>
+                <button class="tab" onclick="switchTab('absent')">Absent</button>
+                <button class="tab" onclick="switchTab('visitors')">Visitors</button>
+                <button class="tab" onclick="switchTab('analytics')">Analytics</button>
+            </div>
+
+            <div id="qr-checkin" class="tab-content active">
+                <div class="qr-section">
+                    <div>
+                        <div class="qr-display">
+                            <h3 style="font-size: 16px; margin-bottom: 8px;">Service QR Code</h3>
+                            <p style="font-size: 12px; color: #6c757d; margin-bottom: 16px;">Scan to check in</p>
+
+                            <select class="service-select" id="serviceSelect" onchange="generateQRCode()">
+                                <option value="sunday-morning">Sunday Morning - 10:00 AM</option>
+                                <option value="sunday-evening">Sunday Evening - 6:00 PM</option>
+                                <option value="midweek">Midweek Bible Study - 7:00 PM</option>
+                                <option value="youth">Youth Gathering - 5:00 PM</option>
+                                <option value="women">Women's Ministry - 8:00 PM</option>
+                            </select>
+
+                            <div class="qr-code" id="qrcode"></div>
+
+                            <button class="btn btn-primary" style="width: 100%;"
+                                onclick="generateNewQRCode()">Regenerate QR Code</button>
+
+                            <div class="qr-info">
+                                <h3>GPS-Protected Check-In</h3>
+                                <p>• Members scan QR code<br>
+                                    • Enter phone number<br>
+                                    • GPS verification required<br>
+                                    • Must be on church premises<br>
+                                    • Auto-detect member/visitor<br>
+                                    • Real-time sync</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="qr-table-wrapper">
+                        <div class="section-header">
+                            <div class="section-title">
+                                <h2>Recent Check-Ins</h2>
+                                <p>Live attendance updates</p>
+                            </div>
+                        </div>
+
+                        <div class="table-container">
+                            <table>
+                                <thead>
+                                    <tr>
+                                        <th>Name</th>
+                                        <th>Type</th>
+                                        <th>Time</th>
+                                        <th>Status</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="recentCheckInsBody">
+                                    <tr>
+                                        <td colspan="4" class="empty-state">
+                                            <p>No check-ins yet today</p>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div id="present" class="tab-content">
+                <div class="section-header">
+                    <div class="section-title">
+                        <h2>Present Members</h2>
+                        <p>Currently checked in</p>
+                    </div>
+                    <div class="date-picker">
+                        <span style="font-size: 14px; color: #495057;">Date:</span>
+                        <input type="date" id="presentDateFilter" onchange="loadDateData()">
+                    </div>
+                </div>
+
+                <div class="filters">
+                    <input type="text" class="filter-input" placeholder="Search..." id="presentSearch"
+                        oninput="filterPresent()">
+                    <select class="filter-select" id="presentTypeFilter" onchange="filterPresent()">
+                        <option value="">All Types</option>
+                        <option value="male">Male</option>
+                        <option value="female">Female</option>
+                        <option value="child">Child</option>
+                    </select>
+                    <select class="filter-select" id="presentMinistryFilter" onchange="filterPresent()">
+                        <option value="">All Ministries</option>
+                        <option value="Worship Team">Worship</option>
+                        <option value="Youth Ministry">Youth</option>
+                        <option value="Children's Ministry">Children</option>
+                        <option value="Prayer Team">Prayer</option>
+                        <option value="Men's Group">Men</option>
+                        <option value="Women's Ministry">Women</option>
+                    </select>
+                </div>
+
+                <div class="table-container">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Member</th>
+                                <th>Phone</th>
+                                <th>Type</th>
+                                <th>Ministry</th>
+                                <th>Check-In Time</th>
+                                <th>Actions</th>
+                            </tr>
+                        </thead>
+                        <tbody id="presentTableBody"></tbody>
+                    </table>
+                </div>
+            </div>
+
+            <div id="absent" class="tab-content">
+                <div class="section-header">
+                    <div class="section-title">
+                        <h2>Absent Members</h2>
+                        <p>Members not checked in today</p>
+                    </div>
+                    <div class="date-picker">
+                        <span style="font-size: 14px; color: #495057;">Date:</span>
+                        <input type="date" id="absentDateFilter" onchange="loadDateData()">
+                    </div>
+                </div>
+
+                <div class="filters">
+                    <input type="text" class="filter-input" placeholder="Search..." id="absentSearch"
+                        oninput="filterAbsent()">
+                    <select class="filter-select" id="absentMinistryFilter" onchange="filterAbsent()">
+                        <option value="">All Ministries</option>
+                        <option value="Worship Team">Worship</option>
+                        <option value="Youth Ministry">Youth</option>
+                        <option value="Children's Ministry">Children</option>
+                        <option value="Prayer Team">Prayer</option>
+                        <option value="Men's Group">Men</option>
+                        <option value="Women's Ministry">Women</option>
+                    </select>
+                </div>
+
+                <div class="table-container">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Member</th>
+                                <th>Phone</th>
+                                <th>Type</th>
+                                <th>Ministry</th>
+                                <th>Last Attended</th>
+                                <th>Actions</th>
+                            </tr>
+                        </thead>
+                        <tbody id="absentTableBody"></tbody>
+                    </table>
+                </div>
+            </div>
+
+            <div id="visitors" class="tab-content">
+                <div class="section-header">
+                    <div class="section-title">
+                        <h2>Visitors</h2>
+                        <p>First-time guests</p>
+                    </div>
+                    <div class="date-picker">
+                        <span style="font-size: 14px; color: #495057;">Date:</span>
+                        <input type="date" id="visitorDateFilter" onchange="loadDateData()">
+                    </div>
+                </div>
+
+                <div class="filters">
+                    <input type="text" class="filter-input" placeholder="Search..." id="visitorSearch"
+                        oninput="filterVisitors()">
+                </div>
+
+                <div class="table-container">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Name</th>
+                                <th>Phone</th>
+                                <th>Type</th>
+                                <th>Check-In Time</th>
+                                <th>Source</th>
+                                <th>Actions</th>
+                            </tr>
+                        </thead>
+                        <tbody id="visitorsTableBody"></tbody>
+                    </table>
+                </div>
+            </div>
+
+            <div id="analytics" class="tab-content">
+                <div class="section-header">
+                    <div class="section-title">
+                        <h2>Analytics Dashboard</h2>
+                        <p>Attendance trends and insights</p>
+                    </div>
+                </div>
+
+                <div
+                    style="height: 300px; margin-bottom: 24px; background: #f8f9fa; border-radius: 6px; padding: 16px;">
+                    <canvas id="attendanceChart"></canvas>
+                </div>
+
+                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 16px;">
+                    <div style="height: 250px; background: #f8f9fa; border-radius: 6px; padding: 16px;">
+                        <canvas id="genderChart"></canvas>
+                    </div>
+                    <div style="height: 250px; background: #f8f9fa; border-radius: 6px; padding: 16px;">
+                        <canvas id="ministryChart"></canvas>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal" id="checkInModal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2>QR Check-In Verification</h2>
+            </div>
+            <div class="modal-body">
+                <div id="checkInAlert"></div>
+                <div class="form-group">
+                    <label class="form-label">Phone Number</label>
+                    <input type="tel" class="form-input" id="checkInPhone" placeholder="e.g., 0551234567">
+                </div>
+                <div id="memberTypeSection" style="display: none;">
+                    <div class="form-group">
+                        <label class="form-label">Type</label>
+                        <select class="form-select" id="memberType">
+                            <option value="male">Male</option>
+                            <option value="female">Female</option>
+                            <option value="child">Child</option>
+                        </select>
+                    </div>
+                </div>
+                <div id="visitorFormSection" style="display: none;">
+                    <div class="form-group">
+                        <label class="form-label">Full Name</label>
+                        <input type="text" class="form-input" id="visitorName">
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label">Type</label>
+                        <select class="form-select" id="visitorType">
+                            <option value="male">Male</option>
+                            <option value="female">Female</option>
+                            <option value="child">Child</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label">How did you hear about us?</label>
+                        <select class="form-select" id="visitorSource">
+                            <option value="friend">Friend/Family</option>
+                            <option value="social">Social Media</option>
+                            <option value="online">Online Search</option>
+                            <option value="event">Community Event</option>
+                            <option value="other">Other</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button class="btn" onclick="closeModal('checkInModal')">Cancel</button>
+                <button class="btn btn-primary" onclick="processCheckIn()">Check In</button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        let memberDatabase = [];
+        let attendanceData = [];
+        let visitorsData = [];
+        let currentDate = new Date().toISOString().split('T')[0];
+        let charts = {};
+
+        const CHURCH_LOCATION = { lat: 5.6037, lng: -0.1870, radius: 100 };
+
+        function initDatabase() {
+            if (localStorage.getItem('memberDatabase')) {
+                memberDatabase = JSON.parse(localStorage.getItem('memberDatabase'));
+            } else {
+                memberDatabase = [
+                    { id: 1, name: 'Sarah Johnson', phone: '0551234567', type: 'female', ministry: 'Worship Team', joinDate: '2023-01-15', attendanceCount: 45, lastCheckIn: '2025-10-01' },
+                    { id: 2, name: 'Michael Chen', phone: '0559876543', type: 'male', ministry: 'Youth Ministry', joinDate: '2022-06-20', attendanceCount: 32, lastCheckIn: '2025-09-28' },
+                    { id: 3, name: 'Emily Rodriguez', phone: '0552345678', type: 'female', ministry: "Children's Ministry", joinDate: '2024-03-10', attendanceCount: 28, lastCheckIn: '2025-10-01' },
+                    { id: 4, name: 'David Thompson', phone: '0558765432', type: 'male', ministry: "Men's Group", joinDate: '2021-11-05', attendanceCount: 50, lastCheckIn: '2025-09-30' },
+                    { id: 5, name: 'Jennifer Williams', phone: '0553456789', type: 'female', ministry: 'Prayer Team', joinDate: '2023-08-12', attendanceCount: 20, lastCheckIn: '2025-10-01' },
+                    { id: 6, name: 'Timothy Baker', phone: '0556789012', type: 'child', ministry: 'Youth Ministry', joinDate: '2024-01-20', attendanceCount: 15, lastCheckIn: '2025-09-29' },
+                    { id: 7, name: 'Lisa Brown', phone: '0554321098', type: 'female', ministry: "Women's Ministry", joinDate: '2022-04-18', attendanceCount: 38, lastCheckIn: '2025-10-01' },
+                    { id: 8, name: 'James Wilson', phone: '0557654321', type: 'male', ministry: 'Worship Team', joinDate: '2023-12-05', attendanceCount: 25, lastCheckIn: '2025-09-27' }
+                ];
+                saveDatabase();
+            }
+            if (localStorage.getItem('attendanceData_' + currentDate)) {
+                attendanceData = JSON.parse(localStorage.getItem('attendanceData_' + currentDate));
+            }
+            if (localStorage.getItem('visitorsData_' + currentDate)) {
+                visitorsData = JSON.parse(localStorage.getItem('visitorsData_' + currentDate));
+            }
+        }
+
+        function saveDatabase() {
+            localStorage.setItem('memberDatabase', JSON.stringify(memberDatabase));
+        }
+
+        function saveAttendanceData() {
+            localStorage.setItem('attendanceData_' + currentDate, JSON.stringify(attendanceData));
+        }
+
+        function saveVisitorsData() {
+            localStorage.setItem('visitorsData_' + currentDate, JSON.stringify(visitorsData));
+        }
+
+        function generateQRCode() {
+            const qrContainer = document.getElementById('qrcode');
+            qrContainer.innerHTML = '';
+
+            const service = document.getElementById('serviceSelect').value;
+            const date = currentDate;
+            const qrData = `CHURCHFLOW_CHECKIN|${service}|${date}|${Date.now()}`;
+
+            new QRCode(qrContainer, {
+                text: qrData,
+                width: 220,
+                height: 220,
+                colorDark: "#212529",
+                colorLight: "#ffffff",
+                correctLevel: QRCode.CorrectLevel.H
+            });
+        }
+
+        function generateNewQRCode() {
+            generateQRCode();
+            showNotification('New QR code generated');
+        }
+
+        function simulateQRScan() {
+            document.getElementById('checkInModal').classList.add('show');
+        }
+
+        function closeModal(modalId) {
+            document.getElementById(modalId).classList.remove('show');
+            document.getElementById('checkInPhone').value = '';
+            document.getElementById('checkInAlert').innerHTML = '';
+            document.getElementById('memberTypeSection').style.display = 'none';
+            document.getElementById('visitorFormSection').style.display = 'none';
+        }
+
+        function verifyGPSLocation(callback) {
+            if (!navigator.geolocation) {
+                callback(false, 'GPS not supported');
+                return;
+            }
+
+            navigator.geolocation.getCurrentPosition(
+                (position) => {
+                    const userLat = position.coords.latitude;
+                    const userLng = position.coords.longitude;
+
+                    const distance = calculateDistance(
+                        userLat, userLng,
+                        CHURCH_LOCATION.lat, CHURCH_LOCATION.lng
+                    );
+
+                    if (distance <= CHURCH_LOCATION.radius) {
+                        callback(true, 'Location verified');
+                    } else {
+                        callback(false, 'You must be on church premises to check in');
+                    }
+                },
+                (error) => {
+                    callback(false, 'Unable to verify location. Please enable GPS.');
+                },
+                { enableHighAccuracy: true, timeout: 10000 }
+            );
+        }
+
+        function calculateDistance(lat1, lng1, lat2, lng2) {
+            const R = 6371000;
+            const dLat = (lat2 - lat1) * Math.PI / 180;
+            const dLng = (lng2 - lng1) * Math.PI / 180;
+            const a = Math.sin(dLat / 2) * Math.sin(dLat / 2) +
+                Math.cos(lat1 * Math.PI / 180) * Math.cos(lat2 * Math.PI / 180) *
+                Math.sin(dLng / 2) * Math.sin(dLng / 2);
+            const c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1 - a));
+            return R * c;
+        }
+
+        function processCheckIn() {
+            const phone = document.getElementById('checkInPhone').value.trim();
+            const alertDiv = document.getElementById('checkInAlert');
+
+            if (!phone) {
+                alertDiv.innerHTML = '<div class="alert alert-error">Please enter phone number</div>';
+                return;
+            }
+
+            alertDiv.innerHTML = '<div class="alert alert-warning">Verifying GPS location...</div>';
+
+            verifyGPSLocation((verified, message) => {
+                if (!verified) {
+                    alertDiv.innerHTML = `<div class="alert alert-error">${message}</div>`;
+                    return;
+                }
+
+                const member = memberDatabase.find(m => m.phone === phone);
+
+                if (member) {
+                    const alreadyCheckedIn = attendanceData.find(a => a.id === member.id);
+                    if (alreadyCheckedIn) {
+                        alertDiv.innerHTML = '<div class="alert alert-warning">Already checked in today</div>';
+                        return;
+                    }
+
+                    document.getElementById('memberTypeSection').style.display = 'block';
+                    document.getElementById('visitorFormSection').style.display = 'none';
+
+                    setTimeout(() => {
+                        const type = document.getElementById('memberType').value;
+                        const time = new Date().toLocaleTimeString('en-US', { hour: '2-digit', minute: '2-digit' });
+
+                        attendanceData.push({
+                            ...member,
+                            type: type,
+                            time: time,
+                            date: currentDate
+                        });
+
+                        member.attendanceCount++;
+                        member.lastCheckIn = currentDate;
+                        member.type = type;
+
+                        saveDatabase();
+                        saveAttendanceData();
+                        updateStats();
+                        renderAll();
+
+                        showNotification(`Welcome ${member.name}!`);
+                        closeModal('checkInModal');
+                    }, 500);
+                } else {
+                    document.getElementById('memberTypeSection').style.display = 'none';
+                    document.getElementById('visitorFormSection').style.display = 'block';
+                    alertDiv.innerHTML = '<div class="alert alert-warning">New visitor detected. Please complete the form.</div>';
+                }
+            });
+        }
+
+        function registerVisitor() {
+            const phone = document.getElementById('checkInPhone').value.trim();
+            const name = document.getElementById('visitorName').value.trim();
+            const type = document.getElementById('visitorType').value;
+            const source = document.getElementById('visitorSource').value;
+
+            if (!name) {
+                document.getElementById('checkInAlert').innerHTML = '<div class="alert alert-error">Please enter name</div>';
+                return;
+            }
+
+            const time = new Date().toLocaleTimeString('en-US', { hour: '2-digit', minute: '2-digit' });
+            const visitor = {
+                id: Date.now(),
+                name: name,
+                phone: phone,
+                type: type,
+                source: source,
+                time: time,
+                date: currentDate
+            };
+
+            visitorsData.push(visitor);
+            saveVisitorsData();
+            updateStats();
+            renderAll();
+
+            showNotification(`Welcome ${name}!`);
+            closeModal('checkInModal');
+        }
+
+        function updateStats() {
+            const present = attendanceData.length;
+            const visitors = visitorsData.length;
+            const total = memberDatabase.length;
+            const absent = total - present;
+
+            const males = [...attendanceData, ...visitorsData].filter(p => p.type === 'male').length;
+            const females = [...attendanceData, ...visitorsData].filter(p => p.type === 'female').length;
+            const children = [...attendanceData, ...visitorsData].filter(p => p.type === 'child').length;
+
+            const rate = total > 0 ? Math.round((present / total) * 100) : 0;
+
+            document.getElementById('totalMembers').textContent = total;
+            document.getElementById('totalPresent').textContent = present;
+            document.getElementById('totalAbsent').textContent = absent;
+            document.getElementById('totalVisitors').textContent = visitors;
+            document.getElementById('totalMales').textContent = males;
+            document.getElementById('totalFemales').textContent = females;
+            document.getElementById('totalChildren').textContent = children;
+            document.getElementById('attendanceRate').textContent = rate + '%';
+
+            if (attendanceData.length > 0) {
+                const times = attendanceData.map(a => {
+                    const [time, period] = a.time.split(' ');
+                    let [hours, minutes] = time.split(':').map(Number);
+                    if (period === 'PM' && hours !== 12) hours += 12;
+                    if (period === 'AM' && hours === 12) hours = 0;
+                    return hours * 60 + minutes;
+                });
+                const avgMinutes = times.reduce((a, b) => a + b) / times.length;
+                const avgHours = Math.floor(avgMinutes / 60);
+                const avgMins = Math.floor(avgMinutes % 60);
+                const period = avgHours >= 12 ? 'PM' : 'AM';
+                const displayHours = avgHours > 12 ? avgHours - 12 : (avgHours === 0 ? 12 : avgHours);
+                document.getElementById('avgArrival').textContent = `${displayHours}:${avgMins.toString().padStart(2, '0')} ${period}`;
+            }
+        }
+
+        function renderRecentCheckIns() {
+            const tbody = document.getElementById('recentCheckInsBody');
+            const recent = [...attendanceData, ...visitorsData].slice(-10).reverse();
+
+            if (recent.length === 0) {
+                tbody.innerHTML = '<tr><td colspan="4" class="empty-state"><p>No check-ins yet today</p></td></tr>';
+                return;
+            }
+
+            tbody.innerHTML = recent.map(entry => `
+                <tr>
+                    <td>
+                        <div class="person-info">
+                            <div class="person-avatar">${entry.name.split(' ').map(n => n[0]).join('')}</div>
+                            <div class="person-details">
+                                <h4>${entry.name}</h4>
+                                <p>${entry.phone}</p>
+                            </div>
+                        </div>
+                    </td>
+                    <td><span class="badge badge-${entry.type}">${entry.type}</span></td>
+                    <td>${entry.time}</td>
+                    <td><span class="badge ${entry.source ? 'badge-visitor' : 'badge-present'}">${entry.source ? 'Visitor' : 'Member'}</span></td>
+                </tr>
+            `).join('');
+        }
+
+        function renderPresent() {
+            const tbody = document.getElementById('presentTableBody');
+            const search = document.getElementById('presentSearch').value.toLowerCase();
+            const typeFilter = document.getElementById('presentTypeFilter').value;
+            const ministryFilter = document.getElementById('presentMinistryFilter').value;
+
+            let data = [...attendanceData];
+            if (search) data = data.filter(d => d.name.toLowerCase().includes(search) || d.phone.includes(search));
+            if (typeFilter) data = data.filter(d => d.type === typeFilter);
+            if (ministryFilter) data = data.filter(d => d.ministry === ministryFilter);
+
+            if (data.length === 0) {
+                tbody.innerHTML = '<tr><td colspan="6" class="empty-state"><p>No present members found</p></td></tr>';
+                return;
+            }
+
+            tbody.innerHTML = data.map(entry => `
+                <tr>
+                    <td>
+                        <div class="person-info">
+                            <div class="person-avatar">${entry.name.split(' ').map(n => n[0]).join('')}</div>
+                            <div class="person-details">
+                                <h4>${entry.name}</h4>
+                            </div>
+                        </div>
+                    </td>
+                    <td>${entry.phone}</td>
+                    <td><span class="badge badge-${entry.type}">${entry.type}</span></td>
+                    <td>${entry.ministry}</td>
+                    <td>${entry.time}</td>
+                    <td>
+                        <button class="btn btn-sm" onclick="removeAttendance(${entry.id})">Remove</button>
+                    </td>
+                </tr>
+            `).join('');
+        }
+
+        function renderAbsent() {
+            const tbody = document.getElementById('absentTableBody');
+            const search = document.getElementById('absentSearch').value.toLowerCase();
+            const ministryFilter = document.getElementById('absentMinistryFilter').value;
+
+            const presentIds = attendanceData.map(a => a.id);
+            let data = memberDatabase.filter(m => !presentIds.includes(m.id));
+
+            if (search) data = data.filter(d => d.name.toLowerCase().includes(search) || d.phone.includes(search));
+            if (ministryFilter) data = data.filter(d => d.ministry === ministryFilter);
+
+            if (data.length === 0) {
+                tbody.innerHTML = '<tr><td colspan="6" class="empty-state"><p>All members are present!</p></td></tr>';
+                return;
+            }
+
+            tbody.innerHTML = data.map(member => `
+                <tr>
+                    <td>
+                        <div class="person-info">
+                            <div class="person-avatar">${member.name.split(' ').map(n => n[0]).join('')}</div>
+                            <div class="person-details">
+                                <h4>${member.name}</h4>
+                            </div>
+                        </div>
+                    </td>
+                    <td>${member.phone}</td>
+                    <td><span class="badge badge-${member.type || 'male'}">${member.type || 'male'}</span></td>
+                    <td>${member.ministry}</td>
+                    <td>${member.lastCheckIn || 'Never'}</td>
+                    <td>
+                        <button class="btn btn-sm" onclick="manualCheckIn(${member.id})">Check In</button>
+                    </td>
+                </tr>
+            `).join('');
+        }
+
+        function renderVisitors() {
+            const tbody = document.getElementById('visitorsTableBody');
+            const search = document.getElementById('visitorSearch').value.toLowerCase();
+
+            let data = [...visitorsData];
+            if (search) data = data.filter(v => v.name.toLowerCase().includes(search) || v.phone.includes(search));
+
+            if (data.length === 0) {
+                tbody.innerHTML = '<tr><td colspan="6" class="empty-state"><p>No visitors today</p></td></tr>';
+                return;
+            }
+
+            tbody.innerHTML = data.map(visitor => `
+                <tr>
+                    <td>
+                        <div class="person-info">
+                            <div class="person-avatar">${visitor.name.split(' ').map(n => n[0]).join('')}</div>
+                            <div class="person-details">
+                                <h4>${visitor.name}</h4>
+                            </div>
+                        </div>
+                    </td>
+                    <td>${visitor.phone}</td>
+                    <td><span class="badge badge-${visitor.type}">${visitor.type}</span></td>
+                    <td>${visitor.time}</td>
+                    <td>${visitor.source}</td>
+                    <td>
+                        <button class="btn btn-sm btn-primary" onclick="convertToMember(${visitor.id})">Convert</button>
+                    </td>
+                </tr>
+            `).join('');
+        }
+
+        function renderAnalytics() {
+            const labels = ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun'];
+            const data = labels.map(() => Math.floor(Math.random() * 50) + 150);
+            data[data.length - 1] = attendanceData.length + visitorsData.length;
+
+            if (charts.attendance) charts.attendance.destroy();
+            const ctx1 = document.getElementById('attendanceChart').getContext('2d');
+            charts.attendance = new Chart(ctx1, {
+                type: 'line',
+                data: {
+                    labels: labels,
+                    datasets: [{
+                        label: 'Attendance',
+                        data: data,
+                        borderColor: '#212529',
+                        backgroundColor: 'rgba(33, 37, 41, 0.1)',
+                        tension: 0.4,
+                        fill: true
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    plugins: { legend: { display: false } }
+                }
+            });
+
+            const genderData = [
+                [...attendanceData, ...visitorsData].filter(p => p.type === 'male').length,
+                [...attendanceData, ...visitorsData].filter(p => p.type === 'female').length,
+                [...attendanceData, ...visitorsData].filter(p => p.type === 'child').length
+            ];
+
+            if (charts.gender) charts.gender.destroy();
+            const ctx2 = document.getElementById('genderChart').getContext('2d');
+            charts.gender = new Chart(ctx2, {
+                type: 'doughnut',
+                data: {
+                    labels: ['Male', 'Female', 'Children'],
+                    datasets: [{
+                        data: genderData,
+                        backgroundColor: ['#6c757d', '#adb5bd', '#e9ecef']
+                    }]
+                },
+                options: { responsive: true, maintainAspectRatio: false }
+            });
+
+            const ministryCounts = {};
+            attendanceData.forEach(m => ministryCounts[m.ministry] = (ministryCounts[m.ministry] || 0) + 1);
+
+            if (charts.ministry) charts.ministry.destroy();
+            const ctx3 = document.getElementById('ministryChart').getContext('2d');
+            charts.ministry = new Chart(ctx3, {
+                type: 'bar',
+                data: {
+                    labels: Object.keys(ministryCounts),
+                    datasets: [{
+                        label: 'Members',
+                        data: Object.values(ministryCounts),
+                        backgroundColor: '#495057'
+                    }]
+                },
+                options: { responsive: true, maintainAspectRatio: false }
+            });
+        }
+
+        function renderAll() {
+            renderRecentCheckIns();
+            renderPresent();
+            renderAbsent();
+            renderVisitors();
+        }
+
+        function filterPresent() {
+            renderPresent();
+        }
+
+        function filterAbsent() {
+            renderAbsent();
+        }
+
+        function filterVisitors() {
+            renderVisitors();
+        }
+
+        function removeAttendance(id) {
+            attendanceData = attendanceData.filter(a => a.id !== id);
+            saveAttendanceData();
+            updateStats();
+            renderAll();
+            showNotification('Attendance removed');
+        }
+
+        function manualCheckIn(id) {
+            const member = memberDatabase.find(m => m.id === id);
+            if (member) {
+                const time = new Date().toLocaleTimeString('en-US', { hour: '2-digit', minute: '2-digit' });
+                attendanceData.push({
+                    ...member,
+                    time: time,
+                    date: currentDate
+                });
+                member.attendanceCount++;
+                member.lastCheckIn = currentDate;
+                saveDatabase();
+                saveAttendanceData();
+                updateStats();
+                renderAll();
+                showNotification(`Checked in: ${member.name}`);
+            }
+        }
+
+        function convertToMember(id) {
+            const visitor = visitorsData.find(v => v.id === id);
+            if (visitor && confirm(`Convert ${visitor.name} to member?`)) {
+                const newId = Math.max(...memberDatabase.map(m => m.id)) + 1;
+                memberDatabase.push({
+                    id: newId,
+                    name: visitor.name,
+                    phone: visitor.phone,
+                    type: visitor.type,
+                    ministry: 'General',
+                    joinDate: currentDate,
+                    attendanceCount: 1,
+                    lastCheckIn: currentDate
+                });
+                attendanceData.push({
+                    id: newId,
+                    name: visitor.name,
+                    phone: visitor.phone,
+                    type: visitor.type,
+                    ministry: 'General',
+                    time: visitor.time,
+                    date: currentDate
+                });
+                visitorsData = visitorsData.filter(v => v.id !== id);
+                saveDatabase();
+                saveAttendanceData();
+                saveVisitorsData();
+                updateStats();
+                renderAll();
+                showNotification(`${visitor.name} converted to member`);
+            }
+        }
+
+        function loadDateData() {
+            const presentDate = document.getElementById('presentDateFilter').value;
+            const absentDate = document.getElementById('absentDateFilter').value;
+            const visitorDate = document.getElementById('visitorDateFilter').value;
+
+            if (presentDate) currentDate = presentDate;
+            if (absentDate) currentDate = absentDate;
+            if (visitorDate) currentDate = visitorDate;
+
+            attendanceData = JSON.parse(localStorage.getItem('attendanceData_' + currentDate) || '[]');
+            visitorsData = JSON.parse(localStorage.getItem('visitorsData_' + currentDate) || '[]');
+
+            updateStats();
+            renderAll();
+        }
+
+        function switchTab(tabName) {
+            document.querySelectorAll('.tab').forEach(t => t.classList.remove('active'));
+            event.target.classList.add('active');
+            document.querySelectorAll('.tab-content').forEach(c => c.classList.remove('active'));
+            document.getElementById(tabName).classList.add('active');
+
+            if (tabName === 'analytics') {
+                setTimeout(() => renderAnalytics(), 100);
+            }
+        }
+
+        function showNotification(message) {
+            const notification = document.createElement('div');
+            notification.className = 'notification';
+            notification.textContent = message;
+            document.body.appendChild(notification);
+            setTimeout(() => notification.remove(), 3000);
+        }
+
+        window.addEventListener('DOMContentLoaded', () => {
+            initDatabase();
+            document.getElementById('presentDateFilter').value = currentDate;
+            document.getElementById('absentDateFilter').value = currentDate;
+            document.getElementById('visitorDateFilter').value = currentDate;
+            generateQRCode();
+            updateStats();
+            renderAll();
+
+            setTimeout(() => {
+                if (confirm('Simulate QR code scan for testing?')) {
+                    simulateQRScan();
+                }
+            }, 1000);
+        });
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,1054 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ChurchFlow Management System</title>
+    <link rel="stylesheet" href="../style.css">
+
+</head>
+
+<body>
+    <div class="container">
+        <!-- Sidebar -->
+        <div class="sidebar">
+            <div class="logo">
+                <div class="logo-icon">
+                    <img src="../church.png" alt="ChurchFlow Logo">
+                </div>
+
+
+                <div class="logo-text">
+                    <h3>Church</h3>
+                    <p>Management System</p>
+                </div>
+            </div>
+            <div class="sidebar-content">
+                <div class="menu-section">
+                    <div class="menu-label">Main Menu</div>
+                    <a href="../index.html" class="menu-item">
+                        <span><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                stroke-linejoin="round" class="lucide lucide-layout-dashboard h-5 w-5"
+                                data-lov-id="src/components/AppSidebar.tsx:110:22" data-lov-name="item.icon"
+                                data-component-path="src/components/AppSidebar.tsx" data-component-line="110"
+                                data-component-file="AppSidebar.tsx" data-component-name="item.icon"
+                                data-component-content="%7B%22className%22%3A%22h-5%20w-5%22%7D">
+                                <rect width="7" height="9" x="3" y="3" rx="1"></rect>
+                                <rect width="7" height="5" x="14" y="3" rx="1"></rect>
+                                <rect width="7" height="9" x="14" y="12" rx="1"></rect>
+                                <rect width="7" height="5" x="3" y="16" rx="1"></rect>
+                            </svg></span>
+                        <span>Dashboard</span>
+                    </a>
+                    <a href="#" class="menu-item  active">
+                        <span>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                stroke-linejoin="round" class="lucide lucide-users h-5 w-5"
+                                data-lov-id="src/components/AppSidebar.tsx:110:22" data-lov-name="item.icon"
+                                data-component-path="src/components/AppSidebar.tsx" data-component-line="110"
+                                data-component-file="AppSidebar.tsx" data-component-name="item.icon"
+                                data-component-content="%7B%22className%22%3A%22h-5%20w-5%22%7D">
+                                <path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"></path>
+                                <circle cx="9" cy="7" r="4"></circle>
+                                <path d="M22 21v-2a4 4 0 0 0-3-3.87"></path>
+                                <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
+                            </svg>
+                        </span>
+                        <span>Members</span>
+                    </a>
+                    <a href="../Events/events.html" class="menu-item">
+                        <span>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                stroke-linejoin="round" class="lucide lucide-calendar h-5 w-5"
+                                data-lov-id="src/components/AppSidebar.tsx:110:22" data-lov-name="item.icon"
+                                data-component-path="src/components/AppSidebar.tsx" data-component-line="110"
+                                data-component-file="AppSidebar.tsx" data-component-name="item.icon"
+                                data-component-content="%7B%22className%22%3A%22h-5%20w-5%22%7D">
+                                <path d="M8 2v4"></path>
+                                <path d="M16 2v4"></path>
+                                <rect width="18" height="18" x="3" y="4" rx="2"></rect>
+                                <path d="M3 10h18"></path>
+                            </svg>
+                        </span>
+                        <span>Events</span>
+                    </a>
+                    <a href="../Finance/finance.html" class="menu-item">
+                        <span>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                stroke-linejoin="round" class="lucide lucide-dollar-sign h-5 w-5"
+                                data-lov-id="src/components/AppSidebar.tsx:110:22" data-lov-name="item.icon"
+                                data-component-path="src/components/AppSidebar.tsx" data-component-line="110"
+                                data-component-file="AppSidebar.tsx" data-component-name="item.icon"
+                                data-component-content="%7B%22className%22%3A%22h-5%20w-5%22%7D">
+                                <line x1="12" x2="12" y1="2" y2="22"></line>
+                                <path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"></path>
+                            </svg>
+                        </span>
+                        <span>Finances</span>
+                    </a>
+                    <a href="../Communication/communication.html" class="menu-item">
+                        <span><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                stroke-linejoin="round" class="lucide lucide-message-square h-5 w-5"
+                                data-lov-id="src/components/AppSidebar.tsx:110:22" data-lov-name="item.icon"
+                                data-component-path="src/components/AppSidebar.tsx" data-component-line="110"
+                                data-component-file="AppSidebar.tsx" data-component-name="item.icon"
+                                data-component-content="%7B%22className%22%3A%22h-5%20w-5%22%7D">
+                                <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path>
+                            </svg>
+                        </span>
+                        <span>Communications</span>
+                    </a>
+                    <a href="../Attendance/attendance.html" class="menu-item">
+                        <span>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                                stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                                class="lucide lucide-user-check h-5 w-5" data-lov-id="src/components/AppSidebar.tsx:112:22"
+                                data-lov-name="item.icon" data-component-path="src/components/AppSidebar.tsx" data-component-line="112"
+                                data-component-file="AppSidebar.tsx" data-component-name="item.icon"
+                                data-component-content="%7B%22className%22%3A%22h-5%20w-5%22%7D">
+                                <path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"></path>
+                                <circle cx="9" cy="7" r="4"></circle>
+                                <polyline points="16 11 18 13 22 9"></polyline>
+                            </svg>
+                        </span>
+                        <span>Attendance</span>
+                    </a>
+                    <a href="../Report/report.html" class="menu-item">
+                        <span><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                stroke-linejoin="round" class="lucide lucide-chart-column h-5 w-5"
+                                data-lov-id="src/components/AppSidebar.tsx:110:22" data-lov-name="item.icon"
+                                data-component-path="src/components/AppSidebar.tsx" data-component-line="110"
+                                data-component-file="AppSidebar.tsx" data-component-name="item.icon"
+                                data-component-content="%7B%22className%22%3A%22h-5%20w-5%22%7D">
+                                <path d="M3 3v16a2 2 0 0 0 2 2h16"></path>
+                                <path d="M18 17V9"></path>
+                                <path d="M13 17V5"></path>
+                                <path d="M8 17v-3"></path>
+                            </svg>
+                        </span>
+                        <span>Reports</span>
+                    </a>
+                </div>
+
+                <div class="menu-section">
+                    <div class="menu-label">AI Features</div>
+                    <a href="../AI/ai_insight.html" class="menu-item has-badge">
+                        <span class="icon">
+                            <img src="../Assests/creative.png" alt="Creative Image">
+                        </span>
+
+
+                        <span>AI Insights</span>
+                        <span class="badge">New</span>
+                    </a>
+                    <a href="../AI/members_analytics.html" class="menu-item has-badge">
+                        <span><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                stroke-linejoin="round" class="lucide lucide-chart-column h-5 w-5"
+                                data-lov-id="src/components/AppSidebar.tsx:131:22" data-lov-name="item.icon"
+                                data-component-path="src/components/AppSidebar.tsx" data-component-line="131"
+                                data-component-file="AppSidebar.tsx" data-component-name="item.icon"
+                                data-component-content="%7B%22className%22%3A%22h-5%20w-5%22%7D">
+                                <path d="M3 3v16a2 2 0 0 0 2 2h16"></path>
+                                <path d="M18 17V9"></path>
+                                <path d="M13 17V5"></path>
+                                <path d="M8 17v-3"></path>
+                            </svg></span>
+                        <span>Member Analytics</span>
+                        <span class="badge">New</span>
+                    </a>
+                    <a href="../AI/ai_smart_report.html" class="menu-item has-badge">
+                        <span><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                stroke-linejoin="round" class="lucide lucide-file-text h-5 w-5"
+                                data-lov-id="src/components/AppSidebar.tsx:131:22" data-lov-name="item.icon"
+                                data-component-path="src/components/AppSidebar.tsx" data-component-line="131"
+                                data-component-file="AppSidebar.tsx" data-component-name="item.icon"
+                                data-component-content="%7B%22className%22%3A%22h-5%20w-5%22%7D">
+                                <path d="M15 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7Z"></path>
+                                <path d="M14 2v4a2 2 0 0 0 2 2h4"></path>
+                                <path d="M10 9H8"></path>
+                                <path d="M16 13H8"></path>
+                                <path d="M16 17H8"></path>
+                            </svg></span>
+                        <span>Smart Reports</span>
+                        <span class="badge">New</span>
+                    </a>
+                </div>
+
+                <div class="menu-section">
+                    <div class="menu-label">Quick Actions</div>
+                    <a href="#" class="menu-item">
+                        <span><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                stroke-linejoin="round" class="lucide lucide-user-plus h-5 w-5"
+                                data-lov-id="src/components/AppSidebar.tsx:151:22" data-lov-name="item.icon"
+                                data-component-path="src/components/AppSidebar.tsx" data-component-line="151"
+                                data-component-file="AppSidebar.tsx" data-component-name="item.icon"
+                                data-component-content="%7B%22className%22%3A%22h-5%20w-5%22%7D">
+                                <path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"></path>
+                                <circle cx="9" cy="7" r="4"></circle>
+                                <line x1="19" x2="19" y1="8" y2="14"></line>
+                                <line x1="22" x2="16" y1="11" y2="11"></line>
+                            </svg></span>
+                        <span>Add Member</span>
+                    </a>
+                    <a href="#" class="menu-item">
+                        <span><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                stroke-linejoin="round" class="lucide lucide-calendar h-5 w-5"
+                                data-lov-id="src/components/AppSidebar.tsx:151:22" data-lov-name="item.icon"
+                                data-component-path="src/components/AppSidebar.tsx" data-component-line="151"
+                                data-component-file="AppSidebar.tsx" data-component-name="item.icon"
+                                data-component-content="%7B%22className%22%3A%22h-5%20w-5%22%7D">
+                                <path d="M8 2v4"></path>
+                                <path d="M16 2v4"></path>
+                                <rect width="18" height="18" x="3" y="4" rx="2"></rect>
+                                <path d="M3 10h18"></path>
+                            </svg></span>
+                        <span>New Event</span>
+                    </a>
+                    <a href="#" class="menu-item">
+                        <span class="icon">
+                            <img src="../Assests/records.png" alt="AI Insights">
+                        </span>
+                        <span>Record Donation</span>
+                    </a>
+                    <a href="#" class="menu-item">
+                        <span><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                stroke-linejoin="round" class="lucide lucide-bell h-5 w-5"
+                                data-lov-id="src/components/AppSidebar.tsx:151:22" data-lov-name="item.icon"
+                                data-component-path="src/components/AppSidebar.tsx" data-component-line="151"
+                                data-component-file="AppSidebar.tsx" data-component-name="item.icon"
+                                data-component-content="%7B%22className%22%3A%22h-5%20w-5%22%7D">
+                                <path d="M6 8a6 6 0 0 1 12 0c0 7 3 9 3 9H3s3-2 3-9"></path>
+                                <path d="M10.3 21a1.94 1.94 0 0 0 3.4 0"></path>
+                            </svg></span>
+                        <span>Send Message</span>
+                    </a>
+                </div>
+
+                <div class="menu-section">
+                    <div class="menu-label"></div>
+                    <a href="#" class="menu-item">
+                        <span><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                stroke-linejoin="round" class="lucide lucide-settings h-5 w-5"
+                                data-lov-id="src/components/AppSidebar.tsx:166:18" data-lov-name="Settings"
+                                data-component-path="src/components/AppSidebar.tsx" data-component-line="166"
+                                data-component-file="AppSidebar.tsx" data-component-name="Settings"
+                                data-component-content="%7B%22className%22%3A%22h-5%20w-5%22%7D">
+                                <path
+                                    d="M12.22 2h-.44a2 2 0 0 0-2 2v.18a2 2 0 0 1-1 1.73l-.43.25a2 2 0 0 1-2 0l-.15-.08a2 2 0 0 0-2.73.73l-.22.38a2 2 0 0 0 .73 2.73l.15.1a2 2 0 0 1 1 1.72v.51a2 2 0 0 1-1 1.74l-.15.09a2 2 0 0 0-.73 2.73l.22.38a2 2 0 0 0 2.73.73l.15-.08a2 2 0 0 1 2 0l.43.25a2 2 0 0 1 1 1.73V20a2 2 0 0 0 2 2h.44a2 2 0 0 0 2-2v-.18a2 2 0 0 1 1-1.73l.43-.25a2 2 0 0 1 2 0l.15.08a2 2 0 0 0 2.73-.73l.22-.39a2 2 0 0 0-.73-2.73l-.15-.08a2 2 0 0 1-1-1.74v-.5a2 2 0 0 1 1-1.74l.15-.09a2 2 0 0 0 .73-2.73l-.22-.38a2 2 0 0 0-2.73-.73l-.15.08a2 2 0 0 1-2 0l-.43-.25a2 2 0 0 1-1-1.73V4a2 2 0 0 0-2-2z">
+                                </path>
+                                <circle cx="12" cy="12" r="3"></circle>
+                            </svg></span>
+                        <span>Settings</span>
+                    </a>
+
+                </div>
+
+            </div>
+
+
+        </div>
+
+
+        <!-- Main Content -->
+        <div class="main-content">
+            <!-- Header -->
+            <div class="header">
+                <button class="mobile-menu-toggle" onclick="toggleSidebar()">☰</button>
+                <div class="search-bar">
+                    <input type="text" class="search-input" placeholder="Search members, events, or anything...">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                        stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                        class="lucide lucide-search absolute left-3 top-1/2 transform -translate-y-1/2 h-4 w-4 text-muted-foreground"
+                        data-lov-id="src/components/Layout.tsx:24:16" data-lov-name="Search"
+                        data-component-path="src/components/Layout.tsx" data-component-line="24"
+                        data-component-file="Layout.tsx" data-component-name="Search"
+                        data-component-content="%7B%22className%22%3A%22absolute%20left-3%20top-1%2F2%20transform%20-translate-y-1%2F2%20h-4%20w-4%20text-muted-foreground%22%7D">
+                        <circle cx="11" cy="11" r="8"></circle>
+                        <path d="m21 21-4.3-4.3"></path>
+                    </svg>
+                </div>
+                <div class="header-right">
+                    <div class="notification-icon">
+                        <span style="font-size: 20px;"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                                viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-bell h-5 w-5"
+                                data-lov-id="src/components/AppSidebar.tsx:151:22" data-lov-name="item.icon"
+                                data-component-path="src/components/AppSidebar.tsx" data-component-line="151"
+                                data-component-file="AppSidebar.tsx" data-component-name="item.icon"
+                                data-component-content="%7B%22className%22%3A%22h-5%20w-5%22%7D">
+                                <path d="M6 8a6 6 0 0 1 12 0c0 7 3 9 3 9H3s3-2 3-9"></path>
+                                <path d="M10.3 21a1.94 1.94 0 0 0 3.4 0"></path>
+                            </svg>
+                        </span>
+                        <span class="notification-badge">3</span>
+                    </div>
+                    <div class="user-profile">
+                        <span style="font-size: 14px; font-weight: 500;">Pastor Lawrence</span>
+                        <span style="font-size: 20px;"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                                viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-user h-5 w-5"
+                                data-lov-id="src/components/Layout.tsx:41:16" data-lov-name="User"
+                                data-component-path="src/components/Layout.tsx" data-component-line="41"
+                                data-component-file="Layout.tsx" data-component-name="User"
+                                data-component-content="%7B%22className%22%3A%22h-5%20w-5%22%7D">
+                                <path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2"></path>
+                                <circle cx="12" cy="7" r="4"></circle>
+                            </svg>
+                        </span>
+                    </div>
+                </div>
+            </div>
+            <script>
+                function toggleSidebar() {
+                    const sidebar = document.querySelector('.sidebar');
+                    sidebar.classList.toggle('open');
+                }
+
+                // Close sidebar when clicking outside on mobile
+                document.addEventListener('click', function (event) {
+                    const sidebar = document.querySelector('.sidebar');
+                    const toggle = document.querySelector('.mobile-menu-toggle');
+
+                    if (window.innerWidth <= 768 &&
+                        !sidebar.contains(event.target) &&
+                        !toggle.contains(event.target) &&
+                        sidebar.classList.contains('open')) {
+                        sidebar.classList.remove('open');
+                    }
+                });
+            </script>
+
+            <div class="dashboard-content">
+                <!-- Main Header -->
+                <div class="cf-header-primary">
+                    <div class="cf-heading-zone">
+                        <h1>Member Management</h1>
+                        <p>Manage your church community with AI-powered insights</p>
+                    </div>
+                    <div class="cf-controls-cluster">
+                        <button class="cf-btn cf-btn-alternate" onclick="exportMembers()">
+                            <span><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+                                <polyline points="7,10 12,15 17,10"></polyline>
+                                <line x1="12" y1="15" x2="12" y2="3"></line>
+                            </svg></span>
+                            <span>Export</span>
+                        </button>
+                        <button class="cf-btn cf-btn-screen" onclick="toggleFilters()">
+                            <span><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-filter h-4 w-4 mr-2"
+                                data-lov-id="src/pages/Members.tsx:170:12" data-lov-name="Filter" data-component-path="src/pages/Members.tsx"
+                                data-component-line="170" data-component-file="Members.tsx" data-component-name="Filter"
+                                data-component-content="%7B%22className%22%3A%22h-4%20w-4%20mr-2%22%7D">
+                                <polygon points="22 3 2 3 10 12.46 10 19 14 21 14 12.46 22 3"></polygon>
+                            </svg>
+                           </span>
+                            <span>Filter</span>
+                        </button>
+                        <button class="cf-btn cf-btn-main" onclick="openAddMemberModal()">
+                            <span>
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                    stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-user-plus h-4 w-4 mr-2"
+                                    data-lov-id="src/pages/Members.tsx:174:12" data-lov-name="UserPlus" data-component-path="src/pages/Members.tsx"
+                                    data-component-line="174" data-component-file="Members.tsx" data-component-name="UserPlus"
+                                    data-component-content="%7B%22className%22%3A%22h-4%20w-4%20mr-2%22%7D">
+                                    <path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"></path>
+                                    <circle cx="9" cy="7" r="4"></circle>
+                                    <line x1="19" x2="19" y1="8" y2="14"></line>
+                                    <line x1="22" x2="16" y1="11" y2="11"></line>
+                                </svg>
+                            </span>
+                            <span>Add Member</span>
+                        </button>
+                    </div>
+                </div>
+                
+                <!-- Notification Cards -->
+                <div class="insights-section">
+                    <div class="insights-header">
+                        <div class="insight-header-row">
+                            <span class="insight-icon">
+                                <img src="../Assests/chatbot.png" alt="AI Insights">
+                            </span>
+                            <h2>AI-Powered Insights</h2>
+                        </div>
+
+                       
+
+                        <div class="cf-alerts-layout">
+                            <div class="cf-alert-tile cf-success">
+                                <span class="cf-alert-symbol"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="green"
+                                    stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-heart h-4 w-4"
+                                    data-lov-id="src/pages/Members.tsx:187:18" data-lov-name="insight.icon" data-component-path="src/pages/Members.tsx"
+                                    data-component-line="187" data-component-file="Members.tsx" data-component-name="insight.icon"
+                                    data-component-content="%7B%22className%22%3A%22h-4%20w-4%22%7D">
+                                    <path
+                                        d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z">
+                                    </path>
+                                </svg>
+                               </span>
+                                <div class="cf-alert-text">
+                                    <h3>High Engagement Alert</h3>
+                                    <p>Sarah Johnson and Michael Chen show exceptional engagement patterns</p>
+                                </div>
+                            </div>
+                        
+                            <div class="cf-alert-tile cf-warning">
+                                <span class="cf-alert-symbol"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="orange"
+                                    stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-triangle-alert h-4 w-4"
+                                    data-lov-id="src/pages/Members.tsx:187:18" data-lov-name="insight.icon" data-component-path="src/pages/Members.tsx"
+                                    data-component-line="187" data-component-file="Members.tsx" data-component-name="insight.icon"
+                                    data-component-content="%7B%22className%22%3A%22h-4%20w-4%22%7D">
+                                    <path d="m21.73 18-8-14a2 2 0 0 0-3.48 0l-8 14A2 2 0 0 0 4 21h16a2 2 0 0 0 1.73-3"></path>
+                                    <path d="M12 9v4"></path>
+                                    <path d="M12 17h.01"></path>
+                                </svg></span>
+                                <div class="cf-alert-text">
+                                    <h3>Follow-Up Needed</h3>
+                                    <p>David Thompson hasn't attended in 45+ days - consider outreach</p>
+                                </div>
+                            </div>
+                        
+                            <div class="cf-alert-tile">
+                                <span class="cf-alert-symbol">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="blue"
+                                        stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-trending-up h-4 w-4"
+                                        data-lov-id="src/pages/Members.tsx:187:18" data-lov-name="insight.icon" data-component-path="src/pages/Members.tsx"
+                                        data-component-line="187" data-component-file="Members.tsx" data-component-name="insight.icon"
+                                        data-component-content="%7B%22className%22%3A%22h-4%20w-4%22%7D">
+                                        <polyline points="22 7 13.5 15.5 8.5 10.5 2 17"></polyline>
+                                        <polyline points="16 7 22 7 22 13"></polyline>
+                                    </svg>
+                                </span>
+                                <div class="cf-alert-text">
+                                    <h3>Membership Growth</h3>
+                                    <p>15% increase in new members this quarter</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                
+                <!-- Metrics Section -->
+                <!-- Metrics Section -->
+                <div class="cf-stats-container">
+                    <div class="cf-stats-layout">
+                        <div class="cf-stat-unit">
+                            <h2 class="cf-color-primary">485</h2>
+                            <p>Total Members</p>
+                        </div>
+                        <div class="cf-stat-unit">
+                            <h2 class="cf-color-secondary">67</h2>
+                            <p>New This Month</p>
+                        </div>
+                        <div class="cf-stat-unit">
+                            <h2 class="cf-color-accent">23</h2>
+                            <p>Need Follow-up</p>
+                        </div>
+                        <!-- New Metrics -->
+                        <div class="cf-stat-unit">
+                            <h2 class="cf-color-info">15</h2>
+                            <p>Birthdays This Month</p>
+                        </div>
+                        <div class="cf-stat-unit">
+                            <h2 class="cf-color-success">312</h2>
+                            <p>Active Members</p>
+                        </div>
+                        <div class="cf-stat-unit">
+                            <h2 class="cf-color-warning">80</h2>
+                            <p>Inactive Members</p>
+                        </div>
+                    </div>
+                </div>
+
+                
+                <!-- Filters Section -->
+                <div class="cf-filter-container">
+                    <div class="cf-filter-upper">
+                        <div class="cf-search-wrapper">
+                            <span class="cf-search-icon">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                                class="lucide lucide-search absolute left-3 top-1/2 transform -translate-y-1/2 h-4 w-4 text-muted-foreground"
+                                data-lov-id="src/components/Layout.tsx:24:16" data-lov-name="Search" data-component-path="src/components/Layout.tsx"
+                                data-component-line="24" data-component-file="Layout.tsx" data-component-name="Search"
+                                data-component-content="%7B%22className%22%3A%22absolute%20left-3%20top-1%2F2%20transform%20-translate-y-1%2F2%20h-4%20w-4%20text-muted-foreground%22%7D">
+                                <circle cx="11" cy="11" r="8"></circle>
+                                <path d="m21 21-4.3-4.3"></path>
+                            </svg></span>
+                            <input type="text" class="cf-search-input" placeholder="Search members..." id="searchInput"
+                                oninput="searchMembers()">
+                        </div>
+                        <button class="cf-btn cf-btn-alternate" onclick="sortTable('name')">Sort by Name</button>
+                        <button class="cf-btn cf-btn-alternate" onclick="sortTable('attendance')">Sort by Attendance</button>
+                    </div>
+                
+                    <div class="cf-filter-lower">
+                        <div class="cf-tabs-group">
+                            <button class="cf-tab-item cf-active" onclick="filterMembers('all')">All Members</button>
+                            <button class="cf-tab-item" onclick="filterMembers('active')">Active</button>
+                            <button class="cf-tab-item" onclick="filterMembers('new')">New Members</button>
+                            <button class="cf-tab-item" onclick="filterMembers('inactive')">Inactive</button>
+                        </div>
+                
+                        <div class="cf-batch-controls">
+                            <span id="selectedCount">0 selected</span>
+                            <button class="cf-btn cf-btn-alternate" onclick="bulkEmail()" id="bulkEmailBtn" disabled>Send
+                                Email</button>
+                            <button class="cf-btn cf-btn-alternate" onclick="bulkExport()" id="bulkExportBtn" disabled>Export
+                                Selected</button>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Roster Section -->
+                <div class="cf-directory-container">
+                    <div class="cf-directory-head">
+                        <div class="cf-directory-label">
+                            <h2>Member Directory</h2>
+                            <p>Complete list of all church members</p>
+                        </div>
+                        <div class="cf-directory-controls">
+                            <button class="cf-btn cf-btn-alternate" onclick="selectAll()">Select All</button>
+                            <button class="cf-btn cf-btn-alternate" onclick="clearSelection()">Clear Selection</button>
+                        </div>
+                    </div>
+                
+                    <table class="cf-members-table" id="memberTable">
+                        <thead>
+                            <tr>
+                                <th class="cf-checkbox-cell">
+                                    <input type="checkbox" id="selectAllCheckbox" onchange="toggleSelectAll()">
+                                </th>
+                                <th onclick="sortTable('name')">Member</th>
+                                <th>Contact</th>
+                                <th>Group</th>
+                                <th onclick="sortTable('status')">Status</th>
+                                <th>Engagement</th>
+                                <th onclick="sortTable('attendance')">Attendance</th>
+                                <th>Last Seen</th>
+                                <th>Actions</th>
+                            </tr>
+                        </thead>
+                        <tbody id="memberTableBody">
+                            <!-- Members will be populated by JavaScript -->
+                        </tbody>
+                    </table>
+                
+                    <div class="cf-pagination">
+                        <div class="cf-page-stats">
+                            Showing <span id="showingCount">5</span> of <span id="totalCount">5</span> members
+                        </div>
+                        <div class="cf-page-buttons">
+                            <button class="cf-page-btn" onclick="previousPage()" id="prevBtn">Previous</button>
+                            <button class="cf-page-btn cf-active">1</button>
+                            <button class="cf-page-btn" onclick="nextPage()" id="nextBtn" disabled>Next</button>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Member Profile Dialog -->
+                <div class="cf-modal" id="profileModal">
+                    <div class="cf-modal-panel">
+                        <div class="cf-modal-head">
+                            <h2>Member Profile</h2>
+                            <button class="cf-modal-close" onclick="closeModal('profileModal')">×</button>
+                        </div>
+                        <div class="cf-modal-content" id="profileModalBody">
+                            <!-- Profile content will be populated by JavaScript -->
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Add/Edit Member Dialog -->
+                <div class="cf-modal" id="editModal">
+                    <div class="cf-modal-panel">
+                        <div class="cf-modal-head">
+                            <h2 id="editModalTitle">Add New Member</h2>
+                            <button class="cf-modal-close" onclick="closeModal('editModal')">×</button>
+                        </div>
+                        <div class="cf-modal-content">
+                            <form id="memberForm">
+                                <div class="cf-grid-dual">
+                                    <div class="cf-form-field">
+                                        <label class="cf-label">First Name</label>
+                                        <input type="text" class="cf-input" id="firstName" required>
+                                    </div>
+                                    <div class="cf-form-field">
+                                        <label class="cf-label">Last Name</label>
+                                        <input type="text" class="cf-input" id="lastName" required>
+                                    </div>
+                                    <div class="cf-form-field">
+                                        <label class="cf-label">Email</label>
+                                        <input type="email" class="cf-input" id="email" required>
+                                    </div>
+                                    <div class="cf-form-field">
+                                        <label class="cf-label">Phone</label>
+                                        <input type="tel" class="cf-input" id="phone">
+                                    </div>
+                                    <div class="cf-form-field">
+                                        <label class="cf-label">Group/Ministry</label>
+                                        <select class="cf-select" id="group">
+                                            <option>Worship Team</option>
+                                            <option>Youth Ministry</option>
+                                            <option>Children's Ministry</option>
+                                            <option>Prayer Team</option>
+                                            <option>Men's Group</option>
+                                            <option>Women's Group</option>
+                                        </select>
+                                    </div>
+                                    <div class="cf-form-field">
+                                        <label class="cf-label">Status</label>
+                                        <select class="cf-select" id="status">
+                                            <option>Active</option>
+                                            <option>Inactive</option>
+                                        </select>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                        <div class="cf-modal-foot">
+                            <button class="cf-btn cf-btn-alternate" onclick="closeModal('editModal')">Cancel</button>
+                            <button class="cf-btn cf-btn-main" onclick="saveMember()">Save Member</button>
+                        </div>
+                    </div>
+                </div>
+                
+                
+
+            </div>
+
+           
+        </div>
+        
+    </div>
+
+
+    <script>
+        // Sample member data
+        let members = [
+            {
+                id: 1,
+                name: 'Sarah Johnson',
+                firstName: 'Sarah',
+                lastName: 'Johnson',
+                email: 'sarah.johnson@email.com',
+                phone: '(555) 123-4567',
+                group: 'Worship Team',
+                status: 'Active',
+                engagement: 'High',
+                attendance: 92,
+                lastSeen: '1/7/2024',
+                joined: '3/15/2022'
+            },
+            {
+                id: 2,
+                name: 'Michael Chen',
+                firstName: 'Michael',
+                lastName: 'Chen',
+                email: 'michael.chen@email.com',
+                phone: '(555) 234-5678',
+                group: 'Youth Ministry',
+                status: 'Active',
+                engagement: 'High',
+                attendance: 87,
+                lastSeen: '1/7/2024',
+                joined: '1/10/2023'
+            },
+            {
+                id: 3,
+                name: 'Emily Rodriguez',
+                firstName: 'Emily',
+                lastName: 'Rodriguez',
+                email: 'emily.rodriguez@email.com',
+                phone: '(555) 345-6789',
+                group: "Children's Ministry",
+                status: 'Active',
+                engagement: 'Medium',
+                attendance: 78,
+                lastSeen: '1/5/2024',
+                joined: '11/5/2021'
+            },
+            {
+                id: 4,
+                name: 'David Thompson',
+                firstName: 'David',
+                lastName: 'Thompson',
+                email: 'david.thompson@email.com',
+                phone: '(555) 456-7890',
+                group: "Men's Group",
+                status: 'Inactive',
+                engagement: 'Low',
+                attendance: 25,
+                lastSeen: '11/20/2023',
+                joined: '8/22/2020'
+            },
+            {
+                id: 5,
+                name: 'Jennifer Williams',
+                firstName: 'Jennifer',
+                lastName: 'Williams',
+                email: 'jennifer.williams@email.com',
+                phone: '(555) 567-8901',
+                group: 'Prayer Team',
+                status: 'Active',
+                engagement: 'High',
+                attendance: 95,
+                lastSeen: '1/7/2024',
+                joined: '12/1/2023'
+            }
+        ];
+
+        let currentFilter = 'all';
+        let selectedMembers = new Set();
+
+        // Initialize table
+        function renderTable() {
+            const tbody = document.getElementById('memberTableBody');
+            tbody.innerHTML = '';
+
+            let filteredMembers = members;
+
+            // Apply filter
+            if (currentFilter !== 'all') {
+                filteredMembers = members.filter(m => {
+                    if (currentFilter === 'active') return m.status === 'Active';
+                    if (currentFilter === 'inactive') return m.status === 'Inactive';
+                    if (currentFilter === 'new') {
+                        const joinDate = new Date(m.joined);
+                        const threeMonthsAgo = new Date();
+                        threeMonthsAgo.setMonth(threeMonthsAgo.getMonth() - 3);
+                        return joinDate > threeMonthsAgo;
+                    }
+                    return true;
+                });
+            }
+
+            filteredMembers.forEach(member => {
+                const row = document.createElement('tr');
+                if (selectedMembers.has(member.id)) {
+                    row.classList.add('cf-row-selected');
+                }
+
+                row.innerHTML = `
+                        <td class="cf-checkbox-cell">
+                            <input type="checkbox" ${selectedMembers.has(member.id) ? 'checked' : ''} 
+                                   onchange="toggleMemberSelection(${member.id})">
+                        </td>
+                        <td>
+                            <div class="cf-member-card">
+                                <div class="cf-member-icon">👤</div>
+                                <div class="cf-member-info">
+                                    <h4>${member.name}</h4>
+                                    <p>Joined ${member.joined}</p>
+                                </div>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="cf-contact-group">
+                                <div class="cf-contact-item">
+                                    <span class="cf-contact-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-mail h-3 w-3" data-lov-id="src/pages/Members.tsx:278:28" data-lov-name="Mail" data-component-path="src/pages/Members.tsx" data-component-line="278" data-component-file="Members.tsx" data-component-name="Mail" data-component-content="%7B%22className%22%3A%22h-3%20w-3%22%7D"><rect width="20" height="16" x="2" y="4" rx="2"></rect><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"></path></svg></span>
+                                    <span>${member.email}</span>
+                                </div>
+                                <div class="cf-contact-item">
+                                    <span class="cf-contact-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-phone h-3 w-3" data-lov-id="src/pages/Members.tsx:282:28" data-lov-name="Phone" data-component-path="src/pages/Members.tsx" data-component-line="282" data-component-file="Members.tsx" data-component-name="Phone" data-component-content="%7B%22className%22%3A%22h-3%20w-3%22%7D"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg></span>
+                                    <span>${member.phone}</span>
+                                </div>
+                            </div>
+                        </td>
+                        <td>${member.group}</td>
+                        <td><span class="cf-badge ${member.status.toLowerCase()}">${member.status}</span></td>
+                        <td><span class="cf-badge ${member.engagement.toLowerCase()}">${member.engagement}</span></td>
+                        <td>
+                            <div class="cf-progress-group">
+                                <div class="cf-progress-track">
+                                    <div class="cf-progress-bar" style="width: ${member.attendance}%"></div>
+                                </div>
+                                <span class="cf-progress-text">${member.attendance}%</span>
+                            </div>
+                        </td>
+                        <td>${member.lastSeen}</td>
+                        <td>
+                            <div class="cf-actions-cell">
+                                <button class="cf-menu-trigger" onclick="toggleMenu(event, ${member.id})">⋮</button>
+                                <div class="cf-dropdown-menu" id="menu-${member.id}">
+                                    <div class="cf-menu-item" onclick="viewProfile(${member.id})">
+                                        <span>👁️</span>
+                                        <span>View Profile</span>
+                                    </div>
+                                    <div class="cf-menu-item" onclick="editMember(${member.id})">
+                                        <span>✏️</span>
+                                        <span>Edit Member</span>
+                                    </div>
+                                    <div class="cf-menu-item" onclick="sendMessage(${member.id})">
+                                        <span>✉️</span>
+                                        <span>Send Message</span>
+                                    </div>
+                                    <div class="cf-menu-item" onclick="viewInsights(${member.id})">
+                                        <span>✨</span>
+                                        <span>AI Insights</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </td>
+                    `;
+                tbody.appendChild(row);
+            });
+
+            updateCounts();
+        }
+
+        function toggleMenu(event, memberId) {
+            event.stopPropagation();
+            const menu = document.getElementById('menu-' + memberId);
+            const allMenus = document.querySelectorAll('.cf-dropdown-menu');
+
+            allMenus.forEach(m => {
+                if (m !== menu) m.classList.remove('cf-show');
+            });
+
+            menu.classList.toggle('cf-show');
+        }
+
+        function closeAllMenus() {
+            document.querySelectorAll('.cf-dropdown-menu').forEach(m => m.classList.remove('cf-show'));
+        }
+
+        document.addEventListener('click', closeAllMenus);
+
+        function filterMembers(filter) {
+            currentFilter = filter;
+            document.querySelectorAll('.cf-tab-item').forEach(t => t.classList.remove('cf-active'));
+            event.target.classList.add('cf-active');
+            renderTable();
+        }
+
+        function searchMembers() {
+            const searchTerm = document.getElementById('searchInput').value.toLowerCase();
+            const rows = document.querySelectorAll('#memberTableBody tr');
+
+            rows.forEach(row => {
+                const text = row.textContent.toLowerCase();
+                row.style.display = text.includes(searchTerm) ? '' : 'none';
+            });
+        }
+
+        function sortTable(column) {
+            members.sort((a, b) => {
+                if (column === 'name') return a.name.localeCompare(b.name);
+                if (column === 'attendance') return b.attendance - a.attendance;
+                if (column === 'status') return a.status.localeCompare(b.status);
+                return 0;
+            });
+            renderTable();
+        }
+
+        function toggleMemberSelection(memberId) {
+            if (selectedMembers.has(memberId)) {
+                selectedMembers.delete(memberId);
+            } else {
+                selectedMembers.add(memberId);
+            }
+            renderTable();
+        }
+
+        function toggleSelectAll() {
+            const checkbox = document.getElementById('selectAllCheckbox');
+            if (checkbox.checked) {
+                members.forEach(m => selectedMembers.add(m.id));
+            } else {
+                selectedMembers.clear();
+            }
+            renderTable();
+        }
+
+        function selectAll() {
+            members.forEach(m => selectedMembers.add(m.id));
+            document.getElementById('selectAllCheckbox').checked = true;
+            renderTable();
+        }
+
+        function clearSelection() {
+            selectedMembers.clear();
+            document.getElementById('selectAllCheckbox').checked = false;
+            renderTable();
+        }
+
+        function updateCounts() {
+            const count = selectedMembers.size;
+            document.getElementById('selectedCount').textContent = `${count} selected`;
+            document.getElementById('bulkEmailBtn').disabled = count === 0;
+            document.getElementById('bulkExportBtn').disabled = count === 0;
+            document.getElementById('showingCount').textContent = members.length;
+            document.getElementById('totalCount').textContent = members.length;
+        }
+
+        function viewProfile(memberId) {
+            const member = members.find(m => m.id === memberId);
+            const modal = document.getElementById('profileModal');
+            const body = document.getElementById('profileModalBody');
+
+            body.innerHTML = `
+                    <div class="cf-profile-header">
+                        <div class="cf-profile-avatar">👤</div>
+                        <div class="cf-profile-data">
+                            <h3>${member.name}</h3>
+                            <div class="cf-profile-meta">
+                                <span class="cf-meta-item">
+                                    <span>📧</span>
+                                    <span>${member.email}</span>
+                                </span>
+                                <span class="cf-meta-item">
+                                    <span>📞</span>
+                                    <span>${member.phone}</span>
+                                </span>
+                                <span class="cf-meta-item">
+                                    <span>📅</span>
+                                    <span>Joined ${member.joined}</span>
+                                </span>
+                            </div>
+                            <div class="cf-tags-row">
+                                <span class="cf-badge ${member.status.toLowerCase()}">${member.status}</span>
+                                <span class="cf-badge ${member.engagement.toLowerCase()}">${member.engagement} Engagement</span>
+                            </div>
+                        </div>
+                    </div>
+    
+                    <div class="cf-info-section">
+                        <h4>Member Information</h4>
+                        <div class="cf-grid-dual">
+                            <div class="cf-field-group">
+                                <span class="cf-field-label">Ministry Group</span>
+                                <span class="cf-field-value">${member.group}</span>
+                            </div>
+                            <div class="cf-field-group">
+                                <span class="cf-field-label">Attendance Rate</span>
+                                <span class="cf-field-value">${member.attendance}%</span>
+                            </div>
+                            <div class="cf-field-group">
+                                <span class="cf-field-label">Last Attended</span>
+                                <span class="cf-field-value">${member.lastSeen}</span>
+                            </div>
+                            <div class="cf-field-group">
+                                <span class="cf-field-label">Member Status</span>
+                                <span class="cf-field-value">${member.status}</span>
+                            </div>
+                        </div>
+                    </div>
+    
+                    <div class="cf-info-section">
+                        <h4>Engagement Statistics</h4>
+                        <div class="cf-metrics-mini">
+                            <div class="cf-metric-box">
+                                <div class="cf-metric-num">${member.attendance}%</div>
+                                <div class="cf-metric-text">Attendance</div>
+                            </div>
+                            <div class="cf-metric-box">
+                                <div class="cf-metric-num">12</div>
+                                <div class="cf-metric-text">Events Attended</div>
+                            </div>
+                            <div class="cf-metric-box">
+                                <div class="cf-metric-num">8</div>
+                                <div class="cf-metric-text">Messages Read</div>
+                            </div>
+                        </div>
+                    </div>
+                `;
+
+            modal.classList.add('cf-show');
+        }
+
+        function editMember(memberId) {
+            const member = members.find(m => m.id === memberId);
+            document.getElementById('editModalTitle').textContent = 'Edit Member';
+            document.getElementById('firstName').value = member.firstName;
+            document.getElementById('lastName').value = member.lastName;
+            document.getElementById('email').value = member.email;
+            document.getElementById('phone').value = member.phone;
+            document.getElementById('group').value = member.group;
+            document.getElementById('status').value = member.status;
+
+            document.getElementById('editModal').classList.add('cf-show');
+        }
+
+        function openAddMemberModal() {
+            document.getElementById('editModalTitle').textContent = 'Add New Member';
+            document.getElementById('memberForm').reset();
+            document.getElementById('editModal').classList.add('cf-show');
+        }
+
+        function saveMember() {
+            const firstName = document.getElementById('firstName').value;
+            const lastName = document.getElementById('lastName').value;
+
+            alert(`Member ${firstName} ${lastName} saved successfully!`);
+            closeModal('editModal');
+        }
+
+        function sendMessage(memberId) {
+            const member = members.find(m => m.id === memberId);
+            alert(`Opening message compose for ${member.name}`);
+        }
+
+        function viewInsights(memberId) {
+            const member = members.find(m => m.id === memberId);
+            alert(`AI Insights for ${member.name}:\n\n- Attendance has been ${member.engagement.toLowerCase()} this quarter\n- Last attended ${member.lastSeen}\n- Member of ${member.group}`);
+        }
+
+        function closeModal(modalId) {
+            document.getElementById(modalId).classList.remove('cf-show');
+        }
+
+        function bulkEmail() {
+            const count = selectedMembers.size;
+            alert(`Opening email composer for ${count} selected members`);
+        }
+
+        function bulkExport() {
+            const count = selectedMembers.size;
+            alert(`Exporting ${count} selected members...`);
+        }
+
+        function exportMembers() {
+            alert('Exporting all members to CSV...');
+        }
+
+        function toggleFilters() {
+            alert('Advanced filters panel would open here');
+        }
+
+        function previousPage() {
+            alert('Loading previous page...');
+        }
+
+        function nextPage() {
+            alert('Loading next page...');
+        }
+
+        // Initialize
+        renderTable();
+    </script>
+
+
+   
+   
+
+
+    
+</body>
+
+</html>

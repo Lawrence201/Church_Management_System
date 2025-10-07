@@ -1,0 +1,444 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AttendanceFlow - Dashboard</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.9.1/chart.min.js"></script>
+    <link rel="stylesheet" href="../style.css">
+</head>
+
+<body>
+    <div class="container">
+        <div class="sidebar">
+            <div class="logo">
+                <div class="logo-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none"
+                        stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                        class="lucide lucide-building2 h-6 w-6 text-white"
+                        data-lov-id="src/components/Sidebar.tsx:37:12" data-lov-name="Building2"
+                        data-component-path="src/components/Sidebar.tsx" data-component-line="37"
+                        data-component-file="Sidebar.tsx" data-component-name="Building2"
+                        data-component-content="%7B%22className%22%3A%22h-6%20w-6%20text-white%22%7D">
+                        <path d="M6 22V4a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v18Z"></path>
+                        <path d="M6 12H4a2 2 0 0 0-2 2v6a2 2 0 0 0 2 2h2"></path>
+                        <path d="M18 9h2a2 2 0 0 1 2 2v9a2 2 0 0 1-2 2h-2"></path>
+                        <path d="M10 6h4"></path>
+                        <path d="M10 10h4"></path>
+                        <path d="M10 14h4"></path>
+                        <path d="M10 18h4"></path>
+                    </svg>
+                </div>
+                <div class="logo-text-group">
+                    <div class="logo-text">Lawrence<span></span></div>
+                    <div class="logo-subtitle">Admin Panel</div>
+                </div>
+            </div>
+
+
+            <nav class="nav-menu">
+                <a href="../index.html" class="nav-item ">
+                    <svg class="nav-icon" viewBox="0 0 24 24">
+                        <path d="M3 13h8V3H3v10zm0 8h8v-6H3v6zm10 0h8V11h-8v10zm0-18v6h8V3h-8z" />
+                    </svg>
+                    Dashboard
+                </a>
+                <a href="../Employees/employees.html" class="nav-item">
+                    <svg class="nav-svg" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round" class="lucide lucide-users h-5 w-5"
+                        data-lov-id="src/components/Sidebar.tsx:61:12" data-lov-name="item.icon"
+                        data-component-path="src/components/Sidebar.tsx" data-component-line="61"
+                        data-component-file="Sidebar.tsx" data-component-name="item.icon"
+                        data-component-content="%7B%22className%22%3A%22h-5%20w-5%22%7D">
+                        <path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"></path>
+                        <circle cx="9" cy="7" r="4"></circle>
+                        <path d="M22 21v-2a4 4 0 0 0-3-3.87"></path>
+                        <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
+                    </svg>
+                    Employees
+                </a>
+                <a href="../Add_Employees/add_employees.html" class="nav-item">
+                    <svg class="nav-svg" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round" class="lucide lucide-user-plus h-5 w-5"
+                        data-lov-id="src/components/Sidebar.tsx:61:12" data-lov-name="item.icon"
+                        data-component-path="src/components/Sidebar.tsx" data-component-line="61"
+                        data-component-file="Sidebar.tsx" data-component-name="item.icon"
+                        data-component-content="%7B%22className%22%3A%22h-5%20w-5%22%7D">
+                        <path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"></path>
+                        <circle cx="9" cy="7" r="4"></circle>
+                        <line x1="19" x2="19" y1="8" y2="14"></line>
+                        <line x1="22" x2="16" y1="11" y2="11"></line>
+                    </svg>
+                    Add Employee
+                </a>
+                <a href="../Scan_Qr_Fingerprint/scan_qr_code.html" class="nav-item ">
+                    <svg class="nav-svg" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round" class="lucide lucide-qr-code h-5 w-5"
+                        data-lov-id="src/components/Sidebar.tsx:61:12" data-lov-name="item.icon"
+                        data-component-path="src/components/Sidebar.tsx" data-component-line="61"
+                        data-component-file="Sidebar.tsx" data-component-name="item.icon"
+                        data-component-content="%7B%22className%22%3A%22h-5%20w-5%22%7D">
+                        <rect width="5" height="5" x="3" y="3" rx="1"></rect>
+                        <rect width="5" height="5" x="16" y="3" rx="1"></rect>
+                        <rect width="5" height="5" x="3" y="16" rx="1"></rect>
+                        <path d="M21 16h-3a2 2 0 0 0-2 2v3"></path>
+                        <path d="M21 21v.01"></path>
+                        <path d="M12 7v3a2 2 0 0 1-2 2H7"></path>
+                        <path d="M3 12h.01"></path>
+                        <path d="M12 3h.01"></path>
+                        <path d="M12 16v.01"></path>
+                        <path d="M16 12h1"></path>
+                        <path d="M21 12v.01"></path>
+                        <path d="M12 21v-1"></path>
+                    </svg>
+                    Scan QR Codes
+                </a>
+                <a href="../Attendance/attendance.html" class="nav-item">
+                    <svg class="nav-icon" viewBox="0 0 24 24">
+                        <path
+                            d="M9 11H7v6h2v-6zm4 0h-2v6h2v-6zm4 0h-2v6h2v-6zm2-7h-3V2h-2v2H8V2H6v2H3c-1.1 0-1.99.9-1.99 2L1 20c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 16H5V9h14v11z" />
+                    </svg>
+                    Attendance
+                </a>
+                <a href="../Report/report.html" class="nav-item">
+                    <svg class="nav-svg" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round" class="lucide lucide-chart-column h-5 w-5"
+                        data-lov-id="src/components/Sidebar.tsx:61:12" data-lov-name="item.icon"
+                        data-component-path="src/components/Sidebar.tsx" data-component-line="61"
+                        data-component-file="Sidebar.tsx" data-component-name="item.icon"
+                        data-component-content="%7B%22className%22%3A%22h-5%20w-5%22%7D">
+                        <path d="M3 3v16a2 2 0 0 0 2 2h16"></path>
+                        <path d="M18 17V9"></path>
+                        <path d="M13 17V5"></path>
+                        <path d="M8 17v-3"></path>
+                    </svg>
+                    Reports
+                </a>
+                <a href="#" class="nav-item active">
+                    <svg class="nav-svg" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round" class="lucide lucide-settings h-5 w-5"
+                        data-lov-id="src/components/Sidebar.tsx:61:12" data-lov-name="item.icon"
+                        data-component-path="src/components/Sidebar.tsx" data-component-line="61"
+                        data-component-file="Sidebar.tsx" data-component-name="item.icon"
+                        data-component-content="%7B%22className%22%3A%22h-5%20w-5%22%7D">
+                        <path
+                            d="M12.22 2h-.44a2 2 0 0 0-2 2v.18a2 2 0 0 1-1 1.73l-.43.25a2 2 0 0 1-2 0l-.15-.08a2 2 0 0 0-2.73.73l-.22.38a2 2 0 0 0 .73 2.73l.15.1a2 2 0 0 1 1 1.72v.51a2 2 0 0 1-1 1.74l-.15.09a2 2 0 0 0-.73 2.73l.22.38a2 2 0 0 0 2.73.73l.15-.08a2 2 0 0 1 2 0l.43.25a2 2 0 0 1 1 1.73V20a2 2 0 0 0 2 2h.44a2 2 0 0 0 2-2v-.18a2 2 0 0 1 1-1.73l.43-.25a2 2 0 0 1 2 0l.15.08a2 2 0 0 0 2.73-.73l.22-.39a2 2 0 0 0-.73-2.73l-.15-.08a2 2 0 0 1-1-1.74v-.5a2 2 0 0 1 1-1.74l.15-.09a2 2 0 0 0 .73-2.73l-.22-.38a2 2 0 0 0-2.73-.73l-.15.08a2 2 0 0 1-2 0l-.43-.25a2 2 0 0 1-1-1.73V4a2 2 0 0 0-2-2z">
+                        </path>
+                        <circle cx="12" cy="12" r="3"></circle>
+                    </svg>
+
+                    Settings
+                </a>
+            </nav>
+
+            <div class="admin-section">
+                <div class="admin-info">
+                    <div class="admin-avatar">
+                        <img src="https://ui-avatars.com/api/?name=LA&background=3b82f6&color=fff&size=36" alt="Admin Avatar" />
+                    </div>
+                    <div>
+                        <div class="admin-name">Administrator</div>
+                        <div class="admin-email">admin123</div>
+                    </div>
+                </div>
+                <a href="http://localhost/Smart_Webbased/logout.php"
+                    class="logout-btn flex items-center text-indigo-600 hover:text-indigo-800">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" style="margin-right: 8px;">
+                        <path
+                            d="M10.09 15.59L11.5 17l5-5-5-5-1.41 1.41L12.67 11H3v2h9.67l-2.58 2.59zM19 3H5c-1.11 0-2 .9-2 2v4h2V5h14v14H5v-4H3v4c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2z" />
+                    </svg>
+                    Logout
+                </a>
+            </div>
+
+
+
+        </div>
+
+        <div class="main-content">
+            <div class="headed">
+                <div class="attflow_topbar">
+                    <div class="attflow_config_icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-settings h-6 w-6 text-gray-700"
+                            data-lov-id="src/components/Settings.tsx:75:10" data-lov-name="SettingsIcon"
+                            data-component-path="src/components/Settings.tsx" data-component-line="75" data-component-file="Settings.tsx"
+                            data-component-name="SettingsIcon" data-component-content="%7B%22className%22%3A%22h-6%20w-6%20text-gray-700%22%7D">
+                            <path
+                                d="M12.22 2h-.44a2 2 0 0 0-2 2v.18a2 2 0 0 1-1 1.73l-.43.25a2 2 0 0 1-2 0l-.15-.08a2 2 0 0 0-2.73.73l-.22.38a2 2 0 0 0 .73 2.73l.15.1a2 2 0 0 1 1 1.72v.51a2 2 0 0 1-1 1.74l-.15.09a2 2 0 0 0-.73 2.73l.22.38a2 2 0 0 0 2.73.73l.15-.08a2 2 0 0 1 2 0l.43.25a2 2 0 0 1 1 1.73V20a2 2 0 0 0 2 2h.44a2 2 0 0 0 2-2v-.18a2 2 0 0 1 1-1.73l.43-.25a2 2 0 0 1 2 0l.15.08a2 2 0 0 0 2.73-.73l.22-.39a2 2 0 0 0-.73-2.73l-.15-.08a2 2 0 0 1-1-1.74v-.5a2 2 0 0 1 1-1.74l.15-.09a2 2 0 0 0 .73-2.73l-.22-.38a2 2 0 0 0-2.73-.73l-.15.08a2 2 0 0 1-2 0l-.43-.25a2 2 0 0 1-1-1.73V4a2 2 0 0 0-2-2z">
+                            </path>
+                            <circle cx="12" cy="12" r="3"></circle>
+                        </svg>
+                    </div>
+                    <div class="attflow_topbar_content">
+                        <h1>Settings</h1>
+                        <p>Manage your attendance system configuration</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="attflow_wrapper">
+               
+            
+                <div class="attflow_navtabs">
+                    <div class="attflow_navtab attflow_selected" data-tab="general">General</div>
+                    <div class="attflow_navtab" data-tab="notifications">Notifications</div>
+                    <div class="attflow_navtab" data-tab="security">Security</div>
+                    <div class="attflow_navtab" data-tab="integrations">Integrations</div>
+                    <div class="attflow_navtab" data-tab="backup">Backup</div>
+                </div>
+
+                <div class="attflow_tabpanel" id="attflow-general-panel">
+                    <div class="attflow_panel">
+                        <div class="attflow_panel_header">
+                            <div class="attflow_panel_icon attflow_org_icon">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                                    stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                                    class="lucide lucide-building h-5 w-5" data-lov-id="src/components/Settings.tsx:97:16"
+                                    data-lov-name="Building" data-component-path="src/components/Settings.tsx" data-component-line="97"
+                                    data-component-file="Settings.tsx" data-component-name="Building"
+                                    data-component-content="%7B%22className%22%3A%22h-5%20w-5%22%7D">
+                                    <rect width="16" height="20" x="4" y="2" rx="2" ry="2"></rect>
+                                    <path d="M9 22v-4h6v4"></path>
+                                    <path d="M8 6h.01"></path>
+                                    <path d="M16 6h.01"></path>
+                                    <path d="M12 6h.01"></path>
+                                    <path d="M12 10h.01"></path>
+                                    <path d="M12 14h.01"></path>
+                                    <path d="M16 10h.01"></path>
+                                    <path d="M16 14h.01"></path>
+                                    <path d="M8 10h.01"></path>
+                                    <path d="M8 14h.01"></path>
+                                </svg>
+                            </div>
+                            <h2>Company Information</h2>
+                        </div>
+                        <p class="attflow_panel_desc">Basic company settings and configuration</p>
+                    
+                        <div class="attflow_form_layout">
+                            <div class="attflow_form_unit">
+                                <label class="attflow_form_label">Company Name</label>
+                                <input type="text" class="attflow_form_input" value="Lawrence Attendance Management System">
+                            </div>
+                            <div class="attflow_form_unit">
+                                <label class="attflow_form_label">Timezone</label>
+                                <div class="attflow_dropdown_container">
+                                    <select class="attflow_dropdown_select">
+                                        <option selected>UTC-5 (Eastern)</option>
+                                        <option>UTC-8 (Pacific)</option>
+                                        <option>UTC-6 (Central)</option>
+                                        <option>UTC-7 (Mountain)</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                    
+                        <button class="attflow_submit_btn">Save Changes</button>
+                    </div>
+                    
+                    <div class="attflow_panel">
+                        <div class="attflow_panel_header">
+                            <div class="attflow_panel_icon attflow_time_icon">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                                    stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                                    class="lucide lucide-clock h-5 w-5" data-lov-id="src/components/Settings.tsx:140:16"
+                                    data-lov-name="Clock" data-component-path="src/components/Settings.tsx" data-component-line="140"
+                                    data-component-file="Settings.tsx" data-component-name="Clock"
+                                    data-component-content="%7B%22className%22%3A%22h-5%20w-5%22%7D">
+                                    <circle cx="12" cy="12" r="10"></circle>
+                                    <polyline points="12 6 12 12 16 14"></polyline>
+                                </svg>
+                            </div>
+                            <h2>Working Hours</h2>
+                        </div>
+                        <p class="attflow_panel_desc">Set default working hours and schedules</p>
+
+                        
+
+
+                        <form action="save_settings.php" method="POST">
+                            <div class="attflow_form_layout">
+                                <div class="attflow_form_unit">
+                                    <label class="attflow_form_label">Start Time</label>
+                                    <div class="attflow_time_container">
+                                        <input type="time" class="attflow_time_field" name="start_time"
+                                            value="<?= htmlspecialchars($start_time) ?>" required>
+                                        <span class="attflow_info_icon"></span>
+                                    </div>
+                                </div>
+                                <div class="attflow_form_unit">
+                                    <label class="attflow_form_label">End Time</label>
+                                    <div class="attflow_time_container">
+                                        <input type="time" class="attflow_time_field" name="end_time"
+                                            value="<?= htmlspecialchars($end_time) ?>">
+                                        <span class="attflow_info_icon"></span>
+                                    </div>
+                                </div>
+                            </div>
+                            <button type="submit" class="attflow_submit_btn">Save Changes</button>
+                        </form>
+
+                    
+                       
+                    </div>
+
+                </div>
+
+                <div class="attflow_tabpanel" id="attflow-notifications-panel" style="display: none;"><div class="np-container">
+                    <div class="np-header">
+                        <h1>
+                            <svg class="np-bell-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M15 17h5l-1.405-1.405A2.032 2.032 0 0118 14.158V11a6.002 6.002 0 00-4-5.659V5a2 2 0 10-4 0v.341C7.67 6.165 6 8.388 6 11v3.159c0 .538-.214 1.055-.595 1.436L4 17h5m6 0v1a3 3 0 11-6 0v-1m6 0H9" />
+                            </svg>
+                            Notification Preferences
+                        </h1>
+                        <p>Configure how and when you receive notifications</p>
+                    </div>
+                
+                    <div class="np-preferences">
+                        <div class="np-preference-item">
+                            <div class="np-preference-content">
+                                <div class="np-preference-title">Email Notifications</div>
+                                <div class="np-preference-description">Receive notifications via email</div>
+                            </div>
+                            <div class="np-toggle-container">
+                                <label class="np-toggle">
+                                    <input type="checkbox" id="email-toggle" checked />
+                                    <span class="np-slider"></span>
+                                </label>
+                            </div>
+                        </div>
+                
+                        <div class="np-preference-item">
+                            <div class="np-preference-content">
+                                <div class="np-preference-title">SMS Notifications</div>
+                                <div class="np-preference-description">Receive notifications via SMS</div>
+                            </div>
+                            <div class="np-toggle-container">
+                                <label class="np-toggle">
+                                    <input type="checkbox" id="sms-toggle" />
+                                    <span class="np-slider"></span>
+                                </label>
+                            </div>
+                        </div>
+                
+                        <div class="np-preference-item">
+                            <div class="np-preference-content">
+                                <div class="np-preference-title">Late Arrival Alerts</div>
+                                <div class="np-preference-description">Get notified when employees arrive late</div>
+                            </div>
+                            <div class="np-toggle-container">
+                                <label class="np-toggle">
+                                    <input type="checkbox" id="late-arrival-toggle" />
+                                    <span class="np-slider"></span>
+                                </label>
+                            </div>
+                        </div>
+                
+                        <div class="np-preference-item">
+                            <div class="np-preference-content">
+                                <div class="np-preference-title">Weekly Reports</div>
+                                <div class="np-preference-description">Receive weekly attendance summaries</div>
+                            </div>
+                            <div class="np-toggle-container">
+                                <label class="np-toggle">
+                                    <input type="checkbox" id="weekly-reports-toggle" />
+                                    <span class="np-slider"></span>
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                
+                    <button class="np-save-button" onclick="savePreferences()">
+                        <svg class="np-save-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M8 7H5a2 2 0 00-2 2v9a2 2 0 002 2h14a2 2 0 002-2V9a2 2 0 00-2-2h-3m-1 4l-3 3m0 0l-3-3m3 3V4" />
+                        </svg>
+                        Save Preferences
+                    </button>
+                </div>
+            </div>
+
+        </div>
+
+
+    </div>
+
+    <script>
+        document.querySelectorAll('.attflow_navtab').forEach(tab => {
+            tab.addEventListener('click', function () {
+                // Remove selected class from all tabs
+                document.querySelectorAll('.attflow_navtab').forEach(t => t.classList.remove('attflow_selected'));
+
+                // Add to current
+                this.classList.add('attflow_selected');
+
+                // Hide all panels
+                document.querySelectorAll('.attflow_tabpanel').forEach(panel => panel.style.display = 'none');
+
+                // Show the one matching this tab
+                const selectedTab = this.getAttribute('data-tab');
+                const targetPanel = document.getElementById(`attflow-${selectedTab}-panel`);
+                if (targetPanel) targetPanel.style.display = 'block';
+            });
+        });
+    </script>
+
+
+
+<script>
+    document.querySelectorAll('.attflow_submit_btn').forEach(btn => {
+            btn.addEventListener('click', async function (e) {
+                e.preventDefault();
+                const form = this.closest('form');
+                const saveMsg = document.getElementById('saveMsg');
+                try {
+                    const response = await fetch(form.action, {
+                        method: 'POST',
+                        body: new FormData(form)
+                    });
+                    const result = await response.json();
+                    if (result.success) {
+                        this.style.background = '#059669';
+                        this.innerHTML = '✓ Saved';
+                        setTimeout(() => {
+                            this.style.background = '#1e293b';
+                            this.innerHTML = ' Save Changes';
+                        }, 2000);
+                    } else {
+                        saveMsg.textContent = result.message;
+                        saveMsg.style.display = 'block';
+                    }
+                } catch (error) {
+                    saveMsg.textContent = 'Server error. Please try again later.';
+                    saveMsg.style.display = 'block';
+                }
+            });
+        });
+</script>
+
+<script>
+    document.addEventListener("DOMContentLoaded", async function () {
+        const response = await fetch('save_settings.php');
+        const data = await response.json();
+        if (data.success) {
+            document.querySelector('input[name="start_time"]').value = data.start_time || '09:00';
+            document.querySelector('input[name="end_time"]').value = data.end_time || '17:00';
+        }
+    });
+</script>
+
+
+
+
+
+</body>
+
+</html>

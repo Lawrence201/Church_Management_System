@@ -1,0 +1,1056 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Church Events</title>
+    <link rel="stylesheet" href="../style.css">
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.9.1/chart.min.js"></script>
+</head>
+
+<body>
+    <div class="container">
+        <!-- Sidebar -->
+        <div class="sidebar">
+            <div class="logo">
+                <div class="logo-icon">
+                    <img src="../church.png" alt="ChurchFlow Logo">
+                </div>
+                <div class="logo-text">
+                    <h3>Church</h3>
+                    <p>Management System</p>
+                </div>
+            </div>
+            <div class="sidebar-content">
+                <div class="menu-section">
+                    <div class="menu-label">Main Menu</div>
+                    <a href="../index.html" class="menu-item">
+                        <span><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                stroke-linejoin="round" class="lucide lucide-layout-dashboard h-5 w-5">
+                                <rect width="7" height="9" x="3" y="3" rx="1"></rect>
+                                <rect width="7" height="5" x="14" y="3" rx="1"></rect>
+                                <rect width="7" height="9" x="14" y="12" rx="1"></rect>
+                                <rect width="7" height="5" x="3" y="16" rx="1"></rect>
+                            </svg></span>
+                        <span>Dashboard</span>
+                    </a>
+                    <a href="../Members/members.html" class="menu-item">
+                        <span><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                stroke-linejoin="round" class="lucide lucide-users h-5 w-5">
+                                <path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"></path>
+                                <circle cx="9" cy="7" r="4"></circle>
+                                <path d="M22 21v-2a4 4 0 0 0-3-3.87"></path>
+                                <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
+                            </svg></span>
+                        <span>Members</span>
+                    </a>
+                    <a href="../Events/events.html" class="menu-item">
+                        <span><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                stroke-linejoin="round" class="lucide lucide-calendar h-5 w-5">
+                                <path d="M8 2v4"></path>
+                                <path d="M16 2v4"></path>
+                                <rect width="18" height="18" x="3" y="4" rx="2"></rect>
+                                <path d="M3 10h18"></path>
+                            </svg></span>
+                        <span>Events</span>
+                    </a>
+                    <a href="../Finance/finance.html" class="menu-item">
+                        <span><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                stroke-linejoin="round" class="lucide lucide-dollar-sign h-5 w-5">
+                                <line x1="12" x2="12" y1="2" y2="22"></line>
+                                <path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"></path>
+                            </svg></span>
+                        <span>Finances</span>
+                    </a>
+                    <a href="../Communication/communication.html" class="menu-item">
+                        <span><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                stroke-linejoin="round" class="lucide lucide-message-square h-5 w-5">
+                                <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path>
+                            </svg></span>
+                        <span>Communications</span>
+                    </a>
+                    <a href="../Attendance/attendance.html" class="menu-item ">
+                        <span><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                stroke-linejoin="round" class="lucide lucide-user-check h-5 w-5">
+                                <path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"></path>
+                                <circle cx="9" cy="7" r="4"></circle>
+                                <polyline points="16 11 18 13 22 9"></polyline>
+                            </svg></span>
+                        <span>Attendance</span>
+                    </a>
+                    <a href="../Report/report.html" class="menu-item">
+                        <span><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                stroke-linejoin="round" class="lucide lucide-chart-column h-5 w-5">
+                                <path d="M3 3v16a2 2 0 0 0 2 2h16"></path>
+                                <path d="M18 17V9"></path>
+                                <path d="M13 17V5"></path>
+                                <path d="M8 17v-3"></path>
+                            </svg></span>
+                        <span>Reports</span>
+                    </a>
+                </div>
+                <div class="menu-section">
+                    <div class="menu-label">AI Features</div>
+                    <a href="ai_insight.html" class="menu-item  has-badge">
+                        <span class="icon"><img src="../Assests/creative.png" alt="AI Insights"></span>
+                        <span>AI Insights</span>
+                        <span class="badge">New</span>
+                    </a>
+                    <a href="members_analytics.html" class="menu-item has-badge">
+                        <span><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                stroke-linejoin="round" class="lucide lucide-chart-column h-5 w-5">
+                                <path d="M3 3v16a2 2 0 0 0 2 2h16"></path>
+                                <path d="M18 17V9"></path>
+                                <path d="M13 17V5"></path>
+                                <path d="M8 17v-3"></path>
+                            </svg></span>
+                        <span>Member Analytics</span>
+                        <span class="badge">New</span>
+                    </a>
+                    <a href="#" class="menu-item active  has-badge">
+                        <span><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                stroke-linejoin="round" class="lucide lucide-file-text h-5 w-5">
+                                <path d="M15 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7Z"></path>
+                                <path d="M14 2v4a2 2 0 0 0 2 2h4"></path>
+                                <path d="M10 9H8"></path>
+                                <path d="M16 13H8"></path>
+                                <path d="M16 17H8"></path>
+                            </svg></span>
+                        <span>Smart Reports</span>
+                        <span class="badge">New</span>
+                    </a>
+                </div>
+                <div class="menu-section">
+                    <div class="menu-label">Quick Actions</div>
+                    <a href="#" class="menu-item">
+                        <span><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                stroke-linejoin="round" class="lucide lucide-user-plus h-5 w-5">
+                                <path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"></path>
+                                <circle cx="9" cy="7" r="4"></circle>
+                                <line x1="19" x2="19" y1="8" y2="14"></line>
+                                <line x1="22" x2="16" y1="11" y2="11"></line>
+                            </svg></span>
+                        <span>Add Member</span>
+                    </a>
+                    <a href="#" class="menu-item">
+                        <span><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                stroke-linejoin="round" class="lucide lucide-calendar h-5 w-5">
+                                <path d="M8 2v4"></path>
+                                <path d="M16 2v4"></path>
+                                <rect width="18" height="18" x="3" y="4" rx="2"></rect>
+                                <path d="M3 10h18"></path>
+                            </svg></span>
+                        <span>New Event</span>
+                    </a>
+                    <a href="#" class="menu-item">
+                        <span class="icon"><img src="../Assests/records.png" alt="AI Insights"></span>
+                        <span>Record Donation</span>
+                    </a>
+                    <a href="#" class="menu-item">
+                        <span><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                stroke-linejoin="round" class="lucide lucide-bell h-5 w-5">
+                                <path d="M6 8a6 6 0 0 1 12 0c0 7 3 9 3 9H3s3-2 3-9"></path>
+                                <path d="M10.3 21a1.94 1.94 0 0 0 3.4 0"></path>
+                            </svg></span>
+                        <span>Send Message</span>
+                    </a>
+                </div>
+                <div class="menu-section">
+                    <div class="menu-label"></div>
+                    <a href="#" class="menu-item">
+                        <span><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                stroke-linejoin="round" class="lucide lucide-settings h-5 w-5">
+                                <path
+                                    d="M12.22 2h-.44a2 2 0 0 0-2 2v.18a2 2 0 0 1-1 1.73l-.43.25a2 2 0 0 1-2 0l-.15-.08a2 2 0 0 0-2.73.73l-.22.38a2 2 0 0 0 .73 2.73l.15.1a2 2 0 0 1 1 1.72v.51a2 2 0 0 1-1 1.74l-.15.09a2 2 0 0 0-.73 2.73l.22.38a2 2 0 0 0 2.73.73l.15-.08a2 2 0 0 1 2 0l.43.25a2 2 0 0 1 1 1.73V20a2 2 0 0 0 2 2h.44a2 2 0 0 0 2-2v-.18a2 2 0 0 1 1-1.73l.43-.25a2 2 0 0 1 2 0l.15.08a2 2 0 0 0 2.73-.73l.22-.39a2 2 0 0 0-.73-2.73l-.15-.08a2 2 0 0 1-1-1.74v-.5a2 2 0 0 1 1-1.74l.15-.09a2 2 0 0 0 .73-2.73l-.22-.38a2 2 0 0 0-2.73-.73l-.15.08a2 2 0 0 1-2 0l-.43-.25a2 2 0 0 1-1-1.73V4a2 2 0 0 0-2-2z">
+                                </path>
+                                <circle cx="12" cy="12" r="3"></circle>
+                            </svg></span>
+                        <span>Settings</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+        <!-- Main Content -->
+        <div class="main-content">
+            <!-- Header -->
+            <div class="header">
+                <button class="mobile-menu-toggle" onclick="toggleSidebar()">☰</button>
+                <div class="search-bar">
+                    <input type="text" class="search-input" placeholder="Search members, events, or anything...">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                        stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                        class="lucide lucide-search absolute left-3 top-1/2 transform -translate-y-1/2 h-4 w-4 text-muted-foreground">
+                        <circle cx="11" cy="11" r="8"></circle>
+                        <path d="m21 21-4.3-4.3"></path>
+                    </svg>
+                </div>
+                <div class="header-right">
+                    <div class="notification-icon">
+                        <span style="font-size: 20px;"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                                viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-bell h-5 w-5">
+                                <path d="M6 8a6 6 0 0 1 12 0c0 7 3 9 3 9H3s3-2 3-9"></path>
+                                <path d="M10.3 21a1.94 1.94 0 0 0 3.4 0"></path>
+                            </svg></span>
+                        <span class="notification-badge">3</span>
+                    </div>
+                    <div class="user-profile">
+                        <span style="font-size: 14px; font-weight: 500;">Pastor Lawrence</span>
+                        <span style="font-size: 20px;"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                                viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-user h-5 w-5">
+                                <path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2"></path>
+                                <circle cx="12" cy="7" r="4"></circle>
+                            </svg></span>
+                    </div>
+                </div>
+            </div>
+            <script>
+                function toggleSidebar() {
+                    const sidebar = document.querySelector('.sidebar');
+                    sidebar.classList.toggle('open');
+                }
+                document.addEventListener('click', function (event) {
+                    const sidebar = document.querySelector('.sidebar');
+                    const toggle = document.querySelector('.mobile-menu-toggle');
+                    if (window.innerWidth <= 768 && !sidebar.contains(event.target) && !toggle.contains(event.target) && sidebar.classList.contains('open')) {
+                        sidebar.classList.remove('open');
+                    }
+                });
+            </script>
+            <!-- Dashboard Content -->
+            <div class="dashboard-content">
+                    <div class="vitae-header">
+                        <div class="vitae-content">
+                            <h1>AI Smart Reports</h1>
+                            <p>Generate intelligent, comprehensive reports powered by advanced AI analytics</p>
+                        </div>
+                        <div class="vitae-actions">
+                            <button class="lumen-btn lumen-secondary" onclick="openScheduleModal()">Schedule Report</button>
+                            <button class="lumen-btn lumen-secondary" onclick="viewHistory()">Report History</button>
+                            <button class="lumen-btn lumen-primary" onclick="generateReport()">Generate Report</button>
+                        </div>
+                    </div>
+                    
+                    <div class="aura-banner">
+                        <div class="aura-content">
+                            <div class="aura-title">
+                                <span>Advanced AI Report Engine</span>
+                                <span class="aura-badge">POWERED BY AI</span>
+                            </div>
+                            <p class="aura-description">
+                                Our AI analyzes over 50 data points across attendance, engagement, finances, and communications to
+                                generate comprehensive, actionable reports in seconds. Get insights that would take hours to compile
+                                manually.
+                            </p>
+                            <div class="aura-stats">
+                                <div class="aura-stat">
+                                    <div class="stat-pulse">847</div>
+                                    <div class="stat-legend">Reports Generated</div>
+                                </div>
+                                <div class="aura-stat">
+                                    <div class="stat-pulse">98%</div>
+                                    <div class="stat-legend">Accuracy Rate</div>
+                                </div>
+                                <div class="aura-stat">
+                                    <div class="stat-pulse">15min</div>
+                                    <div class="stat-legend">Avg Time Saved</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                        <div class="nexus-grid">
+                            <div class="lateral-section">
+                                <div class="vellum-card">
+                                    <div class="vellum-header">
+                                        <h3 class="vellum-title">Report Templates</h3>
+                                        <p class="vellum-subtitle">Select a pre-built template</p>
+                                    </div>
+                                    <div class="template-roster">
+                                        <div class="template-node active" onclick="selectTemplate('comprehensive')">
+                                            <div class="template-crest">
+                                                <div class="template-emblem" style="background: #dbeafe; color: #2563eb;">
+                                                    <svg fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24" width="22" height="22">
+                                                        <path stroke-linecap="round" stroke-linejoin="round"
+                                                            d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" />
+                                                    </svg>
+                                                </div>
+                                                <div class="template-label">Comprehensive Overview</div>
+                                            </div>
+                                            <p class="template-narrative">Complete analysis of all church operations</p>
+                                            <div class="template-meta">
+                                                <span>10-15 pages</span><span>•</span><span>30-40 min</span>
+                                            </div>
+                                        </div>
+                                    
+                                        <div class="template-node" onclick="selectTemplate('attendance')">
+                                            <div class="template-crest">
+                                                <div class="template-emblem" style="background: #dcfce7; color: #16a34a;">
+                                                    <svg fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24" width="22" height="22">
+                                                        <path stroke-linecap="round" stroke-linejoin="round"
+                                                            d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" />
+                                                    </svg>
+                                                </div>
+                                                <div class="template-label">Attendance Analysis</div>
+                                            </div>
+                                            <p class="template-narrative">Deep dive into attendance patterns and trends</p>
+                                            <div class="template-meta">
+                                                <span>5-7 pages</span><span>•</span><span>15-20 min</span>
+                                            </div>
+                                        </div>
+                                    
+                                        <div class="template-node" onclick="selectTemplate('financial')">
+                                            <div class="template-crest">
+                                                <div class="template-emblem" style="background: #fef3c7; color: #d97706;">
+                                                    <svg fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24" width="22" height="22">
+                                                        <path stroke-linecap="round" stroke-linejoin="round"
+                                                            d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                                                    </svg>
+                                                </div>
+                                                <div class="template-label">Financial Summary</div>
+                                            </div>
+                                            <p class="template-narrative">Revenue, expenses, and budget performance</p>
+                                            <div class="template-meta">
+                                                <span>6-8 pages</span><span>•</span><span>20-25 min</span>
+                                            </div>
+                                        </div>
+                                    
+                                        <div class="template-node" onclick="selectTemplate('engagement')">
+                                            <div class="template-crest">
+                                                <div class="template-emblem" style="background: #fae8ff; color: #a21caf;">
+                                                    <svg fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24" width="22" height="22">
+                                                        <path stroke-linecap="round" stroke-linejoin="round" d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6" />
+                                                    </svg>
+                                                </div>
+                                                <div class="template-label">Member Engagement</div>
+                                            </div>
+                                            <p class="template-narrative">Participation, communication, and retention</p>
+                                            <div class="template-meta">
+                                                <span>7-9 pages</span><span>•</span><span>20-25 min</span>
+                                            </div>
+                                        </div>
+                                    
+                                        <div class="template-node" onclick="selectTemplate('quarterly')">
+                                            <div class="template-crest">
+                                                <div class="template-emblem" style="background: #e0f2fe; color: #0284c7;">
+                                                    <svg fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24" width="22" height="22">
+                                                        <path stroke-linecap="round" stroke-linejoin="round"
+                                                            d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
+                                                    </svg>
+                                                </div>
+                                                <div class="template-label">Quarterly Board Report</div>
+                                            </div>
+                                            <p class="template-narrative">Executive summary for board meetings</p>
+                                            <div class="template-meta">
+                                                <span>12-15 pages</span><span>•</span><span>35-45 min</span>
+                                            </div>
+                                        </div>
+                                    
+                                        <div class="template-node" onclick="selectTemplate('custom')">
+                                            <div class="template-crest">
+                                                <div class="template-emblem" style="background: #fce7f3; color: #db2777;">
+                                                    <svg fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24" width="22" height="22">
+                                                        <path stroke-linecap="round" stroke-linejoin="round"
+                                                            d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z" />
+                                                        <path stroke-linecap="round" stroke-linejoin="round" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
+                                                    </svg>
+                                                </div>
+                                                <div class="template-label">Custom Report</div>
+                                            </div>
+                                            <p class="template-narrative">Build your own report from scratch</p>
+                                            <div class="template-meta">
+                                                <span>Variable</span><span>•</span><span>Flexible</span>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                </div>
+                        
+                                <div class="vellum-card">
+                                    <div class="vellum-header">
+                                        <h3 class="vellum-title">Report Parameters</h3>
+                                        <p class="vellum-subtitle">Customize your report</p>
+                                    </div>
+                        
+                                    <div class="form-cluster">
+                                        <label class="form-caption">Time Period</label>
+                                        <select class="form-selector" id="timePeriod">
+                                            <option>Last 30 Days</option>
+                                            <option>Last 90 Days</option>
+                                            <option>Last 6 Months</option>
+                                            <option>Last Year</option>
+                                            <option>Year to Date</option>
+                                            <option>Custom Range</option>
+                                        </select>
+                                    </div>
+                        
+                                    <div class="form-cluster">
+                                        <label class="form-caption">Compare To</label>
+                                        <select class="form-selector" id="comparison">
+                                            <option>Previous Period</option>
+                                            <option>Last Year Same Period</option>
+                                            <option>Last Quarter</option>
+                                            <option>No Comparison</option>
+                                        </select>
+                                    </div>
+                        
+                                    <div class="form-cluster">
+                                        <label class="form-caption">Include Sections</label>
+                                        <div class="checklist-group">
+                                            <div class="checklist-item">
+                                                <input type="checkbox" id="exec-summary" checked>
+                                                <label for="exec-summary">Executive Summary</label>
+                                            </div>
+                                            <div class="checklist-item">
+                                                <input type="checkbox" id="key-metrics" checked>
+                                                <label for="key-metrics">Key Metrics</label>
+                                            </div>
+                                            <div class="checklist-item">
+                                                <input type="checkbox" id="trends" checked>
+                                                <label for="trends">Trends & Analysis</label>
+                                            </div>
+                                            <div class="checklist-item">
+                                                <input type="checkbox" id="insights" checked>
+                                                <label for="insights">AI Insights</label>
+                                            </div>
+                                            <div class="checklist-item">
+                                                <input type="checkbox" id="recommendations" checked>
+                                                <label for="recommendations">Recommendations</label>
+                                            </div>
+                                            <div class="checklist-item">
+                                                <input type="checkbox" id="predictions" checked>
+                                                <label for="predictions">Future Predictions</label>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                        
+                                <div class="vellum-card">
+                                    <div class="vellum-header">
+                                        <h3 class="vellum-title">Auto-Schedule</h3>
+                                        <p class="vellum-subtitle">Generate reports automatically</p>
+                                    </div>
+                                    <div class="schedule-panel">
+                                        <div class="schedule-options">
+                                            <div class="schedule-choice">
+                                                <div class="choice-title">Weekly</div>
+                                                <div class="choice-narrative">Every Monday at 8:00 AM</div>
+                                            </div>
+                                            <div class="schedule-choice active">
+                                                <div class="choice-title">Monthly</div>
+                                                <div class="choice-narrative">1st of each month at 9:00 AM</div>
+                                            </div>
+                                            <div class="schedule-choice">
+                                                <div class="choice-title">Quarterly</div>
+                                                <div class="choice-narrative">Start of each quarter</div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        
+                            <div class="report-stream">
+                                <div class="report-crafter">
+                                    <div class="crafter-header">
+                                        <div class="report-title-segment">
+                                            <h2>Comprehensive Church Report</h2>
+                                            <div class="report-info">
+                                                <div class="info-node">
+                                                    <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                                                        <path stroke-linecap="round" stroke-linejoin="round"
+                                                            d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
+                                                    </svg>
+                                                    <span>January 2024</span>
+                                                </div>
+                                                <div class="info-node">
+                                                    <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                                                        <path stroke-linecap="round" stroke-linejoin="round"
+                                                            d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+                                                    </svg>
+                                                    <span>Generated in 3.2 seconds</span>
+                                                </div>
+                                                <div class="info-node">
+                                                    <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                                                        <path stroke-linecap="round" stroke-linejoin="round"
+                                                            d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+                                                    </svg>
+                                                    <span>98% Confidence Score</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="crafter-actions">
+                                            <button class="lumen-btn lumen-secondary">
+                                                <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                                                    <path stroke-linecap="round" stroke-linejoin="round"
+                                                        d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4" />
+                                                </svg>
+                                                Export PDF
+                                            </button>
+                                            <button class="lumen-btn lumen-secondary">
+                                                <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                                                    <path stroke-linecap="round" stroke-linejoin="round"
+                                                        d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+                                                </svg>
+                                                Share
+                                            </button>
+                                            <button class="lumen-btn lumen-secondary">
+                                                <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                                                    <path stroke-linecap="round" stroke-linejoin="round"
+                                                        d="M17 17h2a2 2 0 002-2v-4a2 2 0 00-2-2H5a2 2 0 00-2 2v4a2 2 0 002 2h2m2 4h6a2 2 0 002-2v-4a2 2 0 00-2-2H9a2 2 0 00-2 2v4a2 2 0 002 2zm8-12V5a2 2 0 00-2-2H9a2 2 0 00-2 2v4h10z" />
+                                                </svg>
+                                                Print
+                                            </button>
+                                        </div>
+                                    </div>
+                        
+                                    <div class="executive-brief">
+                                        <h3 class="brief-title">
+                                            <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                                                <path stroke-linecap="round" stroke-linejoin="round"
+                                                    d="M5 3v4M3 5h4M6 17v4m-2-2h4m5-16l2.286 6.857L21 12l-5.714 2.143L13 21l-2.286-6.857L5 12l5.714-2.143L13 3z" />
+                                            </svg>
+                                            <span>Executive Summary</span>
+                                        </h3>
+                                        <div class="brief-content">
+                                            <strong>Overall Performance:</strong> Your church demonstrated exceptional growth across all key
+                                            areas in January 2024. Attendance increased 15% compared to the previous month, with
+                                            particularly strong engagement in youth ministry (up 45%). Financial health remains robust with
+                                            donations exceeding budget by 6.4%, contributing to a $4,500 surplus. Member retention stands at
+                                            an impressive 94%, though 23 members require follow-up attention. The AI analysis indicates
+                                            continued positive momentum for the next quarter, with projected attendance reaching 378 by
+                                            month-end.
+                                        </div>
+                                    </div>
+                        
+                                    <h3 class="section-head">Key Performance Metrics</h3>
+                                    <p class="section-subhead">Critical indicators compared to previous period</p>
+                        
+                                    <div class="metrics-matrix">
+                                        <div class="metric-frame">
+                                            <div class="metric-caption">Total Members</div>
+                                            <div class="metric-value">485</div>
+                                            <div class="metric-delta positive">↑ +12 (+2.5%)</div>
+                                        </div>
+                                        <div class="metric-frame">
+                                            <div class="metric-caption">Avg Attendance</div>
+                                            <div class="metric-value">356</div>
+                                            <div class="metric-delta positive">↑ +15.2%</div>
+                                        </div>
+                                        <div class="metric-frame">
+                                            <div class="metric-caption">Monthly Donations</div>
+                                            <div class="metric-value">$23.4K</div>
+                                            <div class="metric-delta positive">↑ +18.2%</div>
+                                        </div>
+                                        <div class="metric-frame">
+                                            <div class="metric-caption">Engagement Rate</div>
+                                            <div class="metric-value">87%</div>
+                                            <div class="metric-delta positive">↑ +8.0%</div>
+                                        </div>
+                                    </div>
+                        
+                                    <hr class="section-rift">
+                        
+                                    <h3 class="section-head">AI-Generated Insights</h3>
+                                    <p class="section-subhead">Intelligent analysis of patterns and trends</p>
+                        
+                                    <div class="insights-matrix">
+                                        <div class="insight-frame success">
+                                            <div class="insight-crest">
+                                                <span class="insight-emblem">
+                                                    <svg fill="none" stroke="#10b981" stroke-width="2" viewBox="0 0 24 24">
+                                                        <path stroke-linecap="round" stroke-linejoin="round"
+                                                            d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6" />
+                                                    </svg>
+                                                </span>
+                                                <h4 class="insight-label">Exceptional Youth Growth</h4>
+                                            </div>
+                                            <p class="insight-text">Youth ministry attendance increased 45% this month, reaching 89 regular
+                                                participants. AI analysis suggests this growth is sustainable and recommends expanding
+                                                program capacity.</p>
+                                        </div>
+                        
+                                        <div class="insight-frame warning">
+                                            <div class="insight-crest">
+                                                <span class="insight-emblem">
+                                                    <svg fill="none" stroke="#f59e0b" stroke-width="2" viewBox="0 0 24 24">
+                                                        <path stroke-linecap="round" stroke-linejoin="round"
+                                                            d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z" />
+                                                    </svg>
+                                                </span>
+                                                <h4 class="insight-label">Member Retention Alert</h4>
+                                            </div>
+                                            <p class="insight-text">23 members haven't attended in 45+ days. Predictive models indicate 15
+                                                may become fully inactive without intervention within the next 30 days.</p>
+                                        </div>
+                        
+                                        <div class="insight-frame success">
+                                            <div class="insight-crest">
+                                                <span class="insight-emblem">
+                                                    <svg fill="none" stroke="#10b981" stroke-width="2" viewBox="0 0 24 24">
+                                                        <path stroke-linecap="round" stroke-linejoin="round"
+                                                            d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                                                    </svg>
+                                                </span>
+                                                <h4 class="insight-label">Strong Financial Position</h4>
+                                            </div>
+                                            <p class="insight-text">Donations exceeded monthly budget by 6.4%, the best performance this
+                                                year. Recurring giving increased 12%, indicating improved donor stability.</p>
+                                        </div>
+                        
+                                        <div class="insight-frame">
+                                            <div class="insight-crest">
+                                                <span class="insight-emblem">
+                                                    <svg fill="none" stroke="#64748b" stroke-width="2" viewBox="0 0 24 24">
+                                                        <path stroke-linecap="round" stroke-linejoin="round"
+                                                            d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" />
+                                                    </svg>
+                                                </span>
+                                                <h4 class="insight-label">Event Performance</h4>
+                                            </div>
+                                            <p class="insight-text">Community outreach events averaged 60% attendance. AI recommends
+                                                adjusting promotion strategy and timing to increase participation rates.</p>
+                                        </div>
+                                    </div>
+                        
+                                    <hr class="section-rift">
+                        
+                                    <h3 class="section-head">Attendance Trends</h3>
+                                    <p class="section-subhead">Monthly patterns and service-level breakdown</p>
+                        
+                                    <div class="chart-zone">
+                                        <div class="chart-vessel">
+                                            <canvas id="attendanceChart"></canvas>
+                                        </div>
+                                    </div>
+                        
+                                    <hr class="section-rift">
+                        
+                                    <h3 class="section-head">Financial Performance</h3>
+                                    <p class="section-subhead">Revenue, expenses, and budget comparison</p>
+                        
+                                    <div class="chart-zone">
+                                        <div class="chart-vessel">
+                                            <canvas id="financialChart"></canvas>
+                                        </div>
+                                    </div>
+                        
+                                    <table class="data-grid">
+                                        <thead>
+                                            <tr>
+                                                <th>Category</th>
+                                                <th>Budget</th>
+                                                <th>Actual</th>
+                                                <th>Variance</th>
+                                                <th>% of Budget</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td><strong>Tithes & Offerings</strong></td>
+                                                <td>$18,000</td>
+                                                <td>$19,800</td>
+                                                <td style="color: #10b981;">+$1,800</td>
+                                                <td style="color: #10b981;">110%</td>
+                                            </tr>
+                                            <tr>
+                                                <td><strong>Building Fund</strong></td>
+                                                <td>$3,000</td>
+                                                <td>$3,600</td>
+                                                <td style="color: #10b981;">+$600</td>
+                                                <td style="color: #10b981;">120%</td>
+                                            </tr>
+                                            <tr>
+                                                <td><strong>Operations</strong></td>
+                                                <td>$12,000</td>
+                                                <td>$11,200</td>
+                                                <td style="color: #10b981;">-$800</td>
+                                                <td style="color: #10b981;">93%</td>
+                                            </tr>
+                                            <tr>
+                                                <td><strong>Staff Salaries</strong></td>
+                                                <td>$8,000</td>
+                                                <td>$8,000</td>
+                                                <td>$0</td>
+                                                <td>100%</td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                        
+                                    <hr class="section-rift">
+                        
+                                    <div class="suggestions-section">
+                                        <h3 class="suggestions-title">
+                                            <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                                                <path stroke-linecap="round" stroke-linejoin="round"
+                                                    d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z" />
+                                            </svg>
+                                            <span>AI Recommendations</span>
+                                        </h3>
+                                        <div class="suggestion-roster">
+                                            <div class="suggestion-node">
+                                                <div class="suggestion-crest">
+                                                    <h4 class="suggestion-label">Expand Youth Ministry Capacity</h4>
+                                                    <span class="priority-mark high">High Priority</span>
+                                                </div>
+                                                <p class="suggestion-text">
+                                                    With 45% growth and sustained high engagement, youth ministry is nearing capacity.
+                                                    Consider adding a second youth pastor and expanding meeting space. Projected ROI: +32%
+                                                    participation increase over 6 months.
+                                                </p>
+                                            </div>
+                        
+                                            <div class="suggestion-node">
+                                                <div class="suggestion-crest">
+                                                    <h4 class="suggestion-label">Implement Retention Campaign</h4>
+                                                    <span class="priority-mark high">High Priority</span>
+                                                </div>
+                                                <p class="suggestion-text">
+                                                    Launch personalized follow-up campaign for 23 at-risk members within next 7 days. AI
+                                                    suggests phone calls (67% success rate) rather than emails (34% success rate) for this
+                                                    demographic.
+                                                </p>
+                                            </div>
+                        
+                                            <div class="suggestion-node">
+                                                <div class="suggestion-crest">
+                                                    <h4 class="suggestion-label">Optimize Event Scheduling</h4>
+                                                    <span class="priority-mark medium">Medium Priority</span>
+                                                </div>
+                                                <p class="suggestion-text">
+                                                    Outreach events scheduled on Sunday afternoons show 25% lower attendance. AI analysis
+                                                    suggests Friday evenings or Saturday mornings would increase participation by an
+                                                    estimated 35-40%.
+                                                </p>
+                                            </div>
+                        
+                                            <div class="suggestion-node">
+                                                <div class="suggestion-crest">
+                                                    <h4 class="suggestion-label">Enhance Digital Giving Options</h4>
+                                                    <span class="priority-mark low">Low Priority</span>
+                                                </div>
+                                                <p class="suggestion-text">
+                                                    Online giving accounts for only 23% of total donations. Expanding digital payment
+                                                    options and promoting them could increase overall giving by 8-12% based on similar
+                                                    church benchmarks.
+                                                </p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <script>
+                            function selectTemplate(template) {
+                                document.querySelectorAll('.template-node').forEach(node => {
+                                    node.classList.remove('active');
+                                });
+                                event.currentTarget.classList.add('active');
+                            }
+                        </script>
+                    
+                    <div class="reports-archive">
+                        <div class="vellum-header">
+                            <h3 class="vellum-title">Recently Generated Reports</h3>
+                            <p class="vellum-subtitle">Access your previous AI-generated reports</p>
+                        </div>
+                    
+                        <div class="reports-roster">
+                            <div class="report-node">
+                                <div class="report-info">
+                                    <div class="report-emblem">
+                                        <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                                            <path stroke-linecap="round" stroke-linejoin="round"
+                                                d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" />
+                                        </svg>
+                                    </div>
+                                    <div class="report-details">
+                                        <h4>Comprehensive Church Report - January 2024</h4>
+                                        <p>Generated 2 hours ago • 12 pages • 98% confidence</p>
+                                    </div>
+                                </div>
+                                <div class="report-actions">
+                                    <button class="icon-pulse" title="View">
+                                        <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                                            <path stroke-linecap="round" stroke-linejoin="round" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
+                                            <path stroke-linecap="round" stroke-linejoin="round"
+                                                d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z" />
+                                        </svg>
+                                    </button>
+                                    <button class="icon-pulse" title="Download">
+                                        <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                                            <path stroke-linecap="round" stroke-linejoin="round"
+                                                d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4" />
+                                        </svg>
+                                    </button>
+                                    <button class="icon-pulse" title="Share">
+                                        <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                                            <path stroke-linecap="round" stroke-linejoin="round"
+                                                d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+                                        </svg>
+                                    </button>
+                                </div>
+                            </div>
+                        
+                            <div class="report-node">
+                                <div class="report-info">
+                                    <div class="report-emblem">
+                                        <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                                            <path stroke-linecap="round" stroke-linejoin="round"
+                                                d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                                        </svg>
+                                    </div>
+                                    <div class="report-details">
+                                        <h4>Financial Summary - Q4 2023</h4>
+                                        <p>Generated yesterday • 8 pages • 97% confidence</p>
+                                    </div>
+                                </div>
+                                <div class="report-actions">
+                                    <button class="icon-pulse" title="View">
+                                        <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                                            <path stroke-linecap="round" stroke-linejoin="round" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
+                                            <path stroke-linecap="round" stroke-linejoin="round"
+                                                d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z" />
+                                        </svg>
+                                    </button>
+                                    <button class="icon-pulse" title="Download">
+                                        <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                                            <path stroke-linecap="round" stroke-linejoin="round"
+                                                d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4" />
+                                        </svg>
+                                    </button>
+                                    <button class="icon-pulse" title="Share">
+                                        <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                                            <path stroke-linecap="round" stroke-linejoin="round"
+                                                d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+                                        </svg>
+                                    </button>
+                                </div>
+                            </div>
+                        
+                            <div class="report-node">
+                                <div class="report-info">
+                                    <div class="report-emblem">
+                                        <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                                            <path stroke-linecap="round" stroke-linejoin="round"
+                                                d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" />
+                                        </svg>
+                                    </div>
+                                    <div class="report-details">
+                                        <h4>Member Engagement Analysis - December 2023</h4>
+                                        <p>Generated 3 days ago • 9 pages • 96% confidence</p>
+                                    </div>
+                                </div>
+                                <div class="report-actions">
+                                    <button class="icon-pulse" title="View">
+                                        <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                                            <path stroke-linecap="round" stroke-linejoin="round" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
+                                            <path stroke-linecap="round" stroke-linejoin="round"
+                                                d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z" />
+                                        </svg>
+                                    </button>
+                                    <button class="icon-pulse" title="Download">
+                                        <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                                            <path stroke-linecap="round" stroke-linejoin="round"
+                                                d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4" />
+                                        </svg>
+                                    </button>
+                                    <button class="icon-pulse" title="Share">
+                                        <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                                            <path stroke-linecap="round" stroke-linejoin="round"
+                                                d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+                                        </svg>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Schedule Modal -->
+                    <div class="veil-modal" id="scheduleModal">
+                        <div class="veil-content">
+                            <div class="veil-header">
+                                <h2>Schedule Automated Reports</h2>
+                            </div>
+                            <div class="veil-body">
+                                <div class="form-cluster">
+                                    <label class="form-caption">Report Type</label>
+                                    <select class="form-selector">
+                                        <option>Comprehensive Overview</option>
+                                        <option>Attendance Analysis</option>
+                                        <option>Financial Summary</option>
+                                        <option>Member Engagement</option>
+                                    </select>
+                                </div>
+                                <div class="form-cluster">
+                                    <label class="form-caption">Frequency</label>
+                                    <select class="form-selector">
+                                        <option>Weekly</option>
+                                        <option>Bi-weekly</option>
+                                        <option>Monthly</option>
+                                        <option>Quarterly</option>
+                                    </select>
+                                </div>
+                                <div class="form-cluster">
+                                    <label class="form-caption">Delivery Time</label>
+                                    <input type="time" class="form-entry" value="08:00">
+                                </div>
+                                <div class="form-cluster">
+                                    <label class="form-caption">Email Recipients</label>
+                                    <input type="text" class="form-entry" placeholder="email@example.com">
+                                </div>
+                            </div>
+                            <div class="veil-footer">
+                                <button class="lumen-btn lumen-secondary" onclick="closeModal('scheduleModal')">Cancel</button>
+                                <button class="lumen-btn lumen-primary" onclick="scheduleReport()">Schedule Report</button>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Generating Overlay -->
+                    <div class="genesis-overlay" id="generatingOverlay">
+                        <div class="genesis-content">
+                            <div class="genesis-spinner"></div>
+                            <div class="genesis-text">Generating AI Report...</div>
+                            <div class="genesis-subtext">Analyzing data and generating insights</div>
+                            <div class="progress-rail">
+                                <div class="progress-flow"></div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <script>
+                        // Chart.js configurations
+                        const attendanceCtx = document.getElementById('attendanceChart').getContext('2d');
+                        new Chart(attendanceCtx, {
+                            type: 'line',
+                            data: {
+                                labels: ['Week 1', 'Week 2', 'Week 3', 'Week 4'],
+                                datasets: [
+                                    {
+                                        label: 'Sunday Morning',
+                                        data: [342, 356, 351, 365],
+                                        borderColor: '#3b82f6',
+                                        backgroundColor: 'rgba(59, 130, 246, 0.1)',
+                                        tension: 0.4,
+                                        fill: true,
+                                        borderWidth: 3
+                                    },
+                                    {
+                                        label: 'Sunday Evening',
+                                        data: [162, 171, 168, 175],
+                                        borderColor: '#10b981',
+                                        backgroundColor: 'rgba(16, 185, 129, 0.1)',
+                                        tension: 0.4,
+                                        fill: true,
+                                        borderWidth: 3
+                                    }
+                                ]
+                            },
+                            options: {
+                                responsive: true,
+                                maintainAspectRatio: false,
+                                plugins: {
+                                    legend: {
+                                        position: 'bottom'
+                                    }
+                                }
+                            }
+                        });
+
+                        const financialCtx = document.getElementById('financialChart').getContext('2d');
+                        new Chart(financialCtx, {
+                            type: 'bar',
+                            data: {
+                                labels: ['Week 1', 'Week 2', 'Week 3', 'Week 4'],
+                                datasets: [
+                                    {
+                                        label: 'Donations',
+                                        data: [4500, 5200, 6800, 7200],
+                                        backgroundColor: '#3b82f6',
+                                        borderRadius: 8
+                                    },
+                                    {
+                                        label: 'Expenses',
+                                        data: [3800, 4100, 4300, 4000],
+                                        backgroundColor: '#ef4444',
+                                        borderRadius: 8
+                                    }
+                                ]
+                            },
+                            options: {
+                                responsive: true,
+                                maintainAspectRatio: false,
+                                plugins: {
+                                    legend: {
+                                        position: 'bottom'
+                                    }
+                                },
+                                scales: {
+                                    y: {
+                                        beginAtZero: true
+                                    }
+                                }
+                            }
+                        });
+
+                        function selectTemplate(template) {
+                            document.querySelectorAll('.template-node').forEach(item => {
+                                item.classList.remove('active');
+                            });
+                            event.currentTarget.classList.add('active');
+                        }
+
+                        function generateReport() {
+                            const overlay = document.getElementById('generatingOverlay');
+                            overlay.classList.add('show');
+
+                            setTimeout(() => {
+                                overlay.classList.remove('show');
+                                alert('Report generated successfully! You can now export or share it.');
+                            }, 3000);
+                        }
+
+                        function openScheduleModal() {
+                            document.getElementById('scheduleModal').classList.add('show');
+                        }
+
+                        function closeModal(modalId) {
+                            document.getElementById(modalId).classList.remove('show');
+                        }
+
+                        function scheduleReport() {
+                            alert('Report scheduled successfully!');
+                            closeModal('scheduleModal');
+                        }
+
+                        function viewHistory() {
+                            alert('Opening report history...');
+                        }
+                    </script>
+                
+
+            </div>
+
+        </div>
+    </div>
+    </div>
+</body>
+
+</html>
