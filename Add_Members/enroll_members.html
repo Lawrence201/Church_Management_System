@@ -4,1241 +4,1071 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Add New Member - ChurchFlow</title>
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
+    <title>ChurchFlow Management System</title>
+    <link rel="stylesheet" href="../style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 
-        body {
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
-            background: #f5f7fa;
-            color: #2d3748;
-            padding: 32px;
-        }
 
-        .page-header {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            margin-bottom: 32px;
-        }
-
-        .header-content h1 {
-            font-size: 32px;
-            font-weight: 700;
-            color: #1e293b;
-            margin-bottom: 8px;
-        }
-
-        .header-content p {
-            font-size: 16px;
-            color: #64748b;
-        }
-
-        .header-actions {
-            display: flex;
-            gap: 12px;
-        }
-
-        .btn {
-            padding: 10px 20px;
-            border-radius: 8px;
-            border: none;
-            cursor: pointer;
-            font-size: 14px;
-            font-weight: 500;
-            display: flex;
-            align-items: center;
-            gap: 8px;
-            transition: all 0.2s;
-        }
-
-        .btn-secondary {
-            background: white;
-            color: #475569;
-            border: 1px solid #e2e8f0;
-        }
-
-        .btn-secondary:hover {
-            background: #f8fafc;
-        }
-
-        .btn-primary {
-            background: #3b82f6;
-            color: white;
-        }
-
-        .btn-primary:hover {
-            background: #2563eb;
-        }
-
-        .btn:disabled {
-            opacity: 0.5;
-            cursor: not-allowed;
-        }
-
-        .progress-container {
-            background: white;
-            padding: 24px 32px;
-            border-radius: 12px;
-            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
-            margin-bottom: 32px;
-        }
-
-        .progress-steps {
-            display: flex;
-            justify-content: space-between;
-            position: relative;
-        }
-
-        .progress-line {
-            position: absolute;
-            top: 20px;
-            left: 0;
-            right: 0;
-            height: 2px;
-            background: #e2e8f0;
-            z-index: 0;
-        }
-
-        .progress-line-fill {
-            height: 100%;
-            background: #3b82f6;
-            transition: width 0.3s ease;
-        }
-
-        .step {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            position: relative;
-            z-index: 1;
-        }
-
-        .step-circle {
-            width: 40px;
-            height: 40px;
-            border-radius: 50%;
-            background: white;
-            border: 2px solid #e2e8f0;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-weight: 600;
-            color: #94a3b8;
-            margin-bottom: 8px;
-            transition: all 0.3s;
-        }
-
-        .step.active .step-circle {
-            border-color: #3b82f6;
-            background: #3b82f6;
-            color: white;
-        }
-
-        .step.completed .step-circle {
-            border-color: #10b981;
-            background: #10b981;
-            color: white;
-        }
-
-        .step-label {
-            font-size: 13px;
-            color: #64748b;
-            font-weight: 500;
-        }
-
-        .step.active .step-label {
-            color: #3b82f6;
-            font-weight: 600;
-        }
-
-        .form-container {
-            background: white;
-            padding: 32px;
-            border-radius: 12px;
-            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
-            max-width: 1200px;
-        }
-
-        .form-section {
-            display: none;
-        }
-
-        .form-section.active {
-            display: block;
-            animation: fadeIn 0.3s ease;
-        }
-
-        @keyframes fadeIn {
-            from {
-                opacity: 0;
-                transform: translateY(10px);
-            }
-
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-
-        .section-header {
-            margin-bottom: 32px;
-        }
-
-        .section-title {
-            font-size: 24px;
-            font-weight: 700;
-            color: #1e293b;
-            margin-bottom: 8px;
-        }
-
-        .section-subtitle {
-            font-size: 14px;
-            color: #64748b;
-        }
-
-        .form-grid {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 24px;
-            margin-bottom: 32px;
-        }
-
-        .form-grid.single {
-            grid-template-columns: 1fr;
-        }
-
-        .form-group {
-            display: flex;
-            flex-direction: column;
-            gap: 8px;
-        }
-
-        .form-group.full-width {
-            grid-column: 1 / -1;
-        }
-
-        .form-label {
-            font-size: 14px;
-            font-weight: 600;
-            color: #1e293b;
-            display: flex;
-            align-items: center;
-            gap: 6px;
-        }
-
-        .required {
-            color: #ef4444;
-        }
-
-        .form-input,
-        .form-select,
-        .form-textarea {
-            padding: 12px 16px;
-            border: 2px solid #e2e8f0;
-            border-radius: 8px;
-            font-size: 14px;
-            font-family: inherit;
-            transition: all 0.2s;
-            background: white;
-        }
-
-        .form-input:focus,
-        .form-select:focus,
-        .form-textarea:focus {
-            outline: none;
-            border-color: #3b82f6;
-            box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1);
-        }
-
-        .form-input.error,
-        .form-select.error {
-            border-color: #ef4444;
-        }
-
-        .form-textarea {
-            min-height: 120px;
-            resize: vertical;
-        }
-
-        .form-helper {
-            font-size: 13px;
-            color: #64748b;
-        }
-
-        .form-error {
-            font-size: 13px;
-            color: #ef4444;
-            display: none;
-        }
-
-        .form-error.show {
-            display: block;
-        }
-
-        .photo-upload {
-            display: flex;
-            align-items: center;
-            gap: 24px;
-        }
-
-        .photo-preview {
-            width: 120px;
-            height: 120px;
-            border-radius: 50%;
-            background: #f1f5f9;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            overflow: hidden;
-            border: 3px solid #e2e8f0;
-        }
-
-        .photo-preview img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-        }
-
-        .photo-placeholder {
-            font-size: 48px;
-            color: #cbd5e1;
-        }
-
-        .photo-controls {
-            display: flex;
-            flex-direction: column;
-            gap: 12px;
-        }
-
-        .file-input-wrapper {
-            position: relative;
-            overflow: hidden;
-            display: inline-block;
-        }
-
-        .file-input-wrapper input[type=file] {
-            position: absolute;
-            left: -9999px;
-        }
-
-        .file-input-label {
-            padding: 10px 20px;
-            border-radius: 8px;
-            border: 2px solid #e2e8f0;
-            background: white;
-            color: #475569;
-            font-size: 14px;
-            font-weight: 500;
-            cursor: pointer;
-            transition: all 0.2s;
-            display: inline-block;
-        }
-
-        .file-input-label:hover {
-            background: #f8fafc;
-            border-color: #3b82f6;
-        }
-
-        .radio-group,
-        .checkbox-group {
-            display: flex;
-            gap: 20px;
-        }
-
-        .radio-item,
-        .checkbox-item {
-            display: flex;
-            align-items: center;
-            gap: 8px;
-        }
-
-        .radio-item input,
-        .checkbox-item input {
-            width: 18px;
-            height: 18px;
-            cursor: pointer;
-        }
-
-        .radio-item label,
-        .checkbox-item label {
-            font-size: 14px;
-            color: #475569;
-            cursor: pointer;
-        }
-
-        .ministry-grid {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 12px;
-        }
-
-        .ministry-card {
-            padding: 16px;
-            border: 2px solid #e2e8f0;
-            border-radius: 8px;
-            cursor: pointer;
-            transition: all 0.2s;
-            text-align: center;
-        }
-
-        .ministry-card:hover {
-            border-color: #3b82f6;
-            background: #eff6ff;
-        }
-
-        .ministry-card.selected {
-            border-color: #3b82f6;
-            background: #eff6ff;
-        }
-
-        .ministry-icon {
-            font-size: 32px;
-            margin-bottom: 8px;
-        }
-
-        .ministry-name {
-            font-size: 14px;
-            font-weight: 600;
-            color: #1e293b;
-        }
-
-        .info-card {
-            padding: 16px 20px;
-            background: #eff6ff;
-            border-radius: 8px;
-            border-left: 4px solid #3b82f6;
-            margin-bottom: 24px;
-        }
-
-        .info-card.warning {
-            background: #fef3c7;
-            border-left-color: #f59e0b;
-        }
-
-        .info-card-title {
-            font-size: 14px;
-            font-weight: 600;
-            color: #1e293b;
-            margin-bottom: 4px;
-        }
-
-        .info-card-text {
-            font-size: 13px;
-            color: #475569;
-            line-height: 1.5;
-        }
-
-        .family-member-list {
-            display: flex;
-            flex-direction: column;
-            gap: 12px;
-            margin-top: 16px;
-        }
-
-        .family-member-item {
-            padding: 16px;
-            background: #f8fafc;
-            border-radius: 8px;
-            border: 1px solid #e2e8f0;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-
-        .family-member-info {
-            display: flex;
-            align-items: center;
-            gap: 12px;
-        }
-
-        .family-member-avatar {
-            width: 40px;
-            height: 40px;
-            border-radius: 50%;
-            background: #e2e8f0;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 16px;
-        }
-
-        .family-member-details h4 {
-            font-size: 14px;
-            font-weight: 600;
-            color: #1e293b;
-            margin-bottom: 2px;
-        }
-
-        .family-member-details p {
-            font-size: 13px;
-            color: #64748b;
-        }
-
-        .remove-btn {
-            padding: 6px 12px;
-            border-radius: 6px;
-            border: 1px solid #e2e8f0;
-            background: white;
-            color: #ef4444;
-            font-size: 13px;
-            cursor: pointer;
-            transition: all 0.2s;
-        }
-
-        .remove-btn:hover {
-            background: #fef2f2;
-            border-color: #ef4444;
-        }
-
-        .summary-section {
-            padding: 24px;
-            background: #f8fafc;
-            border-radius: 10px;
-            margin-bottom: 24px;
-        }
-
-        .summary-title {
-            font-size: 18px;
-            font-weight: 600;
-            color: #1e293b;
-            margin-bottom: 16px;
-        }
-
-        .summary-grid {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 16px;
-        }
-
-        .summary-item {
-            display: flex;
-            flex-direction: column;
-            gap: 4px;
-        }
-
-        .summary-label {
-            font-size: 12px;
-            color: #64748b;
-            font-weight: 500;
-            text-transform: uppercase;
-        }
-
-        .summary-value {
-            font-size: 14px;
-            color: #1e293b;
-            font-weight: 600;
-        }
-
-        .form-actions {
-            display: flex;
-            justify-content: space-between;
-            padding-top: 32px;
-            border-top: 2px solid #f1f5f9;
-        }
-
-        .actions-left,
-        .actions-right {
-            display: flex;
-            gap: 12px;
-        }
-
-        .success-message {
-            display: none;
-            text-align: center;
-            padding: 48px;
-        }
-
-        .success-message.show {
-            display: block;
-        }
-
-        .success-icon {
-            width: 80px;
-            height: 80px;
-            background: #d1fae5;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 48px;
-            margin: 0 auto 24px;
-        }
-
-        .success-title {
-            font-size: 28px;
-            font-weight: 700;
-            color: #1e293b;
-            margin-bottom: 12px;
-        }
-
-        .success-text {
-            font-size: 16px;
-            color: #64748b;
-            margin-bottom: 32px;
-        }
-
-        .quick-actions {
-            display: flex;
-            gap: 12px;
-            justify-content: center;
-        }
-    </style>
 </head>
 
 <body>
-    <div class="page-header">
-        <div class="header-content">
-            <h1>Add New Member</h1>
-            <p>Register a new member to your church community</p>
-        </div>
-        <div class="header-actions">
-            <button class="btn btn-secondary" onclick="saveDraft()">Save Draft</button>
-            <button class="btn btn-secondary" onclick="cancelForm()">Cancel</button>
-        </div>
-    </div>
+    <div class="container">
+        <!-- Sidebar -->
+        <div class="sidebar">
+            <div class="logo">
+                <div class="logo-icon">
+                    <img src="../church.png" alt="ChurchFlow Logo">
+                </div>
 
-    <div class="progress-container">
-        <div class="progress-steps">
-            <div class="progress-line">
-                <div class="progress-line-fill" id="progressFill" style="width: 20%"></div>
-            </div>
-            <div class="step active" data-step="1">
-                <div class="step-circle">1</div>
-                <span class="step-label">Personal Info</span>
-            </div>
-            <div class="step" data-step="2">
-                <div class="step-circle">2</div>
-                <span class="step-label">Contact Details</span>
-            </div>
-            <div class="step" data-step="3">
-                <div class="step-circle">3</div>
-                <span class="step-label">Ministry & Groups</span>
-            </div>
-            <div class="step" data-step="4">
-                <div class="step-circle">4</div>
-                <span class="step-label">Family Info</span>
-            </div>
-            <div class="step" data-step="5">
-                <div class="step-circle">5</div>
-                <span class="step-label">Review & Submit</span>
-            </div>
-        </div>
-    </div>
 
-    <div class="form-container">
-        <!-- Step 1: Personal Information -->
-        <div class="form-section active" id="step1">
-            <div class="section-header">
-                <h2 class="section-title">Personal Information</h2>
-                <p class="section-subtitle">Basic details about the new member</p>
-            </div>
-
-            <div class="form-group full-width">
-                <label class="form-label">Profile Photo</label>
-                <div class="photo-upload">
-                    <div class="photo-preview" id="photoPreview">
-                        <div class="photo-placeholder">👤</div>
-                    </div>
-                    <div class="photo-controls">
-                        <div class="file-input-wrapper">
-                            <input type="file" id="photoInput" accept="image/*" onchange="handlePhotoUpload(event)">
-                            <label for="photoInput" class="file-input-label">Upload Photo</label>
-                        </div>
-                        <p class="form-helper">JPG, PNG or GIF. Max 2MB</p>
-                    </div>
+                <div class="logo-text">
+                    <h3>Church</h3>
+                    <p>Management System</p>
                 </div>
             </div>
-
-            <div class="form-grid">
-                <div class="form-group">
-                    <label class="form-label">First Name <span class="required">*</span></label>
-                    <input type="text" class="form-input" id="firstName" required>
-                    <span class="form-error" id="firstNameError">First name is required</span>
+            <div class="sidebar-content">
+                <div class="menu-section">
+                    <div class="menu-label">Main Menu</div>
+                    <a href="../index.html" class="menu-item">
+                        <span><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                stroke-linejoin="round" class="lucide lucide-layout-dashboard h-5 w-5"
+                                data-lov-id="src/components/AppSidebar.tsx:110:22" data-lov-name="item.icon"
+                                data-component-path="src/components/AppSidebar.tsx" data-component-line="110"
+                                data-component-file="AppSidebar.tsx" data-component-name="item.icon"
+                                data-component-content="%7B%22className%22%3A%22h-5%20w-5%22%7D">
+                                <rect width="7" height="9" x="3" y="3" rx="1"></rect>
+                                <rect width="7" height="5" x="14" y="3" rx="1"></rect>
+                                <rect width="7" height="9" x="14" y="12" rx="1"></rect>
+                                <rect width="7" height="5" x="3" y="16" rx="1"></rect>
+                            </svg></span>
+                        <span>Dashboard</span>
+                    </a>
+                    <a href="../Members/members.html" class="menu-item ">
+                        <span>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                stroke-linejoin="round" class="lucide lucide-users h-5 w-5"
+                                data-lov-id="src/components/AppSidebar.tsx:110:22" data-lov-name="item.icon"
+                                data-component-path="src/components/AppSidebar.tsx" data-component-line="110"
+                                data-component-file="AppSidebar.tsx" data-component-name="item.icon"
+                                data-component-content="%7B%22className%22%3A%22h-5%20w-5%22%7D">
+                                <path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"></path>
+                                <circle cx="9" cy="7" r="4"></circle>
+                                <path d="M22 21v-2a4 4 0 0 0-3-3.87"></path>
+                                <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
+                            </svg>
+                        </span>
+                        <span>Members</span>
+                    </a>
+                    <a href="../Events/events.html" class="menu-item">
+                        <span>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                stroke-linejoin="round" class="lucide lucide-calendar h-5 w-5"
+                                data-lov-id="src/components/AppSidebar.tsx:110:22" data-lov-name="item.icon"
+                                data-component-path="src/components/AppSidebar.tsx" data-component-line="110"
+                                data-component-file="AppSidebar.tsx" data-component-name="item.icon"
+                                data-component-content="%7B%22className%22%3A%22h-5%20w-5%22%7D">
+                                <path d="M8 2v4"></path>
+                                <path d="M16 2v4"></path>
+                                <rect width="18" height="18" x="3" y="4" rx="2"></rect>
+                                <path d="M3 10h18"></path>
+                            </svg>
+                        </span>
+                        <span>Events</span>
+                    </a>
+                    <a href="../Finance/finance.html" class="menu-item">
+                        <span>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                stroke-linejoin="round" class="lucide lucide-dollar-sign h-5 w-5"
+                                data-lov-id="src/components/AppSidebar.tsx:110:22" data-lov-name="item.icon"
+                                data-component-path="src/components/AppSidebar.tsx" data-component-line="110"
+                                data-component-file="AppSidebar.tsx" data-component-name="item.icon"
+                                data-component-content="%7B%22className%22%3A%22h-5%20w-5%22%7D">
+                                <line x1="12" x2="12" y1="2" y2="22"></line>
+                                <path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"></path>
+                            </svg>
+                        </span>
+                        <span>Finances</span>
+                    </a>
+                    <a href="../Communication/communication.html" class="menu-item">
+                        <span><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                stroke-linejoin="round" class="lucide lucide-message-square h-5 w-5"
+                                data-lov-id="src/components/AppSidebar.tsx:110:22" data-lov-name="item.icon"
+                                data-component-path="src/components/AppSidebar.tsx" data-component-line="110"
+                                data-component-file="AppSidebar.tsx" data-component-name="item.icon"
+                                data-component-content="%7B%22className%22%3A%22h-5%20w-5%22%7D">
+                                <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path>
+                            </svg>
+                        </span>
+                        <span>Communications</span>
+                    </a>
+                    <a href="#" class="menu-item">
+                        <span>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                                stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                                class="lucide lucide-user-check h-5 w-5" data-lov-id="src/components/AppSidebar.tsx:112:22"
+                                data-lov-name="item.icon" data-component-path="src/components/AppSidebar.tsx" data-component-line="112"
+                                data-component-file="AppSidebar.tsx" data-component-name="item.icon"
+                                data-component-content="%7B%22className%22%3A%22h-5%20w-5%22%7D">
+                                <path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"></path>
+                                <circle cx="9" cy="7" r="4"></circle>
+                                <polyline points="16 11 18 13 22 9"></polyline>
+                            </svg>
+                        </span>
+                        <span>Attendance</span>
+                    </a>
+                    <a href="#" class="menu-item ">
+                        <span><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                stroke-linejoin="round" class="lucide lucide-chart-column h-5 w-5"
+                                data-lov-id="src/components/AppSidebar.tsx:110:22" data-lov-name="item.icon"
+                                data-component-path="src/components/AppSidebar.tsx" data-component-line="110"
+                                data-component-file="AppSidebar.tsx" data-component-name="item.icon"
+                                data-component-content="%7B%22className%22%3A%22h-5%20w-5%22%7D">
+                                <path d="M3 3v16a2 2 0 0 0 2 2h16"></path>
+                                <path d="M18 17V9"></path>
+                                <path d="M13 17V5"></path>
+                                <path d="M8 17v-3"></path>
+                            </svg>
+                        </span>
+                        <span>Reports</span>
+                    </a>
                 </div>
 
-                <div class="form-group">
-                    <label class="form-label">Last Name <span class="required">*</span></label>
-                    <input type="text" class="form-input" id="lastName" required>
-                    <span class="form-error" id="lastNameError">Last name is required</span>
+                <div class="menu-section">
+                    <div class="menu-label">AI Features</div>
+                    <a href="../AI/ai_insight.html" class="menu-item has-badge">
+                        <span class="icon">
+                            <img src="../Assests/creative.png" alt="Creative Image">
+                        </span>
+
+
+                        <span>AI Insights</span>
+                        <span class="badge">New</span>
+                    </a>
+                    <a href="../AI/members_analytics.html" class="menu-item has-badge">
+                        <span><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                stroke-linejoin="round" class="lucide lucide-chart-column h-5 w-5"
+                                data-lov-id="src/components/AppSidebar.tsx:131:22" data-lov-name="item.icon"
+                                data-component-path="src/components/AppSidebar.tsx" data-component-line="131"
+                                data-component-file="AppSidebar.tsx" data-component-name="item.icon"
+                                data-component-content="%7B%22className%22%3A%22h-5%20w-5%22%7D">
+                                <path d="M3 3v16a2 2 0 0 0 2 2h16"></path>
+                                <path d="M18 17V9"></path>
+                                <path d="M13 17V5"></path>
+                                <path d="M8 17v-3"></path>
+                            </svg></span>
+                        <span>Member Analytics</span>
+                        <span class="badge">New</span>
+                    </a>
+                    <a href="../AI/ai_smart_report.html" class="menu-item has-badge">
+                        <span><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                stroke-linejoin="round" class="lucide lucide-file-text h-5 w-5"
+                                data-lov-id="src/components/AppSidebar.tsx:131:22" data-lov-name="item.icon"
+                                data-component-path="src/components/AppSidebar.tsx" data-component-line="131"
+                                data-component-file="AppSidebar.tsx" data-component-name="item.icon"
+                                data-component-content="%7B%22className%22%3A%22h-5%20w-5%22%7D">
+                                <path d="M15 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7Z"></path>
+                                <path d="M14 2v4a2 2 0 0 0 2 2h4"></path>
+                                <path d="M10 9H8"></path>
+                                <path d="M16 13H8"></path>
+                                <path d="M16 17H8"></path>
+                            </svg></span>
+                        <span>Smart Reports</span>
+                        <span class="badge">New</span>
+                    </a>
                 </div>
 
-                <div class="form-group">
-                    <label class="form-label">Date of Birth</label>
-                    <input type="date" class="form-input" id="dateOfBirth">
+                <div class="menu-section">
+                    <div class="menu-label">Quick Actions</div>
+                    <a href="" class="menu-item active">
+                        <span><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                stroke-linejoin="round" class="lucide lucide-user-plus h-5 w-5"
+                                data-lov-id="src/components/AppSidebar.tsx:151:22" data-lov-name="item.icon"
+                                data-component-path="src/components/AppSidebar.tsx" data-component-line="151"
+                                data-component-file="AppSidebar.tsx" data-component-name="item.icon"
+                                data-component-content="%7B%22className%22%3A%22h-5%20w-5%22%7D">
+                                <path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"></path>
+                                <circle cx="9" cy="7" r="4"></circle>
+                                <line x1="19" x2="19" y1="8" y2="14"></line>
+                                <line x1="22" x2="16" y1="11" y2="11"></line>
+                            </svg></span>
+                        <span>Add Member</span>
+                    </a>
+                    <a href="#" class="menu-item">
+                        <span><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                stroke-linejoin="round" class="lucide lucide-calendar h-5 w-5"
+                                data-lov-id="src/components/AppSidebar.tsx:151:22" data-lov-name="item.icon"
+                                data-component-path="src/components/AppSidebar.tsx" data-component-line="151"
+                                data-component-file="AppSidebar.tsx" data-component-name="item.icon"
+                                data-component-content="%7B%22className%22%3A%22h-5%20w-5%22%7D">
+                                <path d="M8 2v4"></path>
+                                <path d="M16 2v4"></path>
+                                <rect width="18" height="18" x="3" y="4" rx="2"></rect>
+                                <path d="M3 10h18"></path>
+                            </svg></span>
+                        <span>New Event</span>
+                    </a>
+                    <a href="#" class="menu-item">
+                        <span class="icon">
+                            <img src="../Assests/records.png" alt="AI Insights">
+                        </span>
+                        <span>Record Donation</span>
+                    </a>
+                    <a href="#" class="menu-item">
+                        <span><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                stroke-linejoin="round" class="lucide lucide-bell h-5 w-5"
+                                data-lov-id="src/components/AppSidebar.tsx:151:22" data-lov-name="item.icon"
+                                data-component-path="src/components/AppSidebar.tsx" data-component-line="151"
+                                data-component-file="AppSidebar.tsx" data-component-name="item.icon"
+                                data-component-content="%7B%22className%22%3A%22h-5%20w-5%22%7D">
+                                <path d="M6 8a6 6 0 0 1 12 0c0 7 3 9 3 9H3s3-2 3-9"></path>
+                                <path d="M10.3 21a1.94 1.94 0 0 0 3.4 0"></path>
+                            </svg></span>
+                        <span>Send Message</span>
+                    </a>
                 </div>
 
-                <div class="form-group">
-                    <label class="form-label">Gender</label>
-                    <select class="form-select" id="gender">
-                        <option value="">Select gender</option>
-                        <option value="male">Male</option>
-                        <option value="female">Female</option>
-                        <option value="other">Prefer not to say</option>
-                    </select>
+                <div class="menu-section">
+                    <div class="menu-label"></div>
+                    <a href="#" class="menu-item">
+                        <span><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                stroke-linejoin="round" class="lucide lucide-settings h-5 w-5"
+                                data-lov-id="src/components/AppSidebar.tsx:166:18" data-lov-name="Settings"
+                                data-component-path="src/components/AppSidebar.tsx" data-component-line="166"
+                                data-component-file="AppSidebar.tsx" data-component-name="Settings"
+                                data-component-content="%7B%22className%22%3A%22h-5%20w-5%22%7D">
+                                <path
+                                    d="M12.22 2h-.44a2 2 0 0 0-2 2v.18a2 2 0 0 1-1 1.73l-.43.25a2 2 0 0 1-2 0l-.15-.08a2 2 0 0 0-2.73.73l-.22.38a2 2 0 0 0 .73 2.73l.15.1a2 2 0 0 1 1 1.72v.51a2 2 0 0 1-1 1.74l-.15.09a2 2 0 0 0-.73 2.73l.22.38a2 2 0 0 0 2.73.73l.15-.08a2 2 0 0 1 2 0l.43.25a2 2 0 0 1 1 1.73V20a2 2 0 0 0 2 2h.44a2 2 0 0 0 2-2v-.18a2 2 0 0 1 1-1.73l.43-.25a2 2 0 0 1 2 0l.15.08a2 2 0 0 0 2.73-.73l.22-.39a2 2 0 0 0-.73-2.73l-.15-.08a2 2 0 0 1-1-1.74v-.5a2 2 0 0 1 1-1.74l.15-.09a2 2 0 0 0 .73-2.73l-.22-.38a2 2 0 0 0-2.73-.73l-.15.08a2 2 0 0 1-2 0l-.43-.25a2 2 0 0 1-1-1.73V4a2 2 0 0 0-2-2z">
+                                </path>
+                                <circle cx="12" cy="12" r="3"></circle>
+                            </svg></span>
+                        <span>Settings</span>
+                    </a>
+
                 </div>
 
-                <div class="form-group">
-                    <label class="form-label">Marital Status</label>
-                    <select class="form-select" id="maritalStatus">
-                        <option value="">Select status</option>
-                        <option value="single">Single</option>
-                        <option value="married">Married</option>
-                        <option value="divorced">Divorced</option>
-                        <option value="widowed">Widowed</option>
-                    </select>
-                </div>
-
-                <div class="form-group">
-                    <label class="form-label">Occupation</label>
-                    <input type="text" class="form-input" id="occupation" placeholder="e.g., Teacher, Engineer">
-                </div>
             </div>
 
-            <div class="form-actions">
-                <div class="actions-left"></div>
-                <div class="actions-right">
-                    <button class="btn btn-primary" onclick="nextStep()">Next Step</button>
-                </div>
-            </div>
-        </div>
 
-        <!-- Step 2: Contact Details -->
-        <div class="form-section" id="step2">
-            <div class="section-header">
-                <h2 class="section-title">Contact Details</h2>
-                <p class="section-subtitle">How can we reach this member?</p>
-            </div>
-
-            <div class="form-grid">
-                <div class="form-group">
-                    <label class="form-label">Phone Number <span class="required">*</span></label>
-                    <input type="tel" class="form-input" id="phone" placeholder="0551234567" required>
-                    <span class="form-error" id="phoneError">Valid phone number is required</span>
-                </div>
-
-                <div class="form-group">
-                    <label class="form-label">Email Address <span class="required">*</span></label>
-                    <input type="email" class="form-input" id="email" placeholder="member@example.com" required>
-                    <span class="form-error" id="emailError">Valid email is required</span>
-                </div>
-
-                <div class="form-group full-width">
-                    <label class="form-label">Home Address</label>
-                    <input type="text" class="form-input" id="address" placeholder="Street address">
-                </div>
-
-                <div class="form-group">
-                    <label class="form-label">City</label>
-                    <input type="text" class="form-input" id="city" placeholder="City">
-                </div>
-
-                <div class="form-group">
-                    <label class="form-label">Region</label>
-                    <input type="text" class="form-input" id="region" placeholder="Region/State">
-                </div>
-            </div>
-
-            <div class="info-card">
-                <h4 class="info-card-title">Emergency Contact</h4>
-                <p class="info-card-text">Please provide an emergency contact person in case we need to reach someone on
-                    behalf of this member.</p>
-            </div>
-
-            <div class="form-grid">
-                <div class="form-group">
-                    <label class="form-label">Emergency Contact Name</label>
-                    <input type="text" class="form-input" id="emergencyName" placeholder="Full name">
-                </div>
-
-                <div class="form-group">
-                    <label class="form-label">Emergency Contact Phone</label>
-                    <input type="tel" class="form-input" id="emergencyPhone" placeholder="Phone number">
-                </div>
-
-                <div class="form-group full-width">
-                    <label class="form-label">Relationship</label>
-                    <input type="text" class="form-input" id="emergencyRelation"
-                        placeholder="e.g., Spouse, Parent, Sibling">
-                </div>
-            </div>
-
-            <div class="form-actions">
-                <div class="actions-left">
-                    <button class="btn btn-secondary" onclick="previousStep()">Previous</button>
-                </div>
-                <div class="actions-right">
-                    <button class="btn btn-primary" onclick="nextStep()">Next Step</button>
-                </div>
-            </div>
-        </div>
-
-        <!-- Step 3: Ministry & Groups -->
-        <div class="form-section" id="step3">
-            <div class="section-header">
-                <h2 class="section-title">Ministry & Groups</h2>
-                <p class="section-subtitle">Select ministries and groups this member will join</p>
-            </div>
-
-            <div class="info-card warning">
-                <h4 class="info-card-title">Member Status</h4>
-                <p class="info-card-text">New members typically start with "Active" status. You can change this later if
-                    needed.</p>
-            </div>
-
-            <div class="form-group">
-                <label class="form-label">Member Status <span class="required">*</span></label>
-                <div class="radio-group">
-                    <div class="radio-item">
-                        <input type="radio" id="statusActive" name="status" value="active" checked>
-                        <label for="statusActive">Active</label>
-                    </div>
-                    <div class="radio-item">
-                        <input type="radio" id="statusInactive" name="status" value="inactive">
-                        <label for="statusInactive">Inactive</label>
-                    </div>
-                </div>
-            </div>
-
-            <div class="form-group">
-                <label class="form-label">Primary Ministry <span class="required">*</span></label>
-                <p class="form-helper" style="margin-bottom: 16px;">Select the main ministry this member will be part of
-                </p>
-                <div class="ministry-grid">
-                    <div class="ministry-card" onclick="selectMinistry(this, 'worship')">
-                        <div class="ministry-icon">🎵</div>
-                        <div class="ministry-name">Worship Team</div>
-                    </div>
-                    <div class="ministry-card" onclick="selectMinistry(this, 'youth')">
-                        <div class="ministry-icon">👥</div>
-                        <div class="ministry-name">Youth Ministry</div>
-                    </div>
-                    <div class="ministry-card" onclick="selectMinistry(this, 'children')">
-                        <div class="ministry-icon">👶</div>
-                        <div class="ministry-name">Children's Ministry</div>
-                    </div>
-                    <div class="ministry-card" onclick="selectMinistry(this, 'prayer')">
-                        <div class="ministry-icon">🙏</div>
-                        <div class="ministry-name">Prayer Team</div>
-                    </div>
-                    <div class="ministry-card" onclick="selectMinistry(this, 'men')">
-                        <div class="ministry-icon">👔</div>
-                        <div class="ministry-name">Men's Group</div>
-                    </div>
-                    <div class="ministry-card" onclick="selectMinistry(this, 'women')">
-                        <div class="ministry-icon">👗</div>
-                        <div class="ministry-name">Women's Group</div>
-                    </div>
-                </div>
-                <input type="hidden" id="selectedMinistry" value="">
-                <span class="form-error" id="ministryError">Please select a ministry</span>
-            </div>
-
-            <div class="form-group">
-                <label class="form-label">Additional Groups</label>
-                <p class="form-helper" style="margin-bottom: 12px;">Member can participate in multiple groups</p>
-                <div class="checkbox-group" style="flex-direction: column;">
-                    <div class="checkbox-item">
-                        <input type="checkbox" id="bibleStudy" value="bible-study">
-                        <label for="bibleStudy">Bible Study</label>
-                    </div>
-                    <div class="checkbox-item">
-                        <input type="checkbox" id="smallGroup" value="small-group">
-                        <label for="smallGroup">Small Group</label>
-                    </div>
-                    <div class="checkbox-item">
-                        <input type="checkbox" id="volunteering" value="volunteering">
-                        <label for="volunteering">Volunteering Team</label>
-                    </div>
-                    <div class="checkbox-item">
-                        <input type="checkbox" id="missions" value="missions">
-                        <label for="missions">Missions</label>
-                    </div>
-                </div>
-            </div>
-
-            <div class="form-group">
-                <label class="form-label">Skills & Talents</label>
-                <input type="text" class="form-input" id="skills" placeholder="e.g., Music, Teaching, Technology">
-                <p class="form-helper">Comma-separated list of skills that could benefit the church</p>
-            </div>
-
-            <div class="form-actions">
-                <div class="actions-left">
-                    <button class="btn btn-secondary" onclick="previousStep()">Previous</button>
-                </div>
-                <div class="actions-right">
-                    <button class="btn btn-primary" onclick="nextStep()">Next Step</button>
-                </div>
-            </div>
         </div>
 
-        <!-- Step 4: Family Information -->
-        <div class="form-section" id="step4">
-            <div class="section-header">
-                <h2 class="section-title">Family Information</h2>
-                <p class="section-subtitle">Add family members and household details</p>
-            </div>
 
-            <div class="info-card">
-                <h4 class="info-card-title">Family Registration</h4>
-                <p class="info-card-text">If this member is part of a family already registered in the system, you can
-                    link them. Otherwise, you can add new family members below.</p>
-            </div>
-
-            <div class="form-group">
-                <label class="form-label">Link to Existing Family</label>
-                <select class="form-select" id="existingFamily">
-                    <option value="">Not part of existing family</option>
-                    <option value="johnson">Johnson Family</option>
-                    <option value="chen">Chen Family</option>
-                    <option value="rodriguez">Rodriguez Family</option>
-                </select>
-            </div>
-
-            <div class="form-group">
-                <label class="form-label">Household Role</label>
-                <select class="form-select" id="householdRole">
-                    <option value="">Select role</option>
-                    <option value="head">Head of Household</option>
-                    <option value="spouse">Spouse</option>
-                    <option value="child">Child</option>
-                    <option value="dependent">Dependent</option>
-                    <option value="other">Other</option>
-                </select>
-            </div>
-
-            <div class="form-group full-width" style="margin-top: 24px;">
-                <label class="form-label">Additional Notes</label>
-                <textarea class="form-textarea" id="notes"
-                    placeholder="Any additional information about this member (dietary restrictions, special needs, preferences, etc.)"></textarea>
-            </div>
-
-            <div class="form-actions">
-                <div class="actions-left">
-                    <button class="btn btn-secondary" onclick="previousStep()">Previous</button>
+        <!-- Main Content -->
+        <div class="main-content">
+            <!-- Header -->
+            <div class="header">
+                <button class="mobile-menu-toggle" onclick="toggleSidebar()">☰</button>
+                <div class="search-bar">
+                    <input type="text" class="search-input" placeholder="Search members, events, or anything...">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                        stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                        class="lucide lucide-search absolute left-3 top-1/2 transform -translate-y-1/2 h-4 w-4 text-muted-foreground"
+                        data-lov-id="src/components/Layout.tsx:24:16" data-lov-name="Search"
+                        data-component-path="src/components/Layout.tsx" data-component-line="24"
+                        data-component-file="Layout.tsx" data-component-name="Search"
+                        data-component-content="%7B%22className%22%3A%22absolute%20left-3%20top-1%2F2%20transform%20-translate-y-1%2F2%20h-4%20w-4%20text-muted-foreground%22%7D">
+                        <circle cx="11" cy="11" r="8"></circle>
+                        <path d="m21 21-4.3-4.3"></path>
+                    </svg>
                 </div>
-                <div class="actions-right">
-                    <button class="btn btn-primary" onclick="nextStep()">Review & Submit</button>
-                </div>
-            </div>
-        </div>
-
-        <!-- Step 5: Review & Submit -->
-        <div class="form-section" id="step5">
-            <div class="section-header">
-                <h2 class="section-title">Review Information</h2>
-                <p class="section-subtitle">Please review all details before submitting</p>
-            </div>
-
-            <div class="summary-section">
-                <h3 class="summary-title">Personal Information</h3>
-                <div class="summary-grid">
-                    <div class="summary-item">
-                        <span class="summary-label">Full Name</span>
-                        <span class="summary-value" id="summaryName">-</span>
+                <div class="header-right">
+                    <div class="notification-icon">
+                        <span style="font-size: 20px;"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                                viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-bell h-5 w-5"
+                                data-lov-id="src/components/AppSidebar.tsx:151:22" data-lov-name="item.icon"
+                                data-component-path="src/components/AppSidebar.tsx" data-component-line="151"
+                                data-component-file="AppSidebar.tsx" data-component-name="item.icon"
+                                data-component-content="%7B%22className%22%3A%22h-5%20w-5%22%7D">
+                                <path d="M6 8a6 6 0 0 1 12 0c0 7 3 9 3 9H3s3-2 3-9"></path>
+                                <path d="M10.3 21a1.94 1.94 0 0 0 3.4 0"></path>
+                            </svg>
+                        </span>
+                        <span class="notification-badge">3</span>
                     </div>
-                    <div class="summary-item">
-                        <span class="summary-label">Date of Birth</span>
-                        <span class="summary-value" id="summaryDOB">-</span>
-                    </div>
-                    <div class="summary-item">
-                        <span class="summary-label">Gender</span>
-                        <span class="summary-value" id="summaryGender">-</span>
-                    </div>
-                    <div class="summary-item">
-                        <span class="summary-label">Marital Status</span>
-                        <span class="summary-value" id="summaryMarital">-</span>
+                    <div class="user-profile">
+                        <span style="font-size: 14px; font-weight: 500;">Pastor Lawrence</span>
+                        <span style="font-size: 20px;"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                                viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-user h-5 w-5"
+                                data-lov-id="src/components/Layout.tsx:41:16" data-lov-name="User"
+                                data-component-path="src/components/Layout.tsx" data-component-line="41"
+                                data-component-file="Layout.tsx" data-component-name="User"
+                                data-component-content="%7B%22className%22%3A%22h-5%20w-5%22%7D">
+                                <path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2"></path>
+                                <circle cx="12" cy="7" r="4"></circle>
+                            </svg>
+                        </span>
                     </div>
                 </div>
             </div>
+            <script>
+                function toggleSidebar() {
+                    const sidebar = document.querySelector('.sidebar');
+                    sidebar.classList.toggle('open');
+                }
 
-            <div class="summary-section">
-                <h3 class="summary-title">Contact Information</h3>
-                <div class="summary-grid">
-                    <div class="summary-item">
-                        <span class="summary-label">Phone</span>
-                        <span class="summary-value" id="summaryPhone">-</span>
-                    </div>
-                    <div class="summary-item">
-                        <span class="summary-label">Email</span>
-                        <span class="summary-value" id="summaryEmail">-</span>
-                    </div>
-                    <div class="summary-item">
-                        <span class="summary-label">Address</span>
-                        <span class="summary-value" id="summaryAddress">-</span>
-                    </div>
-                    <div class="summary-item">
-                        <span class="summary-label">City</span>
-                        <span class="summary-value" id="summaryCity">-</span>
-                    </div>
-                </div>
-            </div>
+                // Close sidebar when clicking outside on mobile
+                document.addEventListener('click', function (event) {
+                    const sidebar = document.querySelector('.sidebar');
+                    const toggle = document.querySelector('.mobile-menu-toggle');
 
-            <div class="summary-section">
-                <h3 class="summary-title">Ministry & Groups</h3>
-                <div class="summary-grid">
-                    <div class="summary-item">
-                        <span class="summary-label">Status</span>
-                        <span class="summary-value" id="summaryStatus">-</span>
-                    </div>
-                    <div class="summary-item">
-                        <span class="summary-label">Primary Ministry</span>
-                        <span class="summary-value" id="summaryMinistry">-</span>
-                    </div>
-                </div>
-            </div>
-
-            <div class="info-card">
-                <h4 class="info-card-title">What happens next?</h4>
-                <p class="info-card-text">After submitting, this member will be added to your church database. They will
-                    receive a welcome email with login credentials and information about upcoming events.</p>
-            </div>
-
-            <div class="form-group">
-                <label class="form-label">Welcome Actions</label>
-                <div class="checkbox-group" style="flex-direction: column;">
-                    <div class="checkbox-item">
-                        <input type="checkbox" id="sendWelcomeEmail" checked>
-                        <label for="sendWelcomeEmail">Send welcome email to member</label>
-                    </div>
-                    <div class="checkbox-item">
-                        <input type="checkbox" id="notifyPastor" checked>
-                        <label for="notifyPastor">Notify pastor and ministry leader</label>
-                    </div>
-                    <div class="checkbox-item">
-                        <input type="checkbox" id="createAccount">
-                        <label for="createAccount">Create member portal account</label>
-                    </div>
-                </div>
-            </div>
-
-            <div class="form-actions">
-                <div class="actions-left">
-                    <button class="btn btn-secondary" onclick="previousStep()">Previous</button>
-                </div>
-                <div class="actions-right">
-                    <button class="btn btn-secondary" onclick="saveDraft()">Save as Draft</button>
-                    <button class="btn btn-primary" onclick="submitForm()">Add Member</button>
-                </div>
-            </div>
-        </div>
-
-        <!-- Success Message -->
-        <div class="success-message" id="successMessage">
-            <div class="success-icon">✓</div>
-            <h2 class="success-title">Member Added Successfully!</h2>
-            <p class="success-text">The new member has been added to your church database and welcome notifications have
-                been sent.</p>
-            <div class="quick-actions">
-                <button class="btn btn-secondary" onclick="viewMember()">View Member Profile</button>
-                <button class="btn btn-primary" onclick="addAnother()">Add Another Member</button>
-            </div>
-        </div>
-    </div>
-
-    <script>
-        let currentStep = 1;
-        const totalSteps = 5;
-        let selectedMinistryValue = '';
-
-        function nextStep() {
-            if (validateStep(currentStep)) {
-                if (currentStep < totalSteps) {
-                    // Hide current step
-                    document.getElementById('step' + currentStep).classList.remove('active');
-                    document.querySelector(`.step[data-step="${currentStep}"]`).classList.add('completed');
-                    document.querySelector(`.step[data-step="${currentStep}"]`).classList.remove('active');
-
-                    // Show next step
-                    currentStep++;
-                    document.getElementById('step' + currentStep).classList.add('active');
-                    document.querySelector(`.step[data-step="${currentStep}"]`).classList.add('active');
-
-                    // Update progress bar
-                    const progress = (currentStep / totalSteps) * 100;
-                    document.getElementById('progressFill').style.width = progress + '%';
-
-                    // Update summary if on last step
-                    if (currentStep === 5) {
-                        updateSummary();
+                    if (window.innerWidth <= 768 &&
+                        !sidebar.contains(event.target) &&
+                        !toggle.contains(event.target) &&
+                        sidebar.classList.contains('open')) {
+                        sidebar.classList.remove('open');
                     }
+                });
+            </script>
 
-                    // Scroll to top
-                    window.scrollTo({ top: 0, behavior: 'smooth' });
-                }
-            }
-        }
+            <div class="dashboard-content">
 
-        function previousStep() {
-            if (currentStep > 1) {
-                // Hide current step
-                document.getElementById('step' + currentStep).classList.remove('active');
-                document.querySelector(`.step[data-step="${currentStep}"]`).classList.remove('active');
+                <div class="xax-page-header">
+                    <div class="cuttin-header-content">
+                        <h1>Add New Member</h1>
+                        <p>Register a new member to your church community</p>
+                    </div>
+                
+                    <div class="xax-header-actions">
+                        <button class="cuttin-btn cuttin-btn-secondary" onclick="saveDraft()">
+                            <i class="fa-regular fa-floppy-disk"></i> Save Draft
+                        </button>
+                        <button class="cuttin-btn cuttin-btn-primary" onclick="cancelForm()">
+                            <i class="fa-solid fa-xmark"></i> Cancel
+                        </button>
+                    </div>
+                </div>
+                <div class="xax-progress-container">
+                    <div class="cuttin-progress-steps">
+                        <div class="xax-progress-line">
+                            <div class="cuttin-progress-line-fill" id="progressFill" style="width: 20%"></div>
+                        </div>
+                        <div class="xax-step active" data-step="1">
+                            <div class="cuttin-step-circle">1</div>
+                            <span class="cuttin-step-label">Personal Info</span>
+                        </div>
+                        <div class="xax-step" data-step="2">
+                            <div class="cuttin-step-circle">2</div>
+                            <span class="cuttin-step-label">Contact Details</span>
+                        </div>
+                        <div class="xax-step" data-step="3">
+                            <div class="cuttin-step-circle">3</div>
+                            <span class="cuttin-step-label">Ministry & Groups</span>
+                        </div>
+                        <div class="xax-step" data-step="4">
+                            <div class="cuttin-step-circle">4</div>
+                            <span class="cuttin-step-label">Family Info</span>
+                        </div>
+                        <div class="xax-step" data-step="5">
+                            <div class="cuttin-step-circle">5</div>
+                            <span class="cuttin-step-label">Review & Submit</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="xax-form-container">
+                    <!-- Step 1: Personal Information -->
+                    <div class="cuttin-form-section active" id="step1">
+                        <div class="xax-section-header">
+                            <h2 class="cuttin-section-title">Personal Information</h2>
+                            <p class="cuttin-section-subtitle">Basic details about the new member</p>
+                        </div>
+                
+                        <div class="cuttin-form-group full-width">
+                            <label class="xax-form-label">Profile Photo</label>
+                            <div class="cuttin-photo-upload">
+                                <div class="xax-photo-preview" id="photoPreview">
+                                    <div class="cuttin-photo-placeholder">👤</div>
+                                </div>
+                                <div class="xax-photo-controls">
+                                    <div class="cuttin-file-input-wrapper">
+                                        <input type="file" id="photoInput" accept="image/*" onchange="handlePhotoUpload(event)">
+                                        <label for="photoInput" class="xax-file-input-label">Upload Photo</label>
+                                    </div>
+                                    <p class="cuttin-form-helper">JPG, PNG or GIF. Max 2MB</p>
+                                </div>
+                            </div>
+                        </div>
+                
+                        <div class="xax-form-grid">
+                            <div class="cuttin-form-group">
+                                <label class="xax-form-label">First Name <span class="cuttin-required">*</span></label>
+                                <input type="text" class="xax-form-input" id="firstName" required>
+                                <span class="xax-form-error" id="firstNameError">First name is required</span>
+                            </div>
+                
+                            <div class="cuttin-form-group">
+                                <label class="xax-form-label">Last Name <span class="cuttin-required">*</span></label>
+                                <input type="text" class="xax-form-input" id="lastName" required>
+                                <span class="xax-form-error" id="lastNameError">Last name is required</span>
+                            </div>
+                
+                            <div class="cuttin-form-group">
+                                <label class="xax-form-label">Date of Birth</label>
+                                <input type="date" class="xax-form-input" id="dateOfBirth">
+                            </div>
+                
+                            <div class="cuttin-form-group">
+                                <label class="xax-form-label">Gender</label>
+                                <select class="xax-form-select" id="gender">
+                                    <option value="">Select gender</option>
+                                    <option value="male">Male</option>
+                                    <option value="female">Female</option>
+                                    
+                                </select>
+                            </div>
+                
+                            <div class="cuttin-form-group">
+                                <label class="xax-form-label">Marital Status</label>
+                                <select class="xax-form-select" id="maritalStatus">
+                                    <option value="">Select status</option>
+                                    <option value="single">Single</option>
+                                    <option value="married">Married</option>
+                                    <option value="divorced">Divorced</option>
+                                    <option value="widowed">Widowed</option>
+                                </select>
+                            </div>
+                
+                            <div class="cuttin-form-group">
+                                <label class="xax-form-label">Occupation</label>
+                                <input type="text" class="xax-form-input" id="occupation" placeholder="e.g., Teacher, Engineer">
+                            </div>
+                        </div>
+                
+                        <div class="cuttin-form-actions">
+                            <div class="xax-actions-left"></div>
+                            <div class="xax-actions-right">
+                                <button class="cuttin-btn cuttin-btn-primary" onclick="nextStep()">Next Step</button>
+                            </div>
+                        </div>
+                    </div>
+                
+                    <!-- Step 2: Contact Details -->
+                    <div class="cuttin-form-section" id="step2">
+                        <div class="xax-section-header">
+                            <h2 class="cuttin-section-title">Contact Details</h2>
+                            <p class="cuttin-section-subtitle">How can we reach this member?</p>
+                        </div>
+                
+                        <div class="xax-form-grid">
+                            <div class="cuttin-form-group">
+                                <label class="xax-form-label">Phone Number <span class="cuttin-required">*</span></label>
+                                <input type="tel" class="xax-form-input" id="phone" placeholder="0551234567" required>
+                                <span class="xax-form-error" id="phoneError">Valid phone number is required</span>
+                            </div>
+                
+                            <div class="cuttin-form-group">
+                                <label class="xax-form-label">Email Address <span class="cuttin-required">*</span></label>
+                                <input type="email" class="xax-form-input" id="email" placeholder="member@example.com" required>
+                                <span class="xax-form-error" id="emailError">Valid email is required</span>
+                            </div>
+                
+                            <div class="cuttin-form-group full-width">
+                                <label class="xax-form-label">Home Address</label>
+                                <input type="text" class="xax-form-input" id="address" placeholder="Street address">
+                            </div>
+                
+                            <div class="cuttin-form-group">
+                                <label class="xax-form-label">City</label>
+                                <input type="text" class="xax-form-input" id="city" placeholder="City">
+                            </div>
+                
+                            <div class="cuttin-form-group">
+                                <label class="xax-form-label">Region</label>
+                                <input type="text" class="xax-form-input" id="region" placeholder="Region/State">
+                            </div>
+                        </div>
+                
+                        <div class="cuttin-info-card">
+                            <h4 class="xax-info-card-title">Emergency Contact</h4>
+                            <p class="xax-info-card-text">Please provide an emergency contact person in case we need to reach someone on
+                                behalf of this member.</p>
+                        </div>
+                
+                        <div class="xax-form-grid">
+                            <div class="cuttin-form-group">
+                                <label class="xax-form-label">Emergency Contact Name</label>
+                                <input type="text" class="xax-form-input" id="emergencyName" placeholder="Full name">
+                            </div>
+                
+                            <div class="cuttin-form-group">
+                                <label class="xax-form-label">Emergency Contact Phone</label>
+                                <input type="tel" class="xax-form-input" id="emergencyPhone" placeholder="Phone number">
+                            </div>
+                
+                            <div class="cuttin-form-group full-width">
+                                <label class="xax-form-label">Relationship</label>
+                                <input type="text" class="xax-form-input" id="emergencyRelation"
+                                    placeholder="e.g., Spouse, Parent, Sibling">
+                            </div>
+                        </div>
+                
+                        <div class="cuttin-form-actions">
+                            <div class="xax-actions-left">
+                                <button class="cuttin-btn cuttin-btn-secondary" onclick="previousStep()">Previous</button>
+                            </div>
+                            <div class="xax-actions-right">
+                                <button class="cuttin-btn cuttin-btn-primary" onclick="nextStep()">Next Step</button>
+                            </div>
+                        </div>
+                    </div>
+                
+                    <!-- Step 3: Ministry & Groups -->
+                    <!-- Only including the modified Step 3 section as per the request -->
+                    <div class="cuttin-form-section" id="step3">
+                        <div class="xax-section-header">
+                            <h2 class="cuttin-section-title">Church Groups & Ministries</h2>
+                            <p class="cuttin-section-subtitle">Select the church groups, departments, leadership roles, and ministries this
+                                member will join</p>
+                        </div>
+                    
+                        <div class="cuttin-info-card warning">
+                            <h4 class="xax-info-card-title">Member Status</h4>
+                            <p class="xax-info-card-text">New members typically start with "Active" status. You can change this later if
+                                needed.</p>
+                        </div>
+                    
+                        <div class="cuttin-form-group">
+                            <label class="xax-form-label">Member Status <span class="cuttin-required">*</span></label>
+                            <div class="cuttin-radio-group">
+                                <div class="xax-radio-item">
+                                    <input type="radio" id="statusActive" name="status" value="active" checked>
+                                    <label for="statusActive">Active</label>
+                                </div>
+                                <div class="xax-radio-item">
+                                    <input type="radio" id="statusInactive" name="status" value="inactive">
+                                    <label for="statusInactive">Inactive</label>
+                                </div>
+                            </div>
+                        </div>
+                    
+                        <div class="cuttin-form-group">
+                            <label class="xax-form-label">Church Group <span class="cuttin-required">*</span></label>
+                            <p class="cuttin-form-helper" style="margin-bottom: 16px;">Select the main church group this member will be part
+                                of</p>
+                            <div class="cuttin-ministry-grid">
+                                <div class="xax-ministry-card" onclick="selectMinistry(this, 'dunamis')">
+                                    <div class="cuttin-ministry-icon">🌟</div>
+                                    <div class="xax-ministry-name">DUNAMIS</div>
+                                </div>
+                                <div class="xax-ministry-card" onclick="selectMinistry(this, 'karbod')">
+                                    <div class="cuttin-ministry-icon">🤝</div>
+                                    <div class="xax-ministry-name">Karbod</div>
+                                </div>
+                                <div class="xax-ministry-card" onclick="selectMinistry(this, 'jubah')">
+                                    <div class="cuttin-ministry-icon">🎉</div>
+                                    <div class="xax-ministry-name">Jubah</div>
+                                </div>
+                                <div class="xax-ministry-card" onclick="selectMinistry(this, 'karish')">
+                                    <div class="cuttin-ministry-icon">🙌</div>
+                                    <div class="xax-ministry-name">Karish</div>
+                                </div>
+                            </div>
+                            <input type="hidden" id="selectedMinistry" value="">
+                            <span class="xax-form-error" id="ministryError">Please select a church group</span>
+                        </div>
+                    
+                        <div class="cuttin-form-group">
+                            <label class="xax-form-label">Department</label>
+                            <p class="cuttin-form-helper" style="margin-bottom: 12px;">Select any departments this member will participate
+                                in</p>
+                            <div class="cuttin-checkbox-group" style="flex-direction: column;">
+                                <div class="xax-checkbox-item">
+                                    <input type="checkbox" id="ursh" value="ursh">
+                                    <label for="ursh">URSH</label>
+                                </div>
+                                <div class="xax-checkbox-item">
+                                    <input type="checkbox" id="choir" value="choir">
+                                    <label for="choir">Choir</label>
+                                </div>
+                                <div class="xax-checkbox-item">
+                                    <input type="checkbox" id="media" value="media">
+                                    <label for="media">MEDIA</label>
+                                </div>
+                                <div class="xax-checkbox-item">
+                                    <input type="checkbox" id="instrumentalish" value="instrumentalish">
+                                    <label for="instrumentalish">INSTRUMENTALISH</label>
+                                </div>
+                            </div>
+                        </div>
+                    
+                        <div class="cuttin-form-group">
+                            <label class="xax-form-label">Leadership Role</label>
+                            <p class="cuttin-form-helper" style="margin-bottom: 12px;">Select a leadership role if applicable</p>
+                            <div class="cuttin-radio-group">
+                                <div class="xax-radio-item">
+                                    <input type="radio" id="noLeader" name="leadership" value="none" checked>
+                                    <label for="noLeader">None</label>
+                                </div>
+                                <div class="xax-radio-item">
+                                    <input type="radio" id="pastor" name="leadership" value="pastor">
+                                    <label for="pastor">Pastor</label>
+                                </div>
+                                <div class="xax-radio-item">
+                                    <input type="radio" id="minister" name="leadership" value="minister">
+                                    <label for="minister">Minister</label>
+                                </div>
+                            </div>
+                        </div>
+                    
+                        <div class="cuttin-form-group">
+                            <label class="xax-form-label">Ministries</label>
+                            <p class="cuttin-form-helper" style="margin-bottom: 12px;">Select any ministries this member will participate in
+                            </p>
+                            <div class="cuttin-checkbox-group" style="flex-direction: column;">
+                                <div class="xax-checkbox-item">
+                                    <input type="checkbox" id="childrenMinistry" value="children-ministry">
+                                    <label for="childrenMinistry">Children Ministry</label>
+                                </div>
+                                <div class="xax-checkbox-item">
+                                    <input type="checkbox" id="womenMinistry" value="women-ministry">
+                                    <label for="womenMinistry">Women Ministry</label>
+                                </div>
+                                <div class="xax-checkbox-item">
+                                    <input type="checkbox" id="menMinistry" value="men-ministry">
+                                    <label for="menMinistry">Men Ministry</label>
+                                </div>
+                                <div class="xax-checkbox-item">
+                                    <input type="checkbox" id="youthMinistry" value="youth-ministry">
+                                    <label for="youthMinistry">Youth Ministry</label>
+                                </div>
+                            </div>
+                        </div>
+                    
+                        <div class="cuttin-form-actions">
+                            <div class="xax-actions-left">
+                                <button class="cuttin-btn cuttin-btn-secondary" onclick="previousStep()">Previous</button>
+                            </div>
+                            <div class="xax-actions-right">
+                                <button class="cuttin-btn cuttin-btn-primary" onclick="nextStep()">Next Step</button>
+                            </div>
+                        </div>
+                    </div>
+                    
+                
+                    <!-- Step 4: Family Information -->
+                    <div class="cuttin-form-section" id="step4">
+                        <div class="xax-section-header">
+                            <h2 class="cuttin-section-title">Family Information</h2>
+                            <p class="cuttin-section-subtitle">Add family members and household details</p>
+                        </div>
+                
+                        <div class="cuttin-info-card">
+                            <h4 class="xax-info-card-title">Family Registration</h4>
+                            <p class="xax-info-card-text">If this member is part of a family already registered in the system, you can
+                                link them. Otherwise, you can add new family members below.</p>
+                        </div>
+                
+                        <div class="cuttin-form-group">
+                            <label class="xax-form-label">Link to Existing Family</label>
+                            <select class="xax-form-select" id="existingFamily">
+                                <option value="">Not part of existing family</option>
+                                <option value="johnson">Johnson Family</option>
+                                <option value="chen">Chen Family</option>
+                                <option value="rodriguez">Rodriguez Family</option>
+                            </select>
+                        </div>
+                
+                        <div class="cuttin-form-group">
+                            <label class="xax-form-label">Household Role</label>
+                            <select class="xax-form-select" id="householdRole">
+                                <option value="">Select role</option>
+                                <option value="head">Head of Household</option>
+                                <option value="spouse">Spouse</option>
+                                <option value="child">Child</option>
+                                <option value="dependent">Dependent</option>
+                                <option value="other">Other</option>
+                            </select>
+                        </div>
+                
+                        <div class="cuttin-form-group full-width" style="margin-top: 24px;">
+                            <label class="xax-form-label">Additional Notes</label>
+                            <textarea class="xax-form-textarea" id="notes"
+                                placeholder="Any additional information about this member (dietary restrictions, special needs, preferences, etc.)"></textarea>
+                        </div>
+                
+                        <div class="cuttin-form-actions">
+                            <div class="xax-actions-left">
+                                <button class="cuttin-btn cuttin-btn-secondary" onclick="previousStep()">Previous</button>
+                            </div>
+                            <div class="xax-actions-right">
+                                <button class="cuttin-btn cuttin-btn-primary" onclick="nextStep()">Review & Submit</button>
+                            </div>
+                        </div>
+                    </div>
+                
+                    <!-- Step 5: Review & Submit -->
+                    <div class="cuttin-form-section" id="step5">
+                        <div class="xax-section-header">
+                            <h2 class="cuttin-section-title">Review Information</h2>
+                            <p class="cuttin-section-subtitle">Please review all details before submitting</p>
+                        </div>
+                
+                        <div class="cuttin-summary-section">
+                            <h3 class="xax-summary-title">Church Groups & Ministries</h3>
+                            <div class="cuttin-summary-grid">
+                                <div class="xax-summary-item">
+                                    <span class="cuttin-summary-label">Status</span>
+                                    <span class="xax-summary-value" id="summaryStatus">-</span>
+                                </div>
+                                <div class="xax-summary-item">
+                                    <span class="cuttin-summary-label">Church Group</span>
+                                    <span class="xax-summary-value" id="summaryMinistry">-</span>
+                                </div>
+                                <div class="xax-summary-item">
+                                    <span class="cuttin-summary-label">Departments</span>
+                                    <span class="xax-summary-value" id="summaryDepartments">-</span>
+                                </div>
+                                <div class="xax-summary-item">
+                                    <span class="cuttin-summary-label">Leadership Role</span>
+                                    <span class="xax-summary-value" id="summaryLeadership">-</span>
+                                </div>
+                                <div class="xax-summary-item">
+                                    <span class="cuttin-summary-label">Ministries</span>
+                                    <span class="xax-summary-value" id="summaryMinistries">-</span>
+                                </div>
+                            </div>
+                        </div>
+                
+                        <div class="cuttin-summary-section">
+                            <h3 class="xax-summary-title">Contact Information</h3>
+                            <div class="cuttin-summary-grid">
+                                <div class="xax-summary-item">
+                                    <span class="cuttin-summary-label">Phone</span>
+                                    <span class="xax-summary-value" id="summaryPhone">-</span>
+                                </div>
+                                <div class="xax-summary-item">
+                                    <span class="cuttin-summary-label">Email</span>
+                                    <span class="xax-summary-value" id="summaryEmail">-</span>
+                                </div>
+                                <div class="xax-summary-item">
+                                    <span class="cuttin-summary-label">Address</span>
+                                    <span class="xax-summary-value" id="summaryAddress">-</span>
+                                </div>
+                                <div class="xax-summary-item">
+                                    <span class="cuttin-summary-label">City</span>
+                                    <span class="xax-summary-value" id="summaryCity">-</span>
+                                </div>
+                            </div>
+                        </div>
+                
+                        <div class="cuttin-summary-section">
+                            <h3 class="xax-summary-title">Ministry & Groups</h3>
+                            <div class="cuttin-summary-grid">
+                                <div class="xax-summary-item">
+                                    <span class="cuttin-summary-label">Status</span>
+                                    <span class="xax-summary-value" id="summaryStatus">-</span>
+                                </div>
+                                <div class="xax-summary-item">
+                                    <span class="cuttin-summary-label">Primary Ministry</span>
+                                    <span class="xax-summary-value" id="summaryMinistry">-</span>
+                                </div>
+                            </div>
+                        </div>
+                
+                        <div class="cuttin-info-card">
+                            <h4 class="xax-info-card-title">What happens next?</h4>
+                            <p class="xax-info-card-text">After submitting, this member will be added to your church database. They will
+                                receive a welcome email with login credentials and information about upcoming events.</p>
+                        </div>
+                
+                        <div class="cuttin-form-group">
+                            <label class="xax-form-label">Welcome Actions</label>
+                            <div class="cuttin-checkbox-group" style="flex-direction: column;">
+                                <div class="xax-checkbox-item">
+                                    <input type="checkbox" id="sendWelcomeEmail" checked>
+                                    <label for="sendWelcomeEmail">Send welcome email to member</label>
+                                </div>
+                                <div class="xax-checkbox-item">
+                                    <input type="checkbox" id="notifyPastor" checked>
+                                    <label for="notifyPastor">Notify pastor and ministry leader</label>
+                                </div>
+                                <div class="xax-checkbox-item">
+                                    <input type="checkbox" id="createAccount">
+                                    <label for="createAccount">Create member portal account</label>
+                                </div>
+                            </div>
+                        </div>
+                
+                        <div class="cuttin-form-actions">
+                            <div class="xax-actions-left">
+                                <button class="cuttin-btn cuttin-btn-secondary" onclick="previousStep()">Previous</button>
+                            </div>
+                            <div class="xax-actions-right">
+                                <button class="cuttin-btn cuttin-btn-secondary" onclick="saveDraft()">Save as Draft</button>
+                                <button class="cuttin-btn cuttin-btn-primary" onclick="submitForm()">Add Member</button>
+                            </div>
+                        </div>
+                    </div>
+                
+                    <!-- Success Message -->
+                    <div class="cuttin-success-message" id="successMessage">
+                        <div class="xax-success-icon">✓</div>
+                        <h2 class="cuttin-success-title">Member Added Successfully!</h2>
+                        <p class="xax-success-text">The new member has been added to your church database and welcome notifications have
+                            been sent.</p>
+                        <div class="cuttin-quick-actions">
+                            <button class="cuttin-btn cuttin-btn-secondary" onclick="viewMember()">View Member Profile</button>
+                            <button class="cuttin-btn cuttin-btn-primary" onclick="addAnother()">Add Another Member</button>
+                        </div>
+                    </div>
+                </div>
+                
+                <script>
+                    let currentStep = 1;
+                        const totalSteps = 5;
+                        let selectedMinistryValue = '';
 
-                // Show previous step
-                currentStep--;
-                document.getElementById('step' + currentStep).classList.add('active');
-                document.querySelector(`.step[data-step="${currentStep}"]`).classList.add('active');
-                document.querySelector(`.step[data-step="${currentStep}"]`).classList.remove('completed');
+                        function nextStep() {
+                            if (validateStep(currentStep)) {
+                                if (currentStep < totalSteps) {
+                                    // Hide current step
+                                    document.getElementById('step' + currentStep).classList.remove('active');
+                                    document.querySelector(`.xax-step[data-step="${currentStep}"]`).classList.add('completed');
+                                    document.querySelector(`.xax-step[data-step="${currentStep}"]`).classList.remove('active');
 
-                // Update progress bar
-                const progress = (currentStep / totalSteps) * 100;
-                document.getElementById('progressFill').style.width = progress + '%';
+                                    // Show next step
+                                    currentStep++;
+                                    document.getElementById('step' + currentStep).classList.add('active');
+                                    document.querySelector(`.xax-step[data-step="${currentStep}"]`).classList.add('active');
 
-                // Scroll to top
-                window.scrollTo({ top: 0, behavior: 'smooth' });
-            }
-        }
+                                    // Update progress bar
+                                    const progress = (currentStep / totalSteps) * 100;
+                                    document.getElementById('progressFill').style.width = progress + '%';
 
-        function validateStep(step) {
-            let isValid = true;
+                                    // Update summary if on last step
+                                    if (currentStep === 5) {
+                                        updateSummary();
+                                    }
 
-            if (step === 1) {
-                const firstName = document.getElementById('firstName');
-                const lastName = document.getElementById('lastName');
+                                    // Scroll to top
+                                    window.scrollTo({ top: 0, behavior: 'smooth' });
+                                }
+                            }
+                        }
 
-                if (!firstName.value.trim()) {
-                    showError('firstName', 'firstNameError');
-                    isValid = false;
-                } else {
-                    hideError('firstName', 'firstNameError');
-                }
+                        function previousStep() {
+                            if (currentStep > 1) {
+                                // Hide current step
+                                document.getElementById('step' + currentStep).classList.remove('active');
+                                document.querySelector(`.xax-step[data-step="${currentStep}"]`).classList.remove('active');
 
-                if (!lastName.value.trim()) {
-                    showError('lastName', 'lastNameError');
-                    isValid = false;
-                } else {
-                    hideError('lastName', 'lastNameError');
-                }
-            }
+                                // Show previous step
+                                currentStep--;
+                                document.getElementById('step' + currentStep).classList.add('active');
+                                document.querySelector(`.xax-step[data-step="${currentStep}"]`).classList.add('active');
+                                document.querySelector(`.xax-step[data-step="${currentStep}"]`).classList.remove('completed');
 
-            if (step === 2) {
-                const phone = document.getElementById('phone');
-                const email = document.getElementById('email');
+                                // Update progress bar
+                                const progress = (currentStep / totalSteps) * 100;
+                                document.getElementById('progressFill').style.width = progress + '%';
 
-                if (!phone.value.trim()) {
-                    showError('phone', 'phoneError');
-                    isValid = false;
-                } else {
-                    hideError('phone', 'phoneError');
-                }
+                                // Scroll to top
+                                window.scrollTo({ top: 0, behavior: 'smooth' });
+                            }
+                        }
 
-                if (!email.value.trim() || !email.value.includes('@')) {
-                    showError('email', 'emailError');
-                    isValid = false;
-                } else {
-                    hideError('email', 'emailError');
-                }
-            }
+                        function validateStep(step) {
+                            let isValid = true;
 
-            if (step === 3) {
-                if (!selectedMinistryValue) {
-                    document.getElementById('ministryError').classList.add('show');
-                    isValid = false;
-                } else {
-                    document.getElementById('ministryError').classList.remove('show');
-                }
-            }
+                            if (step === 1) {
+                                const firstName = document.getElementById('firstName');
+                                const lastName = document.getElementById('lastName');
 
-            return isValid;
-        }
+                                if (!firstName.value.trim()) {
+                                    showError('firstName', 'firstNameError');
+                                    isValid = false;
+                                } else {
+                                    hideError('firstName', 'firstNameError');
+                                }
 
-        function showError(inputId, errorId) {
-            document.getElementById(inputId).classList.add('error');
-            document.getElementById(errorId).classList.add('show');
-        }
+                                if (!lastName.value.trim()) {
+                                    showError('lastName', 'lastNameError');
+                                    isValid = false;
+                                } else {
+                                    hideError('lastName', 'lastNameError');
+                                }
+                            }
 
-        function hideError(inputId, errorId) {
-            document.getElementById(inputId).classList.remove('error');
-            document.getElementById(errorId).classList.remove('show');
-        }
+                            if (step === 2) {
+                                const phone = document.getElementById('phone');
+                                const email = document.getElementById('email');
 
-        function selectMinistry(card, ministry) {
-            document.querySelectorAll('.ministry-card').forEach(c => c.classList.remove('selected'));
-            card.classList.add('selected');
-            selectedMinistryValue = ministry;
-            document.getElementById('selectedMinistry').value = ministry;
-        }
+                                if (!phone.value.trim()) {
+                                    showError('phone', 'phoneError');
+                                    isValid = false;
+                                } else {
+                                    hideError('phone', 'phoneError');
+                                }
 
-        function handlePhotoUpload(event) {
-            const file = event.target.files[0];
-            if (file) {
-                const reader = new FileReader();
-                reader.onload = function (e) {
-                    document.getElementById('photoPreview').innerHTML = `<img src="${e.target.result}" alt="Profile">`;
-                };
-                reader.readAsDataURL(file);
-            }
-        }
+                                if (!email.value.trim() || !email.value.includes('@')) {
+                                    showError('email', 'emailError');
+                                    isValid = false;
+                                } else {
+                                    hideError('email', 'emailError');
+                                }
+                            }
 
-        function updateSummary() {
-            document.getElementById('summaryName').textContent =
-                `${document.getElementById('firstName').value} ${document.getElementById('lastName').value}`;
-            document.getElementById('summaryDOB').textContent =
-                document.getElementById('dateOfBirth').value || 'Not provided';
-            document.getElementById('summaryGender').textContent =
-                document.getElementById('gender').value || 'Not provided';
-            document.getElementById('summaryMarital').textContent =
-                document.getElementById('maritalStatus').value || 'Not provided';
-            document.getElementById('summaryPhone').textContent =
-                document.getElementById('phone').value;
-            document.getElementById('summaryEmail').textContent =
-                document.getElementById('email').value;
-            document.getElementById('summaryAddress').textContent =
-                document.getElementById('address').value || 'Not provided';
-            document.getElementById('summaryCity').textContent =
-                document.getElementById('city').value || 'Not provided';
-            document.getElementById('summaryStatus').textContent =
-                document.querySelector('input[name="status"]:checked').value;
+                            if (step === 3) {
+                                if (!selectedMinistryValue) {
+                                    document.getElementById('ministryError').classList.add('show');
+                                    isValid = false;
+                                } else {
+                                    document.getElementById('ministryError').classList.remove('show');
+                                }
+                            }
 
-            const ministryNames = {
-                'worship': 'Worship Team',
-                'youth': 'Youth Ministry',
-                'children': "Children's Ministry",
-                'prayer': 'Prayer Team',
-                'men': "Men's Group",
-                'women': "Women's Group"
-            };
-            document.getElementById('summaryMinistry').textContent =
-                ministryNames[selectedMinistryValue] || 'Not selected';
-        }
+                            return isValid;
+                        }
 
-        function submitForm() {
-            // Hide form sections
-            document.querySelectorAll('.form-section').forEach(section => {
-                section.style.display = 'none';
-            });
+                        function showError(inputId, errorId) {
+                            document.getElementById(inputId).classList.add('error');
+                            document.getElementById(errorId).classList.add('show');
+                        }
 
-            // Show success message
-            document.getElementById('successMessage').classList.add('show');
+                        function hideError(inputId, errorId) {
+                            document.getElementById(inputId).classList.remove('error');
+                            document.getElementById(errorId).classList.remove('show');
+                        }
 
-            // Scroll to top
-            window.scrollTo({ top: 0, behavior: 'smooth' });
-        }
+                        function selectMinistry(card, ministry) {
+                            document.querySelectorAll('.xax-ministry-card').forEach(c => c.classList.remove('selected'));
+                            card.classList.add('selected');
+                            selectedMinistryValue = ministry;
+                            document.getElementById('selectedMinistry').value = ministry;
+                        }
 
-        function saveDraft() {
-            alert('Member information saved as draft. You can continue editing later.');
-        }
+                        function handlePhotoUpload(event) {
+                            const file = event.target.files[0];
+                            if (file) {
+                                const reader = new FileReader();
+                                reader.onload = function (e) {
+                                    document.getElementById('photoPreview').innerHTML = `<img src="${e.target.result}" alt="Profile">`;
+                                };
+                                reader.readAsDataURL(file);
+                            }
+                        }
 
-        function cancelForm() {
-            if (confirm('Are you sure you want to cancel? All entered information will be lost.')) {
-                window.history.back();
-            }
-        }
+                        function updateSummary() {
+                            document.getElementById('summaryName').textContent =
+                                `${document.getElementById('firstName').value} ${document.getElementById('lastName').value}`;
+                            document.getElementById('summaryDOB').textContent =
+                                document.getElementById('dateOfBirth').value || 'Not provided';
+                            document.getElementById('summaryGender').textContent =
+                                document.getElementById('gender').value || 'Not provided';
+                            document.getElementById('summaryMarital').textContent =
+                                document.getElementById('maritalStatus').value || 'Not provided';
+                            document.getElementById('summaryPhone').textContent =
+                                document.getElementById('phone').value;
+                            document.getElementById('summaryEmail').textContent =
+                                document.getElementById('email').value;
+                            document.getElementById('summaryAddress').textContent =
+                                document.getElementById('address').value || 'Not provided';
+                            document.getElementById('summaryCity').textContent =
+                                document.getElementById('city').value || 'Not provided';
+                            document.getElementById('summaryStatus').textContent =
+                                document.querySelector('input[name="status"]:checked').value;
 
-        function viewMember() {
-            alert('Opening member profile...');
-        }
+                            // Map church group values to display names
+                            const groupNames = {
+                                'dunamis': 'DUNAMIS',
+                                'karbod': 'Karbod',
+                                'jubah': 'Jubah',
+                                'karish': 'Karish'
+                            };
+                            document.getElementById('summaryMinistry').textContent =
+                                groupNames[selectedMinistryValue] || 'Not selected';
 
-        function addAnother() {
-            location.reload();
-        }
-    </script>
+                            // Collect selected departments
+                            const departments = [];
+                            ['ursh', 'choir', 'media', 'instrumentalish'].forEach(id => {
+                                if (document.getElementById(id).checked) {
+                                    departments.push(document.querySelector(`label[for="${id}"]`).textContent);
+                                }
+                            });
+                            document.getElementById('summaryDepartments').textContent =
+                                departments.length > 0 ? departments.join(', ') : 'None';
+
+                            // Get leadership role
+                            const leadershipRole = document.querySelector('input[name="leadership"]:checked').value;
+                            document.getElementById('summaryLeadership').textContent =
+                                leadershipRole === 'none' ? 'None' : leadershipRole.charAt(0).toUpperCase() + leadershipRole.slice(1);
+
+                            // Collect selected ministries
+                            const ministries = [];
+                            ['childrenMinistry', 'womenMinistry', 'menMinistry', 'youthMinistry'].forEach(id => {
+                                if (document.getElementById(id).checked) {
+                                    ministries.push(document.querySelector(`label[for="${id}"]`).textContent);
+                                }
+                            });
+                            document.getElementById('summaryMinistries').textContent =
+                                ministries.length > 0 ? ministries.join(', ') : 'None';
+                        }
+
+                        function submitForm() {
+                            // Hide form sections
+                            document.querySelectorAll('.cuttin-form-section').forEach(section => {
+                                section.style.display = 'none';
+                            });
+
+                            // Show success message
+                            document.getElementById('successMessage').classList.add('show');
+
+                            // Scroll to top
+                            window.scrollTo({ top: 0, behavior: 'smooth' });
+                        }
+
+                        function saveDraft() {
+                            alert('Member information saved as draft. You can continue editing later.');
+                        }
+
+                        function cancelForm() {
+                            if (confirm('Are you sure you want to cancel? All entered information will be lost.')) {
+                                window.history.back();
+                            }
+                        }
+
+                        function viewMember() {
+                            alert('Opening member profile...');
+                        }
+
+                        function addAnother() {
+                            location.reload();
+                        }
+                  
+                </script>
+
+               
+                
+
+
+
+            </div>
+
+
+        </div>
+
+    </div>
+
+
+
+
+
+
+
 </body>
 
 </html>

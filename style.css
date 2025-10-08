@@ -18324,3 +18324,1534 @@ table td {
         height: 10px;
     }
 }
+
+
+
+
+
+
+
+ /************************************************* ADD MEMBERS *********************************************/
+ .xax-page-header {
+     display: flex;
+     justify-content: space-between;
+     align-items: center;
+     margin-bottom: 40px;
+     background: #ffffff;
+     padding: 24px 32px;
+     border-radius: 16px;
+     box-shadow: 0 4px 12px rgba(15, 23, 42, 0.08);
+ }
+
+ .cuttin-header-content h1 {
+     font-size: 28px;
+     font-weight: 700;
+     color: #1e293b;
+     margin-bottom: 6px;
+     letter-spacing: -0.3px;
+ }
+
+ .cuttin-header-content p {
+     font-size: 15px;
+     color: #64748b;
+ }
+
+ .xax-header-actions {
+     display: flex;
+     gap: 14px;
+ }
+
+ .cuttin-btn {
+     padding: 10px 22px;
+     border-radius: 10px;
+     border: none;
+     cursor: pointer;
+     font-size: 14px;
+     font-weight: 600;
+     display: flex;
+     align-items: center;
+     gap: 8px;
+     transition: all 0.25s ease;
+     box-shadow: 0 2px 6px rgba(0, 0, 0, 0.06);
+ }
+
+ .cuttin-btn-secondary {
+     background: #f8fafc;
+     color: #334155;
+     border: 1px solid #e2e8f0;
+ }
+
+ .cuttin-btn-secondary:hover {
+     background: #f1f5f9;
+     transform: translateY(-2px);
+ }
+
+ .cuttin-btn-primary {
+     background: #3b82f6;
+     color: #fff;
+     border: 1px solid #3b82f6;
+ }
+
+ .cuttin-btn-primary:hover {
+     background: #2563eb;
+     transform: translateY(-2px);
+     box-shadow: 0 4px 8px rgba(37, 99, 235, 0.25);
+ }
+
+ .cuttin-btn:disabled {
+     opacity: 0.6;
+     cursor: not-allowed;
+ }
+ /* General container styling for a clean, professional look */
+ .xax-progress-container {
+     background: #ffffff;
+     padding: 32px 40px;
+     border-radius: 16px;
+     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+     margin-bottom: 40px;
+     max-width: 1200px;
+     margin-left: auto;
+     margin-right: auto;
+ }
+
+ /* Progress steps with enhanced spacing and modern design */
+ .cuttin-progress-steps {
+     display: flex;
+     justify-content: space-between;
+     align-items: flex-start;
+     position: relative;
+     padding: 16px 0;
+ }
+
+ .xax-progress-line {
+     position: absolute;
+     top: 24px;
+     left: 0;
+     right: 0;
+     height: 4px;
+     background: #e5e7eb;
+     z-index: 0;
+     border-radius: 2px;
+ }
+
+ .cuttin-progress-line-fill {
+     height: 100%;
+     background: linear-gradient(90deg, #2563eb, #3b82f6);
+     transition: width 0.4s ease-in-out;
+     border-radius: 2px;
+ }
+
+ .xax-step {
+     display: flex;
+     flex-direction: column;
+     align-items: center;
+     position: relative;
+     z-index: 1;
+     width: 120px;
+     text-align: center;
+ }
+
+ .cuttin-step-circle {
+     width: 48px;
+     height: 48px;
+     border-radius: 50%;
+     background: #ffffff;
+     border: 3px solid #e5e7eb;
+     display: flex;
+     align-items: center;
+     justify-content: center;
+     font-size: 18px;
+     font-weight: 700;
+     color: #6b7280;
+     margin-bottom: 12px;
+     transition: all 0.3s ease;
+     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+ }
+
+ .xax-step.active .cuttin-step-circle {
+     border-color: #2563eb;
+     background: #2563eb;
+     color: #ffffff;
+     transform: scale(1.1);
+ }
+
+ .xax-step.completed .cuttin-step-circle {
+     border-color: #059669;
+     background: #059669;
+     color: #ffffff;
+ }
+
+ .cuttin-step-label {
+     font-size: 14px;
+     color: #6b7280;
+     font-weight: 500;
+     line-height: 1.4;
+     max-width: 100px;
+ }
+
+ .xax-step.active .cuttin-step-label {
+     color: #2563eb;
+     font-weight: 600;
+ }
+
+ /* Form container with professional spacing and shadow */
+ .xax-form-container {
+     background: #ffffff;
+     padding: 40px;
+     border-radius: 16px;
+     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+     max-width: 1200px;
+     margin: 0 auto;
+ }
+
+ /* Form section with smooth animation */
+ .cuttin-form-section {
+     display: none;
+ }
+
+ .cuttin-form-section.active {
+     display: block;
+     animation: fadeIn 0.4s ease-in-out;
+ }
+
+ @keyframes fadeIn {
+     from {
+         opacity: 0;
+         transform: translateY(15px);
+     }
+
+     to {
+         opacity: 1;
+         transform: translateY(0);
+     }
+ }
+
+ /* Section header with refined typography */
+ .xax-section-header {
+     margin-bottom: 40px;
+ }
+
+ .cuttin-section-title {
+     font-size: 28px;
+     font-weight: 700;
+     color: #1f2937;
+     margin-bottom: 12px;
+     letter-spacing: -0.025em;
+ }
+
+ .cuttin-section-subtitle {
+     font-size: 16px;
+     color: #6b7280;
+     line-height: 1.5;
+ }
+
+ /* Form grid with balanced spacing */
+ .xax-form-grid {
+     display: grid;
+     grid-template-columns: repeat(2, 1fr);
+     gap: 32px;
+     margin-bottom: 40px;
+ }
+
+ .xax-form-grid.single {
+     grid-template-columns: 1fr;
+ }
+
+ .cuttin-form-group {
+     display: flex;
+     flex-direction: column;
+     gap: 12px;
+ }
+
+ .cuttin-form-group.full-width {
+     grid-column: 1 / -1;
+ }
+
+ .xax-form-label {
+     font-size: 15px;
+     font-weight: 600;
+     color: #1f2937;
+     display: flex;
+     align-items: center;
+     gap: 8px;
+ }
+
+ .cuttin-required {
+     color: #dc2626;
+ }
+
+ .xax-form-input,
+ .xax-form-select,
+ .xax-form-textarea {
+     padding: 14px 16px;
+     border: 2px solid #e5e7eb;
+     border-radius: 10px;
+     font-size: 15px;
+     font-family: inherit;
+     transition: all 0.3s ease;
+     background: #ffffff;
+     color: #1f2937;
+ }
+
+ .xax-form-input:focus,
+ .xax-form-select:focus,
+ .xax-form-textarea:focus {
+     outline: none;
+     border-color: #2563eb;
+     box-shadow: 0 0 0 4px rgba(37, 99, 235, 0.1);
+ }
+
+ .xax-form-input.error,
+ .xax-form-select.error {
+     border-color: #dc2626;
+ }
+
+ .xax-form-textarea {
+     min-height: 140px;
+     resize: vertical;
+ }
+
+ .cuttin-form-helper {
+     font-size: 13px;
+     color: #6b7280;
+     line-height: 1.4;
+ }
+
+ .xax-form-error {
+     font-size: 13px;
+     color: #dc2626;
+     display: none;
+ }
+
+ .xax-form-error.show {
+     display: block;
+ }
+
+ /* Photo upload section with modern styling */
+ .cuttin-photo-upload {
+     display: flex;
+     align-items: center;
+     gap: 32px;
+ }
+
+ .xax-photo-preview {
+     width: 140px;
+     height: 140px;
+     border-radius: 50%;
+     background: #f3f4f6;
+     display: flex;
+     align-items: center;
+     justify-content: center;
+     overflow: hidden;
+     border: 4px solid #e5e7eb;
+     transition: border-color 0.3s ease;
+ }
+
+ .xax-photo-preview img {
+     width: 100%;
+     height: 100%;
+     object-fit: cover;
+ }
+
+ .cuttin-photo-placeholder {
+     font-size: 56px;
+     color: #d1d5db;
+ }
+
+ .xax-photo-controls {
+     display: flex;
+     flex-direction: column;
+     gap: 16px;
+ }
+
+ .cuttin-file-input-wrapper {
+     position: relative;
+     overflow: hidden;
+     display: inline-block;
+ }
+
+ .cuttin-file-input-wrapper input[type=file] {
+     position: absolute;
+     left: -9999px;
+ }
+
+ .xax-file-input-label {
+     padding: 12px 24px;
+     border-radius: 10px;
+     border: 2px solid #e5e7eb;
+     background: #ffffff;
+     color: #4b5563;
+     font-size: 15px;
+     font-weight: 500;
+     cursor: pointer;
+     transition: all 0.3s ease;
+ }
+
+ .xax-file-input-label:hover {
+     background: #f8fafc;
+     border-color: #2563eb;
+     color: #2563eb;
+ }
+
+ /* Radio and checkbox groups with clean design */
+ .cuttin-radio-group,
+ .cuttin-checkbox-group {
+     display: flex;
+     gap: 24px;
+     flex-wrap: wrap;
+ }
+
+ .cuttin-checkbox-group {
+     flex-direction: column;
+     gap: 16px;
+ }
+
+ .xax-radio-item,
+ .xax-checkbox-item {
+     display: flex;
+     align-items: center;
+     gap: 10px;
+ }
+
+ .xax-radio-item input,
+ .xax-checkbox-item input {
+     width: 20px;
+     height: 20px;
+     cursor: pointer;
+     accent-color: #2563eb;
+ }
+
+ .xax-radio-item label,
+ .xax-checkbox-item label {
+     font-size: 15px;
+     color: #4b5563;
+     cursor: pointer;
+ }
+/* ========= FORM SECTION (Step 3) ========= */
+.cuttin-form-section {
+    background: #ffffff;
+    padding: 40px 48px;
+    border-radius: 20px;
+    box-shadow: 0 8px 24px rgba(15, 23, 42, 0.06);
+    margin-bottom: 48px;
+    transition: all 0.3s ease;
+}
+
+/* ---------- Section Header ---------- */
+.xax-section-header {
+    margin-bottom: 40px;
+    text-align: left;
+}
+
+.cuttin-section-title {
+    font-size: 26px;
+    font-weight: 700;
+    color: #1f2937;
+    margin-bottom: 10px;
+    letter-spacing: -0.02em;
+}
+
+.cuttin-section-subtitle {
+    font-size: 15.5px;
+    color: #6b7280;
+    line-height: 1.6;
+}
+
+/* ---------- Info Card ---------- */
+.cuttin-info-card {
+    background: #fffbea;
+    border: 1px solid #fcd34d;
+    padding: 20px 24px;
+    border-radius: 12px;
+    margin-bottom: 32px;
+    box-shadow: 0 2px 6px rgba(250, 204, 21, 0.1);
+}
+
+.cuttin-info-card.warning {
+    background: #fffdf5;
+    border-color: #fde68a;
+}
+
+.xax-info-card-title {
+    font-size: 15.5px;
+    font-weight: 600;
+    color: #78350f;
+    margin-bottom: 6px;
+}
+
+.xax-info-card-text {
+    font-size: 14.5px;
+    color: #92400e;
+    line-height: 1.6;
+}
+
+/* ---------- Form Group ---------- */
+.cuttin-form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-bottom: 28px;
+}
+
+.xax-form-label {
+    font-size: 15px;
+    font-weight: 600;
+    color: #1f2937;
+}
+
+.cuttin-form-helper {
+    font-size: 13.5px;
+    color: #6b7280;
+}
+
+/* ---------- Radio & Checkbox ---------- */
+.cuttin-radio-group,
+.cuttin-checkbox-group {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.xax-radio-item,
+.xax-checkbox-item {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 14.5px;
+    color: #374151;
+}
+
+input[type="radio"],
+input[type="checkbox"] {
+    width: 18px;
+    height: 18px;
+    cursor: pointer;
+    accent-color: #2563eb;
+    transition: all 0.2s ease;
+}
+
+/* ---------- Ministry Grid ---------- */
+.cuttin-ministry-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 20px;
+    margin-top: 12px;
+}
+
+.xax-ministry-card {
+    background: #ffffff;
+    border: 2px solid #e5e7eb;
+    border-radius: 14px;
+    padding: 24px;
+    text-align: center;
+    transition: all 0.3s ease;
+    cursor: pointer;
+    position: relative;
+}
+
+.xax-ministry-card:hover {
+    border-color: #2563eb;
+    background: #f0f6ff;
+    transform: translateY(-4px);
+    box-shadow: 0 8px 16px rgba(37, 99, 235, 0.1);
+}
+
+.xax-ministry-card.selected {
+    border-color: #2563eb;
+    background: #eff6ff;
+    box-shadow: 0 6px 16px rgba(37, 99, 235, 0.15);
+}
+
+.cuttin-ministry-icon {
+    font-size: 34px;
+    margin-bottom: 10px;
+    transition: transform 0.3s ease;
+}
+
+.xax-ministry-card:hover .cuttin-ministry-icon {
+    transform: scale(1.15);
+}
+
+.xax-ministry-name {
+    font-size: 15.5px;
+    font-weight: 600;
+    color: #1f2937;
+}
+
+/* ---------- Form Error ---------- */
+.xax-form-error {
+    color: #dc2626;
+    font-size: 13px;
+    margin-top: 4px;
+    display: none;
+}
+
+/* ---------- Buttons ---------- */
+.cuttin-form-actions {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 32px;
+}
+
+.cuttin-btn {
+    padding: 12px 28px;
+    font-size: 15px;
+    font-weight: 600;
+    border-radius: 10px;
+    border: none;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.cuttin-btn-primary {
+    background: #2563eb;
+    color: #ffffff;
+    box-shadow: 0 4px 10px rgba(37, 99, 235, 0.2);
+}
+
+.cuttin-btn-primary:hover {
+    background: #1d4ed8;
+    transform: translateY(-1px);
+}
+
+.cuttin-btn-secondary {
+    background: #f3f4f6;
+    color: #1f2937;
+}
+
+.cuttin-btn-secondary:hover {
+    background: #e5e7eb;
+    transform: translateY(-1px);
+}
+ /* Info card with subtle gradients */
+ .cuttin-info-card {
+     padding: 20px 24px;
+     background: linear-gradient(135deg, #eff6ff 0%, #dbeafe 100%);
+     border-radius: 12px;
+     border-left: 5px solid #2563eb;
+     margin-bottom: 32px;
+ }
+
+ .cuttin-info-card.warning {
+     background: linear-gradient(135deg, #fef3c7 0%, #fef9c3 100%);
+     border-left-color: #d97706;
+ }
+
+ .xax-info-card-title {
+     font-size: 15px;
+     font-weight: 600;
+     color: #1f2937;
+     margin-bottom: 8px;
+ }
+
+ .xax-info-card-text {
+     font-size: 14px;
+     color: #4b5563;
+     line-height: 1.6;
+ }
+
+ /* Family member list with clean layout */
+ .cuttin-family-member-list {
+     display: flex;
+     flex-direction: column;
+     gap: 16px;
+     margin-top: 20px;
+ }
+
+ .xax-family-member-item {
+     padding: 20px;
+     background: #f8fafc;
+     border-radius: 12px;
+     border: 1px solid #e5e7eb;
+     display: flex;
+     justify-content: space-between;
+     align-items: center;
+     transition: all 0.3s ease;
+ }
+
+ .xax-family-member-item:hover {
+     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+ }
+
+ .cuttin-family-member-info {
+     display: flex;
+     align-items: center;
+     gap: 16px;
+ }
+
+ .xax-family-member-avatar {
+     width: 48px;
+     height: 48px;
+     border-radius: 50%;
+     background: #e5e7eb;
+     display: flex;
+     align-items: center;
+     justify-content: center;
+     font-size: 18px;
+ }
+
+ .cuttin-family-member-details h4 {
+     font-size: 15px;
+     font-weight: 600;
+     color: #1f2937;
+     margin-bottom: 4px;
+ }
+
+ .cuttin-family-member-details p {
+     font-size: 14px;
+     color: #6b7280;
+ }
+
+ .xax-remove-btn {
+     padding: 8px 16px;
+     border-radius: 8px;
+     border: 1px solid #e5e7eb;
+     background: #ffffff;
+     color: #dc2626;
+     font-size: 14px;
+     cursor: pointer;
+     transition: all 0.3s ease;
+ }
+
+ .xax-remove-btn:hover {
+     background: #fef2f2;
+     border-color: #dc2626;
+ }
+
+ /* Summary section with professional layout */
+ .cuttin-summary-section {
+     padding: 32px;
+     background: #f8fafc;
+     border-radius: 12px;
+     margin-bottom: 32px;
+ }
+
+ .xax-summary-title {
+     font-size: 20px;
+     font-weight: 600;
+     color: #1f2937;
+     margin-bottom: 20px;
+ }
+
+ .cuttin-summary-grid {
+     display: grid;
+     grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+     gap: 20px;
+ }
+
+ .xax-summary-item {
+     display: flex;
+     flex-direction: column;
+     gap: 6px;
+ }
+
+ .cuttin-summary-label {
+     font-size: 13px;
+     color: #6b7280;
+     font-weight: 500;
+     text-transform: uppercase;
+     letter-spacing: 0.05em;
+ }
+
+ .xax-summary-value {
+     font-size: 15px;
+     color: #1f2937;
+     font-weight: 600;
+ }
+
+ /* Form actions with modern buttons */
+ .cuttin-form-actions {
+     display: flex;
+     justify-content: space-between;
+     padding-top: 40px;
+     border-top: 2px solid #f3f4f6;
+ }
+
+ .xax-actions-left,
+ .xax-actions-right {
+     display: flex;
+     gap: 16px;
+ }
+
+ .cuttin-btn {
+     padding: 12px 24px;
+     border-radius: 10px;
+     font-size: 15px;
+     font-weight: 500;
+     cursor: pointer;
+     transition: all 0.3s ease;
+ }
+
+ .cuttin-btn-primary {
+     background: #2563eb;
+     color: #ffffff;
+     border: none;
+ }
+
+ .cuttin-btn-primary:hover {
+     background: #1d4ed8;
+     box-shadow: 0 4px 12px rgba(37, 99, 235, 0.2);
+ }
+
+ .cuttin-btn-secondary {
+     background: #ffffff;
+     color: #4b5563;
+     border: 2px solid #e5e7eb;
+ }
+
+ .cuttin-btn-secondary:hover {
+     background: #f8fafc;
+     border-color: #2563eb;
+     color: #2563eb;
+ }
+
+ /* Success message with celebratory design */
+ .cuttin-success-message {
+     display: none;
+     text-align: center;
+     padding: 64px;
+     background: #ffffff;
+     border-radius: 16px;
+ }
+
+ .cuttin-success-message.show {
+     display: block;
+ }
+
+ .xax-success-icon {
+     width: 96px;
+     height: 96px;
+     background: #d1fae5;
+     border-radius: 50%;
+     display: flex;
+     align-items: center;
+     justify-content: center;
+     font-size: 56px;
+     margin: 0 auto 32px;
+ }
+
+ .cuttin-success-title {
+     font-size: 32px;
+     font-weight: 700;
+     color: #1f2937;
+     margin-bottom: 16px;
+ }
+
+ .xax-success-text {
+     font-size: 16px;
+     color: #6b7280;
+     margin-bottom: 40px;
+     line-height: 1.6;
+ }
+
+ .cuttin-quick-actions {
+     display: flex;
+     gap: 16px;
+     justify-content: center;
+ }
+
+
+ /* Media Query for screens up to 1200px */
+ @media (max-width: 1200px) {
+
+     .xax-progress-container,
+     .xax-form-container {
+         max-width: 100%;
+         padding: 24px 32px;
+     }
+
+     .xax-form-grid {
+         grid-template-columns: 1fr;
+         gap: 24px;
+     }
+
+     .cuttin-form-section {
+         padding: 32px;
+     }
+
+     .cuttin-ministry-grid {
+         grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+     }
+
+     .xax-step {
+         width: 100px;
+     }
+
+     .cuttin-step-label {
+         font-size: 13px;
+         max-width: 80px;
+     }
+
+     .cuttin-section-title {
+         font-size: 24px;
+     }
+
+     .cuttin-summary-grid {
+         grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+     }
+ }
+
+ /* Media Query for screens up to 768px */
+ @media (max-width: 768px) {
+     .xax-page-header {
+         padding: 16px 20px;
+         margin-bottom: 24px;
+     }
+
+     .cuttin-header-content h1 {
+         font-size: 24px;
+     }
+
+     .cuttin-header-content p {
+         font-size: 14px;
+     }
+
+     .cuttin-btn {
+         padding: 8px 16px;
+         font-size: 13px;
+     }
+
+     .xax-progress-container {
+         padding: 20px;
+     }
+
+     .cuttin-form-section {
+         padding: 20px;
+         margin-bottom: 24px;
+     }
+
+     .xax-form-input,
+     .xax-form-select,
+     .xax-form-textarea {
+         padding: 12px;
+         font-size: 14px;
+     }
+
+     .xax-form-label {
+         font-size: 14px;
+     }
+
+     .cuttin-form-helper,
+     .xax-form-error {
+         font-size: 12px;
+     }
+
+     .cuttin-info-card {
+         padding: 16px;
+     }
+
+     .xax-info-card-title {
+         font-size: 14.5px;
+     }
+
+     .xax-info-card-text {
+         font-size: 13.5px;
+     }
+
+     .cuttin-family-member-item {
+         flex-direction: column;
+         align-items: flex-start;
+         gap: 12px;
+     }
+
+     .xax-family-member-avatar {
+         width: 40px;
+         height: 40px;
+         font-size: 16px;
+     }
+
+     .cuttin-success-message {
+         padding: 32px;
+     }
+
+     .cuttin-success-title {
+         font-size: 28px;
+     }
+
+     .xax-success-icon {
+         width: 80px;
+         height: 80px;
+         font-size: 48px;
+     }
+
+     .cuttin-quick-actions {
+         flex-direction: column;
+         gap: 12px;
+     }
+ }
+
+
+ /* Media Query for screens up to 480px */
+ @media (max-width: 480px) {
+     .xax-page-header {
+         padding: 10px 12px;
+         margin-bottom: 20px;
+         border-radius: 10px;
+     }
+
+     .cuttin-header-content h1 {
+         font-size: 18px;
+         margin-bottom: 4px;
+     }
+
+     .cuttin-header-content p {
+         font-size: 12px;
+     }
+
+     .xax-header-actions {
+         flex-direction: row;
+         /* Keep buttons on the same row */
+         gap: 6px;
+         /* Reduce gap for smaller screens */
+         justify-content: flex-end;
+         /* Align buttons to the right */
+         flex-wrap: nowrap;
+         /* Prevent wrapping */
+     }
+
+     .cuttin-btn {
+         padding: 6px 8px;
+         /* Slightly smaller padding for compact fit */
+         font-size: 11.5px;
+         /* Smaller font size */
+         gap: 4px;
+         /* Reduce icon-text gap */
+     }
+
+     /* Other styles unchanged */
+     .xax-progress-container {
+         padding: 12px;
+         margin-bottom: 20px;
+     }
+
+     .xax-step {
+         width: 50px;
+     }
+
+     .cuttin-step-circle {
+         width: 28px;
+         height: 28px;
+         font-size: 12px;
+         margin-bottom: 8px;
+     }
+
+     .cuttin-step-label {
+         font-size: 11px;
+         max-width: 50px;
+     }
+
+     .cuttin-form-section {
+         padding: 12px;
+         margin-bottom: 20px;
+         border-radius: 12px;
+     }
+
+     .cuttin-section-title {
+         font-size: 18px;
+         margin-bottom: 8px;
+     }
+
+     .cuttin-section-subtitle {
+         font-size: 12.5px;
+     }
+
+     .xax-form-grid {
+         gap: 12px;
+     }
+
+     .cuttin-form-group {
+         gap: 6px;
+         margin-bottom: 16px;
+     }
+
+     .xax-form-label {
+         font-size: 13px;
+     }
+
+     .xax-form-input,
+     .xax-form-select,
+     .xax-form-textarea {
+         padding: 10px;
+         font-size: 13px;
+         border-radius: 8px;
+     }
+
+     .xax-form-textarea {
+         min-height: 120px;
+     }
+
+     .cuttin-form-helper,
+     .xax-form-error {
+         font-size: 11.5px;
+     }
+
+     .cuttin-photo-upload {
+         gap: 20px;
+     }
+
+     .xax-photo-preview {
+         width: 80px;
+         height: 80px;
+         border-width: 3px;
+     }
+
+     .cuttin-photo-placeholder {
+         font-size: 32px;
+     }
+
+     .xax-file-input-label {
+         padding: 10px 20px;
+         font-size: 13px;
+     }
+
+     .cuttin-radio-group,
+     .cuttin-checkbox-group {
+         gap: 16px;
+     }
+
+     .xax-radio-item,
+     .xax-checkbox-item {
+         font-size: 13px;
+     }
+
+     .xax-radio-item input,
+     .xax-checkbox-item input {
+         width: 16px;
+         height: 16px;
+     }
+
+     .cuttin-ministry-grid {
+         gap: 12px;
+     }
+
+     .xax-ministry-card {
+         padding: 12px;
+     }
+
+     .cuttin-ministry-icon {
+         font-size: 24px;
+         margin-bottom: 8px;
+     }
+
+     .xax-ministry-name {
+         font-size: 13px;
+     }
+
+     .cuttin-info-card {
+         padding: 12px;
+         margin-bottom: 20px;
+     }
+
+     .xax-info-card-title {
+         font-size: 13.5px;
+     }
+
+     .xax-info-card-text {
+         font-size: 12.5px;
+     }
+
+     .xax-family-member-item {
+         padding: 16px;
+     }
+
+     .xax-family-member-avatar {
+         width: 36px;
+         height: 36px;
+         font-size: 14px;
+     }
+
+     .cuttin-family-member-details h4 {
+         font-size: 13px;
+     }
+
+     .cuttin-family-member-details p {
+         font-size: 12px;
+     }
+
+     .xax-remove-btn {
+         padding: 6px 12px;
+         font-size: 12px;
+     }
+
+     .cuttin-summary-section {
+         padding: 20px;
+     }
+
+     .xax-summary-title {
+         font-size: 18px;
+         margin-bottom: 16px;
+     }
+
+     .cuttin-summary-label {
+         font-size: 12px;
+     }
+
+     .xax-summary-value {
+         font-size: 13px;
+     }
+
+     .cuttin-form-actions {
+         padding-top: 20px;
+         gap: 12px;
+     }
+
+     .cuttin-success-message {
+         padding: 24px;
+     }
+
+     .cuttin-success-title {
+         font-size: 20px;
+     }
+
+     .xax-success-icon {
+         width: 64px;
+         height: 64px;
+         font-size: 40px;
+     }
+
+     .xax-success-text {
+         font-size: 13px;
+     }
+ }
+
+ /* Media Query for screens up to 420px */
+ @media (max-width: 420px) {
+     .xax-page-header {
+         padding: 8px 10px;
+     }
+
+     .cuttin-header-content h1 {
+         font-size: 16px;
+     }
+
+     .cuttin-header-content p {
+         font-size: 11.5px;
+     }
+
+     .xax-header-actions {
+         flex-direction: row;
+         /* Keep buttons on the same row */
+         gap: 5px;
+         /* Further reduce gap */
+         justify-content: flex-end;
+         flex-wrap: nowrap;
+     }
+
+     .cuttin-btn {
+         padding: 5px 7px;
+         /* Tighter padding */
+         font-size: 11px;
+         /* Smaller font */
+     }
+
+     /* Other styles unchanged */
+     .xax-progress-container {
+         padding: 10px;
+     }
+
+     .xax-step {
+         width: 45px;
+     }
+
+     .cuttin-step-circle {
+         width: 24px;
+         height: 24px;
+         font-size: 11px;
+     }
+
+     .cuttin-step-label {
+         font-size: 10px;
+         max-width: 45px;
+     }
+
+     .cuttin-form-section {
+         padding: 10px;
+     }
+
+     .cuttin-section-title {
+         font-size: 16px;
+     }
+
+     .cuttin-section-subtitle {
+         font-size: 12px;
+     }
+
+     .xax-form-input,
+     .xax-form-select,
+     .xax-form-textarea {
+         padding: 8px;
+         font-size: 12.5px;
+     }
+
+     .xax-form-label {
+         font-size: 12.5px;
+     }
+
+     .cuttin-form-helper,
+     .xax-form-error {
+         font-size: 11px;
+     }
+
+     .xax-photo-preview {
+         width: 70px;
+         height: 70px;
+     }
+
+     .cuttin-photo-placeholder {
+         font-size: 28px;
+     }
+
+     .xax-file-input-label {
+         padding: 8px 16px;
+         font-size: 12.5px;
+     }
+
+     .cuttin-ministry-icon {
+         font-size: 22px;
+     }
+
+     .xax-ministry-name {
+         font-size: 12.5px;
+     }
+
+     .cuttin-info-card {
+         padding: 10px;
+     }
+
+     .xax-family-member-item {
+         padding: 12px;
+     }
+
+     .cuttin-success-title {
+         font-size: 18px;
+     }
+
+     .xax-success-icon {
+         width: 56px;
+         height: 56px;
+         font-size: 36px;
+     }
+ }
+
+ /* Media Query for screens up to 360px */
+ @media (max-width: 360px) {
+     .xax-page-header {
+         padding: 6px 8px;
+         margin-bottom: 16px;
+     }
+
+     .cuttin-header-content h1 {
+         font-size: 15px;
+     }
+
+     .cuttin-header-content p {
+         font-size: 11px;
+     }
+
+     .xax-header-actions {
+         flex-direction: row;
+         /* Keep buttons on the same row */
+         gap: 4px;
+         /* Minimal gap */
+         justify-content: flex-end;
+         flex-wrap: nowrap;
+     }
+
+     .cuttin-btn {
+         padding: 5px 6px;
+         /* Minimal padding */
+         font-size: 10.5px;
+         /* Smallest font size */
+         border-radius: 6px;
+         /* Slightly smaller radius */
+     }
+
+     /* Other styles unchanged */
+     .xax-progress-container {
+         padding: 8px;
+     }
+
+     .xax-step {
+         width: 40px;
+     }
+
+     .cuttin-step-circle {
+         width: 22px;
+         height: 22px;
+         font-size: 10px;
+         border-width: 2px;
+     }
+
+     .cuttin-step-label {
+         font-size: 9.5px;
+         max-width: 40px;
+     }
+
+     .cuttin-form-section {
+         padding: 8px;
+         border-radius: 10px;
+     }
+
+     .cuttin-section-title {
+         font-size: 15px;
+     }
+
+     .cuttin-section-subtitle {
+         font-size: 11.5px;
+     }
+
+     .xax-form-grid {
+         gap: 10px;
+     }
+
+     .cuttin-form-group {
+         margin-bottom: 12px;
+     }
+
+     .xax-form-label {
+         font-size: 12px;
+     }
+
+     .xax-form-input,
+     .xax-form-select,
+     .xax-form-textarea {
+         padding: 7px;
+         font-size: 12px;
+         border-radius: 6px;
+     }
+
+     .xax-form-textarea {
+         min-height: 100px;
+     }
+
+     .cuttin-form-helper,
+     .xax-form-error {
+         font-size: 10.5px;
+     }
+
+     .xax-photo-preview {
+         width: 60px;
+         height: 60px;
+         border-width: 2px;
+     }
+
+     .cuttin-photo-placeholder {
+         font-size: 24px;
+     }
+
+     .xax-file-input-label {
+         padding: 7px 12px;
+         font-size: 12px;
+     }
+
+     .cuttin-radio-group,
+     .cuttin-checkbox-group {
+         gap: 12px;
+     }
+
+     .xax-radio-item,
+     .xax-checkbox-item {
+         font-size: 12px;
+     }
+
+     .xax-radio-item input,
+     .xax-checkbox-item input {
+         width: 14px;
+         height: 14px;
+     }
+
+     .cuttin-ministry-grid {
+         gap: 10px;
+     }
+
+     .xax-ministry-card {
+         padding: 10px;
+     }
+
+     .cuttin-ministry-icon {
+         font-size: 20px;
+     }
+
+     .xax-ministry-name {
+         font-size: 12px;
+     }
+
+     .cuttin-info-card {
+         padding: 8px;
+         margin-bottom: 16px;
+     }
+
+     .xax-info-card-title {
+         font-size: 12.5px;
+     }
+
+     .xax-info-card-text {
+         font-size: 12px;
+     }
+
+     .xax-family-member-item {
+         padding: 10px;
+     }
+
+     .xax-family-member-avatar {
+         width: 32px;
+         height: 32px;
+         font-size: 12px;
+     }
+
+     .cuttin-family-member-details h4 {
+         font-size: 12px;
+     }
+
+     .cuttin-family-member-details p {
+         font-size: 11px;
+     }
+
+     .xax-remove-btn {
+         padding: 5px 10px;
+         font-size: 11px;
+     }
+
+     .cuttin-summary-section {
+         padding: 16px;
+     }
+
+     .xax-summary-title {
+         font-size: 16px;
+     }
+
+     .cuttin-summary-label {
+         font-size: 11px;
+     }
+
+     .xax-summary-value {
+         font-size: 12px;
+     }
+
+     .cuttin-form-actions {
+         padding-top: 16px;
+     }
+
+     .cuttin-success-message {
+         padding: 20px;
+     }
+
+     .cuttin-success-title {
+         font-size: 16px;
+     }
+
+     .xax-success-icon {
+         width: 48px;
+         height: 48px;
+         font-size: 32px;
+     }
+
+     .xax-success-text {
+         font-size: 12px;
+     }
+
+     .cuttin-quick-actions {
+         gap: 10px;
+     }
+ }
