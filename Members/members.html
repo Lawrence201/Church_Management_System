@@ -14,15 +14,30 @@
         <!-- Sidebar -->
         <div class="sidebar">
             <div class="logo">
-                <div class="logo-icon">
-                    <img src="../church.png" alt="ChurchFlow Logo">
-                </div>
-
-
+            
+                <svg class="church-logo" xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24" fill="none"
+                    stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M10 9h4" />
+                    <path d="M12 7v5" />
+                    <path d="M14 22v-4a2 2 0 0 0-4 0v4" />
+                    <path d="M18 22V5.618a1 1 0 0 0-.553-.894l-4.553-2.277a2 2 0 0 0-1.788 0L6.553 4.724A1 1 0 0 0 6 5.618V22" />
+                    <path d="m18 7 3.447 1.724a1 1 0 0 1 .553.894V20a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V9.618a1 1 0 0 1 .553-.894L6 7" />
+                </svg>
+            
+            
                 <div class="logo-text">
                     <h3>Church</h3>
                     <p>Management System</p>
                 </div>
+            
+                <!-- Close button for mobile -->
+                <button class="sidebar-close" onclick="toggleSidebar()">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                        stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <line x1="18" y1="6" x2="6" y2="18"></line>
+                        <line x1="6" y1="6" x2="18" y2="18"></line>
+                    </svg>
+                </button>
             </div>
             <div class="sidebar-content">
                 <div class="menu-section">
@@ -200,7 +215,7 @@
                             </svg></span>
                         <span>Add Member</span>
                     </a>
-                    <a href="#" class="menu-item">
+                    <a href="../Add_Event/New_Event.html" class="menu-item">
                         <span><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
                                 fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
                                 stroke-linejoin="round" class="lucide lucide-calendar h-5 w-5"
@@ -215,13 +230,13 @@
                             </svg></span>
                         <span>New Event</span>
                     </a>
-                    <a href="#" class="menu-item">
+                    <a href="../Record_Donations/record_donations.html" class="menu-item">
                         <span class="icon">
                             <img src="../Assests/records.png" alt="AI Insights">
                         </span>
                         <span>Record Donation</span>
                     </a>
-                    <a href="#" class="menu-item">
+                    <a href="../Send_Message/send_message.html" class="menu-item">
                         <span><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
                                 fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
                                 stroke-linejoin="round" class="lucide lucide-bell h-5 w-5"
@@ -238,7 +253,7 @@
 
                 <div class="menu-section">
                     <div class="menu-label"></div>
-                    <a href="#" class="menu-item">
+                    <a href="../Settings/settings.html" class="menu-item">
                         <span><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
                                 fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
                                 stroke-linejoin="round" class="lucide lucide-settings h-5 w-5"
@@ -453,24 +468,24 @@
                         </div>
                         <div class="cf-stat-unit">
                             <h2 class="cf-color-secondary">67</h2>
-                            <p>New This Month</p>
+                            <p>Active Members</p>
                         </div>
                         <div class="cf-stat-unit">
                             <h2 class="cf-color-accent">23</h2>
-                            <p>Need Follow-up</p>
+                            <p>Birthday Month</p>
                         </div>
                         <!-- New Metrics -->
                         <div class="cf-stat-unit">
                             <h2 class="cf-color-info">15</h2>
-                            <p>Birthdays This Month</p>
+                            <p>Males</p>
                         </div>
                         <div class="cf-stat-unit">
                             <h2 class="cf-color-success">312</h2>
-                            <p>Active Members</p>
+                            <p>Females</p>
                         </div>
                         <div class="cf-stat-unit">
                             <h2 class="cf-color-warning">80</h2>
-                            <p>Inactive Members</p>
+                            <p>Children</p>
                         </div>
                     </div>
                 </div>
@@ -501,7 +516,7 @@
                         <div class="cf-tabs-group">
                             <button class="cf-tab-item cf-active" onclick="filterMembers('all')">All Members</button>
                             <button class="cf-tab-item" onclick="filterMembers('active')">Active</button>
-                            <button class="cf-tab-item" onclick="filterMembers('new')">New Members</button>
+                            <button class="cf-tab-item" onclick="filterMembers('new')">Visitors</button>
                             <button class="cf-tab-item" onclick="filterMembers('inactive')">Inactive</button>
                         </div>
                 
@@ -536,7 +551,7 @@
                                 </th>
                                 <th onclick="sortTable('name')">Member</th>
                                 <th>Contact</th>
-                                <th>Group</th>
+                                <th>Groups</th>
                                 <th onclick="sortTable('status')">Status</th>
                                 <th>Engagement</th>
                                 <th onclick="sortTable('attendance')">Attendance</th>

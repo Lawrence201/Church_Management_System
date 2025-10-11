@@ -1,0 +1,1685 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Send Message - Church Management System</title>
+    <link rel="stylesheet" href="../style.css">
+    <style>
+        /* ---------- General Page Layout ---------- */
+        .cf-message-container {
+            padding: 32px;
+            background: #f9fafb;
+            font-family: "Inter", "Segoe UI", Roboto, sans-serif;
+        }
+
+        /* ---------- Header ---------- */
+        .cf-message-header {
+            margin-bottom: 40px;
+            text-align: left;
+        }
+
+        .cf-message-header h1 {
+            font-size: 30px;
+            font-weight: 700;
+            color: #0f172a;
+            margin-bottom: 10px;
+            letter-spacing: -0.5px;
+        }
+
+        .cf-message-header p {
+            color: #64748b;
+            font-size: 15px;
+        }
+
+        /* ---------- Two Column Layout ---------- */
+        .cf-message-layout {
+            display: grid;
+            grid-template-columns: 1fr 350px;
+            gap: 24px;
+        }
+
+        /* ---------- Form Card ---------- */
+        .cf-form-card {
+            background: #ffffff;
+            border-radius: 14px;
+            padding: 36px 40px;
+            box-shadow: 0 4px 16px rgba(15, 23, 42, 0.06);
+            border: 1px solid #f1f5f9;
+            margin-bottom: 28px;
+            transition: box-shadow 0.2s ease, transform 0.1s ease;
+        }
+
+        .cf-form-card:hover {
+            box-shadow: 0 8px 22px rgba(15, 23, 42, 0.1);
+            transform: translateY(-1px);
+        }
+
+        /* ---------- Section Titles ---------- */
+        .cf-form-section-title {
+            font-size: 20px;
+            font-weight: 600;
+            color: #1e293b;
+            margin-bottom: 24px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid #f1f5f9;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .cf-section-icon {
+            width: 24px;
+            height: 24px;
+            color: #3b82f6;
+        }
+
+        /* ---------- Form Layout ---------- */
+        .cf-form-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 28px;
+            margin-bottom: 20px;
+        }
+
+        .cf-form-group {
+            display: flex;
+            flex-direction: column;
+        }
+
+        /* ---------- Labels ---------- */
+        .cf-form-label {
+            font-size: 14px;
+            font-weight: 600;
+            color: #334155;
+            margin-bottom: 8px;
+        }
+
+        .cf-form-label.required::after {
+            content: " *";
+            color: #ef4444;
+        }
+
+        /* ---------- Inputs ---------- */
+        .cf-form-input,
+        .cf-form-select,
+        .cf-form-textarea {
+            padding: 12px 14px;
+            border: 1px solid #e2e8f0;
+            border-radius: 8px;
+            font-size: 14px;
+            color: #1e293b;
+            background: #f8fafc;
+            transition: all 0.25s ease;
+        }
+
+        .cf-form-input:focus,
+        .cf-form-select:focus,
+        .cf-form-textarea:focus {
+            background: #ffffff;
+            border-color: #3b82f6;
+            box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.15);
+            outline: none;
+        }
+
+        .cf-form-textarea {
+            resize: vertical;
+            min-height: 250px;
+            font-family: inherit;
+            line-height: 1.6;
+        }
+
+        .cf-form-hint {
+            font-size: 12px;
+            color: #94a3b8;
+            margin-top: 6px;
+        }
+
+        /* ---------- Character Counter ---------- */
+        .cf-char-counter {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-top: 8px;
+        }
+
+        .cf-char-count {
+            font-size: 12px;
+            color: #64748b;
+        }
+
+        .cf-char-count.warning {
+            color: #f59e0b;
+        }
+
+        .cf-char-count.error {
+            color: #ef4444;
+        }
+
+        /* ---------- Recipient Selection ---------- */
+        .cf-recipient-tabs {
+            display: flex;
+            gap: 8px;
+            margin-bottom: 20px;
+            border-bottom: 2px solid #f1f5f9;
+            padding-bottom: 2px;
+        }
+
+        .cf-recipient-tab {
+            padding: 10px 20px;
+            border: none;
+            background: transparent;
+            color: #64748b;
+            font-size: 14px;
+            font-weight: 600;
+            cursor: pointer;
+            border-bottom: 3px solid transparent;
+            transition: all 0.2s ease;
+        }
+
+        .cf-recipient-tab:hover {
+            color: #3b82f6;
+        }
+
+        .cf-recipient-tab.active {
+            color: #3b82f6;
+            border-bottom-color: #3b82f6;
+        }
+
+        .cf-recipient-panel {
+            display: none;
+        }
+
+        .cf-recipient-panel.active {
+            display: block;
+        }
+
+        /* ---------- Group Selection ---------- */
+        .cf-group-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            gap: 12px;
+        }
+
+        .cf-group-card {
+            padding: 16px;
+            border: 2px solid #e2e8f0;
+            border-radius: 10px;
+            cursor: pointer;
+            transition: all 0.25s ease;
+            background: #f8fafc;
+            position: relative;
+        }
+
+        .cf-group-card:hover {
+            border-color: #3b82f6;
+            background: #eff6ff;
+            transform: translateY(-2px);
+        }
+
+        .cf-group-card.selected {
+            border-color: #3b82f6;
+            background: #eff6ff;
+            box-shadow: 0 4px 12px rgba(59, 130, 246, 0.2);
+        }
+
+        .cf-group-card.selected::after {
+            content: "";
+            position: absolute;
+            top: 8px;
+            right: 8px;
+            width: 24px;
+            height: 24px;
+            background: #3b82f6;
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 14px;
+            font-weight: bold;
+        }
+
+        .cf-group-name {
+            font-weight: 600;
+            color: #1e293b;
+            font-size: 14px;
+            margin-bottom: 4px;
+        }
+
+        .cf-group-count {
+            font-size: 12px;
+            color: #64748b;
+        }
+
+        /* ---------- Member Selection ---------- */
+        .cf-member-search {
+            position: relative;
+            margin-bottom: 16px;
+        }
+
+        .cf-search-icon {
+            position: absolute;
+            left: 12px;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 18px;
+            height: 18px;
+            color: #94a3b8;
+        }
+
+        .cf-member-search input {
+            padding-left: 40px;
+        }
+
+        .cf-member-list {
+            max-height: 400px;
+            overflow-y: auto;
+            border: 1px solid #e2e8f0;
+            border-radius: 8px;
+            background: #ffffff;
+        }
+
+        .cf-member-item {
+            padding: 12px 16px;
+            border-bottom: 1px solid #f1f5f9;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            cursor: pointer;
+            transition: background 0.2s ease;
+        }
+
+        .cf-member-item:last-child {
+            border-bottom: none;
+        }
+
+        .cf-member-item:hover {
+            background: #f8fafc;
+        }
+
+        .cf-member-checkbox {
+            width: 18px;
+            height: 18px;
+            accent-color: #3b82f6;
+            cursor: pointer;
+        }
+
+        .cf-member-avatar {
+            width: 36px;
+            height: 36px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, #3b82f6 0%, #2563eb 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: 600;
+            font-size: 14px;
+        }
+
+        .cf-member-info {
+            flex: 1;
+        }
+
+        .cf-member-name {
+            font-weight: 600;
+            color: #1e293b;
+            font-size: 14px;
+        }
+
+        .cf-member-email {
+            font-size: 12px;
+            color: #64748b;
+        }
+
+        /* ---------- Selected Recipients Counter ---------- */
+        .cf-recipients-counter {
+            background: linear-gradient(135deg, #3b82f6 0%, #2563eb 100%);
+            padding: 16px 20px;
+            border-radius: 10px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 20px;
+            box-shadow: 0 4px 12px rgba(59, 130, 246, 0.25);
+        }
+
+        .cf-counter-label {
+            color: rgba(255, 255, 255, 0.9);
+            font-size: 13px;
+            font-weight: 500;
+        }
+
+        .cf-counter-value {
+            color: #ffffff;
+            font-size: 28px;
+            font-weight: 700;
+        }
+
+        /* ---------- Message Templates ---------- */
+        .cf-template-grid {
+            display: grid;
+            gap: 12px;
+        }
+
+        .cf-template-card {
+            padding: 14px 16px;
+            border: 2px solid #e2e8f0;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            background: #f8fafc;
+        }
+
+        .cf-template-card:hover {
+            border-color: #3b82f6;
+            background: #eff6ff;
+        }
+
+        .cf-template-name {
+            font-weight: 600;
+            color: #1e293b;
+            font-size: 14px;
+            margin-bottom: 4px;
+        }
+
+        .cf-template-desc {
+            font-size: 12px;
+            color: #64748b;
+        }
+
+        /* ---------- Message Type Selection ---------- */
+        .cf-message-types {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 12px;
+            margin-bottom: 20px;
+        }
+
+        .cf-message-type {
+            padding: 14px;
+            border: 2px solid #e2e8f0;
+            border-radius: 10px;
+            text-align: center;
+            cursor: pointer;
+            transition: all 0.25s ease;
+            background: #f8fafc;
+        }
+
+        .cf-message-type:hover {
+            border-color: #3b82f6;
+            background: #eff6ff;
+            transform: scale(1.05);
+        }
+
+        .cf-message-type.selected {
+            border-color: #3b82f6;
+            background: #eff6ff;
+            box-shadow: 0 4px 12px rgba(59, 130, 246, 0.2);
+        }
+
+        .cf-type-icon {
+            font-size: 28px;
+            margin-bottom: 8px;
+        }
+
+        .cf-type-text {
+            font-size: 13px;
+            font-weight: 600;
+            color: #334155;
+        }
+
+        /* ---------- Scheduling ---------- */
+        .cf-schedule-toggle {
+            background: #f8fafc;
+            padding: 16px;
+            border-radius: 8px;
+            border: 1px solid #e2e8f0;
+            margin-bottom: 16px;
+        }
+
+        .cf-schedule-options {
+            display: none;
+            margin-top: 16px;
+            padding-top: 16px;
+            border-top: 1px solid #e2e8f0;
+            animation: slideIn 0.3s ease;
+        }
+
+        .cf-schedule-options.show {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 16px;
+        }
+
+        /* ---------- Preview Panel ---------- */
+        .cf-preview-panel {
+            position: sticky;
+            top: 100px;
+        }
+
+        .cf-preview-card {
+            background: #ffffff;
+            border-radius: 14px;
+            padding: 24px;
+            box-shadow: 0 4px 16px rgba(15, 23, 42, 0.06);
+            border: 1px solid #f1f5f9;
+        }
+
+        .cf-preview-title {
+            font-size: 16px;
+            font-weight: 600;
+            color: #1e293b;
+            margin-bottom: 16px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .cf-preview-content {
+            background: #f8fafc;
+            border: 1px solid #e2e8f0;
+            border-radius: 8px;
+            padding: 16px;
+            min-height: 200px;
+            margin-bottom: 16px;
+        }
+
+        .cf-preview-subject {
+            font-weight: 600;
+            color: #1e293b;
+            font-size: 14px;
+            margin-bottom: 12px;
+            padding-bottom: 8px;
+            border-bottom: 1px solid #e2e8f0;
+        }
+
+        .cf-preview-body {
+            color: #475569;
+            font-size: 13px;
+            line-height: 1.6;
+            white-space: pre-wrap;
+        }
+
+        .cf-preview-empty {
+            color: #94a3b8;
+            font-size: 13px;
+            font-style: italic;
+            text-align: center;
+            padding: 40px 20px;
+        }
+
+        .cf-preview-stats {
+            display: grid;
+            gap: 12px;
+        }
+
+        .cf-stat-row {
+            display: flex;
+            justify-content: space-between;
+            padding: 10px 0;
+            border-bottom: 1px solid #f1f5f9;
+        }
+
+        .cf-stat-row:last-child {
+            border-bottom: none;
+        }
+
+        .cf-stat-label {
+            font-size: 13px;
+            color: #64748b;
+        }
+
+        .cf-stat-value {
+            font-size: 13px;
+            font-weight: 600;
+            color: #1e293b;
+        }
+
+        /* ---------- Attachments ---------- */
+        .cf-attachment-zone {
+            border: 2px dashed #cbd5e1;
+            border-radius: 10px;
+            padding: 24px;
+            text-align: center;
+            cursor: pointer;
+            background: #f8fafc;
+            transition: all 0.25s ease;
+        }
+
+        .cf-attachment-zone:hover {
+            border-color: #3b82f6;
+            background: #eff6ff;
+        }
+
+        .cf-attachment-icon {
+            font-size: 36px;
+            margin-bottom: 8px;
+        }
+
+        .cf-attachment-text {
+            font-size: 14px;
+            color: #475569;
+            font-weight: 500;
+        }
+
+        .cf-attachment-hint {
+            font-size: 12px;
+            color: #94a3b8;
+            margin-top: 4px;
+        }
+
+        .cf-attachment-list {
+            display: grid;
+            gap: 8px;
+            margin-top: 16px;
+        }
+
+        .cf-attachment-item {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            padding: 10px 12px;
+            background: #f1f5f9;
+            border-radius: 6px;
+        }
+
+        .cf-attachment-name {
+            flex: 1;
+            font-size: 13px;
+            color: #1e293b;
+            font-weight: 500;
+        }
+
+        .cf-attachment-size {
+            font-size: 12px;
+            color: #64748b;
+        }
+
+        .cf-attachment-remove {
+            cursor: pointer;
+            color: #ef4444;
+            font-weight: bold;
+        }
+
+        /* ---------- Buttons ---------- */
+        .cf-form-actions {
+            display: flex;
+            justify-content: flex-end;
+            gap: 12px;
+            margin-top: 32px;
+            padding-top: 24px;
+            border-top: 1px solid #e2e8f0;
+        }
+
+        .cf-btn {
+            padding: 12px 26px;
+            border-radius: 8px;
+            font-size: 14px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.25s ease;
+            border: none;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .cf-btn-cancel {
+            background: #ffffff;
+            color: #475569;
+            border: 1px solid #e2e8f0;
+        }
+
+        .cf-btn-cancel:hover {
+            background: #f8fafc;
+            border-color: #cbd5e1;
+        }
+
+        .cf-btn-draft {
+            background: #f1f5f9;
+            color: #334155;
+        }
+
+        .cf-btn-draft:hover {
+            background: #e2e8f0;
+        }
+
+        .cf-btn-primary {
+            background: #3b82f6;
+            color: #ffffff;
+            box-shadow: 0 4px 12px rgba(59, 130, 246, 0.25);
+        }
+
+        .cf-btn-primary:hover {
+            background: #2563eb;
+            box-shadow: 0 6px 18px rgba(37, 99, 235, 0.3);
+            transform: translateY(-2px);
+        }
+
+        .cf-btn-icon {
+            width: 18px;
+            height: 18px;
+        }
+
+        /* ---------- Checkbox Groups ---------- */
+        .cf-checkbox-group {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin-top: 10px;
+        }
+
+        .cf-checkbox {
+            width: 18px;
+            height: 18px;
+            accent-color: #3b82f6;
+            cursor: pointer;
+        }
+
+        .cf-checkbox-label {
+            font-size: 14px;
+            color: #334155;
+            cursor: pointer;
+        }
+
+        /* ---------- Success Message ---------- */
+        .cf-success-modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(15, 23, 42, 0.5);
+            z-index: 1000;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .cf-success-modal.show {
+            display: flex;
+        }
+
+        .cf-success-content {
+            background: white;
+            border-radius: 16px;
+            padding: 40px;
+            max-width: 450px;
+            text-align: center;
+            box-shadow: 0 20px 60px rgba(15, 23, 42, 0.3);
+        }
+
+        .cf-success-icon {
+            font-size: 64px;
+            margin-bottom: 16px;
+        }
+
+        .cf-success-title {
+            font-size: 24px;
+            font-weight: 700;
+            color: #0f172a;
+            margin-bottom: 12px;
+        }
+
+        .cf-success-text {
+            font-size: 15px;
+            color: #64748b;
+            margin-bottom: 24px;
+        }
+
+        /* ---------- Responsive Design ---------- */
+        @media (max-width: 1200px) {
+            .cf-message-layout {
+                grid-template-columns: 1fr;
+            }
+
+            .cf-preview-panel {
+                position: relative;
+                top: 0;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .cf-form-card {
+                padding: 24px;
+            }
+
+            .cf-message-header h1 {
+                font-size: 26px;
+            }
+
+            .cf-group-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .cf-message-types {
+                grid-template-columns: 1fr;
+            }
+
+            .cf-form-actions {
+                flex-direction: column;
+            }
+
+            .cf-btn {
+                width: 100%;
+                justify-content: center;
+            }
+
+            .cf-recipient-tabs {
+                overflow-x: auto;
+            }
+        }
+
+        /* ---------- Animations ---------- */
+        @keyframes slideIn {
+            from {
+                opacity: 0;
+                transform: translateY(-10px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <!-- Sidebar -->
+        <div class="sidebar">
+            <div class="logo">
+            
+                <svg class="church-logo" xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24" fill="none"
+                    stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M10 9h4" />
+                    <path d="M12 7v5" />
+                    <path d="M14 22v-4a2 2 0 0 0-4 0v4" />
+                    <path d="M18 22V5.618a1 1 0 0 0-.553-.894l-4.553-2.277a2 2 0 0 0-1.788 0L6.553 4.724A1 1 0 0 0 6 5.618V22" />
+                    <path d="m18 7 3.447 1.724a1 1 0 0 1 .553.894V20a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V9.618a1 1 0 0 1 .553-.894L6 7" />
+                </svg>
+            
+            
+                <div class="logo-text">
+                    <h3>Church</h3>
+                    <p>Management System</p>
+                </div>
+            
+                <!-- Close button for mobile -->
+                <button class="sidebar-close" onclick="toggleSidebar()">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                        stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <line x1="18" y1="6" x2="6" y2="18"></line>
+                        <line x1="6" y1="6" x2="18" y2="18"></line>
+                    </svg>
+                </button>
+            </div>
+            <div class="sidebar-content">
+                <div class="menu-section">
+                    <div class="menu-label">Main Menu</div>
+                    <a href="../index.html" class="menu-item">
+                        <span><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                stroke-linejoin="round">
+                                <rect width="7" height="9" x="3" y="3" rx="1"></rect>
+                                <rect width="7" height="5" x="14" y="3" rx="1"></rect>
+                                <rect width="7" height="9" x="14" y="12" rx="1"></rect>
+                                <rect width="7" height="5" x="3" y="16" rx="1"></rect>
+                            </svg></span>
+                        <span>Dashboard</span>
+                    </a>
+                    <a href="../Members/members.html" class="menu-item">
+                        <span>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                stroke-linejoin="round">
+                                <path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"></path>
+                                <circle cx="9" cy="7" r="4"></circle>
+                                <path d="M22 21v-2a4 4 0 0 0-3-3.87"></path>
+                                <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
+                            </svg>
+                        </span>
+                        <span>Members</span>
+                    </a>
+                    <a href="../Events/events.html" class="menu-item">
+                        <span>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                stroke-linejoin="round">
+                                <path d="M8 2v4"></path>
+                                <path d="M16 2v4"></path>
+                                <rect width="18" height="18" x="3" y="4" rx="2"></rect>
+                                <path d="M3 10h18"></path>
+                            </svg>
+                        </span>
+                        <span>Events</span>
+                    </a>
+                    <a href="../Finance/finance.html" class="menu-item">
+                        <span>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                stroke-linejoin="round">
+                                <line x1="12" x2="12" y1="2" y2="22"></line>
+                                <path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"></path>
+                            </svg>
+                        </span>
+                        <span>Finances</span>
+                    </a>
+                    <a href="../Communication/communication.html" class="menu-item">
+                        <span><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                stroke-linejoin="round">
+                                <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path>
+                            </svg>
+                        </span>
+                        <span>Communications</span>
+                    </a>
+                    <a href="../Attendance/attendance.html" class="menu-item">
+                        <span>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                stroke-linejoin="round">
+                                <path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"></path>
+                                <circle cx="9" cy="7" r="4"></circle>
+                                <polyline points="16 11 18 13 22 9"></polyline>
+                            </svg>
+                        </span>
+                        <span>Attendance</span>
+                    </a>
+                    <a href="../Report/report.html" class="menu-item">
+                        <span><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                stroke-linejoin="round">
+                                <path d="M3 3v16a2 2 0 0 0 2 2h16"></path>
+                                <path d="M18 17V9"></path>
+                                <path d="M13 17V5"></path>
+                                <path d="M8 17v-3"></path>
+                            </svg>
+                        </span>
+                        <span>Reports</span>
+                    </a>
+                </div>
+
+                <div class="menu-section">
+                    <div class="menu-label">AI Features</div>
+                    <a href="../AI/ai_insight.html" class="menu-item has-badge">
+                        <span class="icon">
+                            <img src="../Assests/creative.png" alt="AI Insights">
+                        </span>
+                        <span>AI Insights</span>
+                        <span class="badge">New</span>
+                    </a>
+                    <a href="../AI/members_analytics.html" class="menu-item has-badge">
+                        <span><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                stroke-linejoin="round">
+                                <path d="M3 3v16a2 2 0 0 0 2 2h16"></path>
+                                <path d="M18 17V9"></path>
+                                <path d="M13 17V5"></path>
+                                <path d="M8 17v-3"></path>
+                            </svg></span>
+                        <span>Member Analytics</span>
+                        <span class="badge">New</span>
+                    </a>
+                    <a href="../AI/ai_smart_report.html" class="menu-item has-badge">
+                        <span><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                stroke-linejoin="round">
+                                <path d="M15 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7Z"></path>
+                                <path d="M14 2v4a2 2 0 0 0 2 2h4"></path>
+                                <path d="M10 9H8"></path>
+                                <path d="M16 13H8"></path>
+                                <path d="M16 17H8"></path>
+                            </svg></span>
+                        <span>Smart Reports</span>
+                        <span class="badge">New</span>
+                    </a>
+                </div>
+
+                <div class="menu-section">
+                    <div class="menu-label">Quick Actions</div>
+                    <a href="../Add_Members/enroll_members.html" class="menu-item">
+                        <span><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                stroke-linejoin="round">
+                                <path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"></path>
+                                <circle cx="9" cy="7" r="4"></circle>
+                                <line x1="19" x2="19" y1="8" y2="14"></line>
+                                <line x1="22" x2="16" y1="11" y2="11"></line>
+                            </svg></span>
+                        <span>Add Member</span>
+                    </a>
+                    <a href="../Add_Event/New_Event.html" class="menu-item">
+                        <span><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                stroke-linejoin="round">
+                                <path d="M8 2v4"></path>
+                                <path d="M16 2v4"></path>
+                                <rect width="18" height="18" x="3" y="4" rx="2"></rect>
+                                <path d="M3 10h18"></path>
+                            </svg></span>
+                        <span>New Event</span>
+                    </a>
+                    <a href="../Record_Donations/record_donations.html" class="menu-item">
+                        <span class="icon">
+                            <img src="../Assests/records.png" alt="Record Donation">
+                        </span>
+                        <span>Record Donation</span>
+                    </a>
+                    <a href="#" class="menu-item active">
+                        <span><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                stroke-linejoin="round">
+                                <path d="M6 8a6 6 0 0 1 12 0c0 7 3 9 3 9H3s3-2 3-9"></path>
+                                <path d="M10.3 21a1.94 1.94 0 0 0 3.4 0"></path>
+                            </svg></span>
+                        <span>Send Message</span>
+                    </a>
+                </div>
+
+                <div class="menu-section">
+                    <div class="menu-label"></div>
+                    <a href="../Settings/settings.html" class="menu-item">
+                        <span><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                stroke-linejoin="round">
+                                <path
+                                    d="M12.22 2h-.44a2 2 0 0 0-2 2v.18a2 2 0 0 1-1 1.73l-.43.25a2 2 0 0 1-2 0l-.15-.08a2 2 0 0 0-2.73.73l-.22.38a2 2 0 0 0 .73 2.73l.15.1a2 2 0 0 1 1 1.72v.51a2 2 0 0 1-1 1.74l-.15.09a2 2 0 0 0-.73 2.73l.22.38a2 2 0 0 0 2.73.73l.15-.08a2 2 0 0 1 2 0l.43.25a2 2 0 0 1 1 1.73V20a2 2 0 0 0 2 2h.44a2 2 0 0 0 2-2v-.18a2 2 0 0 1 1-1.73l.43-.25a2 2 0 0 1 2 0l.15.08a2 2 0 0 0 2.73-.73l.22-.39a2 2 0 0 0-.73-2.73l-.15-.08a2 2 0 0 1-1-1.74v-.5a2 2 0 0 1 1-1.74l.15-.09a2 2 0 0 0 .73-2.73l-.22-.38a2 2 0 0 0-2.73-.73l-.15.08a2 2 0 0 1-2 0l-.43-.25a2 2 0 0 1-1-1.73V4a2 2 0 0 0-2-2z">
+                                </path>
+                                <circle cx="12" cy="12" r="3"></circle>
+                            </svg></span>
+                        <span>Settings</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Main Content -->
+        <div class="main-content">
+            <!-- Header -->
+            <div class="header">
+                <button class="mobile-menu-toggle" onclick="toggleSidebar()">☰</button>
+                <div class="search-bar">
+                    <input type="text" class="search-input" placeholder="Search members, events, or anything...">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                        stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                        class="lucide lucide-search absolute left-3 top-1/2 transform -translate-y-1/2 h-4 w-4 text-muted-foreground">
+                        <circle cx="11" cy="11" r="8"></circle>
+                        <path d="m21 21-4.3-4.3"></path>
+                    </svg>
+                </div>
+                <div class="header-right">
+                    <div class="notification-icon">
+                        <span style="font-size: 20px;"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                                viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M6 8a6 6 0 0 1 12 0c0 7 3 9 3 9H3s3-2 3-9"></path>
+                                <path d="M10.3 21a1.94 1.94 0 0 0 3.4 0"></path>
+                            </svg>
+                        </span>
+                        <span class="notification-badge">3</span>
+                    </div>
+                    <div class="user-profile">
+                        <span style="font-size: 14px; font-weight: 500;">Pastor Lawrence</span>
+                        <span style="font-size: 20px;"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                                viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2"></path>
+                                <circle cx="12" cy="7" r="4"></circle>
+                            </svg>
+                        </span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Message Form -->
+            <div class="dashboard-content">
+                <div class="cf-message-header">
+                    <h1>Send Message</h1>
+                    <p>Communicate with your church community via email, SMS, or in-app notifications</p>
+                </div>
+
+                <div class="cf-message-layout">
+                    <!-- Main Form Column -->
+                    <div class="cf-form-column">
+                        <form id="sendMessageForm">
+                            <!-- Message Type Selection -->
+                            <div class="cf-form-card">
+                                <h3 class="cf-form-section-title">
+                                    <svg class="cf-section-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
+                                        fill="none" stroke="currentColor" stroke-width="2">
+                                        <rect x="2" y="7" width="20" height="14" rx="2" ry="2"></rect>
+                                        <path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"></path>
+                                    </svg>
+                                    Message Type
+                                </h3>
+
+                                <div class="cf-message-types">
+                                    <div class="cf-message-type selected" onclick="selectMessageType('email', this)">
+                                        <div class="cf-type-icon">=�</div>
+                                        <div class="cf-type-text">Email</div>
+                                    </div>
+                                    <div class="cf-message-type" onclick="selectMessageType('sms', this)">
+                                        <div class="cf-type-icon">=�</div>
+                                        <div class="cf-type-text">SMS</div>
+                                    </div>
+                                    <div class="cf-message-type" onclick="selectMessageType('notification', this)">
+                                        <div class="cf-type-icon">=</div>
+                                        <div class="cf-type-text">Push Notification</div>
+                                    </div>
+                                    <div class="cf-message-type" onclick="selectMessageType('all', this)">
+                                        <div class="cf-type-icon">=�</div>
+                                        <div class="cf-type-text">All Channels</div>
+                                    </div>
+                                </div>
+                                <input type="hidden" id="messageType" value="email" required>
+                            </div>
+
+                            <!-- Recipients Selection -->
+                            <div class="cf-form-card">
+                                <h3 class="cf-form-section-title">
+                                    <svg class="cf-section-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
+                                        fill="none" stroke="currentColor" stroke-width="2">
+                                        <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
+                                        <circle cx="9" cy="7" r="4"></circle>
+                                        <path d="M23 21v-2a4 4 0 0 0-3-3.87"></path>
+                                        <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
+                                    </svg>
+                                    Select Recipients
+                                </h3>
+
+                                <div class="cf-recipients-counter">
+                                    <div>
+                                        <div class="cf-counter-label">Total Recipients</div>
+                                    </div>
+                                    <div class="cf-counter-value" id="recipientCount">0</div>
+                                </div>
+
+                                <div class="cf-recipient-tabs">
+                                    <button type="button" class="cf-recipient-tab active" onclick="switchRecipientTab('groups', this)">
+                                        Groups
+                                    </button>
+                                    <button type="button" class="cf-recipient-tab" onclick="switchRecipientTab('individuals', this)">
+                                        Individual Members
+                                    </button>
+                                    <button type="button" class="cf-recipient-tab" onclick="switchRecipientTab('everyone', this)">
+                                        Everyone
+                                    </button>
+                                </div>
+
+                                <!-- Groups Panel -->
+                                <div class="cf-recipient-panel active" id="groupsPanel">
+                                    <div class="cf-group-grid">
+                                        <div class="cf-group-card" onclick="toggleGroup(this, 'worship', 45)">
+                                            <div class="cf-group-name"><� Worship Team</div>
+                                            <div class="cf-group-count">45 members</div>
+                                        </div>
+                                        <div class="cf-group-card" onclick="toggleGroup(this, 'youth', 120)">
+                                            <div class="cf-group-name">=e Youth Ministry</div>
+                                            <div class="cf-group-count">120 members</div>
+                                        </div>
+                                        <div class="cf-group-card" onclick="toggleGroup(this, 'children', 85)">
+                                            <div class="cf-group-name">=v Children's Ministry</div>
+                                            <div class="cf-group-count">85 members</div>
+                                        </div>
+                                        <div class="cf-group-card" onclick="toggleGroup(this, 'prayer', 60)">
+                                            <div class="cf-group-name">=O Prayer Team</div>
+                                            <div class="cf-group-count">60 members</div>
+                                        </div>
+                                        <div class="cf-group-card" onclick="toggleGroup(this, 'mens', 95)">
+                                            <div class="cf-group-name">=T Men's Group</div>
+                                            <div class="cf-group-count">95 members</div>
+                                        </div>
+                                        <div class="cf-group-card" onclick="toggleGroup(this, 'womens', 110)">
+                                            <div class="cf-group-name">=W Women's Group</div>
+                                            <div class="cf-group-count">110 members</div>
+                                        </div>
+                                        <div class="cf-group-card" onclick="toggleGroup(this, 'volunteers', 75)">
+                                            <div class="cf-group-name"> Volunteers</div>
+                                            <div class="cf-group-count">75 members</div>
+                                        </div>
+                                        <div class="cf-group-card" onclick="toggleGroup(this, 'seniors', 55)">
+                                            <div class="cf-group-name">=t Seniors</div>
+                                            <div class="cf-group-count">55 members</div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- Individuals Panel -->
+                                <div class="cf-recipient-panel" id="individualsPanel">
+                                    <div class="cf-member-search">
+                                        <svg class="cf-search-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
+                                            fill="none" stroke="currentColor" stroke-width="2">
+                                            <circle cx="11" cy="11" r="8"></circle>
+                                            <path d="m21 21-4.3-4.3"></path>
+                                        </svg>
+                                        <input type="text" class="cf-form-input" placeholder="Search members..."
+                                            oninput="searchMembers(this.value)">
+                                    </div>
+
+                                    <div class="cf-member-list" id="memberList">
+                                        <!-- Members will be populated by JavaScript -->
+                                    </div>
+                                </div>
+
+                                <!-- Everyone Panel -->
+                                <div class="cf-recipient-panel" id="everyonePanel">
+                                    <div style="text-align: center; padding: 40px 20px;">
+                                        <div style="font-size: 48px; margin-bottom: 16px;">=e</div>
+                                        <h4 style="font-size: 18px; color: #1e293b; margin-bottom: 8px;">Send to All Members</h4>
+                                        <p style="font-size: 14px; color: #64748b;">This message will be sent to all 485 active church members</p>
+                                        <button type="button" class="cf-btn cf-btn-primary" style="margin-top: 20px;" onclick="selectEveryone()">
+                                            Select All Members
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Message Content -->
+                            <div class="cf-form-card">
+                                <h3 class="cf-form-section-title">
+                                    <svg class="cf-section-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
+                                        fill="none" stroke="currentColor" stroke-width="2">
+                                        <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+                                        <polyline points="14 2 14 8 20 8"></polyline>
+                                        <line x1="16" y1="13" x2="8" y2="13"></line>
+                                        <line x1="16" y1="17" x2="8" y2="17"></line>
+                                    </svg>
+                                    Message Content
+                                </h3>
+
+                                <div class="cf-form-grid">
+                                    <div class="cf-form-group">
+                                        <label class="cf-form-label">Quick Templates</label>
+                                        <select class="cf-form-select" id="templateSelect" onchange="loadTemplate()">
+                                            <option value="">Choose a template...</option>
+                                            <option value="welcome">Welcome Message</option>
+                                            <option value="event">Event Invitation</option>
+                                            <option value="reminder">Service Reminder</option>
+                                            <option value="prayer">Prayer Request</option>
+                                            <option value="announcement">General Announcement</option>
+                                            <option value="thankyou">Thank You Message</option>
+                                        </select>
+                                    </div>
+
+                                    <div class="cf-form-group">
+                                        <label class="cf-form-label required">Subject Line</label>
+                                        <input type="text" class="cf-form-input" id="messageSubject"
+                                            placeholder="Enter message subject..." required oninput="updatePreview()">
+                                        <span class="cf-form-hint">Keep it clear and concise (recommended: 40-50 characters)</span>
+                                    </div>
+
+                                    <div class="cf-form-group">
+                                        <label class="cf-form-label required">Message Body</label>
+                                        <textarea class="cf-form-textarea" id="messageBody"
+                                            placeholder="Type your message here..." required oninput="updatePreview(); updateCharCount()"></textarea>
+                                        <div class="cf-char-counter">
+                                            <span class="cf-form-hint">Use personalization tags: {name}, {firstName}, {email}</span>
+                                            <span class="cf-char-count" id="charCount">0 / 5000</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Attachments -->
+                            <div class="cf-form-card">
+                                <h3 class="cf-form-section-title">
+                                    <svg class="cf-section-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
+                                        fill="none" stroke="currentColor" stroke-width="2">
+                                        <path d="m21.44 11.05-9.19 9.19a6 6 0 0 1-8.49-8.49l9.19-9.19a4 4 0 0 1 5.66 5.66l-9.2 9.19a2 2 0 0 1-2.83-2.83l8.49-8.48"></path>
+                                    </svg>
+                                    Attachments (Optional)
+                                </h3>
+
+                                <div class="cf-attachment-zone" onclick="document.getElementById('fileUpload').click()">
+                                    <div class="cf-attachment-icon">=�</div>
+                                    <div class="cf-attachment-text">Click to attach files</div>
+                                    <div class="cf-attachment-hint">PDF, DOC, JPG, PNG (Max 10MB per file)</div>
+                                </div>
+                                <input type="file" id="fileUpload" multiple accept=".pdf,.doc,.docx,.jpg,.jpeg,.png"
+                                    style="display: none;" onchange="handleFileUpload(event)">
+
+                                <div class="cf-attachment-list" id="attachmentList"></div>
+                            </div>
+
+                            <!-- Scheduling -->
+                            <div class="cf-form-card">
+                                <h3 class="cf-form-section-title">
+                                    <svg class="cf-section-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
+                                        fill="none" stroke="currentColor" stroke-width="2">
+                                        <circle cx="12" cy="12" r="10"></circle>
+                                        <polyline points="12 6 12 12 16 14"></polyline>
+                                    </svg>
+                                    Delivery Options
+                                </h3>
+
+                                <div class="cf-schedule-toggle">
+                                    <div class="cf-checkbox-group">
+                                        <input type="checkbox" class="cf-checkbox" id="scheduleMessage"
+                                            onchange="toggleSchedule()">
+                                        <label class="cf-checkbox-label" for="scheduleMessage">Schedule for later</label>
+                                    </div>
+
+                                    <div class="cf-schedule-options" id="scheduleOptions">
+                                        <div class="cf-form-group">
+                                            <label class="cf-form-label">Send Date</label>
+                                            <input type="date" class="cf-form-input" id="scheduleDate">
+                                        </div>
+                                        <div class="cf-form-group">
+                                            <label class="cf-form-label">Send Time</label>
+                                            <input type="time" class="cf-form-input" id="scheduleTime">
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="cf-checkbox-group">
+                                    <input type="checkbox" class="cf-checkbox" id="sendCopy" checked>
+                                    <label class="cf-checkbox-label" for="sendCopy">Send me a copy</label>
+                                </div>
+
+                                <div class="cf-checkbox-group">
+                                    <input type="checkbox" class="cf-checkbox" id="trackOpens">
+                                    <label class="cf-checkbox-label" for="trackOpens">Track opens and clicks</label>
+                                </div>
+                            </div>
+
+                            <!-- Form Actions -->
+                            <div class="cf-form-actions">
+                                <button type="button" class="cf-btn cf-btn-cancel" onclick="cancelMessage()">
+                                    <svg class="cf-btn-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
+                                        fill="none" stroke="currentColor" stroke-width="2">
+                                        <line x1="18" y1="6" x2="6" y2="18"></line>
+                                        <line x1="6" y1="6" x2="18" y2="18"></line>
+                                    </svg>
+                                    Cancel
+                                </button>
+                                <button type="button" class="cf-btn cf-btn-draft" onclick="saveDraft()">
+                                    <svg class="cf-btn-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
+                                        fill="none" stroke="currentColor" stroke-width="2">
+                                        <path d="M19 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11l5 5v11a2 2 0 0 1-2 2z"></path>
+                                        <polyline points="17 21 17 13 7 13 7 21"></polyline>
+                                        <polyline points="7 3 7 8 15 8"></polyline>
+                                    </svg>
+                                    Save Draft
+                                </button>
+                                <button type="submit" class="cf-btn cf-btn-primary">
+                                    <svg class="cf-btn-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
+                                        fill="none" stroke="currentColor" stroke-width="2">
+                                        <line x1="22" y1="2" x2="11" y2="13"></line>
+                                        <polygon points="22 2 15 22 11 13 2 9 22 2"></polygon>
+                                    </svg>
+                                    Send Message
+                                </button>
+                            </div>
+                        </form>
+                    </div>
+
+                    <!-- Preview Panel -->
+                    <div class="cf-preview-panel">
+                        <div class="cf-preview-card">
+                            <div class="cf-preview-title">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24"
+                                    fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"></path>
+                                    <path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"></path>
+                                </svg>
+                                Live Preview
+                            </div>
+
+                            <div class="cf-preview-content" id="previewContent">
+                                <div class="cf-preview-empty">
+                                    Start composing your message to see a preview here
+                                </div>
+                            </div>
+
+                            <div class="cf-preview-stats">
+                                <div class="cf-stat-row">
+                                    <span class="cf-stat-label">Message Type:</span>
+                                    <span class="cf-stat-value" id="previewType">Email</span>
+                                </div>
+                                <div class="cf-stat-row">
+                                    <span class="cf-stat-label">Recipients:</span>
+                                    <span class="cf-stat-value" id="previewRecipients">0 selected</span>
+                                </div>
+                                <div class="cf-stat-row">
+                                    <span class="cf-stat-label">Delivery:</span>
+                                    <span class="cf-stat-value" id="previewDelivery">Send immediately</span>
+                                </div>
+                                <div class="cf-stat-row">
+                                    <span class="cf-stat-label">Attachments:</span>
+                                    <span class="cf-stat-value" id="previewAttachments">None</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Success Modal -->
+    <div class="cf-success-modal" id="successModal">
+        <div class="cf-success-content">
+            <div class="cf-success-icon"></div>
+            <div class="cf-success-title">Message Sent Successfully!</div>
+            <div class="cf-success-text" id="successMessage">
+                Your message has been sent to <strong id="sentCount">0</strong> recipients.
+            </div>
+            <button class="cf-btn cf-btn-primary" onclick="closeSuccessModal()">Done</button>
+        </div>
+    </div>
+
+    <script>
+        // Sidebar toggle
+        function toggleSidebar() {
+            const sidebar = document.querySelector('.sidebar');
+            sidebar.classList.toggle('open');
+        }
+
+        document.addEventListener('click', function (event) {
+            const sidebar = document.querySelector('.sidebar');
+            const toggle = document.querySelector('.mobile-menu-toggle');
+            if (window.innerWidth <= 768 && !sidebar.contains(event.target) &&
+                !toggle.contains(event.target) && sidebar.classList.contains('open')) {
+                sidebar.classList.remove('open');
+            }
+        });
+
+        // Sample members data
+        const members = [
+            { id: 1, name: 'Sarah Johnson', email: 'sarah.johnson@email.com', initials: 'SJ' },
+            { id: 2, name: 'Michael Chen', email: 'michael.chen@email.com', initials: 'MC' },
+            { id: 3, name: 'Emily Rodriguez', email: 'emily.rodriguez@email.com', initials: 'ER' },
+            { id: 4, name: 'David Thompson', email: 'david.thompson@email.com', initials: 'DT' },
+            { id: 5, name: 'Jennifer Williams', email: 'jennifer.williams@email.com', initials: 'JW' },
+            { id: 6, name: 'Robert Brown', email: 'robert.brown@email.com', initials: 'RB' },
+            { id: 7, name: 'Lisa Martinez', email: 'lisa.martinez@email.com', initials: 'LM' },
+            { id: 8, name: 'James Wilson', email: 'james.wilson@email.com', initials: 'JW' }
+        ];
+
+        // Populate member list
+        function populateMemberList() {
+            const memberList = document.getElementById('memberList');
+            memberList.innerHTML = members.map(member => `
+                <div class="cf-member-item">
+                    <input type="checkbox" class="cf-member-checkbox" id="member-${member.id}"
+                        onchange="updateRecipientCount()">
+                    <div class="cf-member-avatar">${member.initials}</div>
+                    <label for="member-${member.id}" class="cf-member-info">
+                        <div class="cf-member-name">${member.name}</div>
+                        <div class="cf-member-email">${member.email}</div>
+                    </label>
+                </div>
+            `).join('');
+        }
+
+        populateMemberList();
+
+        // Search members
+        function searchMembers(query) {
+            const filtered = members.filter(m =>
+                m.name.toLowerCase().includes(query.toLowerCase()) ||
+                m.email.toLowerCase().includes(query.toLowerCase())
+            );
+
+            const memberList = document.getElementById('memberList');
+            memberList.innerHTML = filtered.map(member => `
+                <div class="cf-member-item">
+                    <input type="checkbox" class="cf-member-checkbox" id="member-${member.id}"
+                        onchange="updateRecipientCount()">
+                    <div class="cf-member-avatar">${member.initials}</div>
+                    <label for="member-${member.id}" class="cf-member-info">
+                        <div class="cf-member-name">${member.name}</div>
+                        <div class="cf-member-email">${member.email}</div>
+                    </label>
+                </div>
+            `).join('');
+        }
+
+        // Message type selection
+        let selectedMessageType = 'email';
+
+        function selectMessageType(type, element) {
+            document.querySelectorAll('.cf-message-type').forEach(el => el.classList.remove('selected'));
+            element.classList.add('selected');
+            selectedMessageType = type;
+            document.getElementById('messageType').value = type;
+            document.getElementById('previewType').textContent = type.charAt(0).toUpperCase() + type.slice(1);
+        }
+
+        // Recipient tabs
+        function switchRecipientTab(tab, button) {
+            document.querySelectorAll('.cf-recipient-tab').forEach(t => t.classList.remove('active'));
+            document.querySelectorAll('.cf-recipient-panel').forEach(p => p.classList.remove('active'));
+
+            button.classList.add('active');
+            document.getElementById(tab + 'Panel').classList.add('active');
+        }
+
+        // Toggle group selection
+        let selectedGroups = new Set();
+
+        function toggleGroup(element, groupId, count) {
+            element.classList.toggle('selected');
+
+            if (selectedGroups.has(groupId)) {
+                selectedGroups.delete(groupId);
+            } else {
+                selectedGroups.add(groupId);
+            }
+
+            updateRecipientCount();
+        }
+
+        // Update recipient count
+        function updateRecipientCount() {
+            let total = 0;
+
+            // Count selected groups
+            selectedGroups.forEach(groupId => {
+                const groupCard = document.querySelector(`[onclick*="${groupId}"]`);
+                const countText = groupCard.querySelector('.cf-group-count').textContent;
+                total += parseInt(countText.match(/\d+/)[0]);
+            });
+
+            // Count selected individuals
+            const checkedMembers = document.querySelectorAll('.cf-member-checkbox:checked').length;
+            total += checkedMembers;
+
+            document.getElementById('recipientCount').textContent = total;
+            document.getElementById('previewRecipients').textContent = total + ' selected';
+        }
+
+        // Select everyone
+        function selectEveryone() {
+            const totalMembers = 485;
+            document.getElementById('recipientCount').textContent = totalMembers;
+            document.getElementById('previewRecipients').textContent = totalMembers + ' selected';
+            alert('All 485 members selected!');
+        }
+
+        // Message templates
+        const templates = {
+            welcome: {
+                subject: 'Welcome to Our Church Family!',
+                body: 'Dear {name},\n\nWe are thrilled to welcome you to our church community! We believe you are here for a purpose, and we are excited to journey with you in faith.\n\nOur Sunday services are at 9:00 AM and 11:00 AM. We would love to see you there!\n\nBlessings,\nPastor Lawrence'
+            },
+            event: {
+                subject: 'You\'re Invited: Special Church Event',
+                body: 'Hello {firstName},\n\nYou\'re invited to join us for a special event!\n\nDate: [Event Date]\nTime: [Event Time]\nLocation: [Event Location]\n\nWe hope to see you there!\n\nIn Christ,\nChurch Management Team'
+            },
+            reminder: {
+                subject: 'Reminder: Sunday Service This Weekend',
+                body: 'Dear {name},\n\nThis is a friendly reminder about our Sunday service this weekend.\n\nService Times:\n" 9:00 AM - First Service\n" 11:00 AM - Second Service\n\nWe look forward to worshiping with you!\n\nBlessings,\nPastor Lawrence'
+            },
+            prayer: {
+                subject: 'Prayer Request from Our Church',
+                body: 'Dear Prayer Warrior,\n\nWe are reaching out to request your prayers for [prayer need].\n\nLet us come together in prayer and believe for God\'s intervention.\n\nThank you for your faithful prayers.\n\nIn Christ,\nPrayer Team'
+            },
+            announcement: {
+                subject: 'Important Church Announcement',
+                body: 'Dear Church Family,\n\nWe have an important announcement to share with you:\n\n[Your announcement here]\n\nFor more information, please contact the church office.\n\nBlessings,\nChurch Leadership'
+            },
+            thankyou: {
+                subject: 'Thank You for Your Support',
+                body: 'Dear {name},\n\nWe want to express our heartfelt gratitude for your continued support and dedication to our church community.\n\nYour contributions, whether through time, talents, or resources, make a significant impact.\n\nThank you for being a blessing!\n\nWith appreciation,\nPastor Lawrence'
+            }
+        };
+
+        function loadTemplate() {
+            const selected = document.getElementById('templateSelect').value;
+            if (selected && templates[selected]) {
+                document.getElementById('messageSubject').value = templates[selected].subject;
+                document.getElementById('messageBody').value = templates[selected].body;
+                updatePreview();
+                updateCharCount();
+            }
+        }
+
+        // Character count
+        function updateCharCount() {
+            const text = document.getElementById('messageBody').value;
+            const count = text.length;
+            const charCount = document.getElementById('charCount');
+
+            charCount.textContent = `${count} / 5000`;
+
+            if (count > 4500) {
+                charCount.classList.add('error');
+                charCount.classList.remove('warning');
+            } else if (count > 4000) {
+                charCount.classList.add('warning');
+                charCount.classList.remove('error');
+            } else {
+                charCount.classList.remove('warning', 'error');
+            }
+        }
+
+        // Preview update
+        function updatePreview() {
+            const subject = document.getElementById('messageSubject').value;
+            const body = document.getElementById('messageBody').value;
+            const previewContent = document.getElementById('previewContent');
+
+            if (subject || body) {
+                previewContent.innerHTML = `
+                    <div class="cf-preview-subject">${subject || 'No subject'}</div>
+                    <div class="cf-preview-body">${body || 'No message content'}</div>
+                `;
+            } else {
+                previewContent.innerHTML = '<div class="cf-preview-empty">Start composing your message to see a preview here</div>';
+            }
+        }
+
+        // Schedule toggle
+        function toggleSchedule() {
+            const isScheduled = document.getElementById('scheduleMessage').checked;
+            const scheduleOptions = document.getElementById('scheduleOptions');
+
+            if (isScheduled) {
+                scheduleOptions.classList.add('show');
+                document.getElementById('previewDelivery').textContent = 'Scheduled';
+            } else {
+                scheduleOptions.classList.remove('show');
+                document.getElementById('previewDelivery').textContent = 'Send immediately';
+            }
+        }
+
+        // File upload
+        let attachedFiles = [];
+
+        function handleFileUpload(event) {
+            const files = Array.from(event.target.files);
+            const attachmentList = document.getElementById('attachmentList');
+
+            files.forEach(file => {
+                if (file.size > 10 * 1024 * 1024) {
+                    alert(`File ${file.name} is too large. Maximum size is 10MB.`);
+                    return;
+                }
+
+                attachedFiles.push(file);
+
+                const fileSize = (file.size / 1024).toFixed(1) + ' KB';
+                const fileItem = document.createElement('div');
+                fileItem.className = 'cf-attachment-item';
+                fileItem.innerHTML = `
+                    <span>=�</span>
+                    <span class="cf-attachment-name">${file.name}</span>
+                    <span class="cf-attachment-size">${fileSize}</span>
+                    <span class="cf-attachment-remove" onclick="removeAttachment('${file.name}', this)">�</span>
+                `;
+                attachmentList.appendChild(fileItem);
+            });
+
+            updateAttachmentCount();
+        }
+
+        function removeAttachment(fileName, element) {
+            attachedFiles = attachedFiles.filter(f => f.name !== fileName);
+            element.parentElement.remove();
+            updateAttachmentCount();
+        }
+
+        function updateAttachmentCount() {
+            const count = attachedFiles.length;
+            document.getElementById('previewAttachments').textContent = count > 0 ? `${count} file(s)` : 'None';
+        }
+
+        // Form submission
+        document.getElementById('sendMessageForm').addEventListener('submit', function (e) {
+            e.preventDefault();
+
+            const recipientCount = parseInt(document.getElementById('recipientCount').textContent);
+
+            if (recipientCount === 0) {
+                alert('Please select at least one recipient.');
+                return;
+            }
+
+            const formData = {
+                messageType: selectedMessageType,
+                recipients: recipientCount,
+                subject: document.getElementById('messageSubject').value,
+                body: document.getElementById('messageBody').value,
+                scheduled: document.getElementById('scheduleMessage').checked,
+                scheduleDate: document.getElementById('scheduleDate').value,
+                scheduleTime: document.getElementById('scheduleTime').value,
+                attachments: attachedFiles.length,
+                sendCopy: document.getElementById('sendCopy').checked,
+                trackOpens: document.getElementById('trackOpens').checked
+            };
+
+            console.log('Message Data:', formData);
+
+            // Show success modal
+            document.getElementById('sentCount').textContent = recipientCount;
+            document.getElementById('successModal').classList.add('show');
+        });
+
+        function closeSuccessModal() {
+            document.getElementById('successModal').classList.remove('show');
+
+            if (confirm('Would you like to send another message?')) {
+                location.reload();
+            } else {
+                window.location.href = '../Communication/communication.html';
+            }
+        }
+
+        function saveDraft() {
+            alert('Message saved as draft! You can complete it later.');
+        }
+
+        function cancelMessage() {
+            if (confirm('Are you sure you want to cancel? All unsaved changes will be lost.')) {
+                window.location.href = '../Communication/communication.html';
+            }
+        }
+    </script>
+</body>
+
+</html>

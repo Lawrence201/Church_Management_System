@@ -1,0 +1,1357 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Record Donation - Church Management System</title>
+    <link rel="stylesheet" href="../style.css">
+    <style>
+        /* ---------- General Page Layout ---------- */
+        .cf-donation-container {
+            padding: 32px;
+            background: #f9fafb;
+            font-family: "Inter", "Segoe UI", Roboto, sans-serif;
+        }
+
+        /* ---------- Header ---------- */
+        .cf-donation-header {
+            margin-bottom: 40px;
+            text-align: left;
+        }
+
+        .cf-donation-header h1 {
+            font-size: 30px;
+            font-weight: 700;
+            color: #0f172a;
+            margin-bottom: 10px;
+            letter-spacing: -0.5px;
+        }
+
+        .cf-donation-header p {
+            color: #64748b;
+            font-size: 15px;
+        }
+
+        /* ---------- Form Card ---------- */
+        .cf-form-card {
+            background: #ffffff;
+            border-radius: 14px;
+            padding: 36px 40px;
+            box-shadow: 0 4px 16px rgba(15, 23, 42, 0.06);
+            border: 1px solid #f1f5f9;
+            margin-bottom: 28px;
+            transition: box-shadow 0.2s ease, transform 0.1s ease;
+        }
+
+        .cf-form-card:hover {
+            box-shadow: 0 8px 22px rgba(15, 23, 42, 0.1);
+            transform: translateY(-1px);
+        }
+
+        /* ---------- Section Titles ---------- */
+        .cf-form-section-title {
+            font-size: 20px;
+            font-weight: 600;
+            color: #1e293b;
+            margin-bottom: 24px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid #f1f5f9;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .cf-section-icon {
+            width: 24px;
+            height: 24px;
+            color: #3b82f6;
+        }
+
+        /* ---------- Form Layout ---------- */
+        .cf-form-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 28px;
+            margin-bottom: 20px;
+        }
+
+        .cf-form-group {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .cf-form-group.full-width {
+            grid-column: 1 / -1;
+        }
+
+        /* ---------- Labels ---------- */
+        .cf-form-label {
+            font-size: 14px;
+            font-weight: 600;
+            color: #334155;
+            margin-bottom: 8px;
+        }
+
+        .cf-form-label.required::after {
+            content: " *";
+            color: #ef4444;
+        }
+
+        /* ---------- Inputs ---------- */
+        .cf-form-input,
+        .cf-form-select,
+        .cf-form-textarea {
+            padding: 12px 14px;
+            border: 1px solid #e2e8f0;
+            border-radius: 8px;
+            font-size: 14px;
+            color: #1e293b;
+            background: #f8fafc;
+            transition: all 0.25s ease;
+        }
+
+        .cf-form-input:focus,
+        .cf-form-select:focus,
+        .cf-form-textarea:focus {
+            background: #ffffff;
+            border-color: #3b82f6;
+            box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.15);
+            outline: none;
+        }
+
+        .cf-form-textarea {
+            resize: vertical;
+            min-height: 100px;
+            font-family: inherit;
+        }
+
+        .cf-form-hint {
+            font-size: 12px;
+            color: #94a3b8;
+            margin-top: 6px;
+        }
+
+        /* ---------- Amount Display ---------- */
+        .cf-amount-display {
+            background: linear-gradient(135deg, #3b82f6 0%, #2563eb 100%);
+            padding: 24px;
+            border-radius: 12px;
+            text-align: center;
+            margin-bottom: 20px;
+            box-shadow: 0 8px 20px rgba(59, 130, 246, 0.25);
+        }
+
+        .cf-amount-label {
+            color: rgba(255, 255, 255, 0.9);
+            font-size: 13px;
+            font-weight: 500;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 8px;
+        }
+
+        .cf-amount-value {
+            color: #ffffff;
+            font-size: 42px;
+            font-weight: 700;
+            letter-spacing: -1px;
+        }
+
+        .cf-currency-symbol {
+            font-size: 28px;
+            opacity: 0.9;
+        }
+
+        /* ---------- Quick Amount Buttons ---------- */
+        .cf-quick-amounts {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+            gap: 12px;
+            margin-top: 12px;
+        }
+
+        .cf-quick-amount-btn {
+            padding: 12px 20px;
+            background: #ffffff;
+            border: 2px solid #e2e8f0;
+            border-radius: 8px;
+            font-size: 14px;
+            font-weight: 600;
+            color: #334155;
+            cursor: pointer;
+            transition: all 0.2s ease;
+        }
+
+        .cf-quick-amount-btn:hover {
+            background: #f8fafc;
+            border-color: #3b82f6;
+            color: #3b82f6;
+            transform: translateY(-2px);
+        }
+
+        .cf-quick-amount-btn.active {
+            background: #3b82f6;
+            border-color: #3b82f6;
+            color: #ffffff;
+        }
+
+        /* ---------- Checkbox & Radio Groups ---------- */
+        .cf-checkbox-group,
+        .cf-radio-group {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin-top: 10px;
+        }
+
+        .cf-checkbox,
+        .cf-radio {
+            width: 18px;
+            height: 18px;
+            accent-color: #3b82f6;
+            cursor: pointer;
+        }
+
+        .cf-checkbox-label,
+        .cf-radio-label {
+            font-size: 14px;
+            color: #334155;
+            cursor: pointer;
+        }
+
+        /* ---------- Payment Methods ---------- */
+        .cf-payment-methods {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+            gap: 12px;
+            margin-top: 12px;
+        }
+
+        .cf-payment-method {
+            padding: 16px;
+            border: 2px solid #e2e8f0;
+            border-radius: 10px;
+            text-align: center;
+            cursor: pointer;
+            transition: all 0.25s ease;
+            background: #f8fafc;
+        }
+
+        .cf-payment-method:hover {
+            border-color: #3b82f6;
+            background: #eff6ff;
+            transform: scale(1.05);
+        }
+
+        .cf-payment-method.selected {
+            border-color: #3b82f6;
+            background: #eff6ff;
+            box-shadow: 0 4px 12px rgba(59, 130, 246, 0.2);
+        }
+
+        .cf-payment-icon {
+            font-size: 32px;
+            margin-bottom: 8px;
+        }
+
+        .cf-payment-text {
+            font-size: 13px;
+            font-weight: 600;
+            color: #334155;
+        }
+
+        /* ---------- Receipt Section ---------- */
+        .cf-receipt-section {
+            background: #f8fafc;
+            padding: 20px;
+            border-radius: 10px;
+            border: 1px solid #e2e8f0;
+        }
+
+        .cf-receipt-toggle {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin-bottom: 16px;
+        }
+
+        /* ---------- Donor Lookup ---------- */
+        .cf-donor-lookup {
+            position: relative;
+        }
+
+        .cf-donor-suggestions {
+            position: absolute;
+            top: 100%;
+            left: 0;
+            right: 0;
+            background: #ffffff;
+            border: 1px solid #e2e8f0;
+            border-radius: 8px;
+            box-shadow: 0 8px 20px rgba(15, 23, 42, 0.15);
+            max-height: 200px;
+            overflow-y: auto;
+            z-index: 10;
+            display: none;
+            margin-top: 4px;
+        }
+
+        .cf-donor-suggestions.show {
+            display: block;
+        }
+
+        .cf-donor-item {
+            padding: 12px 16px;
+            cursor: pointer;
+            transition: background 0.2s ease;
+            border-bottom: 1px solid #f1f5f9;
+        }
+
+        .cf-donor-item:last-child {
+            border-bottom: none;
+        }
+
+        .cf-donor-item:hover {
+            background: #f8fafc;
+        }
+
+        .cf-donor-name {
+            font-weight: 600;
+            color: #1e293b;
+            font-size: 14px;
+        }
+
+        .cf-donor-email {
+            font-size: 12px;
+            color: #64748b;
+            margin-top: 2px;
+        }
+
+        /* ---------- Anonymous Toggle ---------- */
+        .cf-anonymous-section {
+            background: #fff7ed;
+            border: 1px solid #fed7aa;
+            padding: 16px;
+            border-radius: 8px;
+            display: none;
+        }
+
+        .cf-anonymous-section.show {
+            display: block;
+        }
+
+        .cf-anonymous-icon {
+            color: #f59e0b;
+            margin-right: 8px;
+        }
+
+        /* ---------- Summary Card ---------- */
+        .cf-summary-card {
+            background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);
+            padding: 24px;
+            border-radius: 12px;
+            border: 1px solid #cbd5e1;
+        }
+
+        .cf-summary-title {
+            font-size: 18px;
+            font-weight: 600;
+            color: #1e293b;
+            margin-bottom: 16px;
+        }
+
+        .cf-summary-row {
+            display: flex;
+            justify-content: space-between;
+            padding: 12px 0;
+            border-bottom: 1px solid #cbd5e1;
+        }
+
+        .cf-summary-row:last-child {
+            border-bottom: none;
+            padding-top: 16px;
+            margin-top: 8px;
+            border-top: 2px solid #94a3b8;
+        }
+
+        .cf-summary-label {
+            font-size: 14px;
+            color: #475569;
+            font-weight: 500;
+        }
+
+        .cf-summary-value {
+            font-size: 14px;
+            color: #1e293b;
+            font-weight: 600;
+        }
+
+        .cf-summary-row:last-child .cf-summary-label,
+        .cf-summary-row:last-child .cf-summary-value {
+            font-size: 18px;
+            font-weight: 700;
+            color: #3b82f6;
+        }
+
+        /* ---------- Buttons ---------- */
+        .cf-form-actions {
+            display: flex;
+            justify-content: flex-end;
+            gap: 12px;
+            margin-top: 32px;
+            padding-top: 24px;
+            border-top: 1px solid #e2e8f0;
+        }
+
+        .cf-btn {
+            padding: 12px 26px;
+            border-radius: 8px;
+            font-size: 14px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.25s ease;
+            border: none;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .cf-btn-cancel {
+            background: #ffffff;
+            color: #475569;
+            border: 1px solid #e2e8f0;
+        }
+
+        .cf-btn-cancel:hover {
+            background: #f8fafc;
+            border-color: #cbd5e1;
+        }
+
+        .cf-btn-draft {
+            background: #f1f5f9;
+            color: #334155;
+        }
+
+        .cf-btn-draft:hover {
+            background: #e2e8f0;
+        }
+
+        .cf-btn-primary {
+            background: #10b981;
+            color: #ffffff;
+            box-shadow: 0 4px 12px rgba(16, 185, 129, 0.25);
+        }
+
+        .cf-btn-primary:hover {
+            background: #059669;
+            box-shadow: 0 6px 18px rgba(5, 150, 105, 0.3);
+            transform: translateY(-2px);
+        }
+
+        .cf-btn-icon {
+            width: 18px;
+            height: 18px;
+        }
+
+        /* ---------- Responsive Design ---------- */
+        @media (max-width: 768px) {
+            .cf-form-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .cf-form-actions {
+                flex-direction: column;
+            }
+
+            .cf-btn {
+                width: 100%;
+                justify-content: center;
+            }
+
+            .cf-form-card {
+                padding: 24px;
+            }
+
+            .cf-donation-header h1 {
+                font-size: 26px;
+            }
+
+            .cf-amount-value {
+                font-size: 36px;
+            }
+
+            .cf-payment-methods {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        /* ---------- Tax Deductible Badge ---------- */
+        .cf-tax-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            background: #dcfce7;
+            color: #166534;
+            padding: 6px 12px;
+            border-radius: 6px;
+            font-size: 12px;
+            font-weight: 600;
+            margin-top: 12px;
+        }
+
+        /* ---------- Conditional Fields ---------- */
+        .cf-conditional-field {
+            display: none;
+            animation: slideIn 0.3s ease;
+        }
+
+        .cf-conditional-field.show {
+            display: block;
+        }
+
+        @keyframes slideIn {
+            from {
+                opacity: 0;
+                transform: translateY(-10px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <!-- Sidebar -->
+        <div class="sidebar">
+            <div class="logo">
+            
+                <svg class="church-logo" xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24" fill="none"
+                    stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M10 9h4" />
+                    <path d="M12 7v5" />
+                    <path d="M14 22v-4a2 2 0 0 0-4 0v4" />
+                    <path d="M18 22V5.618a1 1 0 0 0-.553-.894l-4.553-2.277a2 2 0 0 0-1.788 0L6.553 4.724A1 1 0 0 0 6 5.618V22" />
+                    <path d="m18 7 3.447 1.724a1 1 0 0 1 .553.894V20a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V9.618a1 1 0 0 1 .553-.894L6 7" />
+                </svg>
+            
+            
+                <div class="logo-text">
+                    <h3>Church</h3>
+                    <p>Management System</p>
+                </div>
+            
+                <!-- Close button for mobile -->
+                <button class="sidebar-close" onclick="toggleSidebar()">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                        stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <line x1="18" y1="6" x2="6" y2="18"></line>
+                        <line x1="6" y1="6" x2="18" y2="18"></line>
+                    </svg>
+                </button>
+            </div>
+            <div class="sidebar-content">
+                <div class="menu-section">
+                    <div class="menu-label">Main Menu</div>
+                    <a href="../index.html" class="menu-item">
+                        <span><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                stroke-linejoin="round">
+                                <rect width="7" height="9" x="3" y="3" rx="1"></rect>
+                                <rect width="7" height="5" x="14" y="3" rx="1"></rect>
+                                <rect width="7" height="9" x="14" y="12" rx="1"></rect>
+                                <rect width="7" height="5" x="3" y="16" rx="1"></rect>
+                            </svg></span>
+                        <span>Dashboard</span>
+                    </a>
+                    <a href="../Members/members.html" class="menu-item">
+                        <span>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                stroke-linejoin="round">
+                                <path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"></path>
+                                <circle cx="9" cy="7" r="4"></circle>
+                                <path d="M22 21v-2a4 4 0 0 0-3-3.87"></path>
+                                <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
+                            </svg>
+                        </span>
+                        <span>Members</span>
+                    </a>
+                    <a href="../Events/events.html" class="menu-item">
+                        <span>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                stroke-linejoin="round">
+                                <path d="M8 2v4"></path>
+                                <path d="M16 2v4"></path>
+                                <rect width="18" height="18" x="3" y="4" rx="2"></rect>
+                                <path d="M3 10h18"></path>
+                            </svg>
+                        </span>
+                        <span>Events</span>
+                    </a>
+                    <a href="../Finance/finance.html" class="menu-item">
+                        <span>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                stroke-linejoin="round">
+                                <line x1="12" x2="12" y1="2" y2="22"></line>
+                                <path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"></path>
+                            </svg>
+                        </span>
+                        <span>Finances</span>
+                    </a>
+                    <a href="../Communication/communication.html" class="menu-item">
+                        <span><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                stroke-linejoin="round">
+                                <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path>
+                            </svg>
+                        </span>
+                        <span>Communications</span>
+                    </a>
+                    <a href="../Attendance/attendance.html" class="menu-item">
+                        <span>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                stroke-linejoin="round">
+                                <path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"></path>
+                                <circle cx="9" cy="7" r="4"></circle>
+                                <polyline points="16 11 18 13 22 9"></polyline>
+                            </svg>
+                        </span>
+                        <span>Attendance</span>
+                    </a>
+                    <a href="../Report/report.html" class="menu-item">
+                        <span><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                stroke-linejoin="round">
+                                <path d="M3 3v16a2 2 0 0 0 2 2h16"></path>
+                                <path d="M18 17V9"></path>
+                                <path d="M13 17V5"></path>
+                                <path d="M8 17v-3"></path>
+                            </svg>
+                        </span>
+                        <span>Reports</span>
+                    </a>
+                </div>
+
+                <div class="menu-section">
+                    <div class="menu-label">AI Features</div>
+                    <a href="../AI/ai_insight.html" class="menu-item has-badge">
+                        <span class="icon">
+                            <img src="../Assests/creative.png" alt="AI Insights">
+                        </span>
+                        <span>AI Insights</span>
+                        <span class="badge">New</span>
+                    </a>
+                    <a href="../AI/members_analytics.html" class="menu-item has-badge">
+                        <span><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                stroke-linejoin="round">
+                                <path d="M3 3v16a2 2 0 0 0 2 2h16"></path>
+                                <path d="M18 17V9"></path>
+                                <path d="M13 17V5"></path>
+                                <path d="M8 17v-3"></path>
+                            </svg></span>
+                        <span>Member Analytics</span>
+                        <span class="badge">New</span>
+                    </a>
+                    <a href="../AI/ai_smart_report.html" class="menu-item has-badge">
+                        <span><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                stroke-linejoin="round">
+                                <path d="M15 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7Z"></path>
+                                <path d="M14 2v4a2 2 0 0 0 2 2h4"></path>
+                                <path d="M10 9H8"></path>
+                                <path d="M16 13H8"></path>
+                                <path d="M16 17H8"></path>
+                            </svg></span>
+                        <span>Smart Reports</span>
+                        <span class="badge">New</span>
+                    </a>
+                </div>
+
+                <div class="menu-section">
+                    <div class="menu-label">Quick Actions</div>
+                    <a href="../Add_Members/enroll_members.html" class="menu-item">
+                        <span><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                stroke-linejoin="round">
+                                <path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"></path>
+                                <circle cx="9" cy="7" r="4"></circle>
+                                <line x1="19" x2="19" y1="8" y2="14"></line>
+                                <line x1="22" x2="16" y1="11" y2="11"></line>
+                            </svg></span>
+                        <span>Add Member</span>
+                    </a>
+                    <a href="../Add_Event/New_Event.html" class="menu-item">
+                        <span><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                stroke-linejoin="round">
+                                <path d="M8 2v4"></path>
+                                <path d="M16 2v4"></path>
+                                <rect width="18" height="18" x="3" y="4" rx="2"></rect>
+                                <path d="M3 10h18"></path>
+                            </svg></span>
+                        <span>New Event</span>
+                    </a>
+                    <a href="#" class="menu-item active">
+                        <span class="icon">
+                            <img src="../Assests/records.png" alt="Record Donation">
+                        </span>
+                        <span>Record Donation</span>
+                    </a>
+                    <a href="../Send_Message/send_message.html" class="menu-item">
+                        <span><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                stroke-linejoin="round">
+                                <path d="M6 8a6 6 0 0 1 12 0c0 7 3 9 3 9H3s3-2 3-9"></path>
+                                <path d="M10.3 21a1.94 1.94 0 0 0 3.4 0"></path>
+                            </svg></span>
+                        <span>Send Message</span>
+                    </a>
+                </div>
+
+                <div class="menu-section">
+                    <div class="menu-label"></div>
+                    <a href="../Settings/settings.html" class="menu-item">
+                        <span><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                stroke-linejoin="round">
+                                <path
+                                    d="M12.22 2h-.44a2 2 0 0 0-2 2v.18a2 2 0 0 1-1 1.73l-.43.25a2 2 0 0 1-2 0l-.15-.08a2 2 0 0 0-2.73.73l-.22.38a2 2 0 0 0 .73 2.73l.15.1a2 2 0 0 1 1 1.72v.51a2 2 0 0 1-1 1.74l-.15.09a2 2 0 0 0-.73 2.73l.22.38a2 2 0 0 0 2.73.73l.15-.08a2 2 0 0 1 2 0l.43.25a2 2 0 0 1 1 1.73V20a2 2 0 0 0 2 2h.44a2 2 0 0 0 2-2v-.18a2 2 0 0 1 1-1.73l.43-.25a2 2 0 0 1 2 0l.15.08a2 2 0 0 0 2.73-.73l.22-.39a2 2 0 0 0-.73-2.73l-.15-.08a2 2 0 0 1-1-1.74v-.5a2 2 0 0 1 1-1.74l.15-.09a2 2 0 0 0 .73-2.73l-.22-.38a2 2 0 0 0-2.73-.73l-.15.08a2 2 0 0 1-2 0l-.43-.25a2 2 0 0 1-1-1.73V4a2 2 0 0 0-2-2z">
+                                </path>
+                                <circle cx="12" cy="12" r="3"></circle>
+                            </svg></span>
+                        <span>Settings</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Main Content -->
+        <div class="main-content">
+            <!-- Header -->
+            <div class="header">
+                <button class="mobile-menu-toggle" onclick="toggleSidebar()">☰</button>
+                <div class="search-bar">
+                    <input type="text" class="search-input" placeholder="Search members, events, or anything...">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                        stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                        class="lucide lucide-search absolute left-3 top-1/2 transform -translate-y-1/2 h-4 w-4 text-muted-foreground">
+                        <circle cx="11" cy="11" r="8"></circle>
+                        <path d="m21 21-4.3-4.3"></path>
+                    </svg>
+                </div>
+                <div class="header-right">
+                    <div class="notification-icon">
+                        <span style="font-size: 20px;"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                                viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M6 8a6 6 0 0 1 12 0c0 7 3 9 3 9H3s3-2 3-9"></path>
+                                <path d="M10.3 21a1.94 1.94 0 0 0 3.4 0"></path>
+                            </svg>
+                        </span>
+                        <span class="notification-badge">3</span>
+                    </div>
+                    <div class="user-profile">
+                        <span style="font-size: 14px; font-weight: 500;">Pastor Lawrence</span>
+                        <span style="font-size: 20px;"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                                viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2"></path>
+                                <circle cx="12" cy="7" r="4"></circle>
+                            </svg>
+                        </span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Record Donation Form -->
+         
+            <div class="dashboard-content">
+                <div class="cf-donation-header">
+                    <h1>Record New Donation</h1>
+                    <p>Capture donation details and generate receipt for church members</p>
+                </div>
+
+                <form id="recordDonationForm">
+                    <!-- Donation Amount -->
+                    <div class="cf-form-card">
+                        <h3 class="cf-form-section-title">
+                            <svg class="cf-section-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
+                                fill="none" stroke="currentColor" stroke-width="2">
+                                <line x1="12" x2="12" y1="2" y2="22"></line>
+                                <path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"></path>
+                            </svg>
+                            Donation Amount
+                        </h3>
+
+                        <div class="cf-amount-display">
+                            <div class="cf-amount-label">Total Donation Amount</div>
+                            <div class="cf-amount-value">
+                                <span class="cf-currency-symbol">$</span>
+                                <span id="displayAmount">0.00</span>
+                            </div>
+                        </div>
+
+                        <div class="cf-form-grid">
+                            <div class="cf-form-group full-width">
+                                <label class="cf-form-label required">Enter Amount</label>
+                                <input type="number" class="cf-form-input" id="donationAmount" min="0" step="0.01"
+                                    placeholder="0.00" required oninput="updateAmountDisplay()">
+                                <span class="cf-form-hint">Enter the donation amount in dollars</span>
+                            </div>
+
+                            <div class="cf-form-group full-width">
+                                <label class="cf-form-label">Quick Amount Selection</label>
+                                <div class="cf-quick-amounts">
+                                    <button type="button" class="cf-quick-amount-btn" onclick="setAmount(25)">$25</button>
+                                    <button type="button" class="cf-quick-amount-btn" onclick="setAmount(50)">$50</button>
+                                    <button type="button" class="cf-quick-amount-btn" onclick="setAmount(100)">$100</button>
+                                    <button type="button" class="cf-quick-amount-btn" onclick="setAmount(250)">$250</button>
+                                    <button type="button" class="cf-quick-amount-btn" onclick="setAmount(500)">$500</button>
+                                    <button type="button" class="cf-quick-amount-btn" onclick="setAmount(1000)">$1,000</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Donor Information -->
+                    <div class="cf-form-card">
+                        <h3 class="cf-form-section-title">
+                            <svg class="cf-section-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
+                                fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2"></path>
+                                <circle cx="12" cy="7" r="4"></circle>
+                            </svg>
+                            Donor Information
+                        </h3>
+
+                        <div class="cf-form-grid">
+                            <div class="cf-form-group full-width">
+                                <div class="cf-checkbox-group">
+                                    <input type="checkbox" class="cf-checkbox" id="anonymousDonation"
+                                        onchange="toggleAnonymous()">
+                                    <label class="cf-checkbox-label" for="anonymousDonation">This is an anonymous
+                                        donation</label>
+                                </div>
+                            </div>
+
+                            <div id="donorFields">
+                                <div class="cf-form-grid">
+                                    <div class="cf-form-group full-width cf-donor-lookup">
+                                        <label class="cf-form-label required">Donor Name</label>
+                                        <input type="text" class="cf-form-input" id="donorName"
+                                            placeholder="Start typing to search existing members..."
+                                            oninput="searchDonors()" required>
+                                        <div class="cf-donor-suggestions" id="donorSuggestions"></div>
+                                        <span class="cf-form-hint">Select from existing members or enter new donor</span>
+                                    </div>
+
+                                    <div class="cf-form-group">
+                                        <label class="cf-form-label required">Email Address</label>
+                                        <input type="email" class="cf-form-input" id="donorEmail"
+                                            placeholder="donor@example.com" required>
+                                    </div>
+
+                                    <div class="cf-form-group">
+                                        <label class="cf-form-label">Phone Number</label>
+                                        <input type="tel" class="cf-form-input" id="donorPhone"
+                                            placeholder="+1 (555) 123-4567">
+                                    </div>
+
+                                    <div class="cf-form-group full-width">
+                                        <label class="cf-form-label">Mailing Address</label>
+                                        <input type="text" class="cf-form-input" id="donorAddress"
+                                            placeholder="Street address for tax receipt">
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="cf-anonymous-section" id="anonymousSection">
+                                <p>
+                                    <span class="cf-anonymous-icon">9</span>
+                                    <strong>Anonymous Donation:</strong> No personal information will be recorded. A generic
+                                    receipt will be generated without donor details.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Donation Details -->
+                    <div class="cf-form-card">
+                        <h3 class="cf-form-section-title">
+                            <svg class="cf-section-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
+                                fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+                                <polyline points="14 2 14 8 20 8"></polyline>
+                                <line x1="16" y1="13" x2="8" y2="13"></line>
+                                <line x1="16" y1="17" x2="8" y2="17"></line>
+                                <polyline points="10 9 9 9 8 9"></polyline>
+                            </svg>
+                            Donation Details
+                        </h3>
+
+                        <div class="cf-form-grid">
+                            <div class="cf-form-group">
+                                <label class="cf-form-label required">Donation Type</label>
+                                <select class="cf-form-select" id="donationType" required onchange="handleDonationType()">
+                                    <option value="">Select donation type</option>
+                                    <option value="tithe">Tithe</option>
+                                    <option value="offering">General Offering</option>
+                                    <option value="building">Building Fund</option>
+                                    <option value="missions">Missions</option>
+                                    <option value="youth">Youth Ministry</option>
+                                    <option value="benevolence">Benevolence Fund</option>
+                                    <option value="special">Special Project</option>
+                                    <option value="other">Other</option>
+                                </select>
+                            </div>
+
+                            <div class="cf-form-group">
+                                <label class="cf-form-label required">Donation Date</label>
+                                <input type="date" class="cf-form-input" id="donationDate" required>
+                            </div>
+
+                            <div class="cf-form-group full-width cf-conditional-field" id="otherTypeField">
+                                <label class="cf-form-label">Specify Other Type</label>
+                                <input type="text" class="cf-form-input" id="otherType"
+                                    placeholder="Please specify the donation purpose">
+                            </div>
+
+                            <div class="cf-form-group full-width">
+                                <label class="cf-form-label">Campaign/Event (Optional)</label>
+                                <select class="cf-form-select" id="donationCampaign">
+                                    <option value="">Not associated with any campaign</option>
+                                    <option value="easter-2024">Easter 2024 Campaign</option>
+                                    <option value="roof-repair">Roof Repair Project</option>
+                                    <option value="mission-trip">Mission Trip 2024</option>
+                                    <option value="christmas-giving">Christmas Giving Campaign</option>
+                                </select>
+                            </div>
+
+                            <div class="cf-form-group full-width">
+                                <div class="cf-checkbox-group">
+                                    <input type="checkbox" class="cf-checkbox" id="taxDeductible" checked>
+                                    <label class="cf-checkbox-label" for="taxDeductible">Tax deductible donation</label>
+                                </div>
+                                <div class="cf-tax-badge">
+                                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                        stroke-width="2">
+                                        <polyline points="20 6 9 17 4 12"></polyline>
+                                    </svg>
+                                    Tax receipt will be generated
+                                </div>
+                            </div>
+
+                            <div class="cf-form-group full-width">
+                                <label class="cf-form-label">Notes/Comments</label>
+                                <textarea class="cf-form-textarea" id="donationNotes"
+                                    placeholder="Any additional notes about this donation (internal use only)"></textarea>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Payment Method -->
+                    <div class="cf-form-card">
+                        <h3 class="cf-form-section-title">
+                            <svg class="cf-section-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
+                                fill="none" stroke="currentColor" stroke-width="2">
+                                <rect x="1" y="4" width="22" height="16" rx="2" ry="2"></rect>
+                                <line x1="1" y1="10" x2="23" y2="10"></line>
+                            </svg>
+                            Payment Method
+                        </h3>
+
+                        <div class="cf-payment-methods">
+                            <div class="cf-payment-method" onclick="selectPaymentMethod('cash', this)">
+                                <div class="cf-payment-icon">=�</div>
+                                <div class="cf-payment-text">Cash</div>
+                            </div>
+                            <div class="cf-payment-method" onclick="selectPaymentMethod('check', this)">
+                                <div class="cf-payment-icon"><�</div>
+                                <div class="cf-payment-text">Check</div>
+                            </div>
+                            <div class="cf-payment-method" onclick="selectPaymentMethod('card', this)">
+                                <div class="cf-payment-icon">=�</div>
+                                <div class="cf-payment-text">Credit/Debit</div>
+                            </div>
+                            <div class="cf-payment-method" onclick="selectPaymentMethod('online', this)">
+                                <div class="cf-payment-icon"><</div>
+                                <div class="cf-payment-text">Online</div>
+                            </div>
+                            <div class="cf-payment-method" onclick="selectPaymentMethod('transfer', this)">
+                                <div class="cf-payment-icon">�</div>
+                                <div class="cf-payment-text">Bank Transfer</div>
+                            </div>
+                            <div class="cf-payment-method" onclick="selectPaymentMethod('other', this)">
+                                <div class="cf-payment-icon">=�</div>
+                                <div class="cf-payment-text">Other</div>
+                            </div>
+                        </div>
+                        <input type="hidden" id="paymentMethod" required>
+
+                        <div class="cf-form-grid" style="margin-top: 20px;">
+                            <div class="cf-form-group full-width cf-conditional-field" id="checkNumberField">
+                                <label class="cf-form-label">Check Number</label>
+                                <input type="text" class="cf-form-input" id="checkNumber"
+                                    placeholder="Enter check number">
+                            </div>
+
+                            <div class="cf-form-group full-width cf-conditional-field" id="transactionIdField">
+                                <label class="cf-form-label">Transaction ID</label>
+                                <input type="text" class="cf-form-input" id="transactionId"
+                                    placeholder="Enter transaction/reference ID">
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Receipt Options -->
+                    <div class="cf-form-card">
+                        <h3 class="cf-form-section-title">
+                            <svg class="cf-section-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
+                                fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+                                <polyline points="14 2 14 8 20 8"></polyline>
+                                <line x1="16" y1="13" x2="8" y2="13"></line>
+                                <line x1="16" y1="17" x2="8" y2="17"></line>
+                            </svg>
+                            Receipt & Notification
+                        </h3>
+
+                        <div class="cf-receipt-section">
+                            <div class="cf-receipt-toggle">
+                                <input type="checkbox" class="cf-checkbox" id="sendReceipt" checked>
+                                <label class="cf-checkbox-label" for="sendReceipt">Send receipt to donor</label>
+                            </div>
+
+                            <div class="cf-form-grid">
+                                <div class="cf-form-group">
+                                    <label class="cf-form-label">Receipt Method</label>
+                                    <select class="cf-form-select" id="receiptMethod">
+                                        <option value="email">Email</option>
+                                        <option value="print">Print</option>
+                                        <option value="both">Email & Print</option>
+                                    </select>
+                                </div>
+
+                                <div class="cf-form-group">
+                                    <label class="cf-form-label">Receipt Number</label>
+                                    <input type="text" class="cf-form-input" id="receiptNumber"
+                                        placeholder="Auto-generated" readonly>
+                                    <span class="cf-form-hint">Auto-generated upon submission</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Summary -->
+                    <div class="cf-summary-card">
+                        <div class="cf-summary-title">Donation Summary</div>
+                        <div class="cf-summary-row">
+                            <span class="cf-summary-label">Donor:</span>
+                            <span class="cf-summary-value" id="summaryDonor">-</span>
+                        </div>
+                        <div class="cf-summary-row">
+                            <span class="cf-summary-label">Donation Type:</span>
+                            <span class="cf-summary-value" id="summaryType">-</span>
+                        </div>
+                        <div class="cf-summary-row">
+                            <span class="cf-summary-label">Payment Method:</span>
+                            <span class="cf-summary-value" id="summaryPayment">-</span>
+                        </div>
+                        <div class="cf-summary-row">
+                            <span class="cf-summary-label">Date:</span>
+                            <span class="cf-summary-value" id="summaryDate">-</span>
+                        </div>
+                        <div class="cf-summary-row">
+                            <span class="cf-summary-label">Total Amount:</span>
+                            <span class="cf-summary-value" id="summaryAmount">$0.00</span>
+                        </div>
+                    </div>
+
+                    <!-- Form Actions -->
+                    <div class="cf-form-actions">
+                        <button type="button" class="cf-btn cf-btn-cancel" onclick="cancelDonation()">
+                            <svg class="cf-btn-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none"
+                                stroke="currentColor" stroke-width="2">
+                                <line x1="18" y1="6" x2="6" y2="18"></line>
+                                <line x1="6" y1="6" x2="18" y2="18"></line>
+                            </svg>
+                            Cancel
+                        </button>
+                        <button type="button" class="cf-btn cf-btn-draft" onclick="saveDraft()">
+                            <svg class="cf-btn-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none"
+                                stroke="currentColor" stroke-width="2">
+                                <path d="M19 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11l5 5v11a2 2 0 0 1-2 2z"></path>
+                                <polyline points="17 21 17 13 7 13 7 21"></polyline>
+                                <polyline points="7 3 7 8 15 8"></polyline>
+                            </svg>
+                            Save as Draft
+                        </button>
+                        <button type="submit" class="cf-btn cf-btn-primary">
+                            <svg class="cf-btn-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none"
+                                stroke="currentColor" stroke-width="2">
+                                <polyline points="20 6 9 17 4 12"></polyline>
+                            </svg>
+                            Record Donation
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Set today's date as default
+        document.getElementById('donationDate').valueAsDate = new Date();
+
+        // Sidebar toggle
+        function toggleSidebar() {
+            const sidebar = document.querySelector('.sidebar');
+            sidebar.classList.toggle('open');
+        }
+
+        // Close sidebar when clicking outside on mobile
+        document.addEventListener('click', function (event) {
+            const sidebar = document.querySelector('.sidebar');
+            const toggle = document.querySelector('.mobile-menu-toggle');
+
+            if (window.innerWidth <= 768 &&
+                !sidebar.contains(event.target) &&
+                !toggle.contains(event.target) &&
+                sidebar.classList.contains('open')) {
+                sidebar.classList.remove('open');
+            }
+        });
+
+        // Sample member data for donor lookup
+        const members = [
+            { name: 'Sarah Johnson', email: 'sarah.johnson@email.com', phone: '(555) 123-4567' },
+            { name: 'Michael Chen', email: 'michael.chen@email.com', phone: '(555) 234-5678' },
+            { name: 'Emily Rodriguez', email: 'emily.rodriguez@email.com', phone: '(555) 345-6789' },
+            { name: 'David Thompson', email: 'david.thompson@email.com', phone: '(555) 456-7890' },
+            { name: 'Jennifer Williams', email: 'jennifer.williams@email.com', phone: '(555) 567-8901' }
+        ];
+
+        // Update amount display
+        function updateAmountDisplay() {
+            const amount = parseFloat(document.getElementById('donationAmount').value) || 0;
+            document.getElementById('displayAmount').textContent = amount.toFixed(2);
+            document.getElementById('summaryAmount').textContent = '$' + amount.toFixed(2);
+        }
+
+        // Set quick amount
+        function setAmount(amount) {
+            document.getElementById('donationAmount').value = amount;
+            updateAmountDisplay();
+
+            // Update active button
+            document.querySelectorAll('.cf-quick-amount-btn').forEach(btn => {
+                btn.classList.remove('active');
+            });
+            event.target.classList.add('active');
+        }
+
+        // Toggle anonymous donation
+        function toggleAnonymous() {
+            const isAnonymous = document.getElementById('anonymousDonation').checked;
+            const donorFields = document.getElementById('donorFields');
+            const anonymousSection = document.getElementById('anonymousSection');
+
+            if (isAnonymous) {
+                donorFields.style.display = 'none';
+                anonymousSection.classList.add('show');
+                document.getElementById('summaryDonor').textContent = 'Anonymous';
+                // Remove required attributes
+                document.getElementById('donorName').removeAttribute('required');
+                document.getElementById('donorEmail').removeAttribute('required');
+            } else {
+                donorFields.style.display = 'block';
+                anonymousSection.classList.remove('show');
+                document.getElementById('summaryDonor').textContent = '-';
+                // Add required attributes back
+                document.getElementById('donorName').setAttribute('required', 'required');
+                document.getElementById('donorEmail').setAttribute('required', 'required');
+            }
+        }
+
+        // Search donors
+        function searchDonors() {
+            const input = document.getElementById('donorName').value.toLowerCase();
+            const suggestions = document.getElementById('donorSuggestions');
+
+            if (input.length < 2) {
+                suggestions.classList.remove('show');
+                return;
+            }
+
+            const matches = members.filter(m =>
+                m.name.toLowerCase().includes(input)
+            );
+
+            if (matches.length > 0) {
+                suggestions.innerHTML = matches.map(m => `
+                    <div class="cf-donor-item" onclick="selectDonor('${m.name}', '${m.email}', '${m.phone}')">
+                        <div class="cf-donor-name">${m.name}</div>
+                        <div class="cf-donor-email">${m.email}</div>
+                    </div>
+                `).join('');
+                suggestions.classList.add('show');
+            } else {
+                suggestions.classList.remove('show');
+            }
+        }
+
+        // Select donor from suggestions
+        function selectDonor(name, email, phone) {
+            document.getElementById('donorName').value = name;
+            document.getElementById('donorEmail').value = email;
+            document.getElementById('donorPhone').value = phone;
+            document.getElementById('donorSuggestions').classList.remove('show');
+            document.getElementById('summaryDonor').textContent = name;
+        }
+
+        // Hide suggestions when clicking outside
+        document.addEventListener('click', function (event) {
+            if (!event.target.closest('.cf-donor-lookup')) {
+                document.getElementById('donorSuggestions').classList.remove('show');
+            }
+        });
+
+        // Update summary on donor name change
+        document.getElementById('donorName').addEventListener('input', function () {
+            document.getElementById('summaryDonor').textContent = this.value || '-';
+        });
+
+        // Handle donation type selection
+        function handleDonationType() {
+            const donationType = document.getElementById('donationType').value;
+            const otherTypeField = document.getElementById('otherTypeField');
+
+            if (donationType === 'other') {
+                otherTypeField.classList.add('show');
+            } else {
+                otherTypeField.classList.remove('show');
+            }
+
+            const typeText = document.getElementById('donationType').selectedOptions[0].text;
+            document.getElementById('summaryType').textContent = typeText || '-';
+        }
+
+        // Select payment method
+        let selectedPaymentMethod = '';
+
+        function selectPaymentMethod(method, element) {
+            // Remove selected class from all
+            document.querySelectorAll('.cf-payment-method').forEach(el => {
+                el.classList.remove('selected');
+            });
+
+            // Add selected class to clicked element
+            element.classList.add('selected');
+            selectedPaymentMethod = method;
+            document.getElementById('paymentMethod').value = method;
+
+            // Show/hide conditional fields
+            document.getElementById('checkNumberField').classList.remove('show');
+            document.getElementById('transactionIdField').classList.remove('show');
+
+            if (method === 'check') {
+                document.getElementById('checkNumberField').classList.add('show');
+            } else if (method === 'online' || method === 'transfer' || method === 'card') {
+                document.getElementById('transactionIdField').classList.add('show');
+            }
+
+            // Update summary
+            const paymentText = element.querySelector('.cf-payment-text').textContent;
+            document.getElementById('summaryPayment').textContent = paymentText;
+        }
+
+        // Update date summary
+        document.getElementById('donationDate').addEventListener('change', function () {
+            const date = new Date(this.value);
+            const formattedDate = date.toLocaleDateString('en-US', {
+                year: 'numeric',
+                month: 'long',
+                day: 'numeric'
+            });
+            document.getElementById('summaryDate').textContent = formattedDate;
+        });
+
+        // Form submission
+        document.getElementById('recordDonationForm').addEventListener('submit', function (e) {
+            e.preventDefault();
+
+            // Validate payment method
+            if (!selectedPaymentMethod) {
+                alert('Please select a payment method');
+                return;
+            }
+
+            // Collect form data
+            const formData = {
+                amount: document.getElementById('donationAmount').value,
+                anonymous: document.getElementById('anonymousDonation').checked,
+                donorName: document.getElementById('donorName').value,
+                donorEmail: document.getElementById('donorEmail').value,
+                donorPhone: document.getElementById('donorPhone').value,
+                donorAddress: document.getElementById('donorAddress').value,
+                donationType: document.getElementById('donationType').value,
+                donationDate: document.getElementById('donationDate').value,
+                campaign: document.getElementById('donationCampaign').value,
+                taxDeductible: document.getElementById('taxDeductible').checked,
+                notes: document.getElementById('donationNotes').value,
+                paymentMethod: selectedPaymentMethod,
+                checkNumber: document.getElementById('checkNumber').value,
+                transactionId: document.getElementById('transactionId').value,
+                sendReceipt: document.getElementById('sendReceipt').checked,
+                receiptMethod: document.getElementById('receiptMethod').value
+            };
+
+            console.log('Donation Recorded:', formData);
+
+            // Generate receipt number
+            const receiptNum = 'REC-' + Date.now();
+
+            // Show success message
+            alert(`Donation recorded successfully!\n\nReceipt Number: ${receiptNum}\nAmount: $${formData.amount}\nDonor: ${formData.anonymous ? 'Anonymous' : formData.donorName}\n\nReceipt will be ${formData.sendReceipt ? 'sent to donor via ' + formData.receiptMethod : 'available for printing'}.`);
+
+            // Here you would normally send this data to your backend
+            // Then redirect or reset form
+            if (confirm('Would you like to record another donation?')) {
+                this.reset();
+                document.getElementById('displayAmount').textContent = '0.00';
+                document.querySelectorAll('.cf-payment-method').forEach(el => {
+                    el.classList.remove('selected');
+                });
+                selectedPaymentMethod = '';
+                document.getElementById('summaryDonor').textContent = '-';
+                document.getElementById('summaryType').textContent = '-';
+                document.getElementById('summaryPayment').textContent = '-';
+                document.getElementById('summaryDate').textContent = '-';
+                document.getElementById('summaryAmount').textContent = '$0.00';
+                document.getElementById('donationDate').valueAsDate = new Date();
+            } else {
+                window.location.href = '../Finance/finance.html';
+            }
+        });
+
+        function saveDraft() {
+            alert('Donation saved as draft! You can complete it later.');
+        }
+
+        function cancelDonation() {
+            if (confirm('Are you sure you want to cancel? All unsaved changes will be lost.')) {
+                window.location.href = '../Finance/finance.html';
+            }
+        }
+    </script>
+</body>
+
+</html>
